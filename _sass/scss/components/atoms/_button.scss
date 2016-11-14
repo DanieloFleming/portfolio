@@ -1,0 +1,17 @@
+.button, .button:visited {
+	display:inline-block;
+	padding:10px;
+	background-color: $color-tertiary;
+	cursor:pointer;
+}
+.button {
+
+	&:hover {
+		background-color: $color-secondary;
+		color:$color-primary;
+	}
+
+	&.button-normal {
+		border-radius:2px;
+	}
+}

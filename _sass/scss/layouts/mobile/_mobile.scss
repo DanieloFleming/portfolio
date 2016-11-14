@@ -1,0 +1,5 @@
+@media(max-width:$media-width-sm) {
+	@import '_section';
+	@import '_grid';
+	@import '_pages';
+}

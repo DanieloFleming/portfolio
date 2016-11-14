@@ -1,0 +1,40 @@
+.section {
+  padding:3rem 2rem;
+  
+  overflow:hidden;
+  position:relative;
+
+  &.is-colored--dark {
+      background-color:$color-primary;
+  }
+
+  &.is-unpadded {
+      padding-top:0;
+      padding-bottom:0;
+      padding-left:0;
+      padding-right:0;
+  }
+  &.is-unpadded--horizontal {
+      padding-left:0;
+      padding-right:0;
+  }
+  &.is-unpadded--vertical {
+      padding-top:0;
+      padding-bottom:0;
+  }
+
+  &.is-unpadded--top {
+      padding-top:0;
+  }
+
+  &.is-unpadded--bottom {
+      padding-bottom:0;
+  }
+}
+
+.is-inverted {
+    background-color:black;//$color-secondary;
+}
+.section-quote {
+    padding:6rem;
+}

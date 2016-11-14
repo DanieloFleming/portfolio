@@ -1,0 +1,47 @@
+.mouse-indicator {
+	position:absolute;
+
+	width: 20px;
+	height: 40px;
+
+	border: 2px solid white;
+	border-radius: 60px;
+
+	overflow:hidden;
+
+	//background:#353535;//rgba(255, 255, 255, .2);
+
+	span {
+		position: absolute;
+		top: 3px;
+		left: 50%;
+
+		width: 4px;
+		height: 4px;
+
+		margin-left: -2px;
+
+		background-color:#fff;
+		border-radius: 50%;
+
+
+		@include animation(mouse-scroller 2s ease-out infinite);
+	}
+}
+
+@include keyframes(mouse-scroller) {
+  0% {
+    opacity:0;
+    @include translateY(0);
+  }
+  
+  10% {
+    opacity:1;
+    @include translateY(1px);
+  }
+ 
+  100% {
+    opacity:0;
+    @include translateY(16px);
+  }
+}

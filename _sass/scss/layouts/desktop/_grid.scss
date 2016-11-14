@@ -1,0 +1,150 @@
+.container {
+  width: 100%;
+  max-width: $media-width-max;
+}
+
+  .span-lg-10-10 {
+    @include flex(none !important);
+    width: 100%;
+  }
+
+  .span-lg-9-10 {
+    @include flex(none !important);
+    width: 90%;
+  }
+
+  .span-lg-8-10 {
+    @include flex(none !important);
+    width: 80%;
+  }
+
+  .span-lg-7-10 {
+    @include flex(none !important);
+    width: 70%;
+  }
+
+  .span-lg-6-10 {
+    @include flex(none !important);
+    width: 60%;
+  }
+
+  .span-lg-5-10 {
+    @include flex(none !important);
+    width: 50%;
+  }
+
+  .span-lg-4-10 {
+    @include flex(none !important);
+    width: 40%;
+  }
+
+  .span-lg-3-10 {
+     @include flex(none !important);
+     width: 30%;
+  }
+
+  .span-lg-2-10 {
+    @include flex(none !important);
+    width: 20%;
+  }
+
+  .span-lg-1-10 {
+    @include flex(none !important);
+    width: 10%;
+  }
+
+  /*
+    Column span
+   */
+
+  .space-lg-l-10-10 {
+    margin-left: 100%;
+  }
+
+  .space-lg-l-9-10 {
+    margin-left: 90%;
+  }
+
+  .space-lg-l-8-10 {
+    margin-left: 80%;
+  }
+
+  .space-lg-l-7-10 {
+    margin-left: 70%;
+  }
+
+  .space-lg-l-6-10 {
+    margin-left: 60%;
+  }
+
+  .space-lg-l-5-10 {
+    margin-left: 50%;
+  }
+
+  .space-lg-l-4-10 {
+    margin-left: 40%;
+  }
+
+  .space-lg-l-3-10 {
+    margin-left: 30%;
+  }
+
+  .space-lg-l-2-10 {
+    margin-left: 20%;
+  }
+
+  .space-lg-l-1-10 {
+    margin-left: 10%;
+  }
+
+  .space-lg-l-none {
+    margin-left:0;
+  }
+
+  .space-lg-r-10-10 {
+    margin-right: 100%;
+  }
+
+  .space-lg-r-9-10 {
+    margin-right: 90%;
+  }
+
+  .space-lg-r-8-10 {
+    margin-right: 80%;
+  }
+
+  .space-lg-r-7-10 {
+    margin-right: 70%;
+  }
+
+  .space-lg-r-6-10 {
+    margin-right: 60%;
+  }
+
+  .space-lg-r-5-10 {
+    margin-right: 50%;
+  }
+
+  .space-lg-r-4-10 {
+    margin-right: 40%;
+  }
+
+  .space-lg-r-3-10 {
+    margin-right: 30%;
+  }
+
+  .space-lg-r-2-10 {
+    margin-right: 20%;
+  }
+
+  .space-lg-r-1-10 {
+    margin-right: 10%;
+  }
+  .space-lg-r-none {
+    margin-right:0;
+  }
+
+  .space-lg-none {
+    margin-right:0;
+    margin-left:0;
+  }

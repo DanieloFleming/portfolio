@@ -1,0 +1,16 @@
+.page {
+  width:100%;
+}
+
+.page.transitionOut {
+	position:absolute;
+
+	//@include scale(.8);
+	opacity:0;
+
+	@include transition(all, .7s);
+}
+
+.no-scroll {
+	position:fixed;
+}

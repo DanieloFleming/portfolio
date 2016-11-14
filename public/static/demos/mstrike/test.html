@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            * {
+                font-family: "Kenvector Future";
+
+                color:white;
+                font-size:24px;
+                margin:0;
+                padding:0;
+            }
+            canvas {
+                position: absolute;
+
+            }
+            .canvas-container, .pre-loader, .start-screen {
+                position:absolute;
+                width:600px;
+                height:400px;
+                
+                top:0;
+                left:0;
+                //transform: translate(-50%, -50%);
+            }
+
+            .pre-loader {
+                text-align:center;
+                background: url('img/loader.gif') center center no-repeat;
+                background-color:black;
+            }
+
+            .start-screen {
+                text-align: center;
+            }
+            .title-container {
+                text-align: center;
+                margin-top:100px;
+            }
+            .title {
+                margin-top:25%;
+            }
+            .btn{
+                width:300px;
+                margin:0 auto;
+                background-color:transparent;
+                color:white;
+            }
+            .btn-play  {
+                margin-top:80px;
+                margin-bottom: 10px;
+            }
+            .btn:hover{
+                color:black;
+                background:white;
+                cursor: pointer;
+            }
+            .btn:visited, .btn:active {
+                color:deepskyblue;
+                background:transparent;
+            }
+            .game {
+                width:600px;
+                height:400px;
+                overflow:hidden;
+
+                position: relative;
+                background:url('img/dark-purple.png');
+            }
+            .hide {
+                display:none;
+            }
+        </style>
+    </head>
+
+	<body>
+        <div class="game canvas" >
+            <div class="canvas-container canvas" id="container" >
+                <canvas  id="background" class="canvas"></canvas>
+                <canvas  id="playfield" class="canvas"></canvas>
+                <canvas  id="hud" class="canvas"></canvas>
+            </div>
+                <div class="start-screen canvas" >
+                    <img src="img/startscreen/title.png" class="title"/>
+                    <p class='btn btn-play' data-btn="btn-play">play game</p>
+                    <p class='btn btn-sound' data-btn="btn-sound">sound off-on</p>
+                </div>
+                <div class="load-screen canvas" ></div>
+        </div>
+
+
+        <script src="js/utils/NameSpace.js"></script>
+        <script src="js/utils/Helper.js"></script>
+
+        <script src="js/library/Class.js"></script>
+        <script src="js/library/AssetsLoader.js"></script>
+        <script src="js/library/SpriteManager.js"></script>
+        <script src="js/library/AudioManager.js"></script>
+        <script src="js/library/CanvasManager.js"></script>
+        <script src="js/library/SpriteAnimator.js"></script>
+        <script src="js/library/CollisionDetect.js"></script>
+        <script src="js/library/GameArray.js"></script>
+        <script src="js/assets/SpriteSheet.js"></script>
+        <script src="js/assets/AudioBook.js"></script>
+
+        <script src="js/screens/LoadScreen.js"></script>
+        <script src="js/screens/StartScreen.js"></script>
+
+        <script src="js/components/GameObject.js"></script>
+        <script src="js/components/explosion/Explosion.js"></script>
+        <script src="js/components/weapon/Bullet.js"></script>
+        <script src="js/components/player/Ship.js"></script>
+        <script src="js/components/meteor/Meteorite.js"></script>
+        <script src="js/components/meteor/Meteor.js"></script>
+        <script src="js/components/HUD.js"></script>
+
+
+        <script src="js/components/background/Background.js"></script>
+        <script src="js/components/level/Level1.js"></script>
+        <!--
+            <script src="js/classes/HUD.js"></script>
+        -->
+        <script src="js/main.js"></script>
+	</body>
+</html>

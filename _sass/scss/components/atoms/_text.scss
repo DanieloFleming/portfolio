@@ -1,0 +1,57 @@
+p, h1, h2, h3, h4, h5, h6, form * {
+  color: $font-color-primary;
+}
+h1 {
+  text-transform:uppercase;
+  font-family: $font-family-secondary;
+}
+
+.is-inverted {
+    color:#fff;
+
+    p, h1, h2, h3, h4, h5, h6, form * {
+        color:#fff;
+    }
+}
+
+.has-dark-text {
+    color:#000;
+
+    p, h1, h2, h3, h4, h5, h6, form * {
+        color:#000;
+    }
+}
+
+.text-dark {
+    color:#000;
+}
+/*
+  sizes
+*/
+h1 {font-size:120px}
+h2 {font-size:36px;}
+h3 {font-size:24px;}
+h4 {font-size:18px;}
+h5 {font-size:14px;}
+h6 {font-size:12px;}
+
+p {
+    font-size:18px;
+    line-height:24px;
+}
+
+.is-bold {
+  font-weight:bold;
+}
+
+.title {
+    margin-bottom:2rem;
+    font-weight:bold;
+}
+@media(max-width:$media-width-md) {
+  h1 {font-size:80px}
+}
+
+  i {
+    font-family: 'latoblack';
+  }

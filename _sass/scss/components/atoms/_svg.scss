@@ -1,0 +1,64 @@
+svg {
+
+}
+svg.logo {
+	//position:absolute;
+	left:calc(50% - (300px /2));
+	top:calc(50% - (220px /2));
+}
+svg.logo .path {
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	fill: transparent;
+}
+
+.svg-logo-container {
+	position:relative;
+	display:inline-block;
+
+	overflow:hidden;
+	margin:0 20px;
+
+	&.container-shield {max-width:150px}
+	&.container-code {max-width:169px}
+}
+
+.svg-logo-skill {
+	width:100%;
+
+	&.logo-html5 {
+		//original-colors {left: #E44F26, right: #F1662A;
+		.shield-left {fill:#8f8f8f}
+		.shield-right {fill:#9c9c9c}
+		.left-top, .left-bottom {fill:#EBEBEB}
+		.right-top, .right-bottom {fill:#ffffff}
+	}
+
+	&.logo-js {
+		//original-colors{background : #f7df1e, j : #000000, s : #000000,  }
+		.background{fill: #EBEBEB}
+		.j, .s {fill: #9c9c9c}
+	}
+
+	&.logo-css3 {
+		//original-colors {left-shield :#1572B6, right-shield:#33A9DC, left3 :#EBEBEB, right3: #ffffff}
+		.shield-left {fill:#8f8f8f}
+		.shield-right {fill:#9c9c9c}
+		.left-top, .left-middle, .left-bottom {fill:#EBEBEB}
+		.right-top, .right-bottom {fill:#ffffff}
+	}
+
+	&.logo-php {
+		//original-colors {elephant:#709ccb, letters-inside:#fff, shade:#39638b}
+		.elephant, .php-in{fill:#9c9c9c}
+		.shade{fill:#626262}
+
+	}
+
+	&.logo-mysql {
+		//original-colors {border : #134e61, left: #134e61, right: #e87912;}
+
+		.outside-border, .left-dolphin {fill:#8f8f8f}
+		.right-dolphin{fill:#9c9c9c}
+	}
+}

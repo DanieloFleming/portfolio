@@ -1,0 +1,112 @@
+.is-inverted .scroll-indicator,  .light.scroll-indicator{
+	.indicator:before{
+		background-color:#fff;
+	} 
+	.indicator:after {
+		border-right:2px solid #fff;
+		border-bottom:2px solid #fff;
+	}
+	.indicator-text {
+		color:white;
+	}
+
+}
+.scroll-indicator {
+	cursor:pointer;
+	position:absolute;
+	bottom:10px;
+
+	width: 110px;
+	height: 100px;
+
+
+	overflow:hidden;
+
+	left:50%;
+	margin-left:-55px;
+	text-align:center;
+
+	.indicator {
+		position: absolute;
+	    bottom: 0;
+	    left: calc(50% - 10px);
+
+		width: 20px;
+		height: 20px;
+
+		@include transition(transform .7s);
+	}
+	.indicator:before {
+		content:"";
+		display:block;
+		position:absolute;
+		width: 2px;
+		//height: 15px;
+		height:5px;
+		background:$color-secondary;
+		bottom:14px;
+		opacity:0;
+		left:calc(50% - 1px);
+		transform-origin: bottom;
+		@include transform(scaleY(1));
+		@include transition(opacity .7s, transform .7s);
+	}
+	.indicator:after {
+		content:"";
+		position: absolute;
+
+		width: 20px;
+		height: 20px;
+		left:50%;
+		bottom:5px;
+		margin-left:-20px;
+		border-right:2px solid $color-secondary;
+		border-bottom:2px solid $color-secondary;
+
+		@include rotate(45deg);
+		transform-origin:right bottom;
+		@include transition(transform .7s);
+	}
+
+	.indicator-text {
+		text-transform: uppercase;
+    	font-size: 18px;
+    	display: block;
+    	font-weight:bold;
+    	
+
+		
+		@include transition(transform .7s, opacity .7s);
+		&.text-top {
+			opacity:0;
+			@include translateY(60px);
+		}
+
+		&.text-bottom {
+			@include translateY(25px)
+		}
+	}
+
+	&:hover, &.case-loading {
+		.indicator:after {
+			@include transform(scale(.5) rotate(45deg));
+			@include transition(transform .7s);
+		}
+		.indicator:before {
+			opacity:1;
+		    @include transform(scale(.5, 9));
+			@include transition(opacity .7s, transform .7s);
+		}
+
+		.indicator-text {
+			opacity:1;
+			@include translateY(0);
+			@include transition(transform .7s, opacity .7s);
+
+			&.text-bottom {
+				@include transition-delay(.3s);
+			}
+		}
+
+	}
+}

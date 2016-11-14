@@ -1,0 +1,122 @@
+$animation-time: .5s;
+
+[data-delay] {
+	opacity:1;
+
+	@include translateY(0);
+	@include transition(transform .6s, opacity .6s);
+}
+.hide {
+	&[data-delay] {
+		opacity: 0;
+		@include translateY(-40px);
+	}
+
+	&[data-transition-type] {
+		opacity:0;
+	}
+
+	&[data-transition-type="slideUp"] {
+		@include translateY(40%);
+	}
+
+	&[data-transition-type="slideDown"] {
+		@include translateY(-40%);
+	}
+	&[data-transition-type="slideLeft"] {
+		@include translateX(40%)
+	}
+	&[data-transition-type="slideRight"] {
+		@include translateX(-40%)
+	}
+
+	&[data-transition-type="zoomIn"] {
+		@include scale(.8);
+	}
+
+	&[data-transition-type="zoomOut"] {
+		@include scale(1.2);
+	}
+
+	&[data-transition-type="fadeIn"] {
+		@include transform(none);
+	}
+}
+
+[data-transition-type] {
+	-webkit-backface-visibility: hidden;
+	backface-visibility:hidden;
+}/*
+.animate {
+	[data-transition-type] {
+		opacity:0;
+	}
+
+	[data-transition-type="slideUp"] {
+		@include translateY(40%);
+	}
+
+	[data-transition-type="slideDown"] {
+		@include translateY(-40%);
+	}
+	[data-transition-type="slideLeft"] {
+		@include translateX(40%)
+	}
+	[data-transition-type="slideRight"] {
+		@include translateX(-40%)
+	}
+
+	[data-transition-type="zoomIn"] {
+		@include scale(1);
+	}
+
+	[data-transition-type="zoomOut"] {
+		@include scale(1);
+	}
+}
+*/
+.transition {
+	[data-transition-type] {
+		opacity:1;
+		@include transition-duration($animation-time);
+		@include transition-timing-function(ease-out);
+	}
+
+	[data-transition-type="fadeIn"] {
+		@include transition(opacity $animation-time);
+	}
+
+	[data-transition-type="slideUp"] {
+		@include translateY(0);
+
+		@include transition(opacity $animation-time, transform $animation-time);
+	}
+
+	[data-transition-type="slideDown"] {
+		@include translateY(0);
+
+		@include transition-property(opacity, transform);
+	}
+	[data-transition-type="slideLeft"] {
+		@include translateX(0);
+
+		@include transition(opacity $animation-time, transform $animation-time);
+	}
+	[data-transition-type="slideRight"] {
+		@include translateX(0);
+
+		@include transition(opacity $animation-time, translateX $animation-time);
+	}
+
+	[data-transition-type="zoomIn"] {
+		@include scale(0);
+
+		@include transition(opacity $animation-time, scale $animation-time);
+	}
+
+	[data-transition-type="zoomOut"] {
+		@include scale(0);
+
+		@include transition(opacity $animation-time, scale $animation-time);
+	}
+}

@@ -1,0 +1,148 @@
+  .span-md-10-10 {
+    @include flex(none !important);
+    width: 100%;
+  }
+
+  .span-md-9-10 {
+    @include flex(none !important);
+    width: 90%;
+  }
+
+  .span-md-8-10 {
+    @include flex(none !important);
+    width: 80%;
+  }
+
+  .span-md-7-10 {
+    @include flex(none !important);
+    width: 70%;
+  }
+
+  .span-md-6-10 {
+    @include flex(none !important);
+    width: 60%;
+  }
+
+  .span-md-5-10 {
+    @include flex(none !important);
+    width: 50%;
+  }
+
+  .span-md-4-10 {
+    @include flex(none !important);
+    width: 40%;
+  }
+
+  .span-md-3-10 {
+     @include flex(none !important);
+     width: 30%;
+  }
+
+  .span-md-2-10 {
+    @include flex(none !important);
+    width: 20%;
+  }
+
+  .span-md-1-10 {
+    @include flex(none !important);
+    width: 10%;
+  }
+
+  .span-md-none {
+    width:0;
+  }
+  /*
+    Column span
+   */
+
+  .space-md-l-10-10 {
+    margin-left: 100%;
+  }
+
+  .space-md-l-9-10 {
+    margin-left: 90%;
+  }
+
+  .space-md-l-8-10 {
+    margin-left: 80%;
+  }
+
+  .space-md-l-7-10 {
+    margin-left: 70%;
+  }
+
+  .space-md-l-6-10 {
+    margin-left: 60%;
+  }
+
+  .space-md-l-5-10 {
+    margin-left: 50%;
+  }
+
+  .space-md-l-4-10 {
+    margin-left: 40%;
+  }
+
+  .space-md-l-3-10 {
+    margin-left: 30%;
+  }
+
+  .space-md-l-2-10 {
+    margin-left: 20%;
+  }
+
+  .space-md-l-1-10 {
+    margin-left: 10%;
+  }
+
+  .space-md-l-none {
+    margin-left:0;
+  }
+
+  .space-md-r-10-10 {
+    margin-right: 100%;
+  }
+
+  .space-md-r-9-10 {
+    margin-right: 90%;
+  }
+
+  .space-md-r-8-10 {
+    margin-right: 80%;
+  }
+
+  .space-md-r-7-10 {
+    margin-right: 70%;
+  }
+
+  .space-md-r-6-10 {
+    margin-right: 60%;
+  }
+
+  .space-md-r-5-10 {
+    margin-right: 50%;
+  }
+
+  .space-md-r-4-10 {
+    margin-right: 40%;
+  }
+
+  .space-md-r-3-10 {
+    margin-right: 30%;
+  }
+
+  .space-md-r-2-10 {
+    margin-right: 20%;
+  }
+
+  .space-md-r-1-10 {
+    margin-right: 10%;
+  }
+  .space-md-r-none {
+    margin-right:0;
+  }
+
+  .space-md-none {
+    margin-right:0;
+    margin-left:0;
+  }
