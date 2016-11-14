@@ -15,7 +15,7 @@
 /*
 	Compass modules.
  */
-/* line 5, ../../../../../../../var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -37,45 +37,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../../var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../../var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../../var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../../var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../../var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../../var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../../var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../../var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
@@ -2043,12 +2043,14 @@ i {
 }
 
 /* line 13, ../../../_sass/scss/components/molecules/_project-item.scss */
-.project-item, .project-item-placeholder {
+.project-item,
+.project-item-placeholder {
   overflow: hidden;
 }
 
-/* line 16, ../../../_sass/scss/components/molecules/_project-item.scss */
-.project-item-container .project-item, .project-item-placeholder {
+/* line 17, ../../../_sass/scss/components/molecules/_project-item.scss */
+.project-item-container .project-item,
+.project-item-placeholder {
   position: absolute;
   top: 0;
   width: 50%;
@@ -2056,8 +2058,9 @@ i {
   overflow: hidden;
   background-color: grey;
 }
-/* line 27, ../../../_sass/scss/components/molecules/_project-item.scss */
-.project-item-container .project-item .project-item-thumb, .project-item-placeholder .project-item-thumb {
+/* line 29, ../../../_sass/scss/components/molecules/_project-item.scss */
+.project-item-container .project-item .project-item-thumb,
+.project-item-placeholder .project-item-thumb {
   position: absolute;
   width: 100%;
   height: calc(50vw / 1.5);
@@ -2075,8 +2078,9 @@ i {
   transition: transform 0.34s;
 }
 
-/* line 43, ../../../_sass/scss/components/molecules/_project-item.scss */
-.project-item-container .project-item-thumb:after, .project-overlay .overlay-item:after {
+/* line 45, ../../../_sass/scss/components/molecules/_project-item.scss */
+.project-item-container .project-item-thumb:after,
+.project-overlay .overlay-item:after {
   content: '';
   position: absolute;
   width: 100%;
@@ -2086,17 +2090,19 @@ i {
   transition: opacity .6s;
 }
 
-/* line 57, ../../../_sass/scss/components/molecules/_project-item.scss */
-.project-item-container .project-item:nth-child(1), .project-item-container .project-item-placeholder:nth-child(1) {
+/* line 60, ../../../_sass/scss/components/molecules/_project-item.scss */
+.project-item-container .project-item:nth-child(1),
+.project-item-container .project-item-placeholder:nth-child(1) {
   left: 0;
 }
 
-/* line 61, ../../../_sass/scss/components/molecules/_project-item.scss */
-.project-item-container .project-item:nth-child(2), .project-item-container .project-item-placeholder:nth-child(2) {
+/* line 65, ../../../_sass/scss/components/molecules/_project-item.scss */
+.project-item-container .project-item:nth-child(2),
+.project-item-container .project-item-placeholder:nth-child(2) {
   right: 0;
 }
 
-/* line 65, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 70, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-overlay {
   position: fixed;
   top: 0;
@@ -2107,7 +2113,7 @@ i {
   display: none;
 }
 
-/* line 77, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 82, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-overlay .overlay-item {
   position: absolute;
   overflow: hidden;
@@ -2117,15 +2123,15 @@ i {
   width: 50vw;
   height: calc(50vw / 1.5);
 }
-/* line 87, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 92, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-overlay .overlay-item:after {
   opacity: 1;
 }
-/* line 91, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 96, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-overlay .overlay-item .overlay-item-thumb {
   position: absolute;
 }
-/* line 95, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 100, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-overlay .overlay-item.full {
   -moz-transform: translate(0%, 0%) scale(1);
   -ms-transform: translate(0%, 0%) scale(1);
@@ -2133,7 +2139,7 @@ i {
   transform: translate(0%, 0%) scale(1);
 }
 
-/* line 100, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 105, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-title {
   position: absolute;
   font-size: 48px;
@@ -2152,11 +2158,11 @@ i {
   -webkit-transition: -webkit-transform 0.34s, opacity 0.34s;
   transition: transform 0.34s, opacity 0.34s;
 }
-/* line 114, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 119, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-title i {
   font-family: "latoblack";
 }
-/* line 118, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 123, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-title:before {
   content: 'view';
   position: absolute;
@@ -2172,12 +2178,14 @@ i {
   opacity: 0;
 }
 
-/* line 128, ../../../_sass/scss/components/molecules/_project-item.scss */
-.project-item-container .project-item:hover, .project-item-container .project-item-placeholder:hover {
+/* line 133, ../../../_sass/scss/components/molecules/_project-item.scss */
+.project-item-container .project-item:hover,
+.project-item-container .project-item-placeholder:hover {
   cursor: pointer;
 }
-/* line 131, ../../../_sass/scss/components/molecules/_project-item.scss */
-.project-item-container .project-item:hover .project-item-thumb, .project-item-container .project-item-placeholder:hover .project-item-thumb {
+/* line 137, ../../../_sass/scss/components/molecules/_project-item.scss */
+.project-item-container .project-item:hover .project-item-thumb,
+.project-item-container .project-item-placeholder:hover .project-item-thumb {
   -moz-transform: scale(1, 1);
   -ms-transform: scale(1, 1);
   -webkit-transform: scale(1, 1);
@@ -2187,13 +2195,16 @@ i {
   -webkit-transition: -webkit-transform 0.34s;
   transition: transform 0.34s;
 }
-/* line 136, ../../../_sass/scss/components/molecules/_project-item.scss */
-.project-item-container .project-item:hover .project-item-thumb:after, .project-item-container .project-item-placeholder:hover .project-item-thumb:after {
+/* line 142, ../../../_sass/scss/components/molecules/_project-item.scss */
+.project-item-container .project-item:hover .project-item-thumb:after,
+.project-item-container .project-item-placeholder:hover .project-item-thumb:after {
   opacity: 1;
   transition: opacity .35s;
 }
-/* line 141, ../../../_sass/scss/components/molecules/_project-item.scss */
-.project-item-container .project-item:hover .project-item-title, .project-item-container .project-item:hover .project-item-title:before, .project-item-container .project-item-placeholder:hover .project-item-title, .project-item-container .project-item-placeholder:hover .project-item-title:before {
+/* line 147, ../../../_sass/scss/components/molecules/_project-item.scss */
+.project-item-container .project-item:hover .project-item-title, .project-item-container .project-item:hover .project-item-title:before,
+.project-item-container .project-item-placeholder:hover .project-item-title,
+.project-item-container .project-item-placeholder:hover .project-item-title:before {
   opacity: 1;
   -moz-transform: translateY(0);
   -ms-transform: translateY(0);
@@ -2205,7 +2216,7 @@ i {
   transition: transform 0.34s, opacity 0.34s;
 }
 
-/* line 152, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 158, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-container .project-item.selected .project-item-thumb {
   -moz-transform: scale(1, 1);
   -ms-transform: scale(1, 1);
@@ -2216,7 +2227,7 @@ i {
   -webkit-transition: -webkit-transform 0.34s;
   transition: transform 0.34s;
 }
-/* line 158, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 164, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-container .project-item.selected .project-item-title {
   opacity: 0;
   -moz-transition: -moz-transform 0.34s, opacity 0.34s;
@@ -2224,7 +2235,7 @@ i {
   -webkit-transition: -webkit-transform 0.34s, opacity 0.34s;
   transition: transform 0.34s, opacity 0.34s;
 }
-/* line 164, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 170, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-container .project-item.selected .project-item-thumb:after {
   opacity: 1;
   transition: opacity .35s;
@@ -2233,7 +2244,7 @@ i {
   -webkit-transition: opacity 0.34s;
   transition: opacity 0.34s;
 }
-/* line 169, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 175, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-container .project-item.selected .project-item-thumb:after {
   -moz-transform: scale(1, 1);
   -ms-transform: scale(1, 1);
@@ -2245,7 +2256,7 @@ i {
   transition: transform 0.34s;
 }
 
-/* line 175, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 181, ../../../_sass/scss/components/molecules/_project-item.scss */
 .empty-project-item {
   cursor: pointer;
   position: absolute;
@@ -2254,20 +2265,20 @@ i {
   background: #2a2a2a;
   padding: 20px;
 }
-/* line 183, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 189, ../../../_sass/scss/components/molecules/_project-item.scss */
 .empty-project-item p, .empty-project-item h2 {
   color: white;
   text-transform: uppercase;
   text-align: center;
   font-weight: bold;
 }
-/* line 190, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 196, ../../../_sass/scss/components/molecules/_project-item.scss */
 .empty-project-item h2 {
   margin-top: 23%;
   transform: translateY(-50%);
   font-size: 46px;
 }
-/* line 196, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 202, ../../../_sass/scss/components/molecules/_project-item.scss */
 .empty-project-item .text-bottom {
   font-size: 14px;
   position: absolute;
@@ -2275,19 +2286,19 @@ i {
   left: 10px;
   right: 10px;
 }
-/* line 204, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 210, ../../../_sass/scss/components/molecules/_project-item.scss */
 .empty-project-item.full {
   width: 100%;
 }
-/* line 207, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 213, ../../../_sass/scss/components/molecules/_project-item.scss */
 .empty-project-item.left {
   left: 0;
 }
-/* line 211, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 217, ../../../_sass/scss/components/molecules/_project-item.scss */
 .empty-project-item.right {
   right: 0;
 }
-/* line 215, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 221, ../../../_sass/scss/components/molecules/_project-item.scss */
 .empty-project-item:before {
   content: "";
   position: absolute;
@@ -2299,50 +2310,54 @@ i {
 }
 
 @media (max-width: 400px) {
-  /* line 224, ../../../_sass/scss/components/molecules/_project-item.scss */
+  /* line 230, ../../../_sass/scss/components/molecules/_project-item.scss */
   .empty-project-item h2 {
     font-size: 36px;
   }
 }
 @media (max-width: 768px) {
-  /* line 229, ../../../_sass/scss/components/molecules/_project-item.scss */
+  /* line 235, ../../../_sass/scss/components/molecules/_project-item.scss */
   .on-homescreen {
     display: block;
   }
 
-  /* line 232, ../../../_sass/scss/components/molecules/_project-item.scss */
+  /* line 238, ../../../_sass/scss/components/molecules/_project-item.scss */
   .project-item-container {
     height: calc(100vw / 1.5);
   }
-  /* line 235, ../../../_sass/scss/components/molecules/_project-item.scss */
+  /* line 241, ../../../_sass/scss/components/molecules/_project-item.scss */
   .project-item-container.double {
     height: calc(200vw / 1.5);
   }
-  /* line 238, ../../../_sass/scss/components/molecules/_project-item.scss */
-  .project-item-container.double .project-item:nth-child(1), .project-item-container.double .project-item-placeholder:nth-child(1), .project-item-container.double .empty-project-item.left {
+  /* line 244, ../../../_sass/scss/components/molecules/_project-item.scss */
+  .project-item-container.double .project-item:nth-child(1),
+  .project-item-container.double .project-item-placeholder:first-child,
+  .project-item-container.double .empty-project-item.left {
     top: 0;
   }
-  /* line 242, ../../../_sass/scss/components/molecules/_project-item.scss */
-  .project-item-container.double .project-item:nth-child(2), .project-item-container.double .project-itemplaceholder:nth-child(2), .project-item-container.double .empty-project-item.right {
+  /* line 250, ../../../_sass/scss/components/molecules/_project-item.scss */
+  .project-item-container.double .project-item:nth-child(2),
+  .project-item-container.double .project-item-placeholder,
+  .project-item-container.double .empty-project-item.right {
     top: calc(100vw / 1.5);
   }
-  /* line 246, ../../../_sass/scss/components/molecules/_project-item.scss */
+  /* line 256, ../../../_sass/scss/components/molecules/_project-item.scss */
   .project-item-container.double .project-item, .project-item-container.double .project-item-placeholder, .project-item-container.double .empty-project-item {
     height: 50%;
   }
 
-  /* line 253, ../../../_sass/scss/components/molecules/_project-item.scss */
+  /* line 263, ../../../_sass/scss/components/molecules/_project-item.scss */
   .project-item-container .project-item, .project-item-container .project-item-placeholder, .empty-project-item {
     width: 100%;
   }
-  /* line 256, ../../../_sass/scss/components/molecules/_project-item.scss */
+  /* line 266, ../../../_sass/scss/components/molecules/_project-item.scss */
   .project-item-container .project-item .project-item-thumb, .project-item-container .project-item-placeholder .project-item-thumb, .empty-project-item .project-item-thumb {
     position: absolute;
     width: 100%;
     height: calc(100vw / 1.5);
   }
 
-  /* line 262, ../../../_sass/scss/components/molecules/_project-item.scss */
+  /* line 273, ../../../_sass/scss/components/molecules/_project-item.scss */
   .project-overlay .overlay-item, .project-item-placeholder, .empty-project-item {
     width: 100vw;
     height: calc(100vw / 1.5);
@@ -3190,45 +3205,47 @@ footer.hidden {
   width: 25px;
   height: 20px;
   overflow: hidden;
-  /*
-  	&:before {
-  		content:"";
-  		width:55px;
-  		height:50px;
-  		background:orange;
-  		position:absolute;
-  		top:-15px;left:-15px;
-  		@include transition(opacity, .4s);
-  	}
-  */
 }
 /* line 14, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
 .navigation-burger.burger-panel .burger-line {
   background: black;
 }
+/* line 20, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
+.navigation-burger:before {
+  width: 55px;
+  height: 50px;
+  background: white;
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  -moz-transition: opacity, 0.4s;
+  -o-transition: opacity, 0.4s;
+  -webkit-transition: opacity, 0.4s;
+  transition: opacity, 0.4s;
+}
 /* line 30, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
 .navigation-burger .burger-line {
   position: absolute;
   width: 100%;
-  height: 2px;
+  height: 4px;
   background: white;
   -moz-transition: -moz-transform 0.4s;
   -o-transition: -o-transform 0.4s;
   -webkit-transition: -webkit-transform 0.4s;
   transition: transform 0.4s;
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid black;
 }
 /* line 41, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
 .navigation-burger .line-center {
-  margin-top: -1px;
+  margin-top: -2px;
   top: 50%;
-  width: 80%;
+  width: 85%;
   right: 0;
 }
 /* line 48, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
 .navigation-burger .line-bottom {
   top: 100%;
-  margin-top: -2px;
+  margin-top: -4px;
 }
 
 /* line 53, ../../../_sass/scss/components/organisms/_navigation-menu.scss */

@@ -29,7 +29,7 @@ class FrontController extends Controller
         $views = [
             $this->getHomePage(),
             view('pages.aboutpage'),
-            view('pages.project-index'),
+            $this->getProjectIndex(),
             view('pages.project-overview'),
             view('pages.contactpage'),
             view('pages.splash-screen')
@@ -40,10 +40,17 @@ class FrontController extends Controller
 
     private function getHomePage()
     {
-        $collection = collect(Config::get("projects"));
+        $collection = collect(Config::get('projects.items'))->take(4);
+        $placeholder = (object) Config::get('projects.placeholders.to_all');
 
-        return view('pages.homepage', [
-            'data' => $collection->take(4)
-        ]);
+        return view('pages.homepage', compact('collection', 'placeholder'));
+    }
+
+    private function getProjectIndex()
+    {
+        $collection = collect(Config::get('projects.items'));
+        $placeholder = (object) Config::get('projects.placeholders.contact');
+
+        return view('pages.project-index', compact('collection', 'placeholder'));
     }
 }

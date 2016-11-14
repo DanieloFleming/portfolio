@@ -4,6 +4,7 @@
 Homestead.yaml
 Homestead.json
 
+/.sass-cache
 # OS generated files #
 ######################
 .DS_Store
@@ -20,6 +21,6 @@ nbproject
 .~lock.*
 .buildpath
 .idea
-.project
-.settings
+
 composer.lock
+

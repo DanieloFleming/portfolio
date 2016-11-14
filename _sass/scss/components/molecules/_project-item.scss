@@ -10,10 +10,12 @@
 .on-homescreen {
 	display:none;
 }
-.project-item, .project-item-placeholder {
+.project-item,
+.project-item-placeholder {
 	overflow: hidden;
 }
-.project-item-container .project-item, .project-item-placeholder {
+.project-item-container .project-item,
+.project-item-placeholder {
 	position:absolute;
 	top:0;
 
@@ -40,7 +42,8 @@
 		@include transition(transform .34s);
 	}
 }
-.project-item-container .project-item-thumb:after, .project-overlay .overlay-item:after {
+.project-item-container .project-item-thumb:after,
+.project-overlay .overlay-item:after {
 	content:'';
 
 	position: absolute;
@@ -54,11 +57,13 @@
 	transition:opacity .6s;
 }
 
-.project-item-container .project-item:nth-child(1), .project-item-container .project-item-placeholder:nth-child(1) {
+.project-item-container .project-item:nth-child(1),
+.project-item-container .project-item-placeholder:nth-child(1) {
 	left:0;
 }
 
-.project-item-container .project-item:nth-child(2), .project-item-container .project-item-placeholder:nth-child(2)  {
+.project-item-container .project-item:nth-child(2),
+.project-item-container .project-item-placeholder:nth-child(2)  {
 	right:0;
 }
 
@@ -125,7 +130,8 @@
 	}
 }
 
-.project-item-container .project-item:hover, .project-item-container .project-item-placeholder:hover {
+.project-item-container .project-item:hover,
+.project-item-container .project-item-placeholder:hover {
 	cursor: pointer;
 	
 	.project-item-thumb {
@@ -235,11 +241,15 @@
 		&.double {
 			height:calc(200vw / 1.5);
 
-			.project-item:nth-child(1), .project-item-placeholder:nth-child(1), .empty-project-item.left {
+			.project-item:nth-child(1),
+			.project-item-placeholder:first-child,
+			.empty-project-item.left {
 				top:0;
 			}
 
-			.project-item:nth-child(2), .project-itemplaceholder:nth-child(2), .empty-project-item.right  {
+			.project-item:nth-child(2),
+			.project-item-placeholder,
+			.empty-project-item.right  {
 				top:calc(100vw / 1.5);
 			}
 
@@ -259,6 +269,7 @@
 			height:calc(100vw / 1.5);
 		}
 	}
+
 	.project-overlay .overlay-item, .project-item-placeholder, .empty-project-item {
 		width:100vw;
 		height:calc(100vw / 1.5);

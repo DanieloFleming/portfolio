@@ -19,6 +19,32 @@
     </section>
 
     <section class="section section-portfolio-items is-unpadded is-colored--dark is-mobile">
+        <?php if(!empty($collection)) :?>
+
+            <?php for($i = 0; $i <= count($collection); $i++): ?>
+                <?php $project = (isset($collection[$i])) ? (object) $collection[$i] : $placeholder;?>
+
+                <?php $isDouble = (count($collection) - $i > 1) ? "double" : "single";?>
+                <?php $delay = 0.2 * $i + .3;?>
+
+                <?php if($i % 2 == 0) echo '<div class="project-item-container ' . $isDouble. '" data-lala="'. $i .'">';?>
+
+                <?php if ($i - count($collection) == 0):?>
+                    <div class="project-item-placeholder all-cases" data-delay=".2" data-transition-type="slideUp">
+                        <h2 class="project-item-title"><?=$placeholder->sub_title;?></h2>
+                    </div>
+                <?php else:?>
+                    <div class="project-item <?php echo $project->slug;?>" data-slug="<?php echo $project->slug;?>" data-delay="<?= $delay?>">
+                        <figure class="project-item-thumb smart-object" style="background-image:url('<?php echo $project->header;?>');"></figure>
+                        <h2 class="project-item-title" data-transition-type="slideLeft" data-delay="<?= $delay + .2?>"> <?php echo $project->sub_title?> </h2>
+                    </div>
+                <?php endif;?>
+                <?php if($i % 2 == 1) echo '</div>';?>
+            <?php endfor;?>
+
+            <?php if(count($collection) % 2 == 1 ) echo '</div>';?>
+        <?php endif;?>
+        <!--
         <div class="project-item-container double">
             <div class="project-item" data-slug="djos-ink" data-delay="0">
                 <figure class="project-item-thumb smart-object" style="background-image:url('/static/img/cases/djos-ink/thumb.jpg');"></figure>
@@ -43,7 +69,7 @@
             <div class="project-item-placeholder all-cases" data-delay=".2" data-transition-type="slideUp">         
                 <h2 class="project-item-title"><i>All</i>Cases</h2>
             </div>
-        </div>
+        </div>-->
     </section>
 
     <section class="section section-accordeon is-unpadded section-header">
