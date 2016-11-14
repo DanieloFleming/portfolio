@@ -27,7 +27,7 @@ class FrontController extends Controller
     public function getIndex($slug = null)
     {
         $views = [
-            view('pages.homepage'),
+            $this->getHomePage(),
             view('pages.aboutpage'),
             view('pages.project-index'),
             view('pages.project-overview'),
@@ -38,4 +38,12 @@ class FrontController extends Controller
         return view($this->layout, ['templates' => $views]);
     }
 
+    private function getHomePage()
+    {
+        $collection = collect(Config::get("projects"));
+
+        return view('pages.homepage', [
+            'data' => $collection->take(4)
+        ]);
+    }
 }
