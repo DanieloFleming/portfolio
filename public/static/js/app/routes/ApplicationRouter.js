@@ -8,7 +8,7 @@ define([
         routes: {
             ''               : 'index',
             'about'          : 'about',
-            'projects'       : 'projectIndex',
+            'projects(/)'    : 'projectIndex',
             'projects/:slug' : 'projectPage',
             'page-not-found' : 'pageNotFound',
             'contact'        : 'contact',

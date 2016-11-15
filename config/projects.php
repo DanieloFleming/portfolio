@@ -61,5 +61,14 @@ return [
             'slug'      => 'travel-away',
             'header'    => '/static/img/cases/travel-away/thumb.jpg',
         ],
+        [
+            'id'        => 5,
+            'order'     => 4,
+            'type'      => 'GAME',
+            'title'     => 'Lucidicy',
+            'sub_title' => '<i>Lu</i>cidicy',
+            'slug'      => 'lucidicy',
+            'header'    => '/static/img/cases/lucidicy/thumb.jpg',
+        ],
     ]
 ];
