@@ -39,6 +39,8 @@ define([
 
         projectPage : function(slug) {
             var model =  app.collections.projectCollection.findWhere({slug : slug});
+                model.setPrev(app.collections.projectCollection.prev(model));
+                model.setNext(app.collections.projectCollection.next(model));
 
             if (model === undefined) {
                 return this.invalidUrl();

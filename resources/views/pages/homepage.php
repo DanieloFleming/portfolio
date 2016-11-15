@@ -44,32 +44,6 @@
 
             <?php if(count($collection) % 2 == 1 ) echo '</div>';?>
         <?php endif;?>
-        <!--
-        <div class="project-item-container double">
-            <div class="project-item" data-slug="djos-ink" data-delay="0">
-                <figure class="project-item-thumb smart-object" style="background-image:url('/static/img/cases/djos-ink/thumb.jpg');"></figure>
-                <h2 class="project-item-title"><i>Djos</i>Ink</h2>
-            </div>
-            <div class="project-item" data-slug="cafe-de-kroeg" data-delay=".1" data-transition-type="slideRight">
-                <figure class="project-item-thumb smart-object" style="background-image:url('/static/img/cases/cafe-de-kroeg/thumb.jpg');"></figure>     
-                <h2 class="project-item-title"><i>De</i>Kroeg</h2>
-            </div>
-        </div>
-        <div class="project-item-container double">
-            <div class="project-item" data-slug="meteor-strike"  data-delay=".2" data-transition-type="slideUp">
-                <figure class="project-item-thumb smart-object" style="background-image:url('/static/img/cases/meteor-strike/thumb-2.png');"></figure>           
-                <h2 class="project-item-title"><i>M</i>Strike</h2>
-            </div>
-            <div class="project-item" data-slug="noted"  data-delay=".3" data-transition-type="slideLeft">
-                <figure class="project-item-thumb smart-object" style="background-image:url('/static/img/cases/noted/thumb.jpg');"></figure>           
-            <h2 class="project-item-title"><i>N</i>oted</h2>
-            </div>
-        </div>
-        <div class="project-item-container single">
-            <div class="project-item-placeholder all-cases" data-delay=".2" data-transition-type="slideUp">         
-                <h2 class="project-item-title"><i>All</i>Cases</h2>
-            </div>
-        </div>-->
     </section>
 
     <section class="section section-accordeon is-unpadded section-header">

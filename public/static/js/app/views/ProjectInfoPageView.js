@@ -44,6 +44,7 @@ define([
 
         onInitialize : function () {
             this.templateVars.model = this.model;
+
             this.template = app.templateManager.get(this.model.attributes.slug);
 
             this.listenToOnce(this.model, 'change', this.updateTemplate);
@@ -90,7 +91,9 @@ define([
         },
 
         setModel : function(model) {
+
             this.model.set(model.toJSON());
+
             this.updateTemplate();
         },
 
@@ -99,7 +102,7 @@ define([
             
             this.template = app.templateManager.get(slug);
             this.templateVars.model = this.model;
-            
+
             this.setClass(slug);
 
             window.scroll(0, 0);

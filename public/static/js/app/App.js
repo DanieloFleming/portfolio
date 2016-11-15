@@ -20,8 +20,9 @@ define([
             app.regionManager = RegionManager;
             app.templateManager = TemplateManager;
 
-            app.models.projectModel = new ProjectModel();
             app.collections.projectCollection = new ProjectCollection();
+            app.models.projectModel = new ProjectModel();
+
 
             app.collections.projectCollection.fetch({
                 success: startRouter
