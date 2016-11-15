@@ -25,10 +25,10 @@ define([
 
 
             app.collections.projectCollection.fetch({
-                success: startRouter
+                //success: startRouter
             });
 
-            //startSplashScreen();
+            startSplashScreen();
 
         }
 

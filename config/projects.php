@@ -66,7 +66,7 @@ return [
             'order'     => 4,
             'type'      => 'GAME',
             'title'     => 'Lucidicy',
-            'sub_title' => '<i>Lu</i>cidicy',
+            'sub_title' => '<i>Luci</i>dicy',
             'slug'      => 'lucidicy',
             'header'    => '/static/img/cases/lucidicy/thumb.jpg',
         ],
