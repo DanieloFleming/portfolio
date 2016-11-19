@@ -17,7 +17,7 @@ define([
 
         initialize : function() {
             this.views = {
-                homePage        : ViewFactory.get(ViewFactory.VIEW_HOME),
+                homePage        : ViewFactory.get(ViewFactory.VIEW_HOME, {collection: app.collections.projectCollection}),
                 aboutPage       : ViewFactory.get(ViewFactory.VIEW_ABOUT),
                 portfolioPage   : ViewFactory.get(ViewFactory.VIEW_PORTFOLIO, {collection: app.collections.projectCollection}),
                 projectInfo     : ViewFactory.get(ViewFactory.VIEW_PROJECT, {model: app.models.projectModel}),

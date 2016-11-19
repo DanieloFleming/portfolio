@@ -15,7 +15,6 @@ define([
 
 			initialize : function() {
 				_.bindAll(this, 'addUiElement', 'handleShowAnimation', 'setupNavigation');
-				
 
 				this.setUI();
 
@@ -99,4 +98,4 @@ define([
 				this.show();
 			}
 		})
-	})
+	});

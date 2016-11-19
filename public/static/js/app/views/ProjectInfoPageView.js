@@ -64,8 +64,7 @@ define([
             this.isClicked = true;
 
             TweenMax.to(this.el, .7, {
-                opacity:0,
-                y: "+100vh",
+                opacity:0, y: "+100vh",
                 onComplete : this.handleComplete
             })
         },
@@ -75,23 +74,13 @@ define([
         },
 
         handleHeaderLoading : function() {
-            var image = new Image(), headerImageUrl = this.ui.headerImage.getAttribute('data-headerImageUrl');
-            image.src = headerImageUrl;
+            var headerImageUrl = this.ui.headerImage.getAttribute('data-headerImageUrl');
 
             this.ui.headerImage.removeAttribute("data-headerImageUrl");
             this.ui.headerImage.style.backgroundImage = "url(" + headerImageUrl + ")";
-
-            if(image.complete) {
-                this.ui.headerImage.style.opacity = 1;
-            } else {
-                image.onload = function() {
-                    TweenMax.to(this.ui.headerImage, 1, {opacity:1});
-                }.bind(this);
-            }
         },
 
         setModel : function(model) {
-
             this.model.set(model.toJSON());
 
             this.updateTemplate();
@@ -99,9 +88,8 @@ define([
 
         updateTemplate : function() {
             var slug = this.model.get('slug');
-            
-            this.template = app.templateManager.get(slug);
             this.templateVars.model = this.model;
+            this.template = app.templateManager.get(slug);
 
             this.setClass(slug);
 
@@ -114,6 +102,7 @@ define([
 
         onClose : function() {
             this.isClicked = false;
+
             ComponentLoader.close();
         }
     });

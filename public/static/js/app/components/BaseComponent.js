@@ -84,6 +84,6 @@ define([
             }, this);
 
             this.ui = _.clone(this._viewCache.ui);
-        },
+        }
     });
 });

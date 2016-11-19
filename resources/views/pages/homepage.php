@@ -1,7 +1,7 @@
 <script type="template" class="page" id="homepage">
     <section class="section section-header is-unpadded is-mobile">
             <div class="accordeon-overlay" data-delay=".0" data-transition-type="zoomOut"
-            style="background-image:url('/static/img/backgrounds/destruction.jpg'); background-size:cover;background-repeat:no-repeat; background-position:center center;">
+            styles="background-image:url('/static/img/backgrounds/destruction.jpg'); background-size:cover;background-repeat:no-repeat; background-position:center center;">
                 <div class="accordeon-content">
                     <h1 class="accordeon-overlay-title">
                         To destroy is always the first step in any creation.
@@ -19,31 +19,31 @@
     </section>
 
     <section class="section section-portfolio-items is-unpadded is-colored--dark is-mobile">
-        <?php if(!empty($collection)) :?>
 
-            <?php for($i = 0; $i <= count($collection); $i++): ?>
-                <?php $project = (isset($collection[$i])) ? (object) $collection[$i] : $placeholder;?>
+        <% for(var index = 0; index <= collection.length; index++) {
+            var model = collection[index] || {};
+            var isDouble = (collection.length - index > 1) ? "double" : "single";
+            var delay = .2 * index + .3;
+        %>
 
-                <?php $isDouble = (count($collection) - $i > 1) ? "double" : "single";?>
-                <?php $delay = 0.2 * $i + .3;?>
+            <% if(index % 2 == 0) { %>
+                <div class="project-item-container  <%= isDouble %>" >
+            <% } %>
 
-                <?php if($i % 2 == 0) echo '<div class="project-item-container ' . $isDouble. '" data-lala="'. $i .'">';?>
+            <% if (index - collection.length == 0) { %>
+                <div class="project-item-placeholder all-cases" data-delay=".2" data-transition-type="slideUp">
+                    <h2 class="project-item-title"><?=$placeholder->sub_title;?></h2>
+                </div>
+            <% } else { %>
+                <div class="project-item <%= model.slug %>" data-slug="<%= model.slug %>" data-delay="<%= delay %>">
+                    <figure class="project-item-thumb smart-object" style="background-image:url('<%= model.image.src %>');"></figure>
+                    <h2 class="project-item-title" data-transition-type="slideLeft" data-delay="<%= delay + .2%>"> <% model.sub_title%> </h2>
+                </div>
+            <% } %>
 
-                <?php if ($i - count($collection) == 0):?>
-                    <div class="project-item-placeholder all-cases" data-delay=".2" data-transition-type="slideUp">
-                        <h2 class="project-item-title"><?=$placeholder->sub_title;?></h2>
-                    </div>
-                <?php else:?>
-                    <div class="project-item <?php echo $project->slug;?>" data-slug="<?php echo $project->slug;?>" data-delay="<?= $delay?>">
-                        <figure class="project-item-thumb smart-object" style="background-image:url('<?php echo $project->header;?>');"></figure>
-                        <h2 class="project-item-title" data-transition-type="slideLeft" data-delay="<?= $delay + .2?>"> <?php echo $project->sub_title?> </h2>
-                    </div>
-                <?php endif;?>
-                <?php if($i % 2 == 1) echo '</div>';?>
-            <?php endfor;?>
-
-            <?php if(count($collection) % 2 == 1 ) echo '</div>';?>
-        <?php endif;?>
+            <% if(index % 2 == 1) %> </div>
+        <% } %>
+        <!-- if( collection.length % 2 == 1 ) </div> -->
     </section>
 
     <section class="section section-accordeon is-unpadded section-header">

@@ -20,16 +20,16 @@ define([
             app.regionManager = RegionManager;
             app.templateManager = TemplateManager;
 
-            app.collections.projectCollection = new ProjectCollection();
             app.models.projectModel = new ProjectModel();
-
-
-            app.collections.projectCollection.fetch({
-                //success: startRouter
-            });
+            app.collections.projectCollection = new ProjectCollection();
 
             startSplashScreen();
 
+            app.collections.projectCollection.fetch({
+                success : function() {
+                    splashScreen.setCollection(app.collections.projectCollection);
+                }
+            });
         }
 
         function startSplashScreen() {
@@ -51,6 +51,8 @@ define([
          */
         function startRouter() {
             var models = app.collections.projectCollection.models;
+
+
 
             app.templateManager.cacheTemplates(models);
             app.router = new Router();

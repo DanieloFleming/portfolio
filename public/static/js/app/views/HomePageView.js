@@ -13,6 +13,8 @@ define([
 
         templateName : '#homepage',
 
+        templateVars : {},
+
         ui : {
             projectItemsContainer : '.section-portfolio-items',
             accordeonOverlay : '.overlay-desktop',
@@ -43,6 +45,9 @@ define([
             }
         },
 
+        onInitialize : function(options) {
+            this.templateVars.collection = options.collection.toJSON();
+        },
         initialized : function () {
             _.bindAll(this, "hideOverlay");
 

@@ -2,11 +2,11 @@
 
     <div class="project-item-container double">
         <div class="project-item" data-slug="<%= model.get('prev').slug %>"  data-delay="0">
-            <figure class="project-item-thumb smart-object" style="background-image:url('<%= model.get('prev').header %>');"></figure>
+            <figure class="project-item-thumb smart-object" style="background-image:url('<%= model.get('prev').image.src %>');"></figure>
             <h2 class="project-item-title"><i>previous</i></h2>
         </div>
         <div class="project-item" data-slug="<%= model.get('next').slug %>" data-delay=".2">
-            <figure class="project-item-thumb smart-object" style="background-image:url('<%= model.get('next').header %>');"></figure>
+            <figure class="project-item-thumb smart-object" style="background-image:url('<%= model.get('next').image.src %>');"></figure>
             <h2 class="project-item-title"><i>next</i></h2>
         </div>
     </div>

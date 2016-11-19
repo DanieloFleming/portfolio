@@ -2409,6 +2409,31 @@ i {
   z-index: 1;
 }
 
+/* line 51, ../../../_sass/scss/components/molecules/_splash-screen.scss */
+.i-loader {
+  display: block;
+  width: 150px;
+  height: 2px;
+  border-bottom: 1px solid white;
+  bottom: -20px;
+  left: 50%;
+  transition: opacity 1s;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+
+/* line 65, ../../../_sass/scss/components/molecules/_splash-screen.scss */
+.i-loadbar {
+  display: block;
+  width: 150px;
+  height: 1px;
+  background: white;
+  top: 0;
+  left: 0;
+  transform: translateX(-150px);
+}
+
 /* line 1, ../../../_sass/scss/components/molecules/_mouse-scroller.scss */
 .mouse-indicator {
   position: absolute;
@@ -3070,7 +3095,6 @@ i {
   height: 100%;
   top: 0;
   left: 0;
-  opacity: 0;
 }
 /* line 18, ../../../_sass/scss/components/organisms/_header.scss */
 .header-background:after {

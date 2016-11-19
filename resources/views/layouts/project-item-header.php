@@ -1,5 +1,5 @@
 <div class="section section-header is-inverted is-aligned--center">
-    <div class="header-background" data-headerImageUrl="<%= model.get('header') %>"></div>
+    <div class="header-background" data-headerImageUrl="<%= model.get('image').src %>"></div>
     <div class="row fill-parent is-aligned--middle is-unpadded">
         <div class="column">
             <h3 class="title" data-delay="0">- <%= model.get('type') %> -</h3>

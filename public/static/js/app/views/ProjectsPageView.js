@@ -28,7 +28,6 @@ define([
         },
 
         handleCaseClicked : function() {
-            console.log("clicked");
             if(this.isClicked === true) return;
 
             this.isClicked = true;

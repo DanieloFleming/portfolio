@@ -1,9 +1,8 @@
 <div class="splash-screen-bg" id="splash-screen" style="display:none">
 	
 	<div class="logo">
-		
-		<p class="rep text">Danielo Fleming</p>
 
+		<p class="rep text">Danielo Fleming</p>
         <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 600.000000 328.000000"
          preserveAspectRatio="xMidYMid meet" >
@@ -18,7 +17,6 @@
                 -143 38 -219 79 -303 162 -117 116 -164 246 -164 458 0 130 22 237 67 320 40
                 73 126 156 208 199 143 74 268 96 573 97 l222 1 0 -636z" ></path>
 
-
                 <path class="path" 
                 		d="M3392 3179 c-302 -39 -562 -194 -749 -446 -98 -131 -162 -278 -206
                 -468 -20 -88 -21 -118 -24 -1122 l-4 -1033 446 0 445 0 0 390 0 390 150 0 150
@@ -29,6 +27,6 @@
 
             </g>
         </svg>
-        
+        <div class="i-loader"><span class="i-loadbar"></span></div>
     </div>
 </div>

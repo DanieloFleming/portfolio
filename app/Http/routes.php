@@ -11,6 +11,9 @@
 |
 */
 
+Route::get('uploadedtest', function(){
+   return view('debug.uploader');
+});
 $app_routes = ['/', 'home', 'about', 'projects/{slug?}', '404', 'contact'];
 
 foreach($app_routes as $index => $route) {
