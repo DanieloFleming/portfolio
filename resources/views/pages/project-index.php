@@ -1,29 +1,32 @@
 <script type="template" id="project-index">
     <section class="section section-portfolio-items is-unpadded is-colored--dark">
 
-        <?php if(!empty($collection)) :?>
+        <% for(var index = 0; index <= collection.length; index++) {
+            var model = collection[index] || {};
+            var isDouble = (collection.length - index > 1) ? "double" : "single";
+            var delay = .2 * index + .3;
+            var side = (index % 2 == 0) ? 'left' : 'right';
+        %>
 
-            <?php for($i = 0; $i <= count($collection); $i++): ?>
-                <?php $project = (isset($collection[$i])) ? (object) $collection[$i] : $placeholder;?>
-                <?php $isDouble = (count($collection) - $i > 1) ? "double" : "single";?>
-                <?php $delay = 0.2 * $i + .3;?>
-                <?php if($i % 2 == 0) echo '<div class="project-item-container ' . $isDouble. '">';?>
+            <% if(index % 2 === 0) { %>
+                <div class="project-item-container <%= isDouble %>" >
+            <% } %>
 
-                <?php if ($i == count($collection)):?>
-                    <?php $side = ($i % 2 == 0) ? 'left' : 'right';?>
-                    <div class="empty-project-item <?= $side;?>" data-delay="<?= $delay?>">
-                        <?= $placeholder->content;?>
-                    </div>
-                    <?php else:?>
-                        <div class="project-item <?php echo $project->slug;?>" data-slug="<?php echo $project->slug;?>" data-delay="<?= $delay?>">
-                            <figure class="project-item-thumb smart-object" style="background-image:url('<?php echo $project->header;?>');"></figure>
-                            <h2 class="project-item-title" data-transition-type="slideLeft" data-delay="<?= $delay + .2?>"> <?php echo $project->sub_title?> </h2>
-                        </div>
-                    <?php endif;?>
-                <?php if($i % 2 == 1) echo '</div>';?>
-            <?php endfor;?>
+            <% if (index - collection.length === 0) { %>
+                <div class="empty-project-item <%= side %> data-delay="<%= delay %>">
+                    <?= $placeholder->content;?>
+                </div>
+            <% } else { %>
+                <div class="project-item <%= model.slug %>" data-slug="<%= model.slug %>" data-delay="<%= delay %>">
+                    <figure class="project-item-thumb smart-object" style="background-image:url('<%= model.image.src %>');"></figure>
+                    <h2 class="project-item-title"  data-delay="<%= delay + .2 %>"> <%= model.sub_title%> </h2>
+                </div>
+            <% } %>
 
-            <?php if(count($collection) % 2 == 1 ) echo '</div>';?>
-        <?php endif;?>
+            <% if(index % 2 === 1) %> </div>
+        <% } %>
+
+        <% if( collection.length % 2 === 1 ) %> </div>
     </section>
+
 </script>

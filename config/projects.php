@@ -3,7 +3,7 @@ return [
     'placeholders' => [
         'to_all' => [
             'title'     => 'All cases' ,
-            'sub_title' => '<i>All</i>Cases',
+            'sub_title' => '<i>All</i>Crafts',
             'slug'      => 'all-cases',
             'header'    => '',
         ],

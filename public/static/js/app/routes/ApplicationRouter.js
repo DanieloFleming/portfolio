@@ -38,13 +38,16 @@ define([
         },
 
         projectPage : function(slug) {
-            var model =  app.collections.projectCollection.findWhere({slug : slug});
-                model.setPrev(app.collections.projectCollection.prev(model));
-                model.setNext(app.collections.projectCollection.next(model));
+            var collection = app.collections.projectCollection;
+
+            var model = collection.findWhere({slug : slug});
+                model.setPrev(collection.prev(model));
+                model.setNext(collection.next(model));
 
             if (model === undefined) {
                 return this.invalidUrl();
             }
+
             this.views.projectInfo.setModel(model);
             
             app.regionManager.show(this.views.projectInfo);

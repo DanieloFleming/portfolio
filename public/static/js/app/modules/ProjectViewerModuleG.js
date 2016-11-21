@@ -27,7 +27,7 @@ define([
 
         handleClick : function(e) {
             if(this.isClicked) return;
-            
+
             app.navigation.hide();
             this.isClicked = true;
             this.getTargetData(e);

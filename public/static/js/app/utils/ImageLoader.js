@@ -5,8 +5,10 @@ define([
     var ImageLoader = function(url) {
         this.progress = 0;
         this.bytesLoaded = 0;
+        this.filesize = 0;
         this.onChange = null;
         this.onCompleted = null;
+        this.onStart = null;
 
         this.request = new XMLHttpRequest();
         this.request.responseType = "blob";
@@ -21,7 +23,11 @@ define([
             this.progress = e.loaded / e.total;
             this.bytesLoaded = e.loaded;
 
-            if(this.onChange) this.onChange ({
+            if(this.filesize === 0) {
+                this.filesize = e.total;
+                if(this.onStart) this.onStart(this.filesize);
+            }
+            if(this.onChange && this.filesize !== 0) this.onChange ({
                 progress : this.progress,
                 bytesLoaded : this.bytesLoaded,
                 totalBytes : e.total
@@ -57,6 +63,9 @@ define([
         return image;
     };
 
+    ImageLoader.prototype.onLoadStart = function(callback) {
+        this.onStart = callback;
+    };
     ImageLoader.prototype.onProgressChanged = function(callback) {
         this.onChange = callback;
     };

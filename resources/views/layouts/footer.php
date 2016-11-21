@@ -13,5 +13,5 @@
 </section>
 
 <section class="section is-unpadded footer-cases">
-        <p class="footer-cases-text">MORE<i>CASES</i></p>
+        <p class="footer-cases-text">MORE<i>CRAFTS</i></p>
 </section>

@@ -2056,7 +2056,7 @@ i {
   width: 50%;
   height: 100%;
   overflow: hidden;
-  background-color: grey;
+  background-color: black;
 }
 /* line 29, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-container .project-item .project-item-thumb,
@@ -2147,11 +2147,7 @@ i {
   font-family: 'latothin';
   text-transform: uppercase;
   left: 140px;
-  bottom: 20px;
-  -moz-transform: translateY(-40px);
-  -ms-transform: translateY(-40px);
-  -webkit-transform: translateY(-40px);
-  transform: translateY(-40px);
+  bottom: 60px;
   opacity: 1;
   -moz-transition: -moz-transform 0.34s, opacity 0.34s;
   -o-transition: -o-transform 0.34s, opacity 0.34s;
@@ -2167,10 +2163,7 @@ i {
   content: 'view';
   position: absolute;
   left: -120px;
-  -moz-transform: translateY(-60px);
-  -ms-transform: translateY(-60px);
-  -webkit-transform: translateY(-60px);
-  transform: translateY(-60px);
+  bottom: 40px;
   -moz-transition: -moz-transform 0.34s, opacity 0.34s;
   -o-transition: -o-transform 0.34s, opacity 0.34s;
   -webkit-transition: -webkit-transform 0.34s, opacity 0.34s;
@@ -2179,13 +2172,13 @@ i {
 }
 
 /* line 133, ../../../_sass/scss/components/molecules/_project-item.scss */
-.project-item-container .project-item:hover,
-.project-item-container .project-item-placeholder:hover {
+.project-item-container .project-item:not([data-delay]):hover,
+.project-item-container .project-item-placeholder:not([data-delay]):hover {
   cursor: pointer;
 }
 /* line 137, ../../../_sass/scss/components/molecules/_project-item.scss */
-.project-item-container .project-item:hover .project-item-thumb,
-.project-item-container .project-item-placeholder:hover .project-item-thumb {
+.project-item-container .project-item:not([data-delay]):hover .project-item-thumb,
+.project-item-container .project-item-placeholder:not([data-delay]):hover .project-item-thumb {
   -moz-transform: scale(1, 1);
   -ms-transform: scale(1, 1);
   -webkit-transform: scale(1, 1);
@@ -2196,20 +2189,20 @@ i {
   transition: transform 0.34s;
 }
 /* line 142, ../../../_sass/scss/components/molecules/_project-item.scss */
-.project-item-container .project-item:hover .project-item-thumb:after,
-.project-item-container .project-item-placeholder:hover .project-item-thumb:after {
+.project-item-container .project-item:not([data-delay]):hover .project-item-thumb:after,
+.project-item-container .project-item-placeholder:not([data-delay]):hover .project-item-thumb:after {
   opacity: 1;
   transition: opacity .35s;
 }
 /* line 147, ../../../_sass/scss/components/molecules/_project-item.scss */
-.project-item-container .project-item:hover .project-item-title, .project-item-container .project-item:hover .project-item-title:before,
-.project-item-container .project-item-placeholder:hover .project-item-title,
-.project-item-container .project-item-placeholder:hover .project-item-title:before {
+.project-item-container .project-item:not([data-delay]):hover .project-item-title, .project-item-container .project-item:not([data-delay]):hover .project-item-title:before,
+.project-item-container .project-item-placeholder:not([data-delay]):hover .project-item-title,
+.project-item-container .project-item-placeholder:not([data-delay]):hover .project-item-title:before {
   opacity: 1;
-  -moz-transform: translateY(0);
-  -ms-transform: translateY(0);
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
+  -moz-transform: translateY(40px);
+  -ms-transform: translateY(40px);
+  -webkit-transform: translateY(40px);
+  transform: translateY(40px);
   -moz-transition: -moz-transform 0.34s, opacity 0.34s;
   -o-transition: -o-transform 0.34s, opacity 0.34s;
   -webkit-transition: -webkit-transform 0.34s, opacity 0.34s;
@@ -2531,7 +2524,6 @@ i {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: black;
   opacity: 0;
   top: 0;
   transition: opacity .34s;
@@ -2561,7 +2553,6 @@ i {
 .accordeon-title {
   position: absolute;
   font-size: 48px;
-  color: #fff;
   font-family: 'latothin';
   text-transform: uppercase;
   left: 50%;
@@ -2636,31 +2627,7 @@ i {
   transition: transform 0.34s, opacity 0.34s;
 }
 
-/*.stroke-1 {
-	//background:orange;
-	transform-origin:left center;
-
-	transform:scaleX(.25);
-}
-
-.stroke-2 {
-	//background: blue;
-	transform-origin:center center;
-	transform:translateX(calc(-25% * .5)) scaleX(.25);
-}
-
-.stroke-3 {
-	//background: red;
-	transform-origin:center center;
-	transform:translateX(calc(25% * .5)) scaleX(.25);
-}
-.stroke-4 {
-	//background: purple;
-	transform-origin:right center;
-	transform:scaleX(.25);
-
-}*/
-/* line 121, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
+/* line 98, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
 .accordeon-overlay {
   position: absolute;
   top: 0;
@@ -2669,19 +2636,17 @@ i {
   bottom: 0;
   overflow: hidden;
 }
-/* line 126, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
+/* line 103, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
 .accordeon-overlay:before {
-  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
   overflow: hidden;
 }
 
-/* line 134, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
+/* line 111, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
 .accordeon-content {
   position: absolute;
   left: 50%;
@@ -2693,19 +2658,17 @@ i {
   padding: 50px 0 30px;
   width: 90%;
   max-width: 1400px;
-  background: rgba(0, 0, 0, 0.75);
 }
 
-/* line 145, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
+/* line 122, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
 .accordeon-overlay-title {
   margin: 0 40px;
-  color: white;
   text-align: center;
   font-weight: bold;
   font-size: 60px;
   font-family: 'latoblack';
 }
-/* line 153, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
+/* line 130, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
 .accordeon-overlay-title span {
   margin-top: 60px;
   font-size: 24px;
@@ -2713,7 +2676,7 @@ i {
   font-family: 'latothin';
 }
 
-/* line 160, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
+/* line 137, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
 .accordeon-overlay .mouse-indicator {
   position: static;
   margin-left: 50%;
@@ -2725,29 +2688,25 @@ i {
 }
 
 @media (max-width: 768px) {
-  /* line 168, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
+  /* line 145, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
   .section-accordeon {
     display: none;
   }
 
-  /* line 172, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
-  .accordeon-overlay-title {
-    font-size: 30px !important;
-  }
-  /* line 175, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
+  /* line 152, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
   .accordeon-overlay-title span {
     margin-top: 40px;
     font-size: 14px;
   }
 }
 @media (max-width: 1024px) {
-  /* line 182, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
+  /* line 159, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
   .accordeon-overlay-title {
     font-size: 48px;
   }
 }
 /*** CONTACT IMTEM ***/
-/* line 188, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
+/* line 165, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
 .info-content {
   position: absolute;
   top: 0;
@@ -2756,7 +2715,7 @@ i {
   bottom: 0;
 }
 
-/* line 193, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
+/* line 170, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
 .contact-list {
   position: absolute;
   top: 50%;
@@ -2772,9 +2731,8 @@ i {
   text-align: center;
 }
 
-/* line 205, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
+/* line 182, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
 .contact-list-item {
-  color: white;
   font-family: 'Avenir Next LT Pro Regular';
   font-size: 24px;
   text-transform: uppercase;
@@ -2787,13 +2745,13 @@ i {
   font-size: 16px;
 }
 
-/* line 218, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
+/* line 195, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
 .contact-list-item i {
   font-weight: bold;
   font-family: 'latoheavy';
 }
 
-/* line 222, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
+/* line 199, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
 .contact-list-item:before {
   content: "";
   background: url(/static/img/sprites/contact-icons-small-v2.png);
@@ -2804,28 +2762,28 @@ i {
   margin-left: -50px;
 }
 
-/* line 231, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
+/* line 208, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
 .item-mail:before {
   background-position: 0 0;
 }
 
-/* line 234, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
+/* line 211, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
 .item-linked-in:before {
   background-position: 0 -32px;
 }
 
-/* line 237, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
+/* line 214, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
 .item-phone:before {
   background-position: 0 -60px;
 }
 
-/* line 240, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
+/* line 217, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
 .item-fb-messenger:before {
   background-position: 0 -90px;
 }
 
 @media (max-width: 400px) {
-  /* line 246, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
+  /* line 223, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
   .s-top .accordeon-content {
     -moz-transform: translate(-50%, -50%) scale(0.8);
     -ms-transform: translate(-50%, -50%) scale(0.8);
@@ -2833,7 +2791,7 @@ i {
     transform: translate(-50%, -50%) scale(0.8);
   }
 
-  /* line 249, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
+  /* line 226, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
   .contact-list {
     -moz-transform: translate(-50%, -50%) scale(0.9);
     -ms-transform: translate(-50%, -50%) scale(0.9);

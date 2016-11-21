@@ -19,7 +19,6 @@
         },
 
         playMusic : function(audioName) {
-            console.log(audioName);
             if(this.sound == SOUND_ON) {
                 this.checkIfPlaying(audioName);
                 this.currentBgm = audioName;

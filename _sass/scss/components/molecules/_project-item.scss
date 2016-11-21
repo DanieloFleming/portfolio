@@ -24,7 +24,7 @@
 
 	overflow: hidden;
 
-	background-color:grey;
+	background-color:black;
 
 	.project-item-thumb {
 		position:absolute;
@@ -109,9 +109,9 @@
 	font-family:'latothin';
 	text-transform:uppercase;
 	left:140px;
-	bottom:20px;
+	bottom:60px;
 
-	@include translateY(-40px);
+	//@include translateY(-40px);
 	opacity:1;
 
 	@include transition(transform .34s, opacity .34s);
@@ -124,14 +124,14 @@
 		content:'view';
 		position:absolute;
 		left:-120px;
-		@include translateY(-60px);
+		bottom:40px;
 		@include transition(transform .34s, opacity .34s);
 		opacity:0;
 	}
 }
 
-.project-item-container .project-item:hover,
-.project-item-container .project-item-placeholder:hover {
+.project-item-container .project-item:not([data-delay]):hover,
+.project-item-container .project-item-placeholder:not([data-delay]):hover {
 	cursor: pointer;
 	
 	.project-item-thumb {
@@ -147,7 +147,7 @@
 	.project-item-title, .project-item-title:before {
 		opacity:1;
 
-		@include translateY(0);
+		@include translateY(40px);
 
 		@include transition(transform .34s, opacity .34s);
 	}

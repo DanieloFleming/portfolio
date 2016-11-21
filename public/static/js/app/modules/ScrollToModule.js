@@ -1,6 +1,7 @@
 define([
+    'underscore',
 	'app/modules/BaseModule'
-], function(BaseModule) {
+], function(_, BaseModule) {
 
 	return BaseModule.extend({
 		events : {
@@ -10,16 +11,21 @@ define([
 		initialize : function() {
             var bodyValue = (app.browser.isFireFox) ? 'body, html' : 'body';
             this.$body = $(bodyValue);
-            this.el.classList.add('case-loading');
+            _.bindAll(this, 'handleComplete');
 
-			_.bindAll(this, 'handleComplete');
+            this.interact();
+		},
+
+        interact : function(callback) {
+            this.el.classList.add('case-loading');
 
             TweenMax.delayedCall(1.5, function() {
                 this.el.classList.remove("case-loading");
+                if(_.isFunction(callback)) callback();
             }, null, this);
 
-
-		},
+            console.log("hee");
+        },
 
 		handleClick : function(e) {
 			this.setScrollEvent(false);
@@ -64,9 +70,10 @@ define([
 				this.$body[0].removeEventListener('mousewheel', this.preventPageScroll);
         	}
         },
+
          preventPageScroll : function(e) {
             e.preventDefault();
             e.stopPropagation();
-        },
+        }
 	});
-})
+});

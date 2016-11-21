@@ -2,8 +2,8 @@ define([
     'jquery',
     'underscore',
     'app/views/BaseView',
-    'app/modules/HeaderLoaderModule'
-], function($, _, BaseView, HeaderLoaderModule) {
+    'app/modules/PreloaderModule'
+], function($, _, BaseView, PreloaderModule) {
 
     return  BaseView.extend({
         id: 'splash-screen',
@@ -59,7 +59,7 @@ define([
             });
 
             this.postAnimation.to(this.ui.paths, 2, {fill:'#222', ease: Power2.easeInOut})
-                .to(this.ui.loader, 0, {opacity : .0, ease: Power2.easeInOut}, 0)
+                //.to(this.ui.loader, 0, {opacity : .0, ease: Power2.easeInOut}, 0)
                 .to(this.el, 2, {backgroundColor:'#fff', ease: Power2.easeInOut}, '-=2')
                 .to(this.ui.text, 2, {y:'+=30', opacity:1, ease:Power4.easeOut}, '-=1.5')
                 .to(strokeD, 1, {x:'-=300', y:'+=200', ease: Back.easeInOut})
@@ -71,22 +71,29 @@ define([
         },
 
         setCollection: function(collection) {
-            var preloader = new HeaderLoaderModule();
+            var preloader = new PreloaderModule();
                 preloader.load(collection);
-                preloader.onProgressChanged(this.animateIndicator)
+                preloader.onProgressChanged(this.animateIndicator);
         },
 
-        animateIndicator : function(progress) {
+        animateIndicator : _.debounce(function(progress) {
             var value = 1.5 * progress - 150;
 
-            TweenMax.set(this.ui.loadbar, {
-                x : value
+            TweenMax.to(this.ui.loadbar, 1, {
+                x : value, onComplete : function(){
+                    if(this.ui.loadbar._gsTransform.x == 0) {
+                        TweenMax.to(this.ui.loader, 1, {
+                            scaleX : 0
+                        });
+
+                        this.handleLoadCompleted();
+                    }
+                }.bind(this),
+                //ease : SlowMo.ease.config(0.7, 0.7, false)
+                ease : Circ.easeInOut
             });
 
-            if(progress == 100) {
-                this.handleLoadCompleted();
-            }
-        },
+        }, 500),
 
         handleLoadCompleted : function() {
             if(this.loadCompleted) {

@@ -5,7 +5,7 @@
 
     Class.extend = function extend (props) {
         var fn = props.constructor;
-        ;
+
         if (typeof fn !== 'function') {
             throw new ClassConstructorException();
         }
