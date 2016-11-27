@@ -27,9 +27,11 @@ define([
         events : {
             "click .empty-project-item" : "handleCaseClicked"
         },
+        
         onInitialize : function(options) {
             this.templateVars.collection = options.collection.toJSON();
         },
+
         handleCaseClicked : function() {
             if(this.isClicked === true) return;
 

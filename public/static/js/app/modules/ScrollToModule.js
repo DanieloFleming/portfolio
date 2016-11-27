@@ -23,8 +23,6 @@ define([
                 this.el.classList.remove("case-loading");
                 if(_.isFunction(callback)) callback();
             }, null, this);
-
-            console.log("hee");
         },
 
 		handleClick : function(e) {
@@ -32,6 +30,7 @@ define([
 
 			var target = e.currentTarget;
 			var scrollTo = this.getScrollPosition(target);
+            this.el.classList.remove("case-loading");
 
 			this.animateScroll(scrollTo);
 		},
@@ -44,7 +43,7 @@ define([
         },
 
         animateScroll : function(scrollTo) {
-        	var obj = {top:this.$body.scrollTop() }
+        	var obj = {top:this.$body.scrollTop() };
 
         	TweenMax.to(obj, .7, {
         		top:scrollTo,

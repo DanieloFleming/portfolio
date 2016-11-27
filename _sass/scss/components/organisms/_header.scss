@@ -28,4 +28,11 @@
   }
 }
 
-
+.case-header-title {
+	font-size: 120px;
+}
+@media(max-width: $media-width-md) {
+	.case-header-title {
+		font-size: 80px
+	}
+}

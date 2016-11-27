@@ -162,7 +162,7 @@
 	}
 
 	.project-item-title {
-		opacity:0;
+		opacity:0 !important;
 
 		@include transition(transform .34s, opacity .34s);
 	}

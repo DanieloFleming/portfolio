@@ -18,9 +18,13 @@ class FrontController extends Controller
 
     protected $layout = 'layouts.main';
 
+    protected $collection;
+
     public function __construct()
     {
         $paths = Config::get('custom.urls');
+
+        $this->collection = collect(Config::get('projects.items'));
 
         view()->share('paths', $paths);
     }
@@ -41,16 +45,16 @@ class FrontController extends Controller
 
     private function getHomePage()
     {
-        $collection = collect(Config::get('projects.items'))->take(4);
-        $placeholder = (object) Config::get('projects.placeholders.to_all');
+        $collection = $this->collection->take(4);
+        $placeholder = (object)Config::get('projects.placeholders.to_all');
 
         return view('pages.homepage', compact('collection', 'placeholder'));
     }
 
     private function getProjectIndex()
     {
-        $collection = collect(Config::get('projects.items'));
-        $placeholder = (object) Config::get('projects.placeholders.contact');
+        $collection = $this->collection;
+        $placeholder = (object)Config::get('projects.placeholders.contact');
 
         return view('pages.project-index', compact('collection', 'placeholder'));
     }
@@ -58,23 +62,31 @@ class FrontController extends Controller
     private function getProjectOverview()
     {
         $views = [];
+
         $files = File::allFiles(resource_path('views/pages/cases'));
 
-        foreach($files as $file) {
-            $view_name = pathinfo( (string) $file, PATHINFO_FILENAME);
-            $view_location = 'pages.cases.' . $view_name;
+        foreach ($files as $file) {
 
-            if(strpos($view_name, "//") !== false) {
-                continue;
+            $view = $this->getFileView($file);
+
+            if (!empty($view)) {
+                array_push($views, $view);
             }
-
-            array_push($views, view($view_location));
-/*
-            array_push($view, view('layout.project-template', [
-                'data' => view($view_location)
-            ];*/
         }
 
         return view('pages.project-overview', compact('views'));
+    }
+
+    private function getFileView($file)
+    {
+        $view_name = pathinfo( (string) $file, PATHINFO_FILENAME);
+
+        $view_location = 'pages.cases.' . $view_name;
+
+        if ($this->collection->contains('slug', $view_name)) {
+            return view($view_location);
+        }
+
+        return null;
     }
 }

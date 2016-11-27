@@ -27,7 +27,7 @@ return [
         ],
         [
             'id'        => 1,
-            'order'     => 2,
+            'order'     => 4,
             'type'      => 'WEBSITE',
             'title'     => 'Cafe de Kroeg',
             'sub_title' => '<i>De</i>Kroeg',
@@ -36,7 +36,7 @@ return [
         ],
         [
             'id'        => 2,
-            'order'     => 3,
+            'order'     => 6,
             'type'      => 'GAME',
             'title'     => 'Meteor Strike',
             'sub_title' => '<i>M</i>Strike',
@@ -45,7 +45,7 @@ return [
         ],
         [
             'id'        => 3,
-            'order'     => 4,
+            'order'     => 2,
             'type'      => 'APP',
             'title'     => 'Noted',
             'sub_title' => '<i>N</i>oted',
@@ -54,7 +54,7 @@ return [
         ],
         [
             'id'        => 4,
-            'order'     => 5,
+            'order'     => 3,
             'type'      => 'WEBSITE',
             'title'     => 'Travel<span style="font-size:0;"> </span>Away',
             'sub_title' => '<i>Travel</i>',
@@ -63,12 +63,12 @@ return [
         ],
         [
             'id'        => 5,
-            'order'     => 4,
+            'order'     => 5,
             'type'      => 'GAME',
             'title'     => 'Lucidicy',
             'sub_title' => '<i>Luci</i>dicy',
             'slug'      => 'lucidicy',
             'header'    => '/static/img/cases/lucidicy/thumb.jpg',
-        ],
+        ]
     ]
 ];

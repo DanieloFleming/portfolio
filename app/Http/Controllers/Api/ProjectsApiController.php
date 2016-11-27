@@ -9,12 +9,13 @@ class ProjectsApiController extends Controller
 
     public function __construct()
     {
-        $this->projectData = Config::get("projects.items");
+        $this->projectData = collect(Config::get("projects.items"));
     }
 
     public function index()
     {
-        return response()->json($this->projectData, 200);
+        $projectItems = $this->projectData->sortBy("order");
+        return response()->json($projectItems->values()->all(), 200);
     }
 
     public function show($slug)

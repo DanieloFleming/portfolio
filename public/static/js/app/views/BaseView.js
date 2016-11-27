@@ -14,11 +14,8 @@ define([
         //templateOptions: {},
         //templateVars   : {},
         //template       : {},
-        
 
-        /**
-         * Initializer
-         */
+
         initialize : function(options) {
             this._createCache();
 

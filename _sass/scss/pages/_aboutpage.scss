@@ -1,13 +1,62 @@
-.column-skills-language {
-	.language-type {
-		margin-bottom:5px;
-		font-weight:bolc;
+.language-type {
+	margin-bottom:-20px;
+	padding-left:10px;
+	font-weight:bold;
+	font-size: 14px;
+	position: relative;
+}
+
+.language-type-bar {
+	//background:#EBEBEB;
+	border:1.5px solid #adadad;
+	border-radius: 2px;
+	height:30px;
+	overflow:hidden;
+	width:60%;
+	margin-bottom:30px;
+}
+
+.platform-bar {
+	width: 20%;
+	max-width: 75px;
+	border:1.5px solid #9e9e9e;
+	background: #e2e2e2;
+	position: absolute;
+	bottom: 40px;
+}
+
+.platform-type {
+	font-weight:bold;
+	width: 20%;
+	max-width: 75px;
+	position: absolute;
+	bottom: 50px;
+	font-size: 14px;
+}
+
+.skills-subtitle {
+	//margin-bottom:40px;
+}
+
+.pref-item {
+	border:1px solid darkgrey;
+	margin:5px;
+	max-width:70px;
+}
+@media(max-width:$media-width-sm) {
+	.section-technical {
+		padding-bottom:0;
 	}
 
-	.language-type-bar {
-		background:#EBEBEB; 
-		height:10px;
-		overflow:hidden;
-		width:60%;
+	.column-platforms {
+		padding-top:2rem;
+		//background-color:$color-primary;
+	}
+	.section-pref {
+		//background-color:transparent !important;
+	}
+
+	.pref-item {
+		max-width:55px;
 	}
 }

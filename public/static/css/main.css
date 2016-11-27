@@ -922,7 +922,7 @@ a, a:visited {
 
 /* line 1, ../../../_sass/scss/layouts/_section.scss */
 .section {
-  padding: 3rem 2rem;
+  padding: 4rem 2rem;
   overflow: hidden;
   position: relative;
 }
@@ -969,7 +969,7 @@ a, a:visited {
 @media (max-width: 1024px) {
   /* line 1, ../../../_sass/scss/layouts/desktop/_section.scss */
   .section {
-    padding: 1rem 2rem;
+    padding: 3rem 2rem;
   }
 
   /* line 1, ../../../_sass/scss/layouts/desktop/_grid.scss */
@@ -1708,73 +1708,9 @@ svg.logo .path {
 }
 
 /* line 1, ../../../_sass/scss/components/atoms/_list.scss */
-.list {
-  position: relative;
-  padding-left: 30px;
-  list-style: none;
-  border-left: 1px solid #2b2b2b;
-}
-/* line 10, ../../../_sass/scss/components/atoms/_list.scss */
-.list:before, .list:after {
-  content: '';
-  position: absolute;
-  left: -11px;
-  width: 20px;
-  height: 20px;
-  background-color: #fff;
-  border: 1px solid #2b2b2b;
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-/* line 26, ../../../_sass/scss/components/atoms/_list.scss */
-.list:before {
-  top: 3px;
-}
-/* line 30, ../../../_sass/scss/components/atoms/_list.scss */
-.list:after {
-  bottom: 3px;
-}
-
-/* line 35, ../../../_sass/scss/components/atoms/_list.scss */
-.list .list-item {
-  font-size: 18px;
-  padding-top: 1rem;
-}
-
-/* line 40, ../../../_sass/scss/components/atoms/_list.scss */
-.list .list-item:first-child {
-  padding-top: 0;
-}
-
-/* line 45, ../../../_sass/scss/components/atoms/_list.scss */
-.list-item span {
-  display: block;
-}
-
-/* line 50, ../../../_sass/scss/components/atoms/_list.scss */
-.list-item-table {
+.flex-list {
   display: flex;
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-/* line 54, ../../../_sass/scss/components/atoms/_list.scss */
-.list-item-table span {
-  position: relative;
-  flex: 1;
-}
-/* line 59, ../../../_sass/scss/components/atoms/_list.scss */
-.list-item-table .colspan-1 {
-  flex: 1;
-}
-/* line 63, ../../../_sass/scss/components/atoms/_list.scss */
-.list-item-table .colspan-2 {
-  flex: 2;
-}
-/* line 67, ../../../_sass/scss/components/atoms/_list.scss */
-.list-item-table .colspan-3 {
-  flex: 3;
+  justify-content: space-between;
 }
 
 /* line 1, ../../../_sass/scss/components/atoms/_text.scss */
@@ -1782,31 +1718,31 @@ p, h1, h2, h3, h4, h5, h6, form * {
   color: #2b2b2b;
 }
 
-/* line 4, ../../../_sass/scss/components/atoms/_text.scss */
+/* line 5, ../../../_sass/scss/components/atoms/_text.scss */
 h1 {
   text-transform: uppercase;
-  font-family: "Avenir Next LT Pro Demi";
+  font-family: "latoblack";
 }
 
-/* line 9, ../../../_sass/scss/components/atoms/_text.scss */
+/* line 10, ../../../_sass/scss/components/atoms/_text.scss */
 .is-inverted {
   color: #fff;
 }
-/* line 12, ../../../_sass/scss/components/atoms/_text.scss */
+/* line 13, ../../../_sass/scss/components/atoms/_text.scss */
 .is-inverted p, .is-inverted h1, .is-inverted h2, .is-inverted h3, .is-inverted h4, .is-inverted h5, .is-inverted h6, .is-inverted form * {
   color: #fff;
 }
 
-/* line 17, ../../../_sass/scss/components/atoms/_text.scss */
+/* line 18, ../../../_sass/scss/components/atoms/_text.scss */
 .has-dark-text {
   color: #000;
 }
-/* line 20, ../../../_sass/scss/components/atoms/_text.scss */
+/* line 21, ../../../_sass/scss/components/atoms/_text.scss */
 .has-dark-text p, .has-dark-text h1, .has-dark-text h2, .has-dark-text h3, .has-dark-text h4, .has-dark-text h5, .has-dark-text h6, .has-dark-text form * {
   color: #000;
 }
 
-/* line 25, ../../../_sass/scss/components/atoms/_text.scss */
+/* line 26, ../../../_sass/scss/components/atoms/_text.scss */
 .text-dark {
   color: #000;
 }
@@ -1814,60 +1750,66 @@ h1 {
 /*
   sizes
 */
-/* line 31, ../../../_sass/scss/components/atoms/_text.scss */
+/* line 34, ../../../_sass/scss/components/atoms/_text.scss */
 h1 {
-  font-size: 120px;
+  font-size: 60px;
 }
 
-/* line 32, ../../../_sass/scss/components/atoms/_text.scss */
+/* line 38, ../../../_sass/scss/components/atoms/_text.scss */
 h2 {
   font-size: 36px;
 }
 
-/* line 33, ../../../_sass/scss/components/atoms/_text.scss */
+/* line 42, ../../../_sass/scss/components/atoms/_text.scss */
 h3 {
   font-size: 24px;
 }
 
-/* line 34, ../../../_sass/scss/components/atoms/_text.scss */
+/* line 46, ../../../_sass/scss/components/atoms/_text.scss */
 h4 {
   font-size: 18px;
 }
 
-/* line 35, ../../../_sass/scss/components/atoms/_text.scss */
+/* line 50, ../../../_sass/scss/components/atoms/_text.scss */
 h5 {
   font-size: 14px;
 }
 
-/* line 36, ../../../_sass/scss/components/atoms/_text.scss */
+/* line 54, ../../../_sass/scss/components/atoms/_text.scss */
 h6 {
   font-size: 12px;
 }
 
-/* line 38, ../../../_sass/scss/components/atoms/_text.scss */
+/* line 58, ../../../_sass/scss/components/atoms/_text.scss */
 p {
   font-size: 18px;
   line-height: 24px;
 }
 
-/* line 43, ../../../_sass/scss/components/atoms/_text.scss */
+/* line 63, ../../../_sass/scss/components/atoms/_text.scss */
 .is-bold {
   font-weight: bold;
 }
 
-/* line 47, ../../../_sass/scss/components/atoms/_text.scss */
-.title {
+/* line 67, ../../../_sass/scss/components/atoms/_text.scss */
+.title, .sub-title {
   margin-bottom: 2rem;
   font-weight: bold;
 }
 
-@media (max-width: 768px) {
-  /* line 52, ../../../_sass/scss/components/atoms/_text.scss */
+@media (max-width: 1024px) {
+  /* line 73, ../../../_sass/scss/components/atoms/_text.scss */
   h1 {
-    font-size: 80px;
+    font-size: 48px;
   }
 }
-/* line 55, ../../../_sass/scss/components/atoms/_text.scss */
+@media (max-width: 768px) {
+  /* line 79, ../../../_sass/scss/components/atoms/_text.scss */
+  h1 {
+    font-size: 48px;
+  }
+}
+/* line 84, ../../../_sass/scss/components/atoms/_text.scss */
 i {
   font-family: 'latoblack';
 }
@@ -2222,7 +2164,7 @@ i {
 }
 /* line 164, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-container .project-item.selected .project-item-title {
-  opacity: 0;
+  opacity: 0 !important;
   -moz-transition: -moz-transform 0.34s, opacity 0.34s;
   -o-transition: -o-transform 0.34s, opacity 0.34s;
   -webkit-transition: -webkit-transform 0.34s, opacity 0.34s;
@@ -2407,7 +2349,6 @@ i {
   display: block;
   width: 150px;
   height: 2px;
-  border-bottom: 1px solid white;
   bottom: -20px;
   left: 50%;
   transition: opacity 1s;
@@ -2506,297 +2447,6 @@ i {
     -ms-transform: translateY(16px);
     -webkit-transform: translateY(16px);
     transform: translateY(16px);
-  }
-}
-/* line 2, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
-.accordeon {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  cursor: pointer;
-  transform-origin: 0 50%;
-}
-
-/* line 12, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
-.accordeon .accordeon-image-item:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  top: 0;
-  transition: opacity .34s;
-}
-
-/* line 22, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
-.accordeon:hover .accordeon-image-item:after,
-.accordeon.selected .accordeon-image-item:after {
-  opacity: 0.5;
-  transition: opacity .34s;
-}
-
-/* line 28, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
-.accordeon-placeholder.selected .accordeon-image-item:after {
-  opacity: 0 !important;
-}
-
-/* line 31, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
-.accordeon .accordeon-image-item {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  transform-origin: 50% 50%;
-}
-
-/* line 39, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
-.accordeon-title {
-  position: absolute;
-  font-size: 48px;
-  font-family: 'latothin';
-  text-transform: uppercase;
-  left: 50%;
-  bottom: 20px;
-  -moz-transform: translate(-50%, -40px) scaleX(5);
-  -ms-transform: translate(-50%, -40px) scaleX(5);
-  -webkit-transform: translate(-50%, -40px) scaleX(5);
-  transform: translate(-50%, -40px) scaleX(5);
-  opacity: 1;
-  -moz-transition: -moz-transform 0.34s, opacity 0.34s;
-  -o-transition: -o-transform 0.34s, opacity 0.34s;
-  -webkit-transition: -webkit-transform 0.34s, opacity 0.34s;
-  transition: transform 0.34s, opacity 0.34s;
-}
-/* line 53, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
-.accordeon-title i {
-  font-family: "latoblack";
-}
-/* line 57, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
-.accordeon-title:before {
-  content: 'View';
-  font-size: 30px;
-  position: absolute;
-  left: 30px;
-  -moz-transform: translateY(-60px);
-  -webkit-transform: translateY(-60px);
-  transform: translateY(-60px);
-  -moz-transition: -moz-transform 0.34s, opacity 0.34s;
-  -o-transition: -o-transform 0.34s, opacity 0.34s;
-  -webkit-transition: -webkit-transform 0.34s, opacity 0.34s;
-  transition: transform 0.34s, opacity 0.34s;
-  opacity: 0;
-}
-
-/* line 68, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
-.accordeon-placeholder .accordeon-title {
-  color: #2b2b2b;
-}
-
-/* line 73, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
-.section-accordeon .accordeon:hover .accordeon-title, .section-accordeon .accordeon:hover .accordeon-title:before {
-  opacity: 1;
-  -moz-transition: -moz-transform 0.34s, opacity 0.34s;
-  -o-transition: -o-transform 0.34s, opacity 0.34s;
-  -webkit-transition: -webkit-transform 0.34s, opacity 0.34s;
-  transition: transform 0.34s, opacity 0.34s;
-}
-/* line 80, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
-.section-accordeon .accordeon:hover .accordeon-title {
-  -moz-transform: translate(-50%, 0px) scaleX(2.5);
-  -ms-transform: translate(-50%, 0px) scaleX(2.5);
-  -webkit-transform: translate(-50%, 0px) scaleX(2.5);
-  transform: translate(-50%, 0px) scaleX(2.5);
-}
-/* line 83, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
-.section-accordeon .accordeon:hover .accordeon-title:before {
-  -moz-transform: translateY(-30px);
-  -webkit-transform: translateY(-30px);
-  transform: translateY(-30px);
-}
-
-/* line 89, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
-.accordeon.selected {
-  z-index: 10;
-}
-/* line 91, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
-.accordeon.selected .accordeon-title, .accordeon.selected .accordeon-title:before {
-  opacity: 0 !important;
-  -moz-transition: -moz-transform 0.34s, opacity 0.34s;
-  -o-transition: -o-transform 0.34s, opacity 0.34s;
-  -webkit-transition: -webkit-transform 0.34s, opacity 0.34s;
-  transition: transform 0.34s, opacity 0.34s;
-}
-
-/* line 98, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
-.accordeon-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: hidden;
-}
-/* line 103, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
-.accordeon-overlay:before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: hidden;
-}
-
-/* line 111, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
-.accordeon-content {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  padding: 50px 0 30px;
-  width: 90%;
-  max-width: 1400px;
-}
-
-/* line 122, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
-.accordeon-overlay-title {
-  margin: 0 40px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 60px;
-  font-family: 'latoblack';
-}
-/* line 130, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
-.accordeon-overlay-title span {
-  margin-top: 60px;
-  font-size: 24px;
-  display: block;
-  font-family: 'latothin';
-}
-
-/* line 137, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
-.accordeon-overlay .mouse-indicator {
-  position: static;
-  margin-left: 50%;
-  margin-top: 70px;
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-}
-
-@media (max-width: 768px) {
-  /* line 145, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
-  .section-accordeon {
-    display: none;
-  }
-
-  /* line 152, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
-  .accordeon-overlay-title span {
-    margin-top: 40px;
-    font-size: 14px;
-  }
-}
-@media (max-width: 1024px) {
-  /* line 159, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
-  .accordeon-overlay-title {
-    font-size: 48px;
-  }
-}
-/*** CONTACT IMTEM ***/
-/* line 165, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
-.info-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-/* line 170, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
-.contact-list {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  display: block;
-  overflow: hidden;
-  padding: 5px 20px;
-  width: 370px;
-  text-align: center;
-}
-
-/* line 182, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
-.contact-list-item {
-  font-family: 'Avenir Next LT Pro Regular';
-  font-size: 24px;
-  text-transform: uppercase;
-  height: 30px;
-  line-height: 30px;
-  margin: 25px;
-  margin-left: 50px;
-  white-space: nowrap;
-  display: block;
-  font-size: 16px;
-}
-
-/* line 195, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
-.contact-list-item i {
-  font-weight: bold;
-  font-family: 'latoheavy';
-}
-
-/* line 199, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
-.contact-list-item:before {
-  content: "";
-  background: url(/static/img/sprites/contact-icons-small-v2.png);
-  backgroun-repeat: no-repeat;
-  position: absolute;
-  width: 36px;
-  height: 30px;
-  margin-left: -50px;
-}
-
-/* line 208, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
-.item-mail:before {
-  background-position: 0 0;
-}
-
-/* line 211, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
-.item-linked-in:before {
-  background-position: 0 -32px;
-}
-
-/* line 214, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
-.item-phone:before {
-  background-position: 0 -60px;
-}
-
-/* line 217, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
-.item-fb-messenger:before {
-  background-position: 0 -90px;
-}
-
-@media (max-width: 400px) {
-  /* line 223, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
-  .s-top .accordeon-content {
-    -moz-transform: translate(-50%, -50%) scale(0.8);
-    -ms-transform: translate(-50%, -50%) scale(0.8);
-    -webkit-transform: translate(-50%, -50%) scale(0.8);
-    transform: translate(-50%, -50%) scale(0.8);
-  }
-
-  /* line 226, ../../../_sass/scss/components/molecules/_accordeon-item.scss */
-  .contact-list {
-    -moz-transform: translate(-50%, -50%) scale(0.9);
-    -ms-transform: translate(-50%, -50%) scale(0.9);
-    -webkit-transform: translate(-50%, -50%) scale(0.9);
-    transform: translate(-50%, -50%) scale(0.9);
   }
 }
 /* line 1, ../../../_sass/scss/components/molecules/_portfolio-item.scss */
@@ -3065,6 +2715,17 @@ i {
   left: 0;
 }
 
+/* line 31, ../../../_sass/scss/components/organisms/_header.scss */
+.case-header-title {
+  font-size: 120px;
+}
+
+@media (max-width: 768px) {
+  /* line 35, ../../../_sass/scss/components/organisms/_header.scss */
+  .case-header-title {
+    font-size: 80px;
+  }
+}
 /* line 1, ../../../_sass/scss/components/organisms/_footer.scss */
 footer {
   bottom: 0;
@@ -3433,15 +3094,65 @@ footer.hidden {
 }
 
 /* Pages */
-/* line 2, ../../../_sass/scss/pages/_aboutpage.scss */
-.column-skills-language .language-type {
-  margin-bottom: 5px;
-  font-weight: bolc;
+/* line 1, ../../../_sass/scss/pages/_aboutpage.scss */
+.language-type {
+  margin-bottom: -20px;
+  padding-left: 10px;
+  font-weight: bold;
+  font-size: 14px;
+  position: relative;
 }
-/* line 7, ../../../_sass/scss/pages/_aboutpage.scss */
-.column-skills-language .language-type-bar {
-  background: #EBEBEB;
-  height: 10px;
+
+/* line 9, ../../../_sass/scss/pages/_aboutpage.scss */
+.language-type-bar {
+  border: 1.5px solid #adadad;
+  border-radius: 2px;
+  height: 30px;
   overflow: hidden;
   width: 60%;
+  margin-bottom: 30px;
+}
+
+/* line 19, ../../../_sass/scss/pages/_aboutpage.scss */
+.platform-bar {
+  width: 20%;
+  max-width: 75px;
+  border: 1.5px solid #9e9e9e;
+  background: #e2e2e2;
+  position: absolute;
+  bottom: 40px;
+}
+
+/* line 28, ../../../_sass/scss/pages/_aboutpage.scss */
+.platform-type {
+  font-weight: bold;
+  width: 20%;
+  max-width: 75px;
+  position: absolute;
+  bottom: 50px;
+  font-size: 14px;
+}
+
+/* line 41, ../../../_sass/scss/pages/_aboutpage.scss */
+.pref-item {
+  border: 1px solid darkgrey;
+  margin: 5px;
+  max-width: 70px;
+}
+
+@media (max-width: 420px) {
+  /* line 47, ../../../_sass/scss/pages/_aboutpage.scss */
+  .section-technical {
+    padding-bottom: 0;
+  }
+
+  /* line 51, ../../../_sass/scss/pages/_aboutpage.scss */
+  .column-platforms {
+    padding-top: 2rem;
+  }
+
+  /* line 59, ../../../_sass/scss/pages/_aboutpage.scss */
+  .pref-item {
+    max-width: 55px;
+  }
 }

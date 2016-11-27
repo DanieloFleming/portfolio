@@ -39,7 +39,8 @@ define([
         },
 
         events : {
-            'click .footer-cases' : 'handleCaseClicked'
+            'click .footer-cases' : 'handleCaseClicked',
+            'click .section-header' : 'interact'
         },
 
         onInitialize : function () {
@@ -57,6 +58,15 @@ define([
             this.handleHeaderLoading();
 
         },
+        interact : function(){
+            if(this.isInteracting) return;
+
+            this.isInteracting = true;
+
+            this.components.scrollTo.interact(function(){
+                this.isInteracting = false;
+            }.bind(this));
+        },
 
         handleCaseClicked : function() {
             if(this.isClicked) return;
@@ -70,7 +80,7 @@ define([
         },
 
         handleComplete : function() {
-            app.router.navigate('/projects', {trigger: true});
+            app.router.navigate('/cases', {trigger: true});
         },
 
         handleHeaderLoading : function() {

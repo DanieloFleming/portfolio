@@ -5,8 +5,8 @@
         <div class="container">
             <div class="row">
                 <div class="column span-8-10 space-l-1-10">
-                    <h3 data-delay="0" class="title">"change this title"</h3>
-                    <h4 data-delay=".2">- name-titles -</h4>
+                    <h3 data-delay="0" class="title">"change this quote"</h3>
+                    <h4 data-delay=".2">- name-quote -</h4>
                 </div>
             </div>
             <div class="row">

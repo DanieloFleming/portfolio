@@ -17,7 +17,7 @@
             </div>
         </div>
     </div>
-    <div class="section is-unpadded--top">
+    <div class="section">
         <div class="container">
             <img data-delay="0" src="/static/img/cases/noted/triple-view.jpg" style="width:100%;" class="smart-object"/>
         </div>

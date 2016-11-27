@@ -1,34 +1,35 @@
 <script type="template" class="page" id="homepage">
     <section class="section section-header is-unpadded">
-                <div class="accordeon-content">
-                    <h1 class="accordeon-overlay-title" data-delay="0">
-                        To destroy is always the first step in any creation.
-
-                        <span data-delay=".2"> - <i>Pablo</i>Picasso - </span>
-                    </h1>
-                </div>
-
-            <div class="scroll-indicator scroll-to" data-delay=".4">
-                <span class="indicator"></span>
-                <span class="indicator-text text-top">latest</span>
-                <span class="indicator-text text-bottom">cases</span>
+        <div class="row fill-parent is-aligned--middle is-unpadded is-aligned--center">
+            <div class="column span-8-10 space-l-1-10 span-md-10-10 space-md-none">
+                <h1 class="title" data-delay="0">To destroy is always the first step in any creation.</h1>
+                <h3 class="text is-bold" data-delay=".2"> - <i>PABLO</i>PICASSO - </h3>
             </div>
+        </div>
+        <div class="scroll-indicator scroll-to" data-delay=".4">
+            <span class="indicator"></span>
+            <span class="indicator-text text-top">latest</span>
+            <span class="indicator-text text-bottom">cases</span>
+        </div>
     </section>
 
     <section class="section section-portfolio-items is-unpadded is-colored--dark">
 
         <% for(var index = 0; index <= collection.length; index++) {
             var model = collection[index] || {};
-            var isDouble = (collection.length - index > 1) ? "double" : "single";
+
             var delay = .2 * index + .3;
         %>
 
-            <% if(index % 2 === 0) { %>
-                <div class="project-item-container <%= isDouble %>" >
+            <% if(index % 2 == 0) {
+                var isDouble = (collection.length - index > 0) ? "double" : "single";
+            %>
+
+                <div class="project-item-container <%= isDouble %>">
             <% } %>
 
             <% if (index - collection.length === 0) { %>
-                <div class="project-item-placeholder all-cases" data-delay="<%= delay %>" data-transition-type="slideUp">
+                <div class="project-item-placeholder all-cases" data-delay="<%= delay %>">
                     <h2 class="project-item-title"><?=$placeholder->sub_title;?></h2>
                 </div>
             <% } else { %>

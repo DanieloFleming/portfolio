@@ -11,10 +11,14 @@
 |
 */
 
-Route::get('uploadedtest', function(){
-   return view('debug.uploader');
-});
-$app_routes = ['/', 'home', 'about', 'projects/{slug?}', '404', 'contact'];
+$app_routes = [
+    '/',
+    'home',
+    'about',
+    'cases/{slug?}',
+    '404',
+    'contact'
+];
 
 foreach($app_routes as $index => $route) {
 	Route::get($route, 'FrontController@getIndex');
@@ -30,16 +34,3 @@ foreach($app_routes as $index => $route) {
 */
 
 Route::resource('api/projects', 'Api\ProjectsApiController', ['only' => ['index', 'show']]);
-
-
-/*
-|--------------------------------------------------------------------------
-| Styleguide Routes
-|--------------------------------------------------------------------------
-|
-| Hore we set the route for showing defined components like
-| Organisms, Molecules and Atoms. The are used
-| in the front-end application.
-*/
-
-Route::controller('styleguide', 'StyleController');

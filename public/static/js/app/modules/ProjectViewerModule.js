@@ -40,7 +40,6 @@ define([
         	var scrollTarget = this.getScrollPosition(this.item);
             var scrollData = { top:this.$body.scrollTop() };
         	var maxScroll = this.getMaxScroll();
-        	var item = this.item;
 
         	if(scrollTarget > maxScroll) scrollTarget = maxScroll;
 
@@ -49,7 +48,7 @@ define([
         	this.animateScroll(scrollTarget, scrollData);
         },
 
-        getScrollPosition : function(item) {
+        getScrollPosition : function() {
         	var box = this.item.getBoundingClientRect();
         	var bodyOffset = this.$body.offset();
 

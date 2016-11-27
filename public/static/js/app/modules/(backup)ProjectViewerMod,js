@@ -10,7 +10,7 @@ define([
             'click .project-item' : 'handleClick'
         },
 
-        initialize : function() {
+        initialize : function(options) {
             _.bindAll(this,
                 'scrollCompleteHandler',
                 'setupHeaderAnimation',
@@ -46,8 +46,6 @@ define([
 
             this.item.classList.add('selected');
             this.slug = this.item.getAttribute('data-slug');
-
-            //return {imageUrl, item, slug}
         },
 
         setupScroll : function() {
@@ -91,21 +89,9 @@ define([
             window.scroll(0, scrollData.top);
         },
 
-
         scrollCompleteHandler : function() {
             this.loadHeader();
         },
-
-
-
-
-
-
-
-
-
-
-        //HERE STARTS ASTRONOMY
 
         loadHeader : function() {
             this.headerImage = new Image();
@@ -117,7 +103,6 @@ define([
 
         setupHeaderAnimation : function() {
             var backgroundData = this.getHeaderImageSize(this.headerImage);
-
             var scale = this.getScale(backgroundData);
 
             this.overlayContainer = this.$body[0].querySelector('.project-overlay');
@@ -147,7 +132,7 @@ define([
                 }
             }else {
                 return {
-                    
+
                     width:viewWidth,
                     height: (viewWidth / image.width) * image.height,
                     cover : 'width',
@@ -206,6 +191,7 @@ define([
 
         getItemImageSize : function(scales, bgSizes) {
             var imageData = this.headerImage.getBoundingClientRect();
+            var scale;
 
             if(bgSizes.cover == 'height') {
                 return  {
@@ -227,13 +213,14 @@ define([
                 ease: Power4.easeInOut,
                 scale: scale
             }).to(this.overlayImage, this.ANIMATION_TIME, {
-                x:'-.5px',
+                x:'0px',
                 y:'0px',
                 scale:1,
                 transformOrigin:'0 0',
                 ease: Power4.easeInOut,
                 onComplete: this.handleTransitionCompleted
             }, 0);
+
         },
 
         handleTransitionCompleted : function(e) {

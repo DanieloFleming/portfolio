@@ -62,7 +62,7 @@ define([
 
 
         handleComplete : function() {
-            app.router.navigate('/projects', {trigger: true});
+            app.router.navigate('/cases', {trigger: true});
         },
     });
 
