@@ -1,7 +1,7 @@
 <script type="template" id="aboutpage">
     <section class="section section-header is-aligned--centered is-inverted">
 		<div class="header-background" data-delay="0" data-transition-type="fadeIn"
-			 style="//background-image:url('https://s-media-cache-ak0.pinimg.com/originals/38/66/81/3866811a0fb059d23af7b522ba046d23.jpg')"></div>
+			 style="background-image:url('http://fashionpoliceng.com/wp-content/uploads/2014/05/navy-suit-black-model.jpg');"></div>
 
 		<div class="row fill-parent is-aligned--middle is-unpadded">
 			<div class="column span-8-10 space-l-1-10 span-md-10-10 space-md-none">
@@ -20,11 +20,11 @@
         <div class="container">
             <div class="row">
                 <div class="column span-10-10">
-                    <h3 class="is-bold" style="">Legends tells us about</h3>
-                    <h5 class="" style="">A man. A Great man. A Man of Greatness</h5>
+                    <h3 data-delay="0" class="is-bold">Legends tells us about</h3>
+                    <h5 data-delay=".2">A man. A Great man. A Man of Greatness</h5>
                 </div>
                 <div class="column span-10-10">
-                    <p class="is-aligned--center" style="">
+                    <p data-delay=".6" class="is-aligned--center" style="">
                         The one who answers to the call D. Born first son of a goddess under a filling moon somewhere in the late 80s.
                         Occupied with codes and basketball there really isn't much more information to share.
                     </p>
@@ -43,15 +43,15 @@
                     <ul class="flex-list text-center">
                         <li class="list-item">
                             <img src="/static/img/sprites/mobile-small.gif"  data-delay=".6" data-transition-type="zoomIn" style=" max-width:150px; width:100%;"/>
-                            <h5 style="margin-top:10px;" data-delay=".7">App</h5>
+                            <h5 class="is-bold" style="margin-top:10px;" data-delay=".7">App</h5>
                         </li>
                         <li class="list-item">
                             <img src="/static/img/sprites/games-small.gif" data-delay=".8"  data-transition-type="zoomIn" style=" max-width:150px; width:100%;"/>
-                            <h5 style="margin-top:10px;" data-delay=".9">Games</h5>
+                            <h5 class="is-bold" style="margin-top:10px;" data-delay=".9">Games</h5>
                         </li>
                         <li class="list-item">
                             <img src="/static/img/sprites/desktop-small.gif"   data-delay="1" data-transition-type="zoomIn" style=" max-width:150px; width:100%;"/>
-                            <h5 style="margin-top:10px;" data-delay="1.1">Web</h5>
+                            <h5 class="is-bold" style="margin-top:10px;" data-delay="1.1">Web</h5>
                         </li>
                     </ul>
                 </div>
@@ -88,21 +88,21 @@
                 </div>
                 <div class="column span-4-10 span-md-8-10 space-md-l-1-10 span-sm-10-10 space-sm-none  column-platforms" style="height: 410px">
                     <div class="column span-10-10">
-                        <h3 class="is-bold is-aligned--center skills-title" data-delay=".4">Platform Disciplines</h3>
-                        <h5 class="is-aligned--center skills-subtitle" data-delay=".6">Field Experiences</h5>
+                        <h3 class="is-bold is-aligned--center skills-title" data-delay="1.4">Platform Disciplines</h3>
+                        <h5 class="is-aligned--center skills-subtitle" data-delay="1.6">The 4 Elements</h5>
                     </div>
 
-                    <div class="platform-bar" style="height: 70%; left: 5%;" data-transition-type="slideUp" data-delay=".9"></div>
-                    <h4 class="platform-type" data-delay="1" style="left: 5%;">front</h4>
+                    <div class="platform-bar" style="height: 70%; left: 5%;" data-transition-type="slideUp" data-delay="1.9"></div>
+                    <h4 class="platform-type" data-delay="2" style="left: 5%;">front</h4>
 
-                    <div class="platform-bar" style="height: 50%; left: 28%;" data-transition-type="slideUp" data-delay="1.1"></div>
-                    <h4 class="platform-type" data-delay="1.2" style="left: 28%;">back</h4>
+                    <div class="platform-bar" style="height: 50%; left: 28%;" data-transition-type="slideUp" data-delay="2.1"></div>
+                    <h4 class="platform-type" data-delay="2.2" style="left: 28%;">back</h4>
 
-                    <div class="platform-bar" style="height: 30%; left: 52%;" data-transition-type="slideUp" data-delay="1.3"></div>
-                    <h4 class="platform-type" data-delay="1.4" style="left: 52%;">mobile</h4>
+                    <div class="platform-bar" style="height: 30%; left: 52%;" data-transition-type="slideUp" data-delay="2.3"></div>
+                    <h4 class="platform-type" data-delay="2.4" style="left: 52%;">mobile</h4>
 
-                    <div class="platform-bar" style="height: 40%; left: 75%;" data-transition-type="slideUp" data-delay="1.5"></div>
-                    <h4 class="platform-type" data-delay="1.6" style="left: 75%;">game</h4>
+                    <div class="platform-bar" style="height: 40%; left: 75%;" data-transition-type="slideUp" data-delay="2.5"></div>
+                    <h4 class="platform-type" data-delay="2.6" style="left: 75%;">game</h4>
                 </div>
             </div>
         </div>

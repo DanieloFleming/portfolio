@@ -2,8 +2,8 @@
     <section class="section section-header is-unpadded">
         <div class="row fill-parent is-aligned--middle is-unpadded is-aligned--center">
             <div class="column span-8-10 space-l-1-10 span-md-10-10 space-md-none">
-                <h1 class="title" data-delay="0">To destroy is always the first step in any creation.</h1>
-                <h3 class="text is-bold" data-delay=".2"> - <i>PABLO</i>PICASSO - </h3>
+                <h1 class="title" data-delay="0">I'm poiting at the moon, but you keep looking at my finger.</h1>
+                <h3 class="text is-bold" data-delay=".2"> - <i>VAST</i>AIRE - </h3>
             </div>
         </div>
         <div class="scroll-indicator scroll-to" data-delay=".4">
