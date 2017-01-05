@@ -17,7 +17,8 @@ define([
             components: '[data-component]',
             headerImage : ".header-background",
             projectItem : '.project-item',
-            casesFooter : '.footer-cases'
+            casesFooter : '.footer-cases',
+            demos : 'iframe'
         },
         
         components : {
@@ -52,10 +53,12 @@ define([
         },
 
         initialized : function () {
-            _.bindAll(this, "handleComplete");
+            _.bindAll(this, 'handleComplete', 'preparePageChange');
+
             ComponentLoader.load(this.ui.components);
 
             this.handleHeaderLoading();
+            this.listenTo(this.components.projectViewer, 'clicked', this.preparePageChange);
 
         },
         interact : function(){
@@ -69,9 +72,10 @@ define([
         },
 
         handleCaseClicked : function() {
-            if(this.isClicked) return;
+            if(this.isClicked || this.components.projectViewer.isClicked) return;
 
             this.isClicked = true;
+            this.components.projectViewer.isClicked = true;
 
             TweenMax.to(this.el, .7, {
                 opacity:0, y: "+100vh",
@@ -108,6 +112,14 @@ define([
 
         setClass : function(templateClassName) {
             this.el.className = templateClassName;
+        },
+
+        preparePageChange : function() {
+            if(this.ui.demos) {
+                TweenMax.set(this.ui.demos, {
+                    opacity:0
+                });
+            }
         },
 
         onClose : function() {

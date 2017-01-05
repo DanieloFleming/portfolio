@@ -19,21 +19,18 @@ define([
 			if(! templateCache[templateId] ) {
 				templateCache[templateId] = _.template($(templateId).html());
 				$(templateId).remove();
-			};
+			}
 		};
 
 		var get = function(slug) {
 			return templateCache[slugs[slug]];
-		}
-
-
+		};
 
 		return {
 			cacheTemplates : getTemplates,
 			get : get
-		}
+		};
 	});
 
 	return new TemplateManager();
-
-})
+});

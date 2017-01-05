@@ -39,7 +39,7 @@ define([
 
             TweenMax.to(this.el, .7, {
                 opacity:0,
-                y: "+100vh",
+                y: "+100",
                 onComplete : this.handleComplete.bind(this)
             })
         },

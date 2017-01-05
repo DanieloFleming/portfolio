@@ -1,12 +1,12 @@
 <script type="template" class="page" id="homepage">
-    <section class="section section-header is-unpadded">
-        <div class="row fill-parent is-aligned--middle is-unpadded is-aligned--center">
+    <section class="section section-header is-unpadded is-inverted">
+        <div data-delay="0" data-transition-type="fadeIn" class="row fill-parent is-aligned--middle is-unpadded is-aligned--center" style="background-color: black">
             <div class="column span-8-10 space-l-1-10 span-md-10-10 space-md-none">
-                <h1 class="title" data-delay="0">I'm poiting at the moon, but you keep looking at my finger.</h1>
-                <h3 class="text is-bold" data-delay=".2"> - <i>VAST</i>AIRE - </h3>
+                <h1 class="title" data-delay=".2">I'm pointing at the moon, but you keep looking at my finger.</h1>
+                <h3 class="text is-bold" data-delay=".4"> - <i>VAST</i>AIRE - </h3>
             </div>
         </div>
-        <div class="scroll-indicator scroll-to" data-delay=".4">
+        <div class="scroll-indicator scroll-to" data-delay=".6">
             <span class="indicator"></span>
             <span class="indicator-text text-top">latest</span>
             <span class="indicator-text text-bottom">cases</span>
@@ -30,6 +30,7 @@
 
             <% if (index - collection.length === 0) { %>
                 <div class="project-item-placeholder all-cases" data-delay="<%= delay %>">
+                    <figure class="project-item-thumb smart-object" style="background-image:url('<?=$placeholder->header;?>');"></figure>
                     <h2 class="project-item-title"><?=$placeholder->sub_title;?></h2>
                 </div>
             <% } else { %>

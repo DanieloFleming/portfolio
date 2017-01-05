@@ -3,9 +3,9 @@ return [
     'placeholders' => [
         'to_all' => [
             'title'     => 'All cases' ,
-            'sub_title' => '<i>All</i>Crafts',
+            'sub_title' => '<i>All</i>Cases',
             'slug'      => 'all-cases',
-            'header'    => '',
+            'header'    => '/static/img/backgrounds/blacksmith.jpg',
         ],
 
         'contact' => [
@@ -27,7 +27,7 @@ return [
         ],
         [
             'id'        => 1,
-            'order'     => 4,
+            'order'     => 2,
             'type'      => 'WEBSITE',
             'title'     => 'Cafe de Kroeg',
             'sub_title' => '<i>De</i>Kroeg',
@@ -45,7 +45,7 @@ return [
         ],
         [
             'id'        => 3,
-            'order'     => 2,
+            'order'     => 4,
             'type'      => 'APP',
             'title'     => 'Noted',
             'sub_title' => '<i>N</i>oted',
@@ -63,12 +63,30 @@ return [
         ],
         [
             'id'        => 5,
-            'order'     => 5,
+            'order'     => 0,
+            'type'      => 'WEBSITE',
+            'title'     => 'Tanya Heath',
+            'sub_title' => '<i>T</i>Heath',
+            'slug'      => 'tanya-heath',
+            'header'    => '/static/img/cases/tanya-heath-paris/header.jpg',
+        ],
+       /* [
+            'id'        => 6,
+            'order'     => 7,
             'type'      => 'GAME',
             'title'     => 'Lucidicy',
             'sub_title' => '<i>Luci</i>dicy',
             'slug'      => 'lucidicy',
             'header'    => '/static/img/cases/lucidicy/thumb.jpg',
+        ],*/
+        [
+            'id'        => 7,
+            'order'     => 5,
+            'type'      => 'WEBSITE',
+            'title'     => 'D-Blog',
+            'sub_title' => '<i>D</i>blog',
+            'slug'      => 'd-blog',
+            'header'    => '/static/img/cases/d-blog/thumb.jpg',
         ]
     ]
 ];

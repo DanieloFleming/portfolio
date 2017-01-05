@@ -1,17 +1,12 @@
-<section class="section section-portfolio-items is-unpadded is-colored--dark">
-
-        <div class="project-item-container double">
-                <div class="project-item" data-slug="<%= model.get('prev').slug %>"  data-delay="0">
-                        <figure class="project-item-thumb smart-object" style="background-image:url('<%= model.get('prev').image.src %>');"></figure>
-                        <h2 class="project-item-title"><i>previous</i></h2>
-                </div>
-                <div class="project-item" data-slug="<%= model.get('next').slug %>" data-delay=".2">
-                        <figure class="project-item-thumb smart-object" style="background-image:url('<%= model.get('next').image.src %>');"></figure>
-                        <h2 class="project-item-title"><i>next</i></h2>
-                </div>
-        </div>
-</section>
-
-<section class="section is-unpadded footer-cases">
-        <p class="footer-cases-text">MORE<i>CRAFTS</i></p>
-</section>
+<footer class="is-inverted">
+   <div class="container">
+       <div class="row">
+           <div class="column space-l-2-10 span-6-10 is-aligned--left">
+               <ul class="list">
+                   <li class="list-item">connect@danielo.nl</li>
+                   <li class="list-item">m.me/danielo.fleming</li>
+               </ul>
+           </div>
+       </div>
+   </div>
+</footer>

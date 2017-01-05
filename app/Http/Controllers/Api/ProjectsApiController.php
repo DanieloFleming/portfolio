@@ -15,6 +15,7 @@ class ProjectsApiController extends Controller
     public function index()
     {
         $projectItems = $this->projectData->sortBy("order");
+        
         return response()->json($projectItems->values()->all(), 200);
     }
 

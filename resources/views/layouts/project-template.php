@@ -1,4 +1,4 @@
-<script type="template" id="change-me-into-a-valid-slug">
+<script type="template" id="<?=$slug;?>">
     <?= view('layouts.project-item-header');?>
 
     <div class="section is-aligned--center is-unpadded--bottom">
@@ -17,5 +17,5 @@
         </div>
     </div>
 
-    <?php echo view('layouts.footer');?>
+    <?php echo view('layouts.project-footer');?>
 </script>

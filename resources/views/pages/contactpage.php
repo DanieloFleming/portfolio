@@ -1,45 +1,38 @@
 <script type="template" id="contactpage">
-    <section class="section section-header is-unpadded is-inverted">
-        <div class="row fill-parent is-aligned--middle is-unpadded is-aligned--center" style="background: black" data-delay="0" data-transition-type="fadeIn">
-            <div class="column span-8-10 space-l-1-10 span-md-10-10 space-md-none">
-                <h1 class="title" data-delay="0">Contact</h1>
-                <!--<h3 class="text is-bold" data-delay=".2"> - <i>Eddie</i>Griffin - </h3>-->
-            </div>
+    <section class="section section-header is-unpadded">
+        <div class="row fill-parent is-aligned--middle is-unpadded is-aligned--center">
 
-            <div class="column" style="max-width: 230px; margin:0 auto;">
-                <ul class="flex-list text-center">
-                    <li class="list-item">
-                        <img src="/static/img/sprites/linkedin.gif"  data-delay=".2" data-transition-type="zoomIn" style=" max-width:50px; width:100%;"/>
-                        <h5 style="margin-top:10px;" data-delay=".7">Linkedin</h5>
-                    </li>
-                    <li class="list-item">
-                        <img src="/static/img/sprites/mail.gif" data-delay=".4"  data-transition-type="zoomIn" style=" max-width:50px; width:100%;"/>
-                        <h5 style="margin-top:10px;" data-delay=".9">Mail</h5>
-                    </li>
-                    <li class="list-item">
-                        <img src="/static/img/sprites/mesenger.gif"   data-delay=".6" data-transition-type="zoomIn" style=" max-width:50px; width:100%;"/>
-                        <h5 style="margin-top:10px;" data-delay="1.1">Messener</h5>
-                    </li>
-                </ul>
+            <!--<div class="header-background" data-delay="0" data-transition-type="fadeIn" style="background: black"></div>
+-->
+            <ul class="list is-centered list-contact">
+                <li class="list-item list-contact-item" data-delay=".2"><a target="_blank" href="mailto:connect@danielo.nl"> <i>connect</i>@danielo.nl</a></li>
+                <li class="list-item list-contact-item" data-delay=".4"><a target="_blank"  href="https://m.me/danielo.fleming"><i>m.me</i>/danielo.fleming</a></li>
+                <li class="list-item list-contact-item list-contact-item-phone" data-delay=".6"><a  target="_blank" href="tel:+31640217920"><i>+316</i> 40 217 029</a></li>
+            </ul>
+
+            <div class="scroll-indicator scroll-to" data-delay=".8">
+                <span class="indicator"></span>
+                <span class="indicator-text text-top">make</span>
+                <span class="indicator-text text-bottom">contact</span>
             </div>
         </div>
-       <!-- <div class="scroll-indicator scroll-to" data-delay=".4">
-            <span class="indicator"></span>
-            <span class="indicator-text text-top">Make</span>
-            <span class="indicator-text text-bottom">contact</span>
-        </div>-->
     </section>
 
-<!--
-                        How about we come together like butt cheeks and be the shit
+    <section class="section is-unpadded is-inverted" style="height:100vh; background: black;">
+        <div class="row fill-parent is-aligned--middle is-aligned--center is-unpadded ">
+            <form class="form is-centered">
+                <h3 data-delay="0" class="is-bold is-aligned--center">Adele</h3>
+                <h5 data-delay=".2" class="is-aligned--center">Or lionel Richi...</h5>
+                <br /><br />
+                <div class="input-container">
+                    <input type="email" class="input-text form-field" placeholder="@mail..." data-delay=".2">
+                </div>
+                <div class="input-container">
+                    <textarea class="input-textfield form-field" data-delay=".5" placeholder="A great big world..."></textarea>
+                </div>
+                <button class="button-submit" data-delay=".8">connect</button>
+            </form>
+        </div>
+    </section>
 
-                        <span> - <i>Eddie</i>Griffin - </span>
-
-                                    <ul class="contact-list">
-                <li class="contact-list-item item-mail" data-delay=".4" data-transition-type="slideLeft"><i>danielofleming</i>@gmail.com</li>
-                <li class="contact-list-item item-linked-in" data-delay=".6" data-transition-type="slideLeft"><i>link/in/</i>danielofleming</li>
-                <li class="contact-list-item item-fb-messenger" data-delay=".8" data-transition-type="slideLeft"><i>m.me/</i>danielo.fleming</li>
-                <li class="contact-list-item item-phone" data-delay="1.0" data-transition-type="slideLeft"><i>+316</i> 40 21 79 20 </li>
-            </lu>
--->
 </script>

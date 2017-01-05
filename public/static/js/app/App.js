@@ -12,17 +12,20 @@ define([
 
     var Application = (function(){
         var splashScreen;
+        var prefix = typeof document.hidden == "undefined" ? "ms" : '';
         /**
          * initialize pre-loader.
          */
         function initialize() {
-            checkBrowser();
+
             app.regionManager = RegionManager;
             app.templateManager = TemplateManager;
 
             app.models.projectModel = new ProjectModel();
             app.collections.projectCollection = new ProjectCollection();
 
+            checkBrowser();
+            setActiveTabCheck();
             startSplashScreen();
 
             app.collections.projectCollection.fetch({
@@ -42,9 +45,25 @@ define([
 
         function checkBrowser() {
             app.browser = {};
+
             if(document.body.style.MozTransform != undefined) {
                 app.browser.isFireFox = true;
             } 
+        }
+
+        function setActiveTabCheck() {
+            var eventName = prefix + 'visibilitychange';
+
+            document.addEventListener(eventName, handleDocumentTitleChange);
+        }
+
+        function handleDocumentTitleChange() {
+            var hidden = prefix + "hidden";
+            if(document[hidden]) {
+                document.title = ":( come back ";
+            } else {
+                document.title = "welcome back @ danielo.nl";
+            }
         }
         /**
          * Start the application when pre-loading is completed
@@ -52,15 +71,11 @@ define([
         function startRouter() {
             var models = app.collections.projectCollection.models;
 
-
-
-            app.templateManager.cacheTemplates(models);
             app.router = new Router();
-            Backbone.history.start({pushState: true});
-
-            //app.navigation = new navigationComponent();
             app.navigation = new HamburgerComponent();
-            //$('footer')[0].classList.remove('hidden');
+            app.templateManager.cacheTemplates(models);
+
+            Backbone.history.start({pushState: true});
         }
 
         /**

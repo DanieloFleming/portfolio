@@ -1,4 +1,4 @@
-<script type="template" id="cafe-de-kroeg">
+<script type="template" id="<?=$slug;?>">
 
     <?= view('layouts.project-item-header');?>
 
@@ -31,5 +31,5 @@
         </div>
     </div>
 
-    <?php echo view('layouts.footer');?>
+    <?php echo view('layouts.project-footer');?>
 </script>

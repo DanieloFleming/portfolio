@@ -1,0 +1,91 @@
+$form-bg-color : black;
+$form-border-color: white;
+$form-text-color: white;
+.form {
+	width:100%;
+	max-width: 600px;
+	text-align: center;
+	padding:0 40px;
+
+	font-size: 24px;
+}
+.input-text {
+	padding:5px;
+	width:100%;
+
+	font-size:40px;
+
+}
+.input-textfield {
+	font-size: 14px;
+	width: 100%;
+	height:200px;
+	margin-bottom: -3px;
+
+	resize:none;
+}
+.button-submit {
+
+	width:100%;
+	height:40px;
+	line-height: 40px;
+	border: none;
+	color:$form-text-color;
+	background: #2d2d2d;
+}
+.input-text, .input-textfield {
+
+	border:none;
+	border-left:1px solid $form-border-color;
+	border-bottom:1px solid $form-border-color;
+	background: $form-bg-color;
+	color:$form-text-color;
+	padding:5px;
+}
+.input-container {
+	position: relative;
+	margin-bottom:25px;
+}
+.input-container:before, .input-container:after {
+	content: "";
+	position:absolute;
+	background-color:white;
+	left:0;
+
+	@include transition(transform .4s ease, background-color 1s ease);
+
+}
+.input-container.error:before, .input-container.error:after {
+	background-color: red;
+	@include transition(background-color .3s ease);
+}
+.input-container:before {
+	width:2px;
+	height:100%;
+	top:0;
+	@include scaleY(0);
+	transform-origin:top;
+}
+ .input-container:after {
+	width:100%;
+	height:2px;
+	bottom:0;
+	@include scaleX(0);
+	transform-origin: left;
+ }
+ .focus.input-container, .error.input-container {
+	 &:before {
+		 @include scaleY(1);
+		 @include transition(transform .4s ease-in,  background-color 1s ease);
+	 }
+
+	 &:after {
+		 @include scaleX(1);
+		 @include transition(transform .6s ease-out .4s,  background-color 1s ease);
+	 }
+ }
+.button-submit:focus,
+.input-text:focus,
+.input-textfield:focus {
+	outline: none;
+}

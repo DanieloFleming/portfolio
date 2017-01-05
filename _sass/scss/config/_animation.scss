@@ -3,6 +3,7 @@ $animation-time: .5s;
 [data-delay] {
 	opacity:1;
 
+	will-change: opacity, transform;
 	@include translateY(0);
 	@include transition(transform .6s, opacity .6s);
 }
@@ -15,6 +16,7 @@ $animation-time: .5s;
 	&[data-transition-type] {
 		opacity:0;
 	}
+
 
 	&[data-transition-type="slideUp"] {
 		@include translateY(40%);

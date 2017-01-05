@@ -28,6 +28,9 @@ define([
 
         handleClick : function(e) {
             if(this.isClicked) return;
+
+            this.trigger('clicked');
+            
             this.isClicked = true;
             app.navigation.hide();
 

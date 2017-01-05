@@ -8,11 +8,11 @@ define([
         routes: {
             ''               : 'index',
             'about'          : 'about',
-            'cases(/)'    : 'projectIndex',
-            'cases/:slug' : 'projectPage',
+            'cases(/)'       : 'projectIndex',
+            'cases/:slug'    : 'projectPage',
             'page-not-found' : 'pageNotFound',
             'contact'        : 'contact',
-            '*action'        : 'invalidUrl',
+            '*action'        : 'invalidUrl'
         },
 
         initialize : function() {
@@ -63,9 +63,5 @@ define([
         pageNotFound : function() {
             console.log('page not found');
         }
-
     });
-
-
-
 });

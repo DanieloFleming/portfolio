@@ -84,7 +84,7 @@ class FrontController extends Controller
         $view_location = 'pages.cases.' . $view_name;
 
         if ($this->collection->contains('slug', $view_name)) {
-            return view($view_location);
+            return view($view_location)->with('slug', $view_name);
         }
 
         return null;

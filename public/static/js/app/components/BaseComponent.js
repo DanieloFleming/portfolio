@@ -9,7 +9,6 @@ define([
         elements : {},
 
         initialize : function(options) {
-            this.setElements();
 
             if(this.onInitialize) {
                 this.onInitialize(options);
@@ -46,6 +45,7 @@ define([
          */
         setUi : function() {
             if(_.keys(this.ui).length == 0) return;
+
             _.map(this.ui, function(value, key) {
                 this.addUi(key, value);
             }, this);

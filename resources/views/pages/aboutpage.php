@@ -1,15 +1,13 @@
 <script type="template" id="aboutpage">
-    <section class="section section-header is-aligned--centered is-inverted">
-		<div class="header-background" data-delay="0" data-transition-type="fadeIn"
-			 style="background-image:url('http://fashionpoliceng.com/wp-content/uploads/2014/05/navy-suit-black-model.jpg');"></div>
+    <section class="section section-header is-aligned--centered is-inverted is-unpadded">
 
-		<div class="row fill-parent is-aligned--middle is-unpadded">
+		<div data-delay="0" data-transition-type="fadeIn" class="row fill-parent is-aligned--middle is-unpadded" style="background: black">
 			<div class="column span-8-10 space-l-1-10 span-md-10-10 space-md-none">
-				<h1 class="title" data-delay="0">The man behind the codes</h1>
-				<h3 class="text is-bold" data-delay=".2"> - <i>DANIELO</i>FLEMING - </h3>
+				<h1 class="title" data-delay="0.2">Game recognises game and you don't look familiar.</h1>
+				<h3 class="text is-bold" data-delay=".4"> - <i>RILEY</i>FREEMAN - </h3>
 			</div>
 		</div>
-        <div class="scroll-indicator scroll-to" data-delay=".4">
+        <div class="scroll-indicator scroll-to" data-delay=".6">
             <span class="indicator"></span>
             <span class="indicator-text text-top">about</span>
             <span class="indicator-text text-bottom">me</span>
@@ -23,7 +21,7 @@
                     <h3 data-delay="0" class="is-bold">Legends tells us about</h3>
                     <h5 data-delay=".2">A man. A Great man. A Man of Greatness</h5>
                 </div>
-                <div class="column span-10-10">
+                <div class="column span-8-10 space-l-1-10 span-md-10-10 space-md-none">
                     <p data-delay=".6" class="is-aligned--center" style="">
                         The one who answers to the call D. Born first son of a goddess under a filling moon somewhere in the late 80s.
                         Occupied with codes and basketball there really isn't much more information to share.
@@ -107,8 +105,17 @@
             </div>
         </div>
     </section>
-
-    <section class="section section-pref is-colored--dark ">
+    <section class="section is-colored--dark">
+        <div class="container">
+            <div class="row">
+                <div class="column span-8-10 space-l-1-10 span-md-10-10 space-md-none">
+                    <h3 data-delay="0" class="is-bold">Libraries and Frameworks</h3>
+                    <h5 data-delay=".2">Transmutation Circles</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section section-pref">
     	<div class="container">
     		<div class="row">
     			<div class="column span-8-10 space-l-1-10 span-md-10-10 space-md-none">
@@ -141,7 +148,7 @@
                     <h5 data-delay=".2">For some reason</h5>
                     <br />
                     <p data-delay=".4" class="">
-                        If you would like to know more about me, you can always contact me or send a message.
+                        If you are reading this, you have read too much.
                     </p>
                 </div>
             </div>

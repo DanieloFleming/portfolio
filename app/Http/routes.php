@@ -34,3 +34,13 @@ foreach($app_routes as $index => $route) {
 */
 
 Route::resource('api/projects', 'Api\ProjectsApiController', ['only' => ['index', 'show']]);
+
+Route::get('/mail', function(){
+
+    Mail::raw('See if this works', function($message){
+        $message->from('danielofleming@gmail.com', 'danielo');
+        $message->to('connect@danielo.nl', 'Admin Master');
+    });
+
+    dd('here');
+});

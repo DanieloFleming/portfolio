@@ -45,7 +45,7 @@
 
 /* Atoms */
 @import 'components/atoms/_svg';
-@import 'components/atoms/_form';
+//@import 'components/atoms/_form';
 @import 'components/atoms/_list';
 @import 'components/atoms/_text';
 @import 'components/atoms/_button';
@@ -53,11 +53,11 @@
 /* Molecules */
 
 @import "components/molecules/_video";
-@import "components/molecules/_video-poster";
+//@import "components/molecules/_video-poster";
 @import "components/molecules/_project-item";
 @import "components/molecules/_splash-screen";
 @import "components/molecules/_mouse-scroller";
-@import 'components/molecules/_portfolio-item';
+//@import 'components/molecules/_portfolio-item';
 @import "components/molecules/_scroll-indicator";
 
 
@@ -65,7 +65,8 @@
 @import 'components/organisms/_header';
 @import 'components/organisms/_footer';
 @import 'components/organisms/_navigation-menu';
-
+@import 'components/organisms/_form';
 
 /* Pages */
 @import 'pages/_aboutpage';
+@import 'pages/_contactpage';

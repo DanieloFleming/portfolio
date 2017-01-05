@@ -44,7 +44,8 @@ define([
 
         handleClick : function() {
             TweenMax.to(this.el, .7, {
-                opacity:0, y: "+100vh",
+                opacity:0,
+                y: "+100",
                 onComplete : this.handleComplete
             })
         },

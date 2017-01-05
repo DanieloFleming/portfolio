@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tanya Heath Heels</title>
+
+		<style>
+            *, *:before, *:after {
+
+                -webkit-font-smoothing: antialiased;
+                backface-visibility: hidden;
+                box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+
+                -webkit-user-drag: none;
+                -webkit-tap-highlight-color: transparent;
+                -webkit-overflow-scrolling: touch;
+                -webkit-touch-callout: none;
+                -moz-user-select: -moz-none;
+                -ms-user-select: none;
+                -webkit-user-select: none;
+                user-select: none;
+            }
+            html, body{
+                text-align: center;
+                overflow: hidden;
+
+                padding: 20px 20px 0;
+                margin:0;
+            }
+            .container {
+                max-width: 481px;
+                width: 100%;
+                margin:0 auto;
+                overflow: hidden;
+                position: relative;
+            }
+
+            .base {
+                width: 100%;
+                max-width: 481px;
+                position: relative;
+                z-index:10;
+            }
+            .heel {
+                position: absolute;
+                left:0;
+                bottom: 0;
+                width:21%;
+                height: auto;
+                display:none;
+                opacity: 0;
+                z-index:5;
+            }
+
+            .wrapper {
+                position: relative;
+                width: 100%;
+                height: auto;
+            }
+            button {
+                border:none;
+                border-radius:25px;
+                width:50px;
+                height:50px;
+                background: #d4c784;
+                position: absolute;
+                left: 70%;
+                top:30%;
+                z-index:100;
+                padding:0;
+                font-size: 14px;
+            }
+
+            button, button:before {
+                line-height: 50px;
+                text-align: center;
+            }
+
+            button:before {
+                content:'click';
+                z-index: 99;
+                position: absolute;
+                display: block;
+                border-radius:25px;
+                width:50px;
+                height:50px;
+                background: rgba(0, 0, 0, .2);
+                top:0;
+                left:0;
+                opacity: 0;
+                transition: transform .7s ease, opacity .7s ease;
+                text-align: center;
+                background: #ece3b2;
+
+                font-size: 10px;
+            }
+
+            button:before {
+                background: #ece3b2;/*#d4c784;*/
+                z-index:99;
+            }
+
+            button:focus {
+                outline:none;
+            }
+
+            button:hover {
+                cursor: pointer;
+            }
+
+            button:hover:before{
+                transform: scale(1.2);
+                transition: transform .7s ease, opacity .7s ease;
+                color: white;
+                opacity: 1;
+            }
+            button:active:before{
+                transform: none;
+                opacity: 0;
+            }
+
+		</style>
+	</head>
+	<body>
+	<div class="wrapper">
+		<div class="container">
+            <div class="shoe-container">
+                <img src="img/base.png" class="base">
+            </div>
+            <div class="heel-container">
+                <img src="img/1.png" class="heel" style="display:block; opacity:1">
+                <img src="img/2.png" class="heel">
+                <img src="img/3.png" class="heel">
+                <img src="img/4.png" class="heel">
+            </div>
+			
+		</div>
+
+		<button class="button">
+            click
+        </button>
+	</div>
+
+
+		<script type="text/javascript" src="js/TweenLite.min.js"></script>
+		<script type="text/javascript" src="js/CSSPlugin.min.js"></script>
+    <script type="text/javascript">
+
+        (function(){
+            var button, heels, index = 0;
+
+            var initialize = function(){
+                heels = document.querySelectorAll(".heel");
+                button = document.querySelector(".button");
+
+                button.addEventListener("click", _handleButtonClick);
+            }
+
+            var _hidePrevious = function() {
+                var heel = heels[index];
+
+                TweenLite.to(heel, .4, {
+                    opacity:0,
+                    display:'none',
+                    clearProps : "all",
+                    onComplete : _updateIndex
+                });
+            }
+
+            var _updateIndex = function() {
+                index = (index >= heels.length -1) ? 0 : index + 1;
+
+                _showNext();
+            }
+
+            var _showNext = function(id) {
+                var heel = heels[index];
+
+                TweenLite.fromTo(heel, .4, {
+                    opacity : 0,
+                    display:'block',
+                    left:-20
+                }, {
+                    opacity: 1,
+                    left:0
+                });
+            };
+
+            var _handleButtonClick = function(e) {
+                _hidePrevious();
+            }
+
+            initialize();
+
+        })();
+    </script>
+	</body>
+</html>

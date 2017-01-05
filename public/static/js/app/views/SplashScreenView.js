@@ -89,7 +89,6 @@ define([
                         this.handleLoadCompleted();
                     }
                 }.bind(this),
-                //ease : SlowMo.ease.config(0.7, 0.7, false)
                 ease: Circ.easeInOut
             });
 
@@ -110,7 +109,14 @@ define([
         onClose: function () {
             this.preAnimation.kill();
             this.postAnimation.kill();
-        }
+            this.ease = null;
+        },
+        onShow : function() {
+            TweenMax.to(this.el, .4, {
+                opacity:1,
+                display:'block',
+                clearProps:'all'
+            });
+        },
     });
-
 });

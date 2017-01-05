@@ -3,10 +3,9 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8">
-
-        <title>
-
-        </title>
+        <link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/static/img/favicon.ico" type="image/x-icon">
+        <title>welcome @ danielo.nl</title>
         <link rel="stylesheet" href="<?=$paths['css'];?>/main.css">
     </head>
     <body>

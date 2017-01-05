@@ -1,4 +1,4 @@
-<script type="template" id="travel-away">
+<script type="template" id="<?=$slug;?>">
 
     <?= view('layouts.project-item-header');?>
 
@@ -26,5 +26,5 @@
         <img data-delay="0" src="/static/img/cases/travel-away/showcase.jpg" style="width:100%" class="smart-object"/>
     </div>
 
-    <?php echo view('layouts.footer');?>
+    <?php echo view('layouts.project-footer');?>
 </script>

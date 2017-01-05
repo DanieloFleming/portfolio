@@ -1,43 +1,45 @@
 define([
-	'backbone',
+	'app/components/BaseComponent',
 	'underscore'
-	], function(Backbone){
+	], function(BaseComponent, _){
 
-		return Backbone.View.extend({
+		return BaseComponent.extend({
 
 			el: '.navigation',
 
 			ui : {
-				panel : '.navigation-panel'
+				panel : '.navigation-panel',
+                strokes : '.burger-line',
+				links : '.nav-list'
 			},
 
 			events : {
 				'click .navigation-burger' : 'handleClick',
-				'click .nav-listitem' : 'goToPage',
-				//'click .nav-link' : 'preventDefault'
+				'click .nav-listitem' : 'goToPage'
 			},
 
-			initialize : function() {
-				TweenMax.to(this.el, .4, {
-					display:'block',
-					opacity:1
-				});
-				_.bindAll(this, 'addUiElement');
-				this.setUI();
+			initialized : function() {
+				this.el.style.display = "block";
+				TweenMax.staggerFrom(this.ui.strokes, .4, {
+				    x : 25,
+                    clearProps:"all"
+                }, .2)
 			},
 
-			handleClick : function(e) {
-				if(this.clicked) return;
-
-				this.clicked = true;
-				this.togglePanel();
+			handleClick : function() {
+				if(!this.clicked) {
+					this.clicked = true;
+					this.togglePanel();
+                }
 			},
 
 			togglePanel : function() {
 				if(this.isOpen) {
+
 					TweenMax.to($('#application'), .7, {
 						x : "0%"
 					});
+
 					TweenMax.to(this.ui.panel, .7, {
 						display:'none',
 						x:'100%',
@@ -45,19 +47,31 @@ define([
 							this.isOpen = false;
 							this.clicked = false;
 						}.bind(this)
-					})
+					});
+
+                    TweenMax.staggerTo([].slice.call(this.ui.strokes).reverse(), .2, {
+                        x : 0
+                    }, .1);
+
+
 				} else {
+                    TweenMax.staggerTo(this.ui.strokes, .2, {
+                        x : -25
+                    }, .1);
+
 					TweenMax.to($('#application'), .7, {
 						x : "-40%"
 					});
+
 					TweenMax.to(this.ui.panel, .7, {
 						x:'0%',
 						display : 'block',
+						ease:Power1.easeOut,
 						onComplete:function() {
 							this.isOpen = true;
 							this.clicked = false;
 						}.bind(this)
-					})
+					});
 				}
 			},
 
@@ -82,42 +96,30 @@ define([
 					display:'none'
 				});
 
+                TweenMax.staggerTo([].slice.call(this.ui.strokes).reverse(), .2, {
+                    x : 0
+                }, .1);
 
 				this.currentSlug = slug;
 				this.isOpen = false;
 				this.clicked = false;
 			},
 
-			preventDefault : function(e) {
-				console.log('ali');
-				e.preventDefault();
-			},
-
-			setUI : function() {
-				_.each(this.ui, this.addUiElement);
-			},
-
-			addUiElement : function(value, key) {
-				this.ui[key] = document.querySelectorAll(value);
-			},
-
 			hide : function() {
-				//return;
 				this.clicked = true;
 
-				TweenMax.set(this.el, {
-					opacity:0, display: 'none'
-				})
+				TweenMax.set(this.ui.strokes, {
+                    x : 25
+                });
 			},
 
 			show : function() {
-				//return;
 				this.clicked = false;
 
-				TweenMax.to(this.el, .4, {
-					opacity:1, 
-					display: 'block'
-				});
+				TweenMax.staggerTo(this.ui.strokes, .4, {
+                    x : 0,
+                    clearProps:"all"
+                }, .2);
 			}
 		});
 	});

@@ -8,6 +8,7 @@ define([
 		initialize : function(options) {
 			this.sections = Array.prototype.slice.call(this.el.querySelectorAll('.section'));
 			this.elements = this.el.querySelectorAll('[data-delay]');
+            this.showAll = false;
 
 			_.bindAll(this, 'setupTransition', 'update', 'checkIfVisible', 'isVisible', 'fadeInElement', 'terminate', 'removeTransformValues');
 
@@ -30,7 +31,18 @@ define([
 
 	FadeInComponent.prototype.update = function() {
 		this.checkIfVisible();
+        this.checkMaxScroll();
 	};
+
+	FadeInComponent.prototype.checkMaxScroll = function()
+    {
+        var maxScrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var currentScrollPositionY = window.pageYOffset;
+
+        if(maxScrollHeight === currentScrollPositionY) {
+            this.showAll = true;
+        }
+    };
 
 	FadeInComponent.prototype.checkIfVisible = function() {
 		var i = 0, arrayLength = this.sections.length;
@@ -42,7 +54,7 @@ define([
 		for(i; i < arrayLength; i++) {
 			var section = this.sections[i];
 
-			if(section && this.isVisible(section) ) {
+			if(this.showAll || (section && this.isVisible(section) ) ) {
 				this.showElements(section);
 				this.sections.splice(i, 1);
 			}
@@ -55,7 +67,6 @@ define([
 		section.dataset.visible = true;
 
 		_.each(elements, this.fadeInElement);
-
 	};
 	
 	FadeInComponent.prototype.isVisible = function(element) {

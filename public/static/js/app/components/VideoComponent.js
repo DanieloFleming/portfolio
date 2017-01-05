@@ -7,8 +7,8 @@ define([
 		template :'<div class="posterframe"><div class="play-button"></div><div class="video-loader"><span class="loadbar"></span></div></div>',
 		
 		events : {
-			'click .play-button' : 'handleClick',
-			'mousedown video' : 'handleVideoClick',
+			'click video' : 'handleClick',
+			//'mousedown video' : 'handleVideoClick',
 			'ended video' : 'reset'
 		},
 
@@ -21,12 +21,13 @@ define([
 			this.loader = this.el.querySelector('.video-loader');
 			this.loadBar = this.el.querySelector('.loadbar');
 			this.video = this.el.querySelector('video');
+			this.video.style.opacity = 0;
+			this.video.volume = 0;
 			this.firstTime = true;
-			
+			this.isPlaying = false;
+			this.isAnimating = false;
 			this.createPoster();
-			
 			this.video.addEventListener('ended', this.reset)
-
 		},
 
 		createPoster : function() {
@@ -35,9 +36,24 @@ define([
 		},
 
 		handleClick : function() {
+			if(this.isAnimating) return;
+
+			if(this.isPlaying) {
+				this.pauseVideo();
+			} else {
+				this.startVideo();
+			}
+
+			this.isPlaying = !this.isPlaying;
+			this.isAnimating = true;
+		},
+
+		startVideo : function() {
 			this.el.classList.add('clicked');
 
 			if(this.firstTime) {
+				this.video.play();
+				this.video.pause();
 				this.firstTime = false;
 				TweenMax.to(this.loader, .2, {
 					opacity:1
@@ -49,7 +65,6 @@ define([
 			else {
 				this.hideOverlay();
 			}
-
 		},
 
 		startPreLoader : function() {
@@ -62,17 +77,15 @@ define([
 		hideOverlay : function() {
 			this.loadBar.setAttribute('style', '');
 			this.loader.setAttribute('style', '');
-			//this.el.classList.remove('clicked');
-
-			TweenMax.to(this.posterframe, .5, {
-				display:'none',
-				opacity:0, 
-				onComplete: function() {
-					this.el.classList.remove('clicked');
-				}.bind(this)
-			});
 
 			this.playVideo();
+
+			TweenMax.to(this.video, .5, {
+				opacity:1,
+				onComplete: function() {
+					this.isAnimating = false;
+				}.bind(this)
+			});
 		},
 
 		playVideo : function() {
@@ -83,21 +96,15 @@ define([
 			});
 		},
 
-		handleVideoClick : function() {
-			this.pauseVideo();
-		},
-
 		pauseVideo : function() {
-			this.video.pause();
+			this.el.classList.remove('clicked');
 			TweenMax.to(this.video, .5, {
 				volume:0,
+				opacity:0,
 				onComplete:function(){
 					this.video.pause();
+					this.isAnimating = false;
 				}.bind(this)
-			});
-			TweenMax.to(this.posterframe, .5, {
-				display: 'block',
-				opacity:1
 			});
 		},
 
@@ -112,9 +119,6 @@ define([
             this.unbind();
             this.remove();
 		}
-
-
-
 	});
 
 });

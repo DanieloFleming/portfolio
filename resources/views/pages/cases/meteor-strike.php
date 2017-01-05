@@ -1,4 +1,4 @@
-<script type="template" id="meteor-strike">
+<script type="template" id="<?=$slug;?>">
 
     <?= view('layouts.project-item-header');?>
 
@@ -31,10 +31,10 @@
         <div class="row is-unpadded">
             <div class="column is-unpadded">
                 <iframe src="<?= url('/static/demos/mstrike/test.html');?>" style="width:100%; height:100%; max-width:800px;position:absolute;top:0"></iframe>
-                <canvas width="800" height="600" style="width:100%; max-width:800px"></canvas>
+                <canvas width="800" height="600" style="width:100%; max-width:800px;  visibility: hidden"></canvas>
             </div>
         </div>
     </div>
 
-    <?php echo view('layouts.footer');?>
+    <?php echo view('layouts.project-footer');?>
 </script>

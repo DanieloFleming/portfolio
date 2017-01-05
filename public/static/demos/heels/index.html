@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tanya Heath Heels</title>
+
+		<style>
+            *, *:before, *:after {
+
+                -webkit-font-smoothing: antialiased;
+                backface-visibility: hidden;
+                box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+
+                -webkit-user-drag: none;
+                -webkit-tap-highlight-color: transparent;
+                -webkit-overflow-scrolling: touch;
+                -webkit-touch-callout: none;
+                -moz-user-select: -moz-none;
+                -ms-user-select: none;
+                -webkit-user-select: none;
+                user-select: none;
+            }
+            html, body{
+                text-align: center;
+                overflow: hidden;
+
+                padding: 15px 20px 0;
+                margin:0;
+            }
+            .container {
+                max-width: 481px;
+                width: 100%;
+                margin:0 auto;
+                overflow: hidden;
+                position: relative;
+            }
+
+            .base {
+                display: hidden;
+                opacity: 0;
+                position: absolute;
+                width: 100%;
+                max-width: 481px;
+                z-index:10;
+                top:0;
+                left:0;
+            }
+            .heel {
+                position: absolute;
+                left:0;
+                bottom: 0;
+                width:21%;
+                height: auto;
+                display:none;
+                opacity: 0;
+                z-index:5;
+            }
+
+            .wrapper {
+                position: relative;
+                width: 100%;
+                height: auto;
+            }
+            button {
+                border:none;
+                border-radius:25px;
+                width:40px;
+                height:40px;
+                background: #2d2d2d;
+                position: absolute;
+                margin: 0;
+                padding: 0;
+            }
+            .button-shoe {
+                right: 15%;
+                top:20%;
+            }
+
+            .button-heel {
+                left:22%;
+                bottom:8%;
+            }
+
+            .shoe-container, .heel-container {
+                position: absolute;
+                top:0;
+                left: 0;
+                width:100%;
+                height:100%;
+            }
+
+            button:before {
+                content:'+';
+                z-index: 99;
+                position: absolute;
+                display: block;
+                width:40px;
+                height:40px;
+                line-height: 36px;
+                text-align: center;
+                top:0;
+                left:0;
+                margin: 0;
+                padding: 0;
+    
+                transition: transform .4s ease;
+                text-align: center;
+                color:#ece3b2;
+                font-size: 24px;
+            }
+
+            button:focus {
+                outline:none;
+            }
+
+            button:hover {
+                cursor: pointer;
+            }
+
+            button:hover:before{
+                transform: scale(1.2);
+                transform-origin:center;
+                transition: transform .4s ease;
+            }
+
+		</style>
+	</head>
+	<body>
+	<div class="wrapper">
+		<div class="container">
+            <canvas width="481" height="450" style="width:100%; max-width:481px"></canvas>
+            <div class="shoe-container">
+                <img src="img/base-1.png" class="base" style="display:block; opacity:1">
+                <img src="img/base-2.png" class="base">
+                <img src="img/base-3.png" class="base">
+            </div>
+            <div class="heel-container">
+                <img src="img/1.png" class="heel" style="display:block; opacity:1">
+                <img src="img/2.png" class="heel">
+                <img src="img/4.png" class="heel">
+            </div>
+			
+
+        <button class="button button-heel">
+           
+        </button>
+
+        <button class="button button-shoe">
+           
+        </button>
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="js/TweenLite.min.js"></script>
+	<script type="text/javascript" src="js/CSSPlugin.min.js"></script>
+    <script type="text/javascript">
+
+        var ImageSwitch = (function(data){
+            var button, images, index = 0, isAnimating;
+
+            var initialize = function(){
+                images = document.querySelectorAll(data.imageClass);
+                button = document.querySelector(data.buttonClass);
+
+                button.addEventListener("click", _handleButtonClick);
+            }
+
+            var _hidePrevious = function() {
+                var image = images[index];
+
+                TweenLite.to(image, .4, {
+                    opacity:0,
+                    display:'none',
+                    clearProps : "all",
+                    onComplete : _updateIndex
+                });
+            }
+
+            var _updateIndex = function() {
+                index = (index >= images.length -1) ? 0 : index + 1;
+
+                _showNext();
+            }
+
+            var _showNext = function(id) {
+                var image = images[index];
+
+                TweenLite.fromTo(image, .4, {
+                    opacity : 0,
+                    display:'block',
+                    x:-20
+                }, {
+                    opacity: 1,
+                    x:0
+                });
+            };
+
+            var _handleButtonClick = function(e) {
+                if(isAnimating) return;
+
+                isAnimating = true;
+
+                TweenLite.to(button, .8, {
+                    rotation:360,
+                    clearProps: "all",
+                    ease:Power1.easeInOut,
+                    onComplete : function(){
+                        isAnimating = false;
+                    }
+                });
+
+                _hidePrevious();
+            }
+
+            initialize();
+        });
+
+        var heelsAnimator = new ImageSwitch({
+            imageClass : ".heel",
+            buttonClass : '.button-heel'
+        });
+
+        var shoeAnimator = new ImageSwitch({
+            imageClass : ".base",
+            buttonClass : '.button-shoe'
+        });
+    </script>
+	</body>
+</html>
