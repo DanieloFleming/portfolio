@@ -136,7 +136,7 @@ define([
 
         getHeaderImageSize : function(image) {
             var dataSize = this.overlayContainer.getBoundingClientRect();
-
+            this.viewPort = {clientWidth:'', clientHeight:''};
             var ratio = image.width / image.height;
             var viewWidth = this.viewPort.clientWidth = dataSize.width;
             var viewHeight = this.viewPort.clientHeight = dataSize.height;
