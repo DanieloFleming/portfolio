@@ -119,15 +119,15 @@ define([
         },
 
         setupHeaderAnimation : function() {
-            var backgroundData = this.getHeaderImageSize(this.headerImage);
-
-            var scale = this.getScale(backgroundData);
-
             this.overlayContainer = this.$body[0].querySelector('.project-overlay');
             this.overlayImage = this.overlayContainer.querySelector('.overlay-item');
+            this.overlayContainer.style.display = 'block';
+
+            var backgroundData = this.getHeaderImageSize(this.headerImage);
+            var scale = this.getScale(backgroundData);
 
             this.overlayImage.appendChild(this.headerImage);
-            this.overlayContainer.style.display = 'block';
+
 
             this.setOverlayItem(backgroundData);
 
@@ -135,9 +135,11 @@ define([
         },
 
         getHeaderImageSize : function(image) {
+            var dataSize = this.overlayContainer.getBoundingClientRect();
+
             var ratio = image.width / image.height;
-            var viewWidth = this.viewPort.clientWidth;
-            var viewHeight = this.viewPort.clientHeight;
+            var viewWidth = this.viewPort.clientWidth = dataSize.width;
+            var viewHeight = this.viewPort.clientHeight = dataSize.height;
 
             var stretch = (viewWidth / viewHeight > ratio ) ? 'width' : 'height';
 
