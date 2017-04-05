@@ -37,7 +37,8 @@ class FrontController extends Controller
             $this->getProjectIndex(),
             $this->getProjectOverview(),
             view('pages.contactpage'),
-            view('pages.splash-screen')
+            view('pages.splash-screen'),
+            view('errors.404')
         ];
 
         return view($this->layout, ['templates' => $views]);
@@ -54,7 +55,7 @@ class FrontController extends Controller
     private function getProjectIndex()
     {
         $collection = $this->collection;
-        $placeholder = (object)Config::get('projects.placeholders.contact');
+        $placeholder = (object) Config::get('projects.placeholders.contact');
 
         return view('pages.project-index', compact('collection', 'placeholder'));
     }

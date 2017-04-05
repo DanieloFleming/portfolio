@@ -17,28 +17,28 @@
             </div>
         </div>
     </div>
-    <div class="section is-upadded--top">
+    <div class="section">
         <div class="container">
-            <img data-delay="0" src="/static/img/cases/djos-ink/imac-showcase.jpg" style="width:97%" class="smart-object"/>
+            <img data-delay="0" src="/static/img/cases/djos-ink/djos-ink-mac.png" style="width:100%" class="smart-object"/>
         </div>
     </div>
     <div class="section is-colored--dark">
         <div class="container">
-            <img data-delay="0" src="/static/img/cases/djos-ink/ipad-showcase-2.jpg" style="width:100%" class="smart-object"/>
+            <img data-delay="0" src="/static/img/cases/djos-ink/djos-ink-pads.png" style="width:100%; max-width:1080px;" class="smart-object"/>
         </div>
     </div>
     <div class="section">
         <div class="container">
-            <img data-delay="0" src="/static/img/cases/djos-ink/iphone-showcase-2.jpg" style="width:100%" class="smart-object"/>
+            <img data-delay="0" src="/static/img/cases/djos-ink/djos-ink-mobiles-2.png" style="width:100%;" class="smart-object"/>
         </div>
-    </div>
+    </div><!--
     <div class="section is-colored--dark">
         <div class="container">
             <img data-delay="0" src="/static/img/cases/djos-ink/browser-showcase.jpg" style="width:100%" class="smart-object"/>
         </div>
-    </div>
+    </div>-->
     <div class="section is-unpadded" style="overflow:hidden; background-color:black;">
-        <div class="video-container" data-component="video" data-delay="0">
+        <div class="video-container" data-component="video">
             <video class="video-full" poster="/static/img/cases/djos-ink/poster3.jpg">
                 <source src="/static/video/cases/djos-ink/djos-ink-promo_hd.mp4" type="video/mp4">
             </video>

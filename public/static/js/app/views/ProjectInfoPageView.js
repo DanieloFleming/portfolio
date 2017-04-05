@@ -41,7 +41,7 @@ define([
 
         events : {
             'click .footer-cases' : 'handleCaseClicked',
-            'click .section-header' : 'interact'
+            'click .section-header' : 'interact',
         },
 
         onInitialize : function () {
@@ -53,7 +53,7 @@ define([
         },
 
         initialized : function () {
-            _.bindAll(this, 'handleComplete', 'preparePageChange');
+            _.bindAll(this, 'handleComplete', 'preparePageChange', 'handleKeyPress');
 
             ComponentLoader.load(this.ui.components);
 
@@ -76,11 +76,12 @@ define([
 
             this.isClicked = true;
             this.components.projectViewer.isClicked = true;
+            //$('body').off('keyup', this.handleKeyPress);
 
             TweenMax.to(this.el, .7, {
-                opacity:0, y: "+100vh",
+                opacity:0,
                 onComplete : this.handleComplete
-            })
+            });
         },
 
         handleComplete : function() {
@@ -92,6 +93,8 @@ define([
 
             this.ui.headerImage.removeAttribute("data-headerImageUrl");
             this.ui.headerImage.style.backgroundImage = "url(" + headerImageUrl + ")";
+
+            $('body').on('keyup', this.handleKeyPress);
         },
 
         setModel : function(model) {
@@ -115,6 +118,8 @@ define([
         },
 
         preparePageChange : function() {
+            $('body').off('keyup', this.handleKeyPress);
+
             if(this.ui.demos) {
                 TweenMax.set(this.ui.demos, {
                     opacity:0
@@ -122,7 +127,24 @@ define([
             }
         },
 
+        handleKeyPress : function(e) {
+            var slug;
+            switch (e.keyCode) {
+                case 37:
+                    slug = this.model.get('prev').slug;
+                    break;
+                case 39:
+                    slug = this.model.get('next').slug;
+                    break;
+                default: return;
+            }
+
+            app.router.navigate('/cases/' + slug, {trigger: true});
+        },
+
         onClose : function() {
+            $('body').off('keyup', this.handleKeyPress);
+
             this.isClicked = false;
 
             ComponentLoader.close();

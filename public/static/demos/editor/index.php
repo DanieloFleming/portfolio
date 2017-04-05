@@ -44,9 +44,9 @@
                     });
                 })();
 
-                $('html').one('mouseover', function(){
+              /*  $('html').one('mouseover', function(){
                     $('.editor-field.field-title').focus();
-                });
+                });*/
 
                 var StoreActions = (function () {
 
@@ -72,7 +72,6 @@
 
                     _addEvents();
                 })();
-
 
                 function isEmpty(value) {
                     var val = value.toString().trim();

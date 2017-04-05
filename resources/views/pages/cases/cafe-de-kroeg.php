@@ -24,7 +24,7 @@
     </div>
 
     <div class="section is-unpadded" style="overflow:hidden; background-color:black;">
-        <div class="video-container" data-component="video" data-delay="0">
+        <div class="video-container" data-component="video">
             <video class="video-full" poster="/static/img/cases/cafe-de-kroeg/poster.jpg">
                 <source src="/static/video/cases/cafe-de-kroeg/promo.mp4" type="video/mp4">
             </video>

@@ -1,38 +1,43 @@
 <script type="template" id="contactpage">
-    <section class="section section-header is-unpadded">
+    <section class="section section-header is-unpadded  is-inverted">
         <div class="row fill-parent is-aligned--middle is-unpadded is-aligned--center">
 
-            <!--<div class="header-background" data-delay="0" data-transition-type="fadeIn" style="background: black"></div>
--->
+            <div class="header-background" data-delay="0" data-transition-type="fadeIn"
+                 style="background-color:black; background-image:url('/static/img/backgrounds/world-white.png');"></div>
+
             <ul class="list is-centered list-contact">
-                <li class="list-item list-contact-item" data-delay=".2"><a target="_blank" href="mailto:connect@danielo.nl"> <i>connect</i>@danielo.nl</a></li>
-                <li class="list-item list-contact-item" data-delay=".4"><a target="_blank"  href="https://m.me/danielo.fleming"><i>m.me</i>/danielo.fleming</a></li>
-                <li class="list-item list-contact-item list-contact-item-phone" data-delay=".6"><a  target="_blank" href="tel:+31640217920"><i>+316</i> 40 217 029</a></li>
+                <li class="list-item list-contact-item" data-delay=".2"><a href="mailto:connect@danielo.nl"> <i>connect</i>@danielo.nl</a></li>
+                <li class="list-item list-contact-item">
+                    <ul class="list-horizontal list-social-icons list-social--footer">
+                        <li data-delay=".4" class="list-item"><a target="_blank" href="https://www.linkedin.com/in/danielofleming/" class="social-icons social-icon--linkedin"></a></li>
+                        <li data-delay=".6" class="list-item"><a target="_blank" href="https://api.whatsapp.com/send?phone=31640217920" class="social-icons social-icon--whatsapp"></a></li>
+                        <li data-delay=".8" class="list-item"><a target="_blank" href="https://m.me/danielo.fleming" class="social-icons social-icon--messenger"></a></li>
+                        <li data-delay="1" class="list-item"><a  href="mailto:connect@danielo.nl" class="social-icons social-icon--email"></a></li>
+                    </ul>
+                </li><!--
+                <li class="list-item list-contact-item">
+                    <textarea type="text" style="font-family: 'Avenir Next LT Pro Regular';
+    border: 2px solid #bababa;
+    border-radius: 25px;
+    background: none;
+    color: white;
+    padding: 20px;
+    font-size: 12pt;
+    font-weight: 100;
+    height: 131px;
+    resize: none;
+    width: 100%;"></textarea>
+                    <button style="border: 2px solid #bababa;
+    border-radius: 25px;
+    background: none;
+    color: white;
+    padding: 10px;
+    font-size: 12pt;
+    display: block;
+    width: 50%;
+    margin: 20px auto 0;">Send</button>
+                </li>-->
             </ul>
-
-            <div class="scroll-indicator scroll-to" data-delay=".8">
-                <span class="indicator"></span>
-                <span class="indicator-text text-top">make</span>
-                <span class="indicator-text text-bottom">contact</span>
-            </div>
         </div>
     </section>
-
-    <section class="section is-unpadded is-inverted" style="height:100vh; background: black;">
-        <div class="row fill-parent is-aligned--middle is-aligned--center is-unpadded ">
-            <form class="form is-centered">
-                <h3 data-delay="0" class="is-bold is-aligned--center">Adele</h3>
-                <h5 data-delay=".2" class="is-aligned--center">Or lionel Richi...</h5>
-                <br /><br />
-                <div class="input-container">
-                    <input type="email" class="input-text form-field" placeholder="@mail..." data-delay=".2">
-                </div>
-                <div class="input-container">
-                    <textarea class="input-textfield form-field" data-delay=".5" placeholder="A great big world..."></textarea>
-                </div>
-                <button class="button-submit" data-delay=".8">connect</button>
-            </form>
-        </div>
-    </section>
-
 </script>

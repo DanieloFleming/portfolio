@@ -59,6 +59,9 @@
 
 	overflow:hidden;
 }
+.black-style .posterframe .play-button {
+	background:rgba(0, 0, 0, .3);
+ }
 .clicked .play-button{
 	transform:scale(1.4, 0);
 	transition:transform .5s;
@@ -71,6 +74,7 @@
 	transform:scale(.7) rotate(90deg);
 	transition:transform .5s;
 }
+
 .play-button:before {
 	content:'';
 	width:50px;

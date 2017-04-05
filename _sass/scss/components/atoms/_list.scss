@@ -13,6 +13,9 @@
 	white-space: nowrap;
 }
 
+.list-horizontal .list-item {
+	display: inline-block;
+}
 .list-vertical .list-item {
-	list-style: inline-block;
+	display:block;
 }

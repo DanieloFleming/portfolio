@@ -1,6 +1,10 @@
 <script type="template" class="page" id="homepage">
-    <section class="section section-header is-unpadded is-inverted">
-        <div data-delay="0" data-transition-type="fadeIn" class="row fill-parent is-aligned--middle is-unpadded is-aligned--center" style="background-color: black">
+
+    <section class="section section-header header-homepage is-unpadded is-inverted">
+        <video class="video-header-homepage"muted autoplay loop data-delay=".5">
+            <source src="/static/video/trailer.mp4" type="video/mp4">
+        </video>
+        <div data-delay="0" data-transition-type="fadeIn" class="row fill-parent is-aligned--middle is-unpadded is-aligned--center header-content" style="position:absolute">
             <div class="column span-8-10 space-l-1-10 span-md-10-10 space-md-none">
                 <h1 class="title" data-delay=".2">I'm pointing at the moon, but you keep looking at my finger.</h1>
                 <h3 class="text is-bold" data-delay=".4"> - <i>VAST</i>AIRE - </h3>
@@ -13,7 +17,7 @@
         </div>
     </section>
 
-    <section class="section section-portfolio-items is-unpadded is-colored--dark">
+    <section class="section section-portfolio-items is-unpadded is-inverted">
 
         <% for(var index = 0; index <= collection.length; index++) {
             var model = collection[index] || {};
@@ -30,7 +34,7 @@
 
             <% if (index - collection.length === 0) { %>
                 <div class="project-item-placeholder all-cases" data-delay="<%= delay %>">
-                    <figure class="project-item-thumb smart-object" style="background-image:url('<?=$placeholder->header;?>');"></figure>
+                    <figure class="project-item-thumb" style="background-image:url('<?=$placeholder->header;?>');"></figure>
                     <h2 class="project-item-title"><?=$placeholder->sub_title;?></h2>
                 </div>
             <% } else { %>
@@ -45,4 +49,5 @@
 
         <% if( collection.length % 2 === 1 ) %> </div>
     </section>
+    <?= view('layouts.footer');?>
 </script>

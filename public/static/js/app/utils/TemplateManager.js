@@ -12,7 +12,7 @@ define([
 		var _getTemplateId = function(model) {
 			var slug = model.get('slug');
 
-			var templateId = ($('#' + slug).length !== 0) ? '#' + slug : '#' + 'project-overview';
+			var templateId = ($('#' + slug).length !== 0) ? '#' + slug : '#project-overview';
 
 			slugs[slug] = templateId;
 

@@ -6,7 +6,7 @@
 	Dimension 
 */
 /*
-  	Fonts
+  	Dirs
  */
 /* font-size */
 /* font-family */
@@ -1677,8 +1677,13 @@ svg.logo .path {
 }
 
 /* line 16, ../../../_sass/scss/components/atoms/_list.scss */
+.list-horizontal .list-item {
+  display: inline-block;
+}
+
+/* line 19, ../../../_sass/scss/components/atoms/_list.scss */
 .list-vertical .list-item {
-  list-style: inline-block;
+  display: block;
 }
 
 /* line 1, ../../../_sass/scss/components/atoms/_text.scss */
@@ -1864,24 +1869,29 @@ i {
 }
 
 /* line 62, ../../../_sass/scss/components/molecules/_video.scss */
+.black-style .posterframe .play-button {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* line 65, ../../../_sass/scss/components/molecules/_video.scss */
 .clicked .play-button {
   transform: scale(1.4, 0);
   transition: transform .5s;
 }
 
-/* line 66, ../../../_sass/scss/components/molecules/_video.scss */
+/* line 69, ../../../_sass/scss/components/molecules/_video.scss */
 .video-container:hover .play-button:before, .clicked .play-button:before {
   transform: scale(1.4);
   transition: transform .5s;
 }
 
-/* line 70, ../../../_sass/scss/components/molecules/_video.scss */
+/* line 73, ../../../_sass/scss/components/molecules/_video.scss */
 .video-container:hover .play-button:after, .clicked .play-button:after {
   transform: scale(0.7) rotate(90deg);
   transition: transform .5s;
 }
 
-/* line 74, ../../../_sass/scss/components/molecules/_video.scss */
+/* line 78, ../../../_sass/scss/components/molecules/_video.scss */
 .play-button:before {
   content: '';
   width: 50px;
@@ -1895,7 +1905,7 @@ i {
   transition: transform, .5s;
 }
 
-/* line 90, ../../../_sass/scss/components/molecules/_video.scss */
+/* line 94, ../../../_sass/scss/components/molecules/_video.scss */
 .play-button:after {
   position: absolute;
   content: '';
@@ -1910,7 +1920,7 @@ i {
   transition: transform, .5s;
 }
 
-/* line 107, ../../../_sass/scss/components/molecules/_video.scss */
+/* line 111, ../../../_sass/scss/components/molecules/_video.scss */
 .video-loader {
   display: block;
   width: 100px;
@@ -1925,13 +1935,13 @@ i {
   overflow: hidden;
 }
 
-/* line 121, ../../../_sass/scss/components/molecules/_video.scss */
+/* line 125, ../../../_sass/scss/components/molecules/_video.scss */
 .clicked .video-loader {
   display: block;
   opacity: 0;
 }
 
-/* line 126, ../../../_sass/scss/components/molecules/_video.scss */
+/* line 130, ../../../_sass/scss/components/molecules/_video.scss */
 .loadbar {
   display: block;
   width: 100px;
@@ -1941,6 +1951,141 @@ i {
   left: 0;
   overflow: hidden;
   transform: translateX(-100px);
+}
+
+/* line 1, ../../../_sass/scss/components/molecules/_social-icons.scss */
+.list-social-icons {
+  width: 220px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* line 7, ../../../_sass/scss/components/molecules/_social-icons.scss */
+.social-icons {
+  position: relative;
+  border: 1px solid transparent;
+  border-radius: 25px;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  background-position: center center;
+  background-size: 100%;
+}
+
+/* line 17, ../../../_sass/scss/components/molecules/_social-icons.scss */
+.social-icons:before,
+.social-icons:after {
+  content: '';
+  border-radius: 25px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+/* line 28, ../../../_sass/scss/components/molecules/_social-icons.scss */
+.social-icons:before {
+  transition: opacity .3s ease-in;
+}
+
+/* line 31, ../../../_sass/scss/components/molecules/_social-icons.scss */
+.social-icons:after {
+  opacity: 1;
+  transform: scale(1.1, 1.1);
+}
+
+/* line 35, ../../../_sass/scss/components/molecules/_social-icons.scss */
+.social-icons:hover:before {
+  opacity: .8;
+  transition: opacity .3s ease-out;
+}
+
+/* line 39, ../../../_sass/scss/components/molecules/_social-icons.scss */
+.social-icons:hover:after {
+  opacity: 0;
+  transform: scale(2, 2);
+  transition: opacity .6s ease-out, transform .6s ease-out;
+}
+
+/* line 45, ../../../_sass/scss/components/molecules/_social-icons.scss */
+.list-social--footer > li {
+  margin: 0 5px;
+}
+/* line 48, ../../../_sass/scss/components/molecules/_social-icons.scss */
+.list-social--footer .social-icons:before {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+/* line 51, ../../../_sass/scss/components/molecules/_social-icons.scss */
+.list-social--footer .social-icons:after {
+  border: 2px solid rgba(255, 255, 255, 0.7);
+}
+/* line 54, ../../../_sass/scss/components/molecules/_social-icons.scss */
+.list-social--footer .social-icons:hover {
+  border: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+/* line 58, ../../../_sass/scss/components/molecules/_social-icons.scss */
+.list-social--menu {
+  margin: 0 auto;
+  text-align: center;
+}
+/* line 62, ../../../_sass/scss/components/molecules/_social-icons.scss */
+.list-social--menu .list-item {
+  margin: 0 5px;
+}
+/* line 66, ../../../_sass/scss/components/molecules/_social-icons.scss */
+.list-social--menu .social-icons:before {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+/* line 70, ../../../_sass/scss/components/molecules/_social-icons.scss */
+.list-social--menu .social-icons:after {
+  border: 2px solid rgba(0, 0, 0, 0.5);
+}
+/* line 73, ../../../_sass/scss/components/molecules/_social-icons.scss */
+.list-social--menu .social-icons:hover {
+  border: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+/* line 77, ../../../_sass/scss/components/molecules/_social-icons.scss */
+.social-icon--linkedin {
+  background-image: url("/static/img//sprites/socials/linked.gif");
+}
+
+/* line 80, ../../../_sass/scss/components/molecules/_social-icons.scss */
+.social-icon-dark--linkedin {
+  background-image: url("/static/img//sprites/socials/linkedin-black.gif");
+}
+
+/* line 83, ../../../_sass/scss/components/molecules/_social-icons.scss */
+.social-icon--messenger {
+  background-image: url("/static/img//sprites/socials/messenger.gif");
+}
+
+/* line 86, ../../../_sass/scss/components/molecules/_social-icons.scss */
+.social-icon-dark--messenger {
+  background-image: url("/static/img//sprites/socials/messenger-black.gif");
+}
+
+/* line 89, ../../../_sass/scss/components/molecules/_social-icons.scss */
+.social-icon--email {
+  background-image: url("/static/img//sprites/socials/mail.gif");
+}
+
+/* line 92, ../../../_sass/scss/components/molecules/_social-icons.scss */
+.social-icon-dark--email {
+  background-image: url("/static/img//sprites/socials/mail-black.gif");
+}
+
+/* line 95, ../../../_sass/scss/components/molecules/_social-icons.scss */
+.social-icon--whatsapp {
+  background-image: url("/static/img//sprites/socials/whatsapp.png");
+}
+
+/* line 98, ../../../_sass/scss/components/molecules/_social-icons.scss */
+.social-icon-dark--whatsapp {
+  background-image: url("/static/img//sprites/socials/whatsapp-black.png");
 }
 
 /* line 1, ../../../_sass/scss/components/molecules/_project-item.scss */
@@ -1959,10 +2104,11 @@ i {
 /* line 13, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item,
 .project-item-placeholder {
+  will-change: transform, opacity;
   overflow: hidden;
 }
 
-/* line 17, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 18, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-container .project-item,
 .project-item-placeholder {
   position: absolute;
@@ -1972,7 +2118,7 @@ i {
   overflow: hidden;
   background-color: black;
 }
-/* line 29, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 30, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-container .project-item .project-item-thumb,
 .project-item-placeholder .project-item-thumb {
   position: absolute;
@@ -1992,7 +2138,7 @@ i {
   transition: transform 0.34s;
 }
 
-/* line 45, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 46, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-container .project-item-thumb:after,
 .project-overlay .overlay-item:after {
   content: '';
@@ -2001,23 +2147,23 @@ i {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   opacity: 0;
-  will-change: transform;
+  will-change: transform, opacity;
   transition: opacity .6s;
 }
 
-/* line 61, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 62, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-container .project-item:nth-child(1),
 .project-item-container .project-item-placeholder:nth-child(1) {
   left: 0;
 }
 
-/* line 66, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 67, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-container .project-item:nth-child(2),
 .project-item-container .project-item-placeholder:nth-child(2) {
   right: 0;
 }
 
-/* line 71, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 72, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-overlay {
   position: fixed;
   top: 0;
@@ -2029,7 +2175,7 @@ i {
   z-index: 100;
 }
 
-/* line 85, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 86, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-overlay .overlay-item {
   position: absolute;
   overflow: hidden;
@@ -2039,15 +2185,15 @@ i {
   width: 50vw;
   height: calc(50vw / 1.5);
 }
-/* line 95, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 96, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-overlay .overlay-item:after {
   opacity: 1;
 }
-/* line 99, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 100, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-overlay .overlay-item .overlay-item-thumb {
   position: absolute;
 }
-/* line 103, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 104, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-overlay .overlay-item.full {
   -moz-transform: translate(0%, 0%) scale(1);
   -ms-transform: translate(0%, 0%) scale(1);
@@ -2055,7 +2201,7 @@ i {
   transform: translate(0%, 0%) scale(1);
 }
 
-/* line 108, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 109, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-title {
   position: absolute;
   font-size: 48px;
@@ -2070,11 +2216,11 @@ i {
   -webkit-transition: -webkit-transform 0.34s, opacity 0.34s;
   transition: transform 0.34s, opacity 0.34s;
 }
-/* line 122, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 123, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-title i {
   font-family: "latoblack";
 }
-/* line 126, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 127, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-title:before {
   content: 'view';
   position: absolute;
@@ -2087,12 +2233,12 @@ i {
   opacity: 0;
 }
 
-/* line 136, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 137, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-container .project-item:not([data-delay]):hover,
 .project-item-container .project-item-placeholder:not([data-delay]):hover {
   cursor: pointer;
 }
-/* line 140, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 141, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-container .project-item:not([data-delay]):hover .project-item-thumb,
 .project-item-container .project-item-placeholder:not([data-delay]):hover .project-item-thumb {
   -moz-transform: scale(1, 1);
@@ -2104,13 +2250,13 @@ i {
   -webkit-transition: -webkit-transform 0.34s;
   transition: transform 0.34s;
 }
-/* line 145, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 146, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-container .project-item:not([data-delay]):hover .project-item-thumb:after,
 .project-item-container .project-item-placeholder:not([data-delay]):hover .project-item-thumb:after {
   opacity: 1;
   transition: opacity .35s;
 }
-/* line 150, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 151, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-container .project-item:not([data-delay]):hover .project-item-title, .project-item-container .project-item:not([data-delay]):hover .project-item-title:before,
 .project-item-container .project-item-placeholder:not([data-delay]):hover .project-item-title,
 .project-item-container .project-item-placeholder:not([data-delay]):hover .project-item-title:before {
@@ -2125,7 +2271,7 @@ i {
   transition: transform 0.34s, opacity 0.34s;
 }
 
-/* line 161, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 162, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-container .project-item.selected .project-item-thumb {
   -moz-transform: scale(1, 1);
   -ms-transform: scale(1, 1);
@@ -2136,7 +2282,7 @@ i {
   -webkit-transition: -webkit-transform 0.34s;
   transition: transform 0.34s;
 }
-/* line 167, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 168, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-container .project-item.selected .project-item-title {
   opacity: 0 !important;
   -moz-transition: -moz-transform 0.34s, opacity 0.34s;
@@ -2144,7 +2290,7 @@ i {
   -webkit-transition: -webkit-transform 0.34s, opacity 0.34s;
   transition: transform 0.34s, opacity 0.34s;
 }
-/* line 173, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 174, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-container .project-item.selected .project-item-thumb:after {
   opacity: 1;
   transition: opacity .35s;
@@ -2153,7 +2299,7 @@ i {
   -webkit-transition: opacity 0.34s;
   transition: opacity 0.34s;
 }
-/* line 178, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 179, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-container .project-item.selected .project-item-thumb:after {
   -moz-transform: scale(1, 1);
   -ms-transform: scale(1, 1);
@@ -2165,7 +2311,7 @@ i {
   transition: transform 0.34s;
 }
 
-/* line 184, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 185, ../../../_sass/scss/components/molecules/_project-item.scss */
 .empty-project-item {
   cursor: pointer;
   position: absolute;
@@ -2175,41 +2321,46 @@ i {
   padding: 20px;
   overflow: hidden;
 }
-/* line 193, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 194, ../../../_sass/scss/components/molecules/_project-item.scss */
 .empty-project-item p, .empty-project-item h2 {
   color: white;
   text-transform: uppercase;
-  text-align: center;
   font-weight: bold;
 }
-/* line 200, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 201, ../../../_sass/scss/components/molecules/_project-item.scss */
 .empty-project-item h2 {
-  margin-top: 23%;
+  position: absolute;
+  top: 44%;
+  left: 0;
+  padding: 20px;
   transform: translateY(-50%);
   font-size: 46px;
   transition: transform .7s ease;
+  max-width: 600px;
+  text-align: left;
 }
-/* line 207, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 213, ../../../_sass/scss/components/molecules/_project-item.scss */
 .empty-project-item .text-bottom {
   font-size: 14px;
   position: absolute;
   bottom: 20px;
-  left: 10px;
-  right: 10px;
+  left: 20px;
+  right: 20px;
 }
-/* line 215, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 221, ../../../_sass/scss/components/molecules/_project-item.scss */
 .empty-project-item.full {
   width: 100%;
 }
-/* line 218, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 224, ../../../_sass/scss/components/molecules/_project-item.scss */
 .empty-project-item.left {
   left: 0;
+  width: 100%;
 }
-/* line 222, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 229, ../../../_sass/scss/components/molecules/_project-item.scss */
 .empty-project-item.right {
   right: 0;
 }
-/* line 226, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 233, ../../../_sass/scss/components/molecules/_project-item.scss */
 .empty-project-item:before {
   content: "";
   position: absolute;
@@ -2220,66 +2371,66 @@ i {
   background: rgba(0, 0, 0, 0.5);
   transition: transform .7s ease;
 }
-/* line 235, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 242, ../../../_sass/scss/components/molecules/_project-item.scss */
 .empty-project-item:hover:before {
   transform: scale(1.2);
   transition: transform .7s ease;
 }
-/* line 239, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 246, ../../../_sass/scss/components/molecules/_project-item.scss */
 .empty-project-item:hover h2 {
   transform: translateY(-45%);
   transition: transform .7s ease;
 }
 
 @media (max-width: 400px) {
-  /* line 248, ../../../_sass/scss/components/molecules/_project-item.scss */
+  /* line 254, ../../../_sass/scss/components/molecules/_project-item.scss */
   .empty-project-item h2 {
     font-size: 36px;
   }
 }
 @media (max-width: 768px) {
-  /* line 253, ../../../_sass/scss/components/molecules/_project-item.scss */
+  /* line 259, ../../../_sass/scss/components/molecules/_project-item.scss */
   .on-homescreen {
     display: block;
   }
 
-  /* line 256, ../../../_sass/scss/components/molecules/_project-item.scss */
+  /* line 262, ../../../_sass/scss/components/molecules/_project-item.scss */
   .project-item-container {
     height: calc(100vw / 1.5);
   }
-  /* line 259, ../../../_sass/scss/components/molecules/_project-item.scss */
+  /* line 265, ../../../_sass/scss/components/molecules/_project-item.scss */
   .project-item-container.double {
     height: calc(200vw / 1.5);
   }
-  /* line 262, ../../../_sass/scss/components/molecules/_project-item.scss */
+  /* line 268, ../../../_sass/scss/components/molecules/_project-item.scss */
   .project-item-container.double .project-item:nth-child(1),
   .project-item-container.double .project-item-placeholder:first-child,
   .project-item-container.double .empty-project-item.left {
     top: 0;
   }
-  /* line 268, ../../../_sass/scss/components/molecules/_project-item.scss */
+  /* line 274, ../../../_sass/scss/components/molecules/_project-item.scss */
   .project-item-container.double .project-item:nth-child(2),
   .project-item-container.double .project-item-placeholder,
   .project-item-container.double .empty-project-item.right {
     top: calc(100vw / 1.5);
   }
-  /* line 274, ../../../_sass/scss/components/molecules/_project-item.scss */
+  /* line 280, ../../../_sass/scss/components/molecules/_project-item.scss */
   .project-item-container.double .project-item, .project-item-container.double .project-item-placeholder, .project-item-container.double .empty-project-item {
     height: 50%;
   }
 
-  /* line 281, ../../../_sass/scss/components/molecules/_project-item.scss */
+  /* line 287, ../../../_sass/scss/components/molecules/_project-item.scss */
   .project-item-container .project-item, .project-item-container .project-item-placeholder, .empty-project-item {
     width: 100%;
   }
-  /* line 284, ../../../_sass/scss/components/molecules/_project-item.scss */
+  /* line 290, ../../../_sass/scss/components/molecules/_project-item.scss */
   .project-item-container .project-item .project-item-thumb, .project-item-container .project-item-placeholder .project-item-thumb, .empty-project-item .project-item-thumb {
     position: absolute;
     width: 100%;
     height: calc(100vw / 1.5);
   }
 
-  /* line 291, ../../../_sass/scss/components/molecules/_project-item.scss */
+  /* line 297, ../../../_sass/scss/components/molecules/_project-item.scss */
   .project-overlay .overlay-item, .project-item-placeholder, .empty-project-item {
     width: 100vw;
     height: calc(100vw / 1.5);
@@ -2620,33 +2771,50 @@ i {
   font-size: 120px;
 }
 
+/* line 34, ../../../_sass/scss/components/organisms/_header.scss */
+.header-homepage video {
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) !important;
+}
+/* line 44, ../../../_sass/scss/components/organisms/_header.scss */
+.header-homepage .header-content:before {
+  content: '';
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  background: url("/static/img/backgrounds/pattern-a.png") center center repeat;
+  opacity: .7;
+}
+
 @media (max-width: 768px) {
-  /* line 34, ../../../_sass/scss/components/organisms/_header.scss */
+  /* line 54, ../../../_sass/scss/components/organisms/_header.scss */
   .case-header-title {
     font-size: 80px;
   }
 }
 /* line 1, ../../../_sass/scss/components/organisms/_footer.scss */
 footer {
-  bottom: 0;
-  left: 0;
-  right: 0;
   background: black;
-  height: 70px;
 }
-/* line 10, ../../../_sass/scss/components/organisms/_footer.scss */
+/* line 4, ../../../_sass/scss/components/organisms/_footer.scss */
 footer.hidden {
   display: none;
 }
 
-/* line 14, ../../../_sass/scss/components/organisms/_footer.scss */
+/* line 8, ../../../_sass/scss/components/organisms/_footer.scss */
 .footer-cases {
   cursor: pointer;
   background: #1a1a1a;
   overflow: hidden;
 }
 
-/* line 19, ../../../_sass/scss/components/organisms/_footer.scss */
+/* line 13, ../../../_sass/scss/components/organisms/_footer.scss */
 .footer-cases:before {
   content: "";
   position: absolute;
@@ -2666,7 +2834,7 @@ footer.hidden {
   transition: transform 0.34s;
 }
 
-/* line 35, ../../../_sass/scss/components/organisms/_footer.scss */
+/* line 29, ../../../_sass/scss/components/organisms/_footer.scss */
 .footer-cases:hover:before {
   -moz-transform: translateY(0px);
   -ms-transform: translateY(0px);
@@ -2678,7 +2846,7 @@ footer.hidden {
   -webkit-transition: -webkit-transform 0.34s;
   transition: transform 0.34s;
 }
-/* line 41, ../../../_sass/scss/components/organisms/_footer.scss */
+/* line 35, ../../../_sass/scss/components/organisms/_footer.scss */
 .footer-cases:hover .footer-cases-text {
   -moz-transform: translateY(10px);
   -ms-transform: translateY(10px);
@@ -2689,7 +2857,7 @@ footer.hidden {
   -webkit-transition: -webkit-transform 0.7s;
   transition: transform 0.7s;
 }
-/* line 47, ../../../_sass/scss/components/organisms/_footer.scss */
+/* line 41, ../../../_sass/scss/components/organisms/_footer.scss */
 .footer-cases:hover .footer-cases-text:before {
   opacity: 1;
   -moz-transform: translate(-50%, -20px);
@@ -2702,7 +2870,7 @@ footer.hidden {
   transition: transform 0.7s, opacity, 0.7s;
 }
 
-/* line 54, ../../../_sass/scss/components/organisms/_footer.scss */
+/* line 48, ../../../_sass/scss/components/organisms/_footer.scss */
 .footer-cases-text {
   text-align: center;
   font-weight: bold;
@@ -2718,7 +2886,7 @@ footer.hidden {
   transition: transform 0.7s;
 }
 
-/* line 63, ../../../_sass/scss/components/organisms/_footer.scss */
+/* line 57, ../../../_sass/scss/components/organisms/_footer.scss */
 .footer-cases-text:before {
   content: "VIEW";
   position: absolute;
@@ -2853,11 +3021,12 @@ footer.hidden {
 
 /* line 100, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
 .list-navigation-contact {
+  padding: 10px;
   position: absolute;
-  bottom: 20px;
+  bottom: 0px;
   width: 100%;
 }
-/* line 105, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
+/* line 106, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
 .list-navigation-contact .list-item h5 {
   text-align: center;
 }
@@ -2872,13 +3041,14 @@ footer.hidden {
 }
 
 /* line 12, ../../../_sass/scss/components/organisms/_form.scss */
-.input-text {
+.input-text, .button-submit {
   padding: 5px;
   width: 100%;
-  font-size: 40px;
+  font-size: 14px;
+  height: 45px;
 }
 
-/* line 19, ../../../_sass/scss/components/organisms/_form.scss */
+/* line 20, ../../../_sass/scss/components/organisms/_form.scss */
 .input-textfield {
   font-size: 14px;
   width: 100%;
@@ -2887,33 +3057,28 @@ footer.hidden {
   resize: none;
 }
 
-/* line 27, ../../../_sass/scss/components/organisms/_form.scss */
+/* line 28, ../../../_sass/scss/components/organisms/_form.scss */
 .button-submit {
-  width: 100%;
-  height: 40px;
-  line-height: 40px;
-  border: none;
   color: white;
-  background: #2d2d2d;
+  background: transparent;
 }
 
-/* line 36, ../../../_sass/scss/components/organisms/_form.scss */
-.input-text, .input-textfield {
+/* line 32, ../../../_sass/scss/components/organisms/_form.scss */
+.input-text, .input-textfield, .button-submit {
   border: none;
-  border-left: 1px solid white;
-  border-bottom: 1px solid white;
+  border: 1px solid white;
   background: black;
   color: white;
   padding: 5px;
 }
 
-/* line 45, ../../../_sass/scss/components/organisms/_form.scss */
+/* line 41, ../../../_sass/scss/components/organisms/_form.scss */
 .input-container {
   position: relative;
-  margin-bottom: 25px;
+  margin-bottom: -2px;
 }
 
-/* line 49, ../../../_sass/scss/components/organisms/_form.scss */
+/* line 45, ../../../_sass/scss/components/organisms/_form.scss */
 .input-container:before, .input-container:after {
   content: "";
   position: absolute;
@@ -2925,7 +3090,7 @@ footer.hidden {
   transition: transform 0.4s ease, background-color 1s ease;
 }
 
-/* line 58, ../../../_sass/scss/components/organisms/_form.scss */
+/* line 54, ../../../_sass/scss/components/organisms/_form.scss */
 .input-container.error:before, .input-container.error:after {
   background-color: red;
   -moz-transition: background-color 0.3s ease;
@@ -2934,7 +3099,7 @@ footer.hidden {
   transition: background-color 0.3s ease;
 }
 
-/* line 62, ../../../_sass/scss/components/organisms/_form.scss */
+/* line 58, ../../../_sass/scss/components/organisms/_form.scss */
 .input-container:before {
   width: 2px;
   height: 100%;
@@ -2946,7 +3111,7 @@ footer.hidden {
   transform-origin: top;
 }
 
-/* line 69, ../../../_sass/scss/components/organisms/_form.scss */
+/* line 65, ../../../_sass/scss/components/organisms/_form.scss */
 .input-container:after {
   width: 100%;
   height: 2px;
@@ -2958,7 +3123,7 @@ footer.hidden {
   transform-origin: left;
 }
 
-/* line 77, ../../../_sass/scss/components/organisms/_form.scss */
+/* line 73, ../../../_sass/scss/components/organisms/_form.scss */
 .focus.input-container:before, .error.input-container:before {
   -moz-transform: scaleY(1);
   -ms-transform: scaleY(1);
@@ -2969,7 +3134,7 @@ footer.hidden {
   -webkit-transition: -webkit-transform 0.4s ease-in, background-color 1s ease;
   transition: transform 0.4s ease-in, background-color 1s ease;
 }
-/* line 82, ../../../_sass/scss/components/organisms/_form.scss */
+/* line 78, ../../../_sass/scss/components/organisms/_form.scss */
 .focus.input-container:after, .error.input-container:after {
   -moz-transform: scaleX(1);
   -ms-transform: scaleX(1);
@@ -2982,7 +3147,7 @@ footer.hidden {
   transition: transform 0.6s ease-out 0.4s, background-color 1s ease;
 }
 
-/* line 87, ../../../_sass/scss/components/organisms/_form.scss */
+/* line 83, ../../../_sass/scss/components/organisms/_form.scss */
 .button-submit:focus,
 .input-text:focus,
 .input-textfield:focus {
@@ -3029,7 +3194,13 @@ footer.hidden {
   font-size: 14px;
 }
 
-/* line 41, ../../../_sass/scss/pages/_aboutpage.scss */
+/* line 40, ../../../_sass/scss/pages/_aboutpage.scss */
+.frame-item {
+  height: 40px;
+  margin: 30px;
+}
+
+/* line 44, ../../../_sass/scss/pages/_aboutpage.scss */
 .pref-item {
   border: 1px solid darkgrey;
   margin: 5px;
@@ -3037,17 +3208,17 @@ footer.hidden {
 }
 
 @media (max-width: 420px) {
-  /* line 47, ../../../_sass/scss/pages/_aboutpage.scss */
+  /* line 50, ../../../_sass/scss/pages/_aboutpage.scss */
   .section-technical {
     padding-bottom: 0;
   }
 
-  /* line 51, ../../../_sass/scss/pages/_aboutpage.scss */
+  /* line 54, ../../../_sass/scss/pages/_aboutpage.scss */
   .column-platforms {
     padding-top: 2rem;
   }
 
-  /* line 59, ../../../_sass/scss/pages/_aboutpage.scss */
+  /* line 62, ../../../_sass/scss/pages/_aboutpage.scss */
   .pref-item {
     max-width: 55px;
   }
@@ -3061,7 +3232,7 @@ footer.hidden {
 .list-contact-item {
   font-family: 'Avenir Next LT Pro Regular';
   font-size: 16px;
-  margin: 30px 0;
+  margin: 15px 0;
   text-transform: uppercase;
 }
 

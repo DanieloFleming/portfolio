@@ -11,19 +11,11 @@
 |
 */
 
-$app_routes = [
-    '/',
-    'home',
-    'about',
-    'cases/{slug?}',
-    '404',
-    'contact'
-];
+$app_routes = ['/', 'home', 'about', 'cases/{slug?}', 'limbo', 'contact'];
 
 foreach($app_routes as $index => $route) {
 	Route::get($route, 'FrontController@getIndex');
 }
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -41,6 +33,5 @@ Route::get('/mail', function(){
         $message->from('danielofleming@gmail.com', 'danielo');
         $message->to('connect@danielo.nl', 'Admin Master');
     });
-
-    dd('here');
+    
 });

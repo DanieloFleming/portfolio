@@ -18,16 +18,16 @@ return [
     'items' => [
         [
             'id'        => 0,
-            'order'     => 1,
+            'order'     => 5,
             'type'      => 'WEBSITE',
             'title'     => 'Djo&#39;s Ink' ,
             'sub_title' => '<i>Djos</i>Ink',
             'slug'      => 'djos-ink',
-            'header'    => '/static/img/cases/djos-ink/thumb.jpg',
+            'header'    => '/static/img/cases/djos-ink/thumb-v.jpg',
         ],
         [
             'id'        => 1,
-            'order'     => 2,
+            'order'     => 8,
             'type'      => 'WEBSITE',
             'title'     => 'Cafe de Kroeg',
             'sub_title' => '<i>De</i>Kroeg',
@@ -36,7 +36,7 @@ return [
         ],
         [
             'id'        => 2,
-            'order'     => 6,
+            'order'     => 7,
             'type'      => 'GAME',
             'title'     => 'Meteor Strike',
             'sub_title' => '<i>M</i>Strike',
@@ -45,7 +45,7 @@ return [
         ],
         [
             'id'        => 3,
-            'order'     => 4,
+            'order'     => 3,
             'type'      => 'APP',
             'title'     => 'Noted',
             'sub_title' => '<i>N</i>oted',
@@ -54,25 +54,25 @@ return [
         ],
         [
             'id'        => 4,
-            'order'     => 3,
+            'order'     => 6,
             'type'      => 'WEBSITE',
             'title'     => 'Travel<span style="font-size:0;"> </span>Away',
-            'sub_title' => '<i>Travel</i>',
+            'sub_title' => '<i>T</i>ravel',
             'slug'      => 'travel-away',
             'header'    => '/static/img/cases/travel-away/thumb.jpg',
         ],
         [
             'id'        => 5,
-            'order'     => 0,
+            'order'     => 1,
             'type'      => 'WEBSITE',
             'title'     => 'Tanya Heath',
             'sub_title' => '<i>T</i>Heath',
             'slug'      => 'tanya-heath',
             'header'    => '/static/img/cases/tanya-heath-paris/header.jpg',
         ],
-       /* [
+        /*[
             'id'        => 6,
-            'order'     => 7,
+            'order'     => 11,
             'type'      => 'GAME',
             'title'     => 'Lucidicy',
             'sub_title' => '<i>Luci</i>dicy',
@@ -81,12 +81,30 @@ return [
         ],*/
         [
             'id'        => 7,
-            'order'     => 5,
+            'order'     => 4,
             'type'      => 'WEBSITE',
             'title'     => 'D-Blog',
             'sub_title' => '<i>D</i>blog',
             'slug'      => 'd-blog',
             'header'    => '/static/img/cases/d-blog/thumb.jpg',
+        ],
+        [
+            'id'        => 8,
+            'order'     => 10,
+            'type'      => 'GAME',
+            'title'     => 'Pool Party Panic',
+            'sub_title' => '<i>PPP</i>anic',
+            'slug'      => 'pool-party-panic',
+            'header'    => '/static/img/cases/pool-party-panic/thumb-stretched.jpg',
+        ],
+        [
+            'id'        => 9,
+            'order'     => 2,
+            'type'      => 'WEBSITE',
+            'title'     => 'RZ Basket<span style="font-size:0;"> </span>ball',
+            'sub_title' => '<i>RZ</i>Ball',
+            'slug'      => 'rz-basketball',
+            'header'    => '/static/img/cases/rz-basketball/thumb-overlayed.jpg',
         ]
     ]
 ];

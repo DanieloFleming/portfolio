@@ -41,7 +41,7 @@ define([
 					});
 
 					TweenMax.to(this.ui.panel, .7, {
-						display:'none',
+						//display:'none',
 						x:'100%',
 						onComplete:function() {
 							this.isOpen = false;
@@ -65,7 +65,7 @@ define([
 
 					TweenMax.to(this.ui.panel, .7, {
 						x:'0%',
-						display : 'block',
+						//display : 'block',
 						ease:Power1.easeOut,
 						onComplete:function() {
 							this.isOpen = true;
@@ -93,7 +93,7 @@ define([
 
 				TweenMax.set(this.ui.panel, {
 					x:'100%',
-					display:'none'
+					//display:'none'
 				});
 
                 TweenMax.staggerTo([].slice.call(this.ui.strokes).reverse(), .2, {

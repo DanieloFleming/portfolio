@@ -1,11 +1,12 @@
 <script type="template" id="<?=$slug;?>">
+
     <?= view('layouts.project-item-header');?>
 
     <div class="section is-aligned--center is-unpadded--bottom">
         <div class="container">
             <div class="row">
                 <div class="column span-8-10 space-l-1-10">
-                    <h3 data-delay="0" class="title">"A blank piece of paper is God’s way of telling us how hard it to be God"</h3>
+                    <h3 data-delay="0" class="title">"A blank piece of paper is God’s way of telling us how hard it is to be God"</h3>
                     <h4 data-delay=".2">- Sidney Sheldon -</h4>
                 </div>
             </div>
@@ -16,7 +17,7 @@
             </div>
         </div>
     </div>
-    <div class="section is-upadded--top">
+    <div class="section">
         <div class="container">
             <img data-delay="0" src="/static/img/cases/d-blog/macbook.png" style="width:100%" class="smart-object"/>
         </div>

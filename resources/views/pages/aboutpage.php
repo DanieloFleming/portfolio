@@ -24,7 +24,7 @@
                 <div class="column span-8-10 space-l-1-10 span-md-10-10 space-md-none">
                     <p data-delay=".6" class="is-aligned--center" style="">
                         The one who answers to the call D. Born first son of a goddess under a filling moon somewhere in the late 80s.
-                        Occupied with codes and basketball there really isn't much more information to share.
+                        Occupied with coding, dance and basketball there really isn't much more information to share.
                     </p>
                 </div>
             </div>
@@ -112,6 +112,14 @@
                     <h3 data-delay="0" class="is-bold">Libraries and Frameworks</h3>
                     <h5 data-delay=".2">Transmutation Circles</h5>
                 </div>
+                <div class="column">
+                    <img src="/static/img/sprites/frameworks/backbone-js.png"  data-delay=".4" data-transition-type="zoomIn" class="frame-item"/>
+                    <img src="/static/img/sprites/frameworks/wordpress.png"  data-delay=".6" data-transition-type="zoomIn" class="frame-item"/>
+                    <img src="/static/img/sprites/frameworks/laravel.png" data-delay=".8"  data-transition-type="zoomIn" class="frame-item"/>
+                    <img src="/static/img/sprites/frameworks/android.png"  data-delay="1" data-transition-type="zoomIn" class="frame-item"/>
+                    <img src="/static/img/sprites/frameworks/github.png"  data-delay="1.2" data-transition-type="zoomIn" class="frame-item"/>
+                    <img src="/static/img/sprites/frameworks/unity.png"  data-delay="1.4" data-transition-type="zoomIn" class="frame-item"/>
+                </div>
             </div>
         </div>
     </section>
@@ -140,7 +148,7 @@
     		</div>
     	</div>
     </section>
-    <section class="section is-inverted">
+    <section class="section is-inverted" style="background: #1a1a1a">
         <div class="container">
             <div class="row">
                 <div class="column span-8-10 space-l-1-10 span-md-10-10 space-md-none">
@@ -154,5 +162,6 @@
             </div>
         </div>
     </section>
+    <?= view('layouts.footer');?>
 </script>
 

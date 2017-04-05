@@ -42,12 +42,11 @@ define([
             this.templateVars.collection = _.first(options.collection.toJSON(), 3);
         },
 
-        handleClick : function() {
-            TweenMax.to(this.el, .7, {
+        handleClick : function(e) {
+            TweenMax.to(this.el, .5, {
                 opacity:0,
-                y: "+100",
                 onComplete : this.handleComplete
-            })
+            });
         },
 
         interact : function(){

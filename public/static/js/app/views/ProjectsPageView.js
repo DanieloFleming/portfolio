@@ -6,7 +6,7 @@ define([
 ], function(_, BaseView, FadeInComponent, ProjectViewerModule) {
 
     return  BaseView.extend({
-        id : 'projectPage',
+        id : 'project-index',
 
         templateName: '#project-index',
         templateVars : {},
@@ -21,13 +21,13 @@ define([
             fader : {
                 module : FadeInComponent,
                 el: 'this'
-            },
+            }
         },
 
         events : {
             "click .empty-project-item" : "handleCaseClicked"
         },
-        
+
         onInitialize : function(options) {
             this.templateVars.collection = options.collection.toJSON();
         },
@@ -39,7 +39,6 @@ define([
 
             TweenMax.to(this.el, .7, {
                 opacity:0,
-                y: "+100",
                 onComplete : this.handleComplete.bind(this)
             })
         },

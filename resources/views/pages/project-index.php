@@ -24,10 +24,10 @@
                 </div>
             <% } %>
 
-            <% if(index % 2 === 1) %> </div>
+            <% if(index % 2 === 1) { %> </div> <% } %>
         <% } %>
 
-        <% if( collection.length % 2 === 1 ) %> </div>
+        <% if( collection.length % 2 === 1 ) { %> </div> <% } %>
     </section>
-
+    <?= view('layouts.footer');?>
 </script>

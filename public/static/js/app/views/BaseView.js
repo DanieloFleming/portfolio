@@ -173,7 +173,6 @@ define([
             }, this);
 
             this.components = _.clone(this._viewCache.components);
-        },
+        }
     });
-
 });

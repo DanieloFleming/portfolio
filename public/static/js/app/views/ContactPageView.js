@@ -10,12 +10,12 @@ define([
 
         templateName: '#contactpage',
 
-        events : {
+       /* events : {
             'click .button-submit' : 'handleSubmitButtonClick',
             'click .section-header' : 'interact',
             'focus .form-field' : 'handleFormInteraction',
             'blur .form-field' : 'handleFormInteraction'
-        },
+        },*/
 
         ui : {
             formFields : '.form-field'
@@ -26,10 +26,10 @@ define([
                 module : FadeInComponent,
                 el: 'this'
             },
-            scrollTo : {
+           /* scrollTo : {
                 module : ScrollToModule,
                 el : '.scroll-to'
-            }
+            }*/
         },
 
         types : {

@@ -14,9 +14,11 @@ $media-width-md: 768px;
 $media-width-sm: 420px;
 
 /*
-  	Fonts
+  	Dirs
  */
 $fonts-dir: '/static/fonts';
+$image-dir: '/static/img/';
+$sprites-dir: $image-dir + '/sprites';
 
 /* font-size */
 $font-size-lg: '';

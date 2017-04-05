@@ -3,15 +3,17 @@ define([
     'app/views/AboutPageView',
     'app/views/ProjectsPageView',
     'app/views/ProjectInfoPageView',
-    'app/views/ContactPageView'
-], function(HomePage, AboutPage, ProjectPage, ProjectInfoPage, ContactPage){
+    'app/views/ContactPageView',
+    'app/views/Page404'
+], function(HomePage, AboutPage, ProjectPage, ProjectInfoPage, ContactPage, Page404){
     return (function(){
         var views =  [
             HomePage,
             AboutPage,
             ProjectPage,
             ProjectInfoPage,
-            ContactPage
+            ContactPage,
+            Page404
         ];
 
         var getView = function get(viewCode, options) {
@@ -30,6 +32,7 @@ define([
             VIEW_PORTFOLIO  : 2,
             VIEW_PROJECT    : 3,
             VIEW_CONTACT    : 4,
+            VIEW_404        : 5,
         };
     })();
 });

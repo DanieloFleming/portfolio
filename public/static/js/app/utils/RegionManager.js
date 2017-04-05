@@ -2,7 +2,7 @@ define([
     'jquery',
     'backbone'
 ], function($, Backbone){
-   return (function($, Backbone){
+   return (function($){
        var currentView;
        var applicationView = "#application";
        var region = {};

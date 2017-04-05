@@ -34,9 +34,9 @@ define([
         this.checkMaxScroll();
 	};
 
-	FadeInComponent.prototype.checkMaxScroll = function()
-    {
-        var maxScrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+	FadeInComponent.prototype.checkMaxScroll = function() {
+    	var docElement = document.documentElement;
+        var maxScrollHeight = docElement.scrollHeight - docElement.clientHeight;
         var currentScrollPositionY = window.pageYOffset;
 
         if(maxScrollHeight === currentScrollPositionY) {
@@ -70,15 +70,15 @@ define([
 	};
 	
 	FadeInComponent.prototype.isVisible = function(element) {
-		var bounds = element.getBoundingClientRect() || {};
+		var bounds = element.getBoundingClientRect();
 		var windowHeight = window.innerHeight;
-		var showHeight = windowHeight;
 
-		return (bounds.top * 1.3 < showHeight || bounds.bottom < windowHeight);
+		return (bounds.top * 1.3 < windowHeight || bounds.bottom < windowHeight);
 	};
 
 	FadeInComponent.prototype.fadeInElement = function(element) {
 		if(TweenMax.isTweening(element)) return false;
+
 		var delayTime = element.getAttribute('data-delay') || 0;
 
 		element.style.transitionDelay = delayTime + 's';

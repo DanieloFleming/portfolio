@@ -30,17 +30,24 @@
     </section>
 
     <section class="section is-unpadded">
-        <div class="container is-centered">
-            <iframe data-delay="0"
+        <div class="container is-centered" data-delay="0">
+            <iframe
                     src="<?= url('/static/demos/heels/index.html');?>"
                     style="width:100%; height:100%; position:absolute; top:0; left:0"></iframe>
             <canvas width="480" height="450" style="width:90%; max-height:490px; visibility: hidden"></canvas>
         </div>
     </section>
-
-    <section class="section is-unpadded" style="line-height:0">
-        <img data-delay="0" src="/static/img/cases/tanya-heath-paris/autumn-phone.jpg" style="width:100%" class="smart-object"/>
+    <section class="section is-unpadded" style="overflow:hidden; background-color:black;">
+        <div class="video-container" data-component="video">
+            <video class="video-full" poster="/static/img/cases/tanya-heath-paris/poster.jpg">
+                <source src="/static/video/cases/tanya-heath-paris/promo.mp4" type="video/mp4">
+            </video>
+        </div>
     </section>
-
+    <!--
+        <section class="section is-unpadded" style="line-height:0">
+            <img data-delay="0" src="/static/img/cases/tanya-heath-paris/autumn-phone.jpg" style="width:100%"/>
+        </section>
+    -->
     <?php echo view('layouts.project-footer');?>
 </script>

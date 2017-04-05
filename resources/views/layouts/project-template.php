@@ -11,7 +11,7 @@
             </div>
             <div class="row">
                 <div class="column span-10-10">
-                    <img data-delay=".4" src="img/of/logo" />
+                    <img data-delay=".4" src="/static/img/cases/" />
                 </div>
             </div>
         </div>

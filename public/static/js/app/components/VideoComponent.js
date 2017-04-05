@@ -8,31 +8,36 @@ define([
 		
 		events : {
 			'click video' : 'handleClick',
-			//'mousedown video' : 'handleVideoClick',
 			'ended video' : 'reset'
 		},
 
 		initialize : function() {
-			_.bindAll(this, 'startPreLoader', 'hideOverlay', 'reset');
+			_.bindAll(this, 'startPreLoader', 'hideOverlay', 'reset', 'handleClick', 'pauseVideo');
 
-			this.$el.append(this.template);
-
-			this.posterframe = this.el.querySelector('.posterframe');
-			this.loader = this.el.querySelector('.video-loader');
-			this.loadBar = this.el.querySelector('.loadbar');
-			this.video = this.el.querySelector('video');
-			this.video.style.opacity = 0;
-			this.video.volume = 0;
 			this.firstTime = true;
 			this.isPlaying = false;
 			this.isAnimating = false;
+
+			this.$el.append(this.template);
+
+			this.loader = this.el.querySelector('.video-loader');
+			this.loadBar = this.el.querySelector('.loadbar');
+
+			this.video = this.el.querySelector('video');
+			this.video.style.opacity = 0;
+			this.video.volume = 0;
+
 			this.createPoster();
-			this.video.addEventListener('ended', this.reset)
+
+			this.video.addEventListener('ended', this.reset);
+			this.video.addEventListener('pause', this.pauseVideo);
 		},
 
 		createPoster : function() {
+			var posterframe = this.el.querySelector('.posterframe');
 			var poster = this.video.getAttribute('poster');
-			this.posterframe.style.backgroundImage = "url('" + poster + "')"; 
+
+			posterframe.style.backgroundImage = "url('" + poster + "')";
 		},
 
 		handleClick : function() {
@@ -97,6 +102,8 @@ define([
 		},
 
 		pauseVideo : function() {
+			if(this.isAnimating) return;
+
 			this.el.classList.remove('clicked');
 			TweenMax.to(this.video, .5, {
 				volume:0,
@@ -110,12 +117,16 @@ define([
 
 		reset : function() {
 			this.firstTime = true;
+			this.isPlaying = false;
 			this.pauseVideo();
 			this.video.currentTime = 0;
-
 		},
 
 		close : function() {
+			this.video.removeEventListener('ended', this.reset);
+			this.video.removeEventListener('pause', this.handleClick);
+			this.loader = this.loadBar = this.video = null;
+
             this.unbind();
             this.remove();
 		}
