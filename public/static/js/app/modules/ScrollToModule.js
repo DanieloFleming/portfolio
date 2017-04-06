@@ -10,8 +10,9 @@ define([
 
 		initialize : function() {
             var bodyValue = (app.browser.isFireFox) ? 'body, html' : 'body';
-            this.$body = $(bodyValue);
-            _.bindAll(this, 'handleComplete');
+            this.$body = $('#application');
+
+            _.bindAll(this, 'handleComplete', 'scrollToPosition');
 
             this.interact();
 		},
@@ -59,7 +60,8 @@ define([
         },
 
         scrollToPosition : function(scrollData) {
-            window.scroll(0, scrollData.top);
+            //window.scroll(0, scrollData.top);
+            this.$body[0].scrollTop = scrollData.top;
         },
 
         setScrollEvent : function(enabled) {
