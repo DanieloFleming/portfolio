@@ -52,8 +52,8 @@ define([
                 display:'none'
             });
 
-           // window.scroll(0, 0);
-            $('#application')[0].scrollTop = 0;
+            window.scroll(0, 0);
+            $('#application')[0].scrollTop = -1;
 
             $(this.el).html(this.template(this.templateVars));
 
