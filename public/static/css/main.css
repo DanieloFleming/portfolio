@@ -112,10 +112,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 body {
   font-family: "latothin";
   width: 100%;
+  height: 100%;
+  overflow: hidden;
   font-size: 18px;
 }
 
-/* line 32, ../../../_sass/scss/config/_base.scss */
+/* line 34, ../../../_sass/scss/config/_base.scss */
 html, #application {
   width: 100%;
   height: 100%;
@@ -124,13 +126,19 @@ html, #application {
   position: relative;
 }
 
-/* line 40, ../../../_sass/scss/config/_base.scss */
+/* line 41, ../../../_sass/scss/config/_base.scss */
+#application {
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+/* line 46, ../../../_sass/scss/config/_base.scss */
 a, a:visited {
   text-decoration: none;
   color: inherit;
 }
 
-/* line 45, ../../../_sass/scss/config/_base.scss */
+/* line 51, ../../../_sass/scss/config/_base.scss */
 .smart-object {
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
@@ -148,33 +156,33 @@ a, a:visited {
   perspective: 1000;
 }
 
-/* line 66, ../../../_sass/scss/config/_base.scss */
+/* line 72, ../../../_sass/scss/config/_base.scss */
 .fill-width {
   width: 100%;
 }
 
-/* line 70, ../../../_sass/scss/config/_base.scss */
+/* line 76, ../../../_sass/scss/config/_base.scss */
 .fill-height {
   height: 100%;
 }
 
-/* line 74, ../../../_sass/scss/config/_base.scss */
+/* line 80, ../../../_sass/scss/config/_base.scss */
 .full-width {
   width: 100vw;
 }
 
-/* line 78, ../../../_sass/scss/config/_base.scss */
+/* line 84, ../../../_sass/scss/config/_base.scss */
 .full-height {
   height: 100vh;
 }
 
-/* line 82, ../../../_sass/scss/config/_base.scss */
+/* line 88, ../../../_sass/scss/config/_base.scss */
 .fill-parent {
   width: 100%;
   height: 100%;
 }
 
-/* line 87, ../../../_sass/scss/config/_base.scss */
+/* line 93, ../../../_sass/scss/config/_base.scss */
 .is-unpadded {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
@@ -182,34 +190,34 @@ a, a:visited {
   padding-right: 0 !important;
 }
 
-/* line 94, ../../../_sass/scss/config/_base.scss */
+/* line 100, ../../../_sass/scss/config/_base.scss */
 .is-unpadded--horizontal {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
 
-/* line 99, ../../../_sass/scss/config/_base.scss */
+/* line 105, ../../../_sass/scss/config/_base.scss */
 .is-unpadded--vertical {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
 }
 
-/* line 104, ../../../_sass/scss/config/_base.scss */
+/* line 110, ../../../_sass/scss/config/_base.scss */
 .is-unpadded--top {
   padding-top: 0 !important;
 }
 
-/* line 108, ../../../_sass/scss/config/_base.scss */
+/* line 114, ../../../_sass/scss/config/_base.scss */
 .is-unpadded--bottom {
   padding-bottom: 0 !important;
 }
 
-/* line 112, ../../../_sass/scss/config/_base.scss */
+/* line 118, ../../../_sass/scss/config/_base.scss */
 .is-mobile {
   display: none;
 }
 
-/* line 116, ../../../_sass/scss/config/_base.scss */
+/* line 122, ../../../_sass/scss/config/_base.scss */
 .is-centered {
   margin-left: auto;
   margin-right: auto;
@@ -217,7 +225,7 @@ a, a:visited {
 }
 
 @media (max-width: 768px) {
-  /* line 123, ../../../_sass/scss/config/_base.scss */
+  /* line 129, ../../../_sass/scss/config/_base.scss */
   .is-mobile {
     display: block;
   }
