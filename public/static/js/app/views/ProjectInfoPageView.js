@@ -3,8 +3,9 @@ define([
     'app/components/FadeInComponent',
     'app/modules/ProjectViewerModuleG',
     'app/modules/ScrollToModule',
-    'app/components/ComponentLoader'
-], function(BaseView, FadeInComponent, ProjectViewerModule, ScrollToModule, ComponentLoader) {
+    'app/components/ComponentLoader',
+    'app/modules/HeaderResizeModule'
+], function(BaseView, FadeInComponent, ProjectViewerModule, ScrollToModule, ComponentLoader, HeaderResizeModule) {
 
     return  BaseView.extend({
         id : 'projectPage',
@@ -36,6 +37,11 @@ define([
             scrollTo : {
                 module : ScrollToModule,
                 el : '.scroll-to'
+            },
+
+            headerResize: {
+                module : HeaderResizeModule,
+                el : '.section-header'
             }
         },
 

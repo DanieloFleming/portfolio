@@ -2,7 +2,7 @@
 <html>
     <head>
         <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
-        <meta name="viewport" content="width=device-width, initial-scale=0.8, minimum-scale=0.8, user-scalable=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">

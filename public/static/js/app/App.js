@@ -46,9 +46,11 @@ define([
         function checkBrowser() {
             app.browser = {};
 
-            if(document.body.style.MozTransform != undefined) {
-                app.browser.isFireFox = true;
-            } 
+            app.browser.isFireFox = document.body.style.MozTransform != undefined;
+
+            app.browser.isMobile = 'ontouchstart' in window || navigator.msMaxTouchPoints ||
+            typeof window.orientation !== "undefined" || navigator.userAgent.indexOf('IEMobile') !== -1;
+
         }
 
         function setActiveTabCheck() {

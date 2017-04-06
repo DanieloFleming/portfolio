@@ -2,8 +2,9 @@ define([
     'jquery',
     'underscore',
     'app/views/BaseView',
-    'app/modules/PreloaderModule'
-], function ($, _, BaseView, PreloaderModule) {
+    'app/modules/PreloaderModule',
+    'app/modules/HeaderResizeModule'
+], function ($, _, BaseView, PreloaderModule, HeaderResizeModule) {
 
     return BaseView.extend({
         id: 'splash-screen',
@@ -16,6 +17,12 @@ define([
             text: '.rep',
             loader: '.i-loader',
             loadbar: '.i-loadbar'
+        },
+        components : {
+            headerResize: {
+                module : HeaderResizeModule,
+                el : 'this'
+            }
         },
 
         onInitialize: function () {
@@ -115,8 +122,8 @@ define([
             TweenMax.to(this.el, .4, {
                 opacity:1,
                 display:'block',
-                clearProps:'all'
+                clearProps:'display, opacity'
             });
-        },
+        }
     });
 });

@@ -31,7 +31,7 @@ define([
 
 	FadeInComponent.prototype.update = function() {
 		this.checkIfVisible();
-        this.checkMaxScroll();
+        //this.checkMaxScroll();
 	};
 
 	FadeInComponent.prototype.checkMaxScroll = function() {
@@ -40,7 +40,7 @@ define([
         var currentScrollPositionY = window.pageYOffset;
 
         if(maxScrollHeight === currentScrollPositionY) {
-            this.showAll = true;
+            //this.showAll = true;
         }
     };
 
@@ -54,7 +54,7 @@ define([
 		for(i; i < arrayLength; i++) {
 			var section = this.sections[i];
 
-			if(this.showAll || (section && this.isVisible(section) ) ) {
+			if((this.showAll && section) || (section && this.isVisible(section) ) ) {
 				this.showElements(section);
 				this.sections.splice(i, 1);
 			}

@@ -22,7 +22,7 @@ define([
 		},
 
 		_loadModule : function(value) {
-			var type = value.getAttribute('data-component')
+			var type = value.getAttribute('data-component');
 
 			if(! componentTypes[type]) {
 				console.log('invalid type Exception')

@@ -2,8 +2,9 @@ define([
     'app/views/BaseView',
     'app/components/FadeInComponent',
     'app/modules/ProjectViewerModuleG',
-    'app/modules/ScrollToModule'
-], function(BaseView, FadeInComponent, ProjectViewerModule, ScrollToModule) {
+    'app/modules/ScrollToModule',
+    'app/modules/HeaderResizeModule'
+], function(BaseView, FadeInComponent, ProjectViewerModule, ScrollToModule, HeaderResizeModule) {
 
     return  BaseView.extend({
         id : 'homepage',
@@ -16,6 +17,7 @@ define([
 
         ui : {
             projectItemsContainer : '.section-portfolio-items',
+            header : '.section-header'
         },
 
         events : {
@@ -35,6 +37,10 @@ define([
             scrollTo : {
                 module : ScrollToModule,
                 el : '.scroll-to'
+            },
+            headerResize: {
+                module : HeaderResizeModule,
+                el : '.section-header'
             }
         },
 

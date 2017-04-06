@@ -6,7 +6,8 @@ define([
     'app/views/BaseView',
     'app/components/FadeInComponent',
     'app/modules/ScrollToModule',
-], function($, _, Backbone, BaseView, FadeInComponent, ScrollToModule) {
+    'app/modules/HeaderResizeModule'
+], function($, _, Backbone, BaseView, FadeInComponent, ScrollToModule, HeaderResizeModule) {
 
     return  BaseView.extend({
         className : 'page aboutpage',
@@ -25,6 +26,10 @@ define([
             fader : {
                 module : FadeInComponent,
                 el: 'this'
+            },
+            headerResize: {
+                module : HeaderResizeModule,
+                el : '.section-header'
             }
         },
 
