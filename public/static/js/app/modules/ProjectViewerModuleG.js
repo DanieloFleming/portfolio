@@ -14,7 +14,8 @@ define([
             _.bindAll(this,
                 'scrollCompleteHandler',
                 'setupHeaderAnimation',
-                'handleTransitionCompleted'
+                'handleTransitionCompleted',
+                'scrollToPosition'
             );
 
             this.overlayElement = $(this.template)[0];
@@ -22,6 +23,8 @@ define([
             this.$body = $(
                 app.browser.isFireFox ? 'body, html' : 'body'
             );
+
+            this.$application = $('#application');
 
             this.viewPort = document.documentElement;
         },
@@ -57,7 +60,7 @@ define([
             var scrollTarget = this.getScrollPosition(this.item);
             var maxScroll = this.getMaxScroll();
             var scrollData = {
-                top : this.$body.scrollTop()
+                top : this.$application.scrollTop()
             };
 
             if(scrollTarget > maxScroll) {
@@ -71,13 +74,13 @@ define([
 
         getScrollPosition : function() {
             var box = this.item.getBoundingClientRect();
-            var bodyOffset = this.$body.offset();
+            var bodyOffset = this.$application.offset();
 
-            return Math.round(box.top + this.$body.scrollTop() - bodyOffset.top);
+            return Math.round(box.top + this.$application.scrollTop() - bodyOffset.top);
         },
 
         getMaxScroll : function() {
-            return Math.max(this.$body.prop('scrollHeight')) - this.viewPort.clientHeight;
+            return Math.max(this.$application.prop('scrollHeight')) - this.viewPort.clientHeight;
         },
 
         animateScroll : function(target, obj) {
@@ -91,7 +94,8 @@ define([
         },
 
         scrollToPosition : function(scrollData) {
-            window.scroll(0, scrollData.top);
+            //window.scroll(0, scrollData.top);
+            this.$application[0].scrollTop = scrollData.top;
         },
 
 
@@ -135,11 +139,11 @@ define([
         },
 
         getHeaderImageSize : function(image) {
-            var dataSize = this.overlayContainer.getBoundingClientRect();
-            this.viewPort = {clientWidth:'', clientHeight:''};
+            //var dataSize = this.overlayContainer.getBoundingClientRect();
+            //this.viewPort = {clientWidth:'', clientHeight:''};
             var ratio = image.width / image.height;
-            var viewWidth = this.viewPort.clientWidth = dataSize.width;
-            var viewHeight = this.viewPort.clientHeight = dataSize.height;
+            var viewWidth = this.viewPort.clientWidth;// = dataSize.width;
+            var viewHeight = this.viewPort.clientHeight;// = dataSize.height;
 
             var stretch = (viewWidth / viewHeight > ratio ) ? 'width' : 'height';
 
@@ -242,7 +246,8 @@ define([
         },
 
         handleTransitionCompleted : function(e) {
-            window.scroll(0, 0);
+            //window.scroll(0, 0);
+            //this.$application[0].scrollTop = 0;
             this.setScrollEvent(true);
             app.router.navigate('/cases/' + this.slug, {trigger: true});
             app.navigation.show();
