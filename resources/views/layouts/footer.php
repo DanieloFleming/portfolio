@@ -7,10 +7,10 @@
            </div>-->
 
            <ul class="list-horizontal list-social-icons list-social--footer">
-               <li class="list-item"><a target="_blank" href="https://www.linkedin.com/in/danielofleming/" class="social-icons social-icon--linkedin"></a></li>
-               <li class="list-item"><a target="_blank" href="https://api.whatsapp.com/send?phone=31640217920" class="social-icons social-icon--whatsapp"></a></li>
-               <li class="list-item"><a target="_blank" href="https://m.me/danielo.fleming" class="social-icons social-icon--messenger"></a></li>
-               <li class="list-item"><a href="mailto:connect@danielo.nl" class="social-icons social-icon--email"></a></li>
+               <li class="list-item"><a target="_blank" href="https://www.linkedin.com/in/danielofleming/" class="contact-icons social-icon--linkedin"></a></li>
+               <li class="list-item"><a target="_blank" href="https://api.whatsapp.com/send?phone=31640217920" class="contact-icons social-icon--whatsapp"></a></li>
+               <li class="list-item"><a target="_blank" href="https://m.me/danielo.fleming" class="contact-icons social-icon--messenger"></a></li>
+               <li class="list-item"><a href="mailto:connect@danielo.nl" class="contact-icons social-icon--email"></a></li>
            </ul>
            <p style="font-size: 10px; width: 100%; margin-bottom:1px" class="is-aligned--center">© <?=date('Y');?> danielo.nl | All Rights Reserved.</p>
        </div>

@@ -1971,7 +1971,7 @@ i {
 }
 
 /* line 7, ../../../_sass/scss/components/molecules/_social-icons.scss */
-.social-icons {
+.contact-icons {
   position: relative;
   border: 1px solid transparent;
   border-radius: 25px;
@@ -1983,9 +1983,9 @@ i {
 }
 
 /* line 17, ../../../_sass/scss/components/molecules/_social-icons.scss */
-.social-icons:before,
-.social-icons:after {
-  content: '';
+.contact-icons:before,
+.contact-icons:after {
+  content: "";
   border-radius: 25px;
   position: absolute;
   width: 100%;
@@ -1996,24 +1996,24 @@ i {
 }
 
 /* line 28, ../../../_sass/scss/components/molecules/_social-icons.scss */
-.social-icons:before {
+.contact-icons:before {
   transition: opacity .3s ease-in;
 }
 
 /* line 31, ../../../_sass/scss/components/molecules/_social-icons.scss */
-.social-icons:after {
+.contact-icons:after {
   opacity: 1;
   transform: scale(1.1, 1.1);
 }
 
 /* line 35, ../../../_sass/scss/components/molecules/_social-icons.scss */
-.social-icons:hover:before {
+.contact-icons:hover:before {
   opacity: .8;
   transition: opacity .3s ease-out;
 }
 
 /* line 39, ../../../_sass/scss/components/molecules/_social-icons.scss */
-.social-icons:hover:after {
+.contact-icons:hover:after {
   opacity: 0;
   transform: scale(2, 2);
   transition: opacity .6s ease-out, transform .6s ease-out;
@@ -2024,15 +2024,15 @@ i {
   margin: 0 5px;
 }
 /* line 48, ../../../_sass/scss/components/molecules/_social-icons.scss */
-.list-social--footer .social-icons:before {
+.list-social--footer .contact-icons:before {
   background-color: rgba(255, 255, 255, 0.3);
 }
 /* line 51, ../../../_sass/scss/components/molecules/_social-icons.scss */
-.list-social--footer .social-icons:after {
+.list-social--footer .contact-icons:after {
   border: 2px solid rgba(255, 255, 255, 0.7);
 }
 /* line 54, ../../../_sass/scss/components/molecules/_social-icons.scss */
-.list-social--footer .social-icons:hover {
+.list-social--footer .contact-icons:hover {
   border: 2px solid rgba(255, 255, 255, 0.7);
 }
 
@@ -2046,15 +2046,15 @@ i {
   margin: 0 5px;
 }
 /* line 66, ../../../_sass/scss/components/molecules/_social-icons.scss */
-.list-social--menu .social-icons:before {
+.list-social--menu .contact-icons:before {
   background-color: rgba(0, 0, 0, 0.1);
 }
 /* line 70, ../../../_sass/scss/components/molecules/_social-icons.scss */
-.list-social--menu .social-icons:after {
+.list-social--menu .contact-icons:after {
   border: 2px solid rgba(0, 0, 0, 0.5);
 }
 /* line 73, ../../../_sass/scss/components/molecules/_social-icons.scss */
-.list-social--menu .social-icons:hover {
+.list-social--menu .contact-icons:hover {
   border: 2px solid rgba(0, 0, 0, 0.5);
 }
 
@@ -2065,7 +2065,7 @@ i {
 
 /* line 80, ../../../_sass/scss/components/molecules/_social-icons.scss */
 .social-icon-dark--linkedin {
-  background-image: url("/static/img//sprites/socials/linkedin-black.gif");
+  background-image: url("/static/img//sprites/socials/linked-black.gif");
 }
 
 /* line 83, ../../../_sass/scss/components/molecules/_social-icons.scss */

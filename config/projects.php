@@ -70,7 +70,7 @@ return [
             'slug'      => 'tanya-heath',
             'header'    => '/static/img/cases/tanya-heath-paris/header.jpg',
         ],
-        [
+        /*[
             'id'        => 6,
             'order'     => 11,
             'type'      => 'GAME',
@@ -78,7 +78,7 @@ return [
             'sub_title' => '<i>Luci</i>dicy',
             'slug'      => 'lucidicy',
             'header'    => '/static/img/cases/lucidicy/thumb.jpg',
-        ],
+        ],*/
         [
             'id'        => 7,
             'order'     => 4,
