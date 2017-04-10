@@ -14,7 +14,7 @@ define([
 			},
 
 			events : {
-				'click .navigation-burger' : 'handleClick',
+				'click .menu-button' : 'handleClick',
 				'click .nav-listitem' : 'goToPage'
 			},
 

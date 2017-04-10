@@ -2917,20 +2917,35 @@ footer.hidden {
   display: none;
 }
 
-/* line 6, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
-.navigation-burger {
+/* line 5, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
+.menu-button {
   position: fixed;
+  top: 0;
+  right: 0;
+  width: 55px;
+  height: 50px;
+  overflow: hidden;
+}
+
+/* line 13, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
+.menu-button:hover {
+  cursor: pointer;
+}
+
+/* line 16, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
+.navigation-burger {
+  position: absolute;
   top: 15px;
   right: 15px;
   width: 25px;
   height: 20px;
   overflow: hidden;
 }
-/* line 14, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
+/* line 25, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
 .navigation-burger.burger-panel .burger-line {
   background: black;
 }
-/* line 21, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
+/* line 30, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
 .navigation-burger .burger-line {
   position: absolute;
   width: 100%;
@@ -2938,24 +2953,24 @@ footer.hidden {
   background: black;
   border-top: 2px solid white;
 }
-/* line 29, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
+/* line 38, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
 .navigation-burger .line-center {
   margin-top: -2px;
   top: 50%;
   width: 85%;
   right: 0;
 }
-/* line 36, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
+/* line 45, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
 .navigation-burger .line-bottom {
   top: 100%;
   margin-top: -4px;
 }
-/* line 41, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
+/* line 50, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
 .navigation-burger .line-x, .navigation-burger .line-y {
   border: none;
   height: 2px;
 }
-/* line 47, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
+/* line 56, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
 .navigation-burger .line-x {
   transform-origin: 0 0;
   -moz-transform: rotate(45deg);
@@ -2964,7 +2979,7 @@ footer.hidden {
   transform: rotate(45deg);
   left: calc(4px + 25px);
 }
-/* line 53, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
+/* line 62, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
 .navigation-burger .line-y {
   transform-origin: 100% 0;
   -moz-transform: rotate(-45deg);
@@ -2974,12 +2989,7 @@ footer.hidden {
   left: 20px;
 }
 
-/* line 59, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
-.navigation-burger:hover {
-  cursor: pointer;
-}
-
-/* line 62, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
+/* line 69, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
 .nav-list {
   top: 50px;
   width: 100%;
@@ -2988,18 +2998,18 @@ footer.hidden {
   text-align: center;
 }
 
-/* line 69, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
+/* line 76, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
 .nav-listitem {
   cursor: pointer;
   position: relative;
   width: 100%;
   height: 18%;
 }
-/* line 74, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
+/* line 81, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
 .nav-listitem:hover {
   background: #eee;
 }
-/* line 77, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
+/* line 84, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
 .nav-listitem .nav-link {
   font-family: 'latoblack';
   font-size: 40px;
@@ -3014,7 +3024,7 @@ footer.hidden {
   transform: translate(-50%, -50%);
 }
 
-/* line 87, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
+/* line 94, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
 .navigation-panel {
   top: 0;
   left: 0;
@@ -3029,14 +3039,14 @@ footer.hidden {
   overflow: hidden;
 }
 
-/* line 100, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
+/* line 107, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
 .list-navigation-contact {
   padding: 10px;
   position: absolute;
   bottom: 0px;
   width: 100%;
 }
-/* line 106, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
+/* line 113, ../../../_sass/scss/components/organisms/_navigation-menu.scss */
 .list-navigation-contact .list-item h5 {
   text-align: center;
 }

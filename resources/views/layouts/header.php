@@ -24,13 +24,14 @@
             </li>
         </ul>
 	</div>
+	<div class="menu-button">
+		<div class="navigation-burger">
+			<span class="burger-line line-top"></span>
+			<span class="burger-line line-center"></span>
+			<span class="burger-line line-bottom"></span>
 
-	<div class="navigation-burger">
-		<span class="burger-line line-top"></span>
-		<span class="burger-line line-center"></span>
-		<span class="burger-line line-bottom"></span>
-
-		<span class="burger-line line-x"></span>
-		<span class="burger-line line-y"></span>
+			<span class="burger-line line-x"></span>
+			<span class="burger-line line-y"></span>
+		</div>
 	</div>
 </div>
