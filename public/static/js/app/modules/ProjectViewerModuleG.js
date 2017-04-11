@@ -37,7 +37,6 @@ define([
             this.isClicked = true;
             app.navigation.hide();
 
-
             this.getTargetData(e);
             this.setScrollEvent(false);
 
@@ -52,8 +51,6 @@ define([
 
             this.item.classList.add('selected');
             this.slug = this.item.getAttribute('data-slug');
-
-            //return {imageUrl, item, slug}
         },
 
         setupScroll : function() {
