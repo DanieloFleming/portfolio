@@ -26,16 +26,16 @@
 
         <div class="row">
             <div class="column span-5-10 span-md-10-10 is-aligned--center">
-                <img data-delay="0" src="/static/img/cases/pool-party-panic/screenshots/g2.jpg" style="border:2px solid white; width:95%; margin-bottom:1rem" class="smart-object"/>
+                <img data-delay=".2" src="/static/img/cases/pool-party-panic/screenshots/g2.jpg" style="border:2px solid white; width:95%; margin-bottom:1rem" class="smart-object"/>
             </div>
             <div class="column span-5-10 span-md-10-10 is-aligned--center">
-                <img data-delay=".2" src="/static/img/cases/pool-party-panic/screenshots/g1.jpg" style="border:2px solid white; width:95%;  margin-bottom:1rem" class="smart-object"/>
+                <img data-delay=".4" src="/static/img/cases/pool-party-panic/screenshots/g1.jpg" style="border:2px solid white; width:95%;  margin-bottom:1rem" class="smart-object"/>
             </div>
             <div class="column span-5-10 span-md-10-10 is-aligned--center">
-                <img data-delay=".4" src="/static/img/cases/pool-party-panic/screenshots/g4.jpg" style="border:2px solid white; width:95%;  margin-bottom:1rem" class="smart-object"/>
+                <img data-delay=".6" src="/static/img/cases/pool-party-panic/screenshots/g4.jpg" style="border:2px solid white; width:95%;  margin-bottom:1rem" class="smart-object"/>
             </div>
             <div class="column span-5-10 span-md-10-10 is-aligned--center">
-                <img data-delay=".6" src="/static/img/cases/pool-party-panic/screenshots/g5.jpg" style="border:2px solid white; width:95%;  margin-bottom:1rem" class="smart-object"/>
+                <img data-delay=".8" src="/static/img/cases/pool-party-panic/screenshots/g5.jpg" style="border:2px solid white; width:95%;  margin-bottom:1rem" class="smart-object"/>
             </div>
         </div>
     </section>

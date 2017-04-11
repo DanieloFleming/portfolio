@@ -32,7 +32,7 @@
                 <img data-delay=".6" src="/static/img/cases/lucidicy/screenshots/7.jpg" style="border:2px solid white; width:95%;  margin-bottom:1rem" class="smart-object"/>
             </div>
             <div class="column span-5-10 span-md-10-10 is-aligned--center">
-                <img data-delay=".6" src="/static/img/cases/lucidicy/screenshots/3.jpg" style="border:2px solid white; width:95%;  margin-bottom:1rem" class="smart-object"/>
+                <img data-delay=".8" src="/static/img/cases/lucidicy/screenshots/3.jpg" style="border:2px solid white; width:95%;  margin-bottom:1rem" class="smart-object"/>
             </div>
         </div>
     </section>
