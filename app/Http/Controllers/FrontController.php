@@ -38,7 +38,7 @@ class FrontController extends Controller
             $this->getProjectOverview(),
             view('pages.contactpage'),
             view('pages.splash-screen'),
-            view('errors.404')
+            //view('errors.404')
         ];
 
         return view($this->layout, ['templates' => $views]);

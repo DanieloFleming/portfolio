@@ -1,4 +1,4 @@
-<script type="template" class="page" id="404">
+
 
     <section class="section section-header is-unpadded is-inverted">
         <div data-delay="0" data-transition-type="fadeIn"
@@ -16,4 +16,3 @@
             </div>
         </div>
     </section>
-</script>

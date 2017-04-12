@@ -24,7 +24,8 @@
 
         <?= View::make('layouts.header');?>
         
-        <script data-main="<?=$paths['js'];?>/main.js" src="<?=$paths['js'];?>/vendor/require-2.1.17.js"></script>
+        <!--<script data-main="<?=$paths['js'];?>/main.js" src="<?=$paths['js'];?>/vendor/require-2.1.17.js"></script>-->
+        <script data-main="<?=$paths['js'];?>/main-built.js" src="<?=$paths['js'];?>/vendor/require-2.1.17.js"></script>
         
         <?php if(isset($templates) && is_array($templates)):?>
             <?php foreach($templates as $template):?>
