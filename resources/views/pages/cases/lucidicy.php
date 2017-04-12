@@ -36,5 +36,12 @@
             </div>
         </div>
     </section>
+    <section class="section is-unpadded black-style" style="overflow:hidden; background-color:black;">
+        <div class="video-container" data-component="video">
+            <video class="video-full" poster="/static/img/cases/lucidicy/poster.gif">
+                <source src="/static/video/cases/lucidicy/promo.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section>
     <?php echo view('layouts.project-footer');?>
 </script>
