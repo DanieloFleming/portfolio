@@ -97,9 +97,11 @@
         game.mouseX = 100;
         game.mouseY = 100;
 
-        container.addEventListener('mousedown', handleMouseClick);
-        container.addEventListener('mouseup', handleMouseClick);
+        //container.addEventListener('mousedown', handleMouseClick);
+        //container.addEventListener('mouseup', handleMouseClick);
         container.addEventListener('mousemove', handleMouseMove);
+        container.addEventListener('touchstart', handleTouch);
+         container.addEventListener('touchmove', handleTouch);
         window.addEventListener('resize', handleResize);
     }
 
@@ -117,6 +119,14 @@
     function handleMouseMove(e) {
         game.mouseX = e.layerX;
         game.mouseY = e.layerY;
+    }
+
+    function handleTouch(e) {
+        e.preventDefault();
+        var touch = e.changedTouches[0];
+        
+        game.mouseX = (touch.pageX - container.offsetLeft);
+        game.mouseY = (touch.pageY - container.offsetTop);
     }
 
     function handleResize(e) {

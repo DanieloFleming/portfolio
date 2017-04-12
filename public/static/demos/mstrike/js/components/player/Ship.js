@@ -57,7 +57,7 @@
         },
 
         autoFire : function() {
-            if(this.isHit || this.dead || this.toDraw === false) return;
+            if(this.dead || this.toDraw === false) return;
             this.ticker('fire', this.reloadTime, this.fire.bind(this));
         },
 
