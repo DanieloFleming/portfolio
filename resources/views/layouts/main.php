@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -23,10 +22,13 @@
         </div>
 
         <?= View::make('layouts.header');?>
-        
-        <!--<script data-main="<?=$paths['js'];?>/main.js" src="<?=$paths['js'];?>/vendor/require-2.1.17.js"></script>-->
-        <script data-main="<?=$paths['js'];?>/main-built.js" src="<?=$paths['js'];?>/vendor/require-2.1.17.js"></script>
-        
+
+        <?php if (App::environment('local')):?>
+            <script data-main="<?=$paths['js'];?>/main.js" src="<?=$paths['js'];?>/vendor/require-2.1.17.js"></script>
+        <?php else:?>
+            <script data-main="<?=$paths['js'];?>/main-built.js" src="<?=$paths['js'];?>/vendor/require-2.1.17.js"></script>
+        <?php endif;?>
+
         <?php if(isset($templates) && is_array($templates)):?>
             <?php foreach($templates as $template):?>
                 <?= $template;?>
