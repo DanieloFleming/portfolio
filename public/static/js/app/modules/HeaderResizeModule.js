@@ -19,14 +19,17 @@ define([
         },
 
         handleNonChrome : function() {
-            Object.assign($("#application")[0].style, {perspective : 'none', transform:'none'});
-
             var vid = this.el.querySelector('.video-header-homepage');
             var bg = this.el.querySelector('.header-background');
             if(vid) {
                 vid.classList.add("no-parallax");
             } else if(bg) {
                 bg.style.transform = 'none';
+            }
+            if(app.browser.isSafari) {
+                Object.assign($("#application")[0].style, {perspective : 'none', transform:'none'});
+            } else {
+                Object.assign($("#application")[0].style, {perspective : 'none'});
             }
         },
 

@@ -1,6 +1,7 @@
 .section-header {
 	width: 100%;
 	height: 100vh;
+	//min-height: 480px;
 	background-color: #fff !important;
 	//transition: height .4s ease;
 }
@@ -58,7 +59,11 @@
 		font-size: 80px
 	}
 }
-
+@media(max-height: 480px) {
+	.header-background {
+		transform:none;
+	}
+}
 .video-header-homepage.no-parallax {
 	@include transform(translate(-50%, -50%) !important);
 }

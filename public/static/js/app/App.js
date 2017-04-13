@@ -47,10 +47,9 @@ define([
             app.browser = {};
 
             app.browser.isFireFox = document.body.style.MozTransform != undefined;
-
-            app.browser.isChrome = (window.chrome) &&
-                window.navigator.vendor == "Google Inc." &&
-                window.navigator.userAgent.indexOf("OPR") == -1;
+            app.browser.isSafari = navigator.userAgent.indexOf("Safari") > -1;
+            app.browser.isChrome = (window.chrome);// && navigator.vendor == "Google Inc.";
+                //navigator.userAgent.indexOf("OPR") == -1;
 
             app.browser.isMobile = 'ontouchstart' in window || navigator.msMaxTouchPoints ||
             typeof window.orientation !== "undefined" || navigator.userAgent.indexOf('IEMobile') !== -1;
