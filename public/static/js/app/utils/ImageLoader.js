@@ -32,6 +32,14 @@ define([
                 bytesLoaded : this.bytesLoaded,
                 totalBytes : e.total
             });
+        } else {
+            if(this.onStart) this.onStart(0);
+
+            if(this.onChange) this.onChange ({
+                progress : this.progress,
+                bytesLoaded : this.bytesLoaded,
+                totalBytes : e.total
+            });
         }
     };
 
