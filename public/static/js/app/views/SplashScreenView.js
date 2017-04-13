@@ -88,7 +88,8 @@ define([
 
             TweenMax.to(this.ui.loadbar, 1, {
                 x: value, onComplete: function () {
-                    if (this.ui.loadbar._gsTransform.x == 0) {
+                    if (this.ui.loadbar instanceof HTMLElement
+                        && this.ui.loadbar._gsTransform.x == 0) {
                         TweenMax.to(this.ui.loader, 1.25, {
                             scaleX: 0
                         });
