@@ -58,3 +58,7 @@
 		font-size: 80px
 	}
 }
+
+.video-header-homepage.no-parallax {
+	@include transform(translate(-50%, -50%) !important);
+}

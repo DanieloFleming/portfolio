@@ -2810,6 +2810,14 @@ i {
     font-size: 80px;
   }
 }
+/* line 62, ../../../_sass/scss/components/organisms/_header.scss */
+.video-header-homepage.no-parallax {
+  -moz-transform: translate(-50%, -50%) !important;
+  -ms-transform: translate(-50%, -50%) !important;
+  -webkit-transform: translate(-50%, -50%) !important;
+  transform: translate(-50%, -50%) !important;
+}
+
 /* line 1, ../../../_sass/scss/components/organisms/_footer.scss */
 footer {
   background: black;
