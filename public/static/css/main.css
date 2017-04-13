@@ -2792,7 +2792,7 @@ i {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) !important;
+  transform: translate(-50%, -50%) translateZ(-1px) scale(2) !important;
 }
 /* line 46, ../../../_sass/scss/components/organisms/_header.scss */
 .header-homepage .header-content:before {
