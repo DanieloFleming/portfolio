@@ -2755,7 +2755,7 @@ i {
   background-color: #fff !important;
 }
 
-/* line 8, ../../../_sass/scss/components/organisms/_header.scss */
+/* line 9, ../../../_sass/scss/components/organisms/_header.scss */
 .header-background {
   background-position: center center;
   background-repeat: no-repeat;
@@ -2767,7 +2767,7 @@ i {
   left: 0;
   transform: translateZ(-1px) scale(2);
 }
-/* line 18, ../../../_sass/scss/components/organisms/_header.scss */
+/* line 19, ../../../_sass/scss/components/organisms/_header.scss */
 .header-background:after {
   content: '';
   background-color: rgba(0, 0, 0, 0.5);
@@ -2778,12 +2778,12 @@ i {
   left: 0;
 }
 
-/* line 31, ../../../_sass/scss/components/organisms/_header.scss */
+/* line 32, ../../../_sass/scss/components/organisms/_header.scss */
 .case-header-title {
   font-size: 120px;
 }
 
-/* line 36, ../../../_sass/scss/components/organisms/_header.scss */
+/* line 37, ../../../_sass/scss/components/organisms/_header.scss */
 .header-homepage video {
   min-width: 100%;
   min-height: 100%;
@@ -2794,7 +2794,7 @@ i {
   left: 50%;
   transform: translate(-50%, -50%) translateZ(-1px) scale(2) !important;
 }
-/* line 46, ../../../_sass/scss/components/organisms/_header.scss */
+/* line 47, ../../../_sass/scss/components/organisms/_header.scss */
 .header-homepage .header-content:before {
   content: '';
   width: 100%;
@@ -2805,12 +2805,18 @@ i {
 }
 
 @media (max-width: 768px) {
-  /* line 57, ../../../_sass/scss/components/organisms/_header.scss */
+  /* line 58, ../../../_sass/scss/components/organisms/_header.scss */
   .case-header-title {
     font-size: 80px;
   }
 }
-/* line 62, ../../../_sass/scss/components/organisms/_header.scss */
+@media (max-height: 480px) {
+  /* line 63, ../../../_sass/scss/components/organisms/_header.scss */
+  .header-background {
+    transform: none;
+  }
+}
+/* line 67, ../../../_sass/scss/components/organisms/_header.scss */
 .video-header-homepage.no-parallax {
   -moz-transform: translate(-50%, -50%) !important;
   -ms-transform: translate(-50%, -50%) !important;
