@@ -46,8 +46,6 @@ define([
         function checkBrowser() {
             app.browser = {};
 
-            console.log("JAJAJS");
-
             app.browser.isFireFox = document.body.style.MozTransform != undefined;
             app.browser.isChrome = (window.chrome);
 
