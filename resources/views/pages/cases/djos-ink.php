@@ -39,7 +39,7 @@
     </div>-->
     <div class="section is-unpadded" style="overflow:hidden; background-color:black;">
         <div class="video-container" data-component="video">
-            <video class="video-full" poster="/static/img/cases/djos-ink/poster3.jpg">
+            <video class="video-full" poster="/static/img/cases/djos-ink/poster.jpg">
                 <source src="/static/video/cases/djos-ink/djos-ink-promo_hd.mp4" type="video/mp4">
             </video>
         </div>
