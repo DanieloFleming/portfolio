@@ -46,11 +46,13 @@ define([
         function checkBrowser() {
             app.browser = {};
 
+            console.log("JAJAJS");
+
             app.browser.isFireFox = document.body.style.MozTransform != undefined;
+            app.browser.isChrome = (window.chrome);
 
             app.browser.isMobile = 'ontouchstart' in window || navigator.msMaxTouchPoints ||
             typeof window.orientation !== "undefined" || navigator.userAgent.indexOf('IEMobile') !== -1;
-
         }
 
         function setActiveTabCheck() {

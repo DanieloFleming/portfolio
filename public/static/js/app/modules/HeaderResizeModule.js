@@ -13,6 +13,21 @@ define([
 
                 this.handleResize();
             }
+            if(!app.browser.isChrome) {
+                this.handleNonChrome();
+            }
+        },
+
+        handleNonChrome : function() {
+            Object.assign($("#application")[0].style, {perspective : 'none', transform:'none'});
+
+            var vid = this.el.querySelector('.video-header-homepage');
+            var bg = this.el.querySelector('.header-background');
+            if(vid) {
+                vid.classList.add("no-parallax");
+            } else if(bg) {
+                bg.style.transform = 'none';
+            }
         },
 
         handleResize: function() {
