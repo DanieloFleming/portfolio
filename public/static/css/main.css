@@ -1730,69 +1730,75 @@ h1 {
   color: #000;
 }
 
+/* line 30, ../../../_sass/scss/components/atoms/_text.scss */
+.line-breaker {
+  display: inline-block;
+  font-size: 0;
+}
+
 /*
   sizes
 */
-/* line 34, ../../../_sass/scss/components/atoms/_text.scss */
+/* line 37, ../../../_sass/scss/components/atoms/_text.scss */
 h1 {
   font-size: 60px;
 }
 
-/* line 38, ../../../_sass/scss/components/atoms/_text.scss */
+/* line 41, ../../../_sass/scss/components/atoms/_text.scss */
 h2 {
   font-size: 36px;
 }
 
-/* line 42, ../../../_sass/scss/components/atoms/_text.scss */
+/* line 45, ../../../_sass/scss/components/atoms/_text.scss */
 h3 {
   font-size: 24px;
 }
 
-/* line 46, ../../../_sass/scss/components/atoms/_text.scss */
+/* line 49, ../../../_sass/scss/components/atoms/_text.scss */
 h4 {
   font-size: 18px;
 }
 
-/* line 50, ../../../_sass/scss/components/atoms/_text.scss */
+/* line 53, ../../../_sass/scss/components/atoms/_text.scss */
 h5 {
   font-size: 14px;
 }
 
-/* line 54, ../../../_sass/scss/components/atoms/_text.scss */
+/* line 57, ../../../_sass/scss/components/atoms/_text.scss */
 h6 {
   font-size: 12px;
 }
 
-/* line 58, ../../../_sass/scss/components/atoms/_text.scss */
+/* line 61, ../../../_sass/scss/components/atoms/_text.scss */
 p {
   font-size: 18px;
   line-height: 24px;
 }
 
-/* line 63, ../../../_sass/scss/components/atoms/_text.scss */
+/* line 66, ../../../_sass/scss/components/atoms/_text.scss */
 .is-bold {
   font-weight: bold;
 }
 
-/* line 67, ../../../_sass/scss/components/atoms/_text.scss */
+/* line 70, ../../../_sass/scss/components/atoms/_text.scss */
 .title, .sub-title {
   margin-bottom: 2rem;
   font-weight: bold;
 }
 
 @media (max-width: 1024px) {
-  /* line 73, ../../../_sass/scss/components/atoms/_text.scss */
+  /* line 76, ../../../_sass/scss/components/atoms/_text.scss */
   h1 {
     font-size: 48px;
   }
 }
 @media (max-width: 768px) {
-  /* line 79, ../../../_sass/scss/components/atoms/_text.scss */
+  /* line 82, ../../../_sass/scss/components/atoms/_text.scss */
   h1 {
     font-size: 36px;
   }
 }
-/* line 84, ../../../_sass/scss/components/atoms/_text.scss */
+/* line 87, ../../../_sass/scss/components/atoms/_text.scss */
 i {
   font-family: 'latoblack';
 }
