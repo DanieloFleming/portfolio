@@ -134,13 +134,19 @@ html, #application {
   transform: translateZ(0);
 }
 
-/* line 50, ../../../_sass/scss/config/_base.scss */
+@media screen and (min-width: 0\0) {
+  /* line 51, ../../../_sass/scss/config/_base.scss */
+  #application {
+    width: calc(100% + 20px);
+  }
+}
+/* line 54, ../../../_sass/scss/config/_base.scss */
 a, a:visited {
   text-decoration: none;
   color: inherit;
 }
 
-/* line 55, ../../../_sass/scss/config/_base.scss */
+/* line 59, ../../../_sass/scss/config/_base.scss */
 .smart-object {
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
@@ -158,33 +164,33 @@ a, a:visited {
   perspective: 1000;
 }
 
-/* line 76, ../../../_sass/scss/config/_base.scss */
+/* line 80, ../../../_sass/scss/config/_base.scss */
 .fill-width {
   width: 100%;
 }
 
-/* line 80, ../../../_sass/scss/config/_base.scss */
+/* line 84, ../../../_sass/scss/config/_base.scss */
 .fill-height {
   height: 100%;
 }
 
-/* line 84, ../../../_sass/scss/config/_base.scss */
+/* line 88, ../../../_sass/scss/config/_base.scss */
 .full-width {
   width: 100vw;
 }
 
-/* line 88, ../../../_sass/scss/config/_base.scss */
+/* line 92, ../../../_sass/scss/config/_base.scss */
 .full-height {
   height: 100vh;
 }
 
-/* line 92, ../../../_sass/scss/config/_base.scss */
+/* line 96, ../../../_sass/scss/config/_base.scss */
 .fill-parent {
   width: 100%;
   height: 100%;
 }
 
-/* line 97, ../../../_sass/scss/config/_base.scss */
+/* line 101, ../../../_sass/scss/config/_base.scss */
 .is-unpadded {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
@@ -192,34 +198,34 @@ a, a:visited {
   padding-right: 0 !important;
 }
 
-/* line 104, ../../../_sass/scss/config/_base.scss */
+/* line 108, ../../../_sass/scss/config/_base.scss */
 .is-unpadded--horizontal {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
 
-/* line 109, ../../../_sass/scss/config/_base.scss */
+/* line 113, ../../../_sass/scss/config/_base.scss */
 .is-unpadded--vertical {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
 }
 
-/* line 114, ../../../_sass/scss/config/_base.scss */
+/* line 118, ../../../_sass/scss/config/_base.scss */
 .is-unpadded--top {
   padding-top: 0 !important;
 }
 
-/* line 118, ../../../_sass/scss/config/_base.scss */
+/* line 122, ../../../_sass/scss/config/_base.scss */
 .is-unpadded--bottom {
   padding-bottom: 0 !important;
 }
 
-/* line 122, ../../../_sass/scss/config/_base.scss */
+/* line 126, ../../../_sass/scss/config/_base.scss */
 .is-mobile {
   display: none;
 }
 
-/* line 126, ../../../_sass/scss/config/_base.scss */
+/* line 130, ../../../_sass/scss/config/_base.scss */
 .is-centered {
   margin-left: auto;
   margin-right: auto;
@@ -227,7 +233,7 @@ a, a:visited {
 }
 
 @media (max-width: 768px) {
-  /* line 133, ../../../_sass/scss/config/_base.scss */
+  /* line 137, ../../../_sass/scss/config/_base.scss */
   .is-mobile {
     display: block;
   }
@@ -2107,7 +2113,7 @@ i {
 /* line 1, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-container {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: calc(50vw / 1.5);
   overflow: hidden;
 }
