@@ -132,16 +132,15 @@ html, #application {
   overflow-x: hidden;
   overflow-y: visible;
   transform: translateZ(0);
-  perspective: 1px;
 }
 
-/* line 49, ../../../_sass/scss/config/_base.scss */
+/* line 50, ../../../_sass/scss/config/_base.scss */
 a, a:visited {
   text-decoration: none;
   color: inherit;
 }
 
-/* line 54, ../../../_sass/scss/config/_base.scss */
+/* line 55, ../../../_sass/scss/config/_base.scss */
 .smart-object {
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
@@ -159,33 +158,33 @@ a, a:visited {
   perspective: 1000;
 }
 
-/* line 75, ../../../_sass/scss/config/_base.scss */
+/* line 76, ../../../_sass/scss/config/_base.scss */
 .fill-width {
   width: 100%;
 }
 
-/* line 79, ../../../_sass/scss/config/_base.scss */
+/* line 80, ../../../_sass/scss/config/_base.scss */
 .fill-height {
   height: 100%;
 }
 
-/* line 83, ../../../_sass/scss/config/_base.scss */
+/* line 84, ../../../_sass/scss/config/_base.scss */
 .full-width {
   width: 100vw;
 }
 
-/* line 87, ../../../_sass/scss/config/_base.scss */
+/* line 88, ../../../_sass/scss/config/_base.scss */
 .full-height {
   height: 100vh;
 }
 
-/* line 91, ../../../_sass/scss/config/_base.scss */
+/* line 92, ../../../_sass/scss/config/_base.scss */
 .fill-parent {
   width: 100%;
   height: 100%;
 }
 
-/* line 96, ../../../_sass/scss/config/_base.scss */
+/* line 97, ../../../_sass/scss/config/_base.scss */
 .is-unpadded {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
@@ -193,34 +192,34 @@ a, a:visited {
   padding-right: 0 !important;
 }
 
-/* line 103, ../../../_sass/scss/config/_base.scss */
+/* line 104, ../../../_sass/scss/config/_base.scss */
 .is-unpadded--horizontal {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
 
-/* line 108, ../../../_sass/scss/config/_base.scss */
+/* line 109, ../../../_sass/scss/config/_base.scss */
 .is-unpadded--vertical {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
 }
 
-/* line 113, ../../../_sass/scss/config/_base.scss */
+/* line 114, ../../../_sass/scss/config/_base.scss */
 .is-unpadded--top {
   padding-top: 0 !important;
 }
 
-/* line 117, ../../../_sass/scss/config/_base.scss */
+/* line 118, ../../../_sass/scss/config/_base.scss */
 .is-unpadded--bottom {
   padding-bottom: 0 !important;
 }
 
-/* line 121, ../../../_sass/scss/config/_base.scss */
+/* line 122, ../../../_sass/scss/config/_base.scss */
 .is-mobile {
   display: none;
 }
 
-/* line 125, ../../../_sass/scss/config/_base.scss */
+/* line 126, ../../../_sass/scss/config/_base.scss */
 .is-centered {
   margin-left: auto;
   margin-right: auto;
@@ -228,7 +227,7 @@ a, a:visited {
 }
 
 @media (max-width: 768px) {
-  /* line 132, ../../../_sass/scss/config/_base.scss */
+  /* line 133, ../../../_sass/scss/config/_base.scss */
   .is-mobile {
     display: block;
   }
@@ -2179,8 +2178,8 @@ i {
   position: fixed;
   top: 0;
   left: 0;
-  min-width: 100%;
-  min-height: 100%;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   display: none;
   z-index: 100;
@@ -2765,7 +2764,6 @@ i {
   height: 100%;
   top: 0;
   left: 0;
-  transform: translateZ(-1px) scale(2);
 }
 /* line 19, ../../../_sass/scss/components/organisms/_header.scss */
 .header-background:after {
@@ -2792,31 +2790,35 @@ i {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) translateZ(-1px) scale(2) !important;
+  transform: translate(-50%, -50%) !important;
 }
 /* line 47, ../../../_sass/scss/components/organisms/_header.scss */
 .header-homepage .header-content:before {
-  content: '';
+  content: "";
   width: 100%;
   position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   height: 100%;
-  background: url("/static/img/backgrounds/pattern-a.png") center center repeat;
+  background: url("/static/img/backgrounds/pattern-a.png") top left repeat;
   opacity: .7;
 }
 
 @media (max-width: 768px) {
-  /* line 58, ../../../_sass/scss/components/organisms/_header.scss */
+  /* line 62, ../../../_sass/scss/components/organisms/_header.scss */
   .case-header-title {
     font-size: 80px;
   }
 }
 @media (max-height: 480px) {
-  /* line 63, ../../../_sass/scss/components/organisms/_header.scss */
+  /* line 67, ../../../_sass/scss/components/organisms/_header.scss */
   .header-background {
     transform: none;
   }
 }
-/* line 67, ../../../_sass/scss/components/organisms/_header.scss */
+/* line 71, ../../../_sass/scss/components/organisms/_header.scss */
 .video-header-homepage.no-parallax {
   -moz-transform: translate(-50%, -50%) !important;
   -ms-transform: translate(-50%, -50%) !important;

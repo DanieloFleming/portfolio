@@ -156,6 +156,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * Other Service Providers
+         */
+        Jenssegers\Agent\AgentServiceProvider::class,
+
     ],
 
     /*
@@ -201,6 +206,10 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        /*
+         * Other Aliases
+         */
+        'Agent' => Jenssegers\Agent\Facades\Agent::class,
 
     ],
 

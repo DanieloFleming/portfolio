@@ -63,8 +63,9 @@ define([
             if(scrollTarget > maxScroll) {
                 scrollTarget = maxScroll;
             }
-
+            this.overlayElement.style.width = this.$application[0].clientWidth + 'px';
             this.$body[0].appendChild(this.overlayElement);
+
 
             this.animateScroll(scrollTarget, scrollData);
         },
@@ -121,6 +122,7 @@ define([
 
         setupHeaderAnimation : function() {
             this.overlayContainer = this.$body[0].querySelector('.project-overlay');
+            //this.overlayContainer.style.width = this.$application[0].clientWidth + 'px';
             this.overlayImage = this.overlayContainer.querySelector('.overlay-item');
             this.overlayContainer.style.display = 'block';
 
@@ -129,7 +131,6 @@ define([
 
             this.overlayImage.appendChild(this.headerImage);
 
-
             this.setOverlayItem(backgroundData);
 
             this.animateHeader(scale);
@@ -137,7 +138,7 @@ define([
 
         getHeaderImageSize : function(image) {
             //var dataSize = this.overlayContainer.getBoundingClientRect();
-            //this.viewPort = {clientWidth:'', clientHeight:''};
+            this.viewPort = {clientWidth:this.$application[0].clientWidth, clientHeight:this.viewPort.clientHeight, kees:'koking'};
             var ratio = image.width / image.height;
             var viewWidth = this.viewPort.clientWidth;// = dataSize.width;
             var viewHeight = this.viewPort.clientHeight;// = dataSize.height;
@@ -163,6 +164,7 @@ define([
         },
 
         getScale : function(scaleData) {
+            console.log(this.viewPort);
             if(scaleData.stretchTo == 'width') {
                 return this.viewPort.clientWidth / scaleData.width;
             } else {
@@ -187,7 +189,7 @@ define([
                 width:viewWidth,
                 height:viewHeight,
                 scaleX: scales.x,
-                scaleY: scales.y,
+                scaleY: scales.y
             });
 
 

@@ -27,9 +27,9 @@ define([
                 bg.style.transform = 'none';
             }
             if(app.browser.isSafari) {
-                Object.assign($("#application")[0].style, {perspective : 'none', transform:'none'});
+                $("#application").css({perspective : 'none', transform:'none'});
             } else {
-                Object.assign($("#application")[0].style, {perspective : 'none'});
+                $("#application").css({perspective : 'none'});
             }
         },
 
