@@ -138,7 +138,7 @@ define([
 
         getHeaderImageSize : function(image) {
             //var dataSize = this.overlayContainer.getBoundingClientRect();
-            this.viewPort = {clientWidth:this.$application[0].clientWidth, clientHeight:this.viewPort.clientHeight, kees:'koking'};
+            this.viewPort = {clientWidth:this.$application[0].clientWidth, clientHeight:this.viewPort.clientHeight};
             var ratio = image.width / image.height;
             var viewWidth = this.viewPort.clientWidth;// = dataSize.width;
             var viewHeight = this.viewPort.clientHeight;// = dataSize.height;
@@ -164,7 +164,6 @@ define([
         },
 
         getScale : function(scaleData) {
-            console.log(this.viewPort);
             if(scaleData.stretchTo == 'width') {
                 return this.viewPort.clientWidth / scaleData.width;
             } else {
