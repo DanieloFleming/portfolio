@@ -25,7 +25,9 @@ define([
 			var type = value.getAttribute('data-component');
 
 			if(! componentTypes[type]) {
-				console.log('invalid type Exception')
+				if(window.console) {
+					console.log('invalid type Exception');
+				}
 			}
 
 			this.componentArray.push(new componentTypes[type]({el:value}));
@@ -43,7 +45,7 @@ define([
 		_closeComponent : function(component) {
 			component.close();
 		}
-	}
+	};
 
 	return ComponentLoader;
-})
+});
