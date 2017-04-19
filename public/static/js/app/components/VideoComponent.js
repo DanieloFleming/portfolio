@@ -102,7 +102,7 @@ define([
 		},
 
 		pauseVideo : function() {
-			if(this.isAnimating) return;
+			if(this.isAnimating || this.video == null) return;
 
 			this.el.classList.remove('clicked');
 			TweenMax.to(this.video, .5, {

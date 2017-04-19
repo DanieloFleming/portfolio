@@ -11,10 +11,11 @@ define([
         this.onStart = null;
 
         this.request = new XMLHttpRequest();
+        this.request.open("GET", url, true);
         this.request.responseType = "blob";
         this.request.addEventListener("progress", this._handleProgress.bind(this));
         this.request.addEventListener("load", this._loadCompleted.bind(this));
-        this.request.open("GET", url, true);
+
         this.request.send(null);
     };
 

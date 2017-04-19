@@ -15,7 +15,7 @@
 	height: 100%;
 	top: 0;
 	left: 0;
-	transform: translateZ(-1px) scale(2);
+	//transform: translateZ(-1px) scale(2);
 	&:after {
 		content: '';
 		background-color: rgba(0, 0, 0, .5);
@@ -45,11 +45,15 @@
 		transform: translate(-50%, -50%) translateZ(-1px) scale(2) !important;
 	}
 	.header-content:before {
-		content: '';
+		content: "";
 		width: 100%;
 		position: absolute;
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
 		height: 100%;
-		background: url('/static/img/backgrounds/pattern-a.png') center center repeat;
+		background: url('/static/img/backgrounds/pattern-a.png') top left repeat;
 		opacity: .7;
 	}
 }

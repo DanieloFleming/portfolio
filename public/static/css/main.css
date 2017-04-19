@@ -132,16 +132,15 @@ html, #application {
   overflow-x: hidden;
   overflow-y: visible;
   transform: translateZ(0);
-  perspective: 1px;
 }
 
-/* line 49, ../../../_sass/scss/config/_base.scss */
+/* line 50, ../../../_sass/scss/config/_base.scss */
 a, a:visited {
   text-decoration: none;
   color: inherit;
 }
 
-/* line 54, ../../../_sass/scss/config/_base.scss */
+/* line 55, ../../../_sass/scss/config/_base.scss */
 .smart-object {
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
@@ -159,33 +158,33 @@ a, a:visited {
   perspective: 1000;
 }
 
-/* line 75, ../../../_sass/scss/config/_base.scss */
+/* line 76, ../../../_sass/scss/config/_base.scss */
 .fill-width {
   width: 100%;
 }
 
-/* line 79, ../../../_sass/scss/config/_base.scss */
+/* line 80, ../../../_sass/scss/config/_base.scss */
 .fill-height {
   height: 100%;
 }
 
-/* line 83, ../../../_sass/scss/config/_base.scss */
+/* line 84, ../../../_sass/scss/config/_base.scss */
 .full-width {
   width: 100vw;
 }
 
-/* line 87, ../../../_sass/scss/config/_base.scss */
+/* line 88, ../../../_sass/scss/config/_base.scss */
 .full-height {
   height: 100vh;
 }
 
-/* line 91, ../../../_sass/scss/config/_base.scss */
+/* line 92, ../../../_sass/scss/config/_base.scss */
 .fill-parent {
   width: 100%;
   height: 100%;
 }
 
-/* line 96, ../../../_sass/scss/config/_base.scss */
+/* line 97, ../../../_sass/scss/config/_base.scss */
 .is-unpadded {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
@@ -193,34 +192,34 @@ a, a:visited {
   padding-right: 0 !important;
 }
 
-/* line 103, ../../../_sass/scss/config/_base.scss */
+/* line 104, ../../../_sass/scss/config/_base.scss */
 .is-unpadded--horizontal {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
 
-/* line 108, ../../../_sass/scss/config/_base.scss */
+/* line 109, ../../../_sass/scss/config/_base.scss */
 .is-unpadded--vertical {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
 }
 
-/* line 113, ../../../_sass/scss/config/_base.scss */
+/* line 114, ../../../_sass/scss/config/_base.scss */
 .is-unpadded--top {
   padding-top: 0 !important;
 }
 
-/* line 117, ../../../_sass/scss/config/_base.scss */
+/* line 118, ../../../_sass/scss/config/_base.scss */
 .is-unpadded--bottom {
   padding-bottom: 0 !important;
 }
 
-/* line 121, ../../../_sass/scss/config/_base.scss */
+/* line 122, ../../../_sass/scss/config/_base.scss */
 .is-mobile {
   display: none;
 }
 
-/* line 125, ../../../_sass/scss/config/_base.scss */
+/* line 126, ../../../_sass/scss/config/_base.scss */
 .is-centered {
   margin-left: auto;
   margin-right: auto;
@@ -228,7 +227,7 @@ a, a:visited {
 }
 
 @media (max-width: 768px) {
-  /* line 132, ../../../_sass/scss/config/_base.scss */
+  /* line 133, ../../../_sass/scss/config/_base.scss */
   .is-mobile {
     display: block;
   }
@@ -2179,14 +2178,15 @@ i {
   position: fixed;
   top: 0;
   left: 0;
-  min-width: 100%;
-  min-height: 100%;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   display: none;
   z-index: 100;
+  background-color: #640a64;
 }
 
-/* line 86, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 88, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-overlay .overlay-item {
   position: absolute;
   overflow: hidden;
@@ -2196,15 +2196,15 @@ i {
   width: 50vw;
   height: calc(50vw / 1.5);
 }
-/* line 96, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 98, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-overlay .overlay-item:after {
   opacity: 1;
 }
-/* line 100, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 102, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-overlay .overlay-item .overlay-item-thumb {
   position: absolute;
 }
-/* line 104, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 106, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-overlay .overlay-item.full {
   -moz-transform: translate(0%, 0%) scale(1);
   -ms-transform: translate(0%, 0%) scale(1);
@@ -2212,7 +2212,7 @@ i {
   transform: translate(0%, 0%) scale(1);
 }
 
-/* line 109, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 111, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-title {
   position: absolute;
   font-size: 48px;
@@ -2227,11 +2227,11 @@ i {
   -webkit-transition: -webkit-transform 0.34s, opacity 0.34s;
   transition: transform 0.34s, opacity 0.34s;
 }
-/* line 123, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 125, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-title i {
   font-family: "latoblack";
 }
-/* line 127, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 129, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-title:before {
   content: 'view';
   position: absolute;
@@ -2244,12 +2244,12 @@ i {
   opacity: 0;
 }
 
-/* line 137, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 139, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-container .project-item:not([data-delay]):hover,
 .project-item-container .project-item-placeholder:not([data-delay]):hover {
   cursor: pointer;
 }
-/* line 141, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 143, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-container .project-item:not([data-delay]):hover .project-item-thumb,
 .project-item-container .project-item-placeholder:not([data-delay]):hover .project-item-thumb {
   -moz-transform: scale(1, 1);
@@ -2261,13 +2261,13 @@ i {
   -webkit-transition: -webkit-transform 0.34s;
   transition: transform 0.34s;
 }
-/* line 146, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 148, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-container .project-item:not([data-delay]):hover .project-item-thumb:after,
 .project-item-container .project-item-placeholder:not([data-delay]):hover .project-item-thumb:after {
   opacity: 1;
   transition: opacity .35s;
 }
-/* line 151, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 153, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-container .project-item:not([data-delay]):hover .project-item-title, .project-item-container .project-item:not([data-delay]):hover .project-item-title:before,
 .project-item-container .project-item-placeholder:not([data-delay]):hover .project-item-title,
 .project-item-container .project-item-placeholder:not([data-delay]):hover .project-item-title:before {
@@ -2282,7 +2282,7 @@ i {
   transition: transform 0.34s, opacity 0.34s;
 }
 
-/* line 162, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 164, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-container .project-item.selected .project-item-thumb {
   -moz-transform: scale(1, 1);
   -ms-transform: scale(1, 1);
@@ -2293,7 +2293,7 @@ i {
   -webkit-transition: -webkit-transform 0.34s;
   transition: transform 0.34s;
 }
-/* line 168, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 170, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-container .project-item.selected .project-item-title {
   opacity: 0 !important;
   -moz-transition: -moz-transform 0.34s, opacity 0.34s;
@@ -2301,7 +2301,7 @@ i {
   -webkit-transition: -webkit-transform 0.34s, opacity 0.34s;
   transition: transform 0.34s, opacity 0.34s;
 }
-/* line 174, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 176, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-container .project-item.selected .project-item-thumb:after {
   opacity: 1;
   transition: opacity .35s;
@@ -2310,7 +2310,7 @@ i {
   -webkit-transition: opacity 0.34s;
   transition: opacity 0.34s;
 }
-/* line 179, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 181, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-container .project-item.selected .project-item-thumb:after {
   -moz-transform: scale(1, 1);
   -ms-transform: scale(1, 1);
@@ -2322,7 +2322,7 @@ i {
   transition: transform 0.34s;
 }
 
-/* line 185, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 187, ../../../_sass/scss/components/molecules/_project-item.scss */
 .empty-project-item {
   cursor: pointer;
   position: absolute;
@@ -2332,13 +2332,13 @@ i {
   padding: 20px;
   overflow: hidden;
 }
-/* line 194, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 196, ../../../_sass/scss/components/molecules/_project-item.scss */
 .empty-project-item p, .empty-project-item h2 {
   color: white;
   text-transform: uppercase;
   font-weight: bold;
 }
-/* line 201, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 203, ../../../_sass/scss/components/molecules/_project-item.scss */
 .empty-project-item h2 {
   position: absolute;
   top: 44%;
@@ -2350,7 +2350,7 @@ i {
   max-width: 600px;
   text-align: left;
 }
-/* line 213, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 215, ../../../_sass/scss/components/molecules/_project-item.scss */
 .empty-project-item .text-bottom {
   font-size: 14px;
   position: absolute;
@@ -2358,20 +2358,20 @@ i {
   left: 20px;
   right: 20px;
 }
-/* line 221, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 223, ../../../_sass/scss/components/molecules/_project-item.scss */
 .empty-project-item.full {
   width: 100%;
 }
-/* line 224, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 226, ../../../_sass/scss/components/molecules/_project-item.scss */
 .empty-project-item.left {
   left: 0;
   width: 100%;
 }
-/* line 229, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 231, ../../../_sass/scss/components/molecules/_project-item.scss */
 .empty-project-item.right {
   right: 0;
 }
-/* line 233, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 235, ../../../_sass/scss/components/molecules/_project-item.scss */
 .empty-project-item:before {
   content: "";
   position: absolute;
@@ -2382,66 +2382,66 @@ i {
   background: rgba(0, 0, 0, 0.5);
   transition: transform .7s ease;
 }
-/* line 242, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 244, ../../../_sass/scss/components/molecules/_project-item.scss */
 .empty-project-item:hover:before {
   transform: scale(1.2);
   transition: transform .7s ease;
 }
-/* line 246, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 248, ../../../_sass/scss/components/molecules/_project-item.scss */
 .empty-project-item:hover h2 {
   transform: translateY(-45%);
   transition: transform .7s ease;
 }
 
 @media (max-width: 400px) {
-  /* line 254, ../../../_sass/scss/components/molecules/_project-item.scss */
+  /* line 256, ../../../_sass/scss/components/molecules/_project-item.scss */
   .empty-project-item h2 {
     font-size: 36px;
   }
 }
 @media (max-width: 768px) {
-  /* line 259, ../../../_sass/scss/components/molecules/_project-item.scss */
+  /* line 261, ../../../_sass/scss/components/molecules/_project-item.scss */
   .on-homescreen {
     display: block;
   }
 
-  /* line 262, ../../../_sass/scss/components/molecules/_project-item.scss */
+  /* line 264, ../../../_sass/scss/components/molecules/_project-item.scss */
   .project-item-container {
     height: calc(100vw / 1.5);
   }
-  /* line 265, ../../../_sass/scss/components/molecules/_project-item.scss */
+  /* line 267, ../../../_sass/scss/components/molecules/_project-item.scss */
   .project-item-container.double {
     height: calc(200vw / 1.5);
   }
-  /* line 268, ../../../_sass/scss/components/molecules/_project-item.scss */
+  /* line 270, ../../../_sass/scss/components/molecules/_project-item.scss */
   .project-item-container.double .project-item:nth-child(1),
   .project-item-container.double .project-item-placeholder:first-child,
   .project-item-container.double .empty-project-item.left {
     top: 0;
   }
-  /* line 274, ../../../_sass/scss/components/molecules/_project-item.scss */
+  /* line 276, ../../../_sass/scss/components/molecules/_project-item.scss */
   .project-item-container.double .project-item:nth-child(2),
   .project-item-container.double .project-item-placeholder,
   .project-item-container.double .empty-project-item.right {
     top: calc(100vw / 1.5);
   }
-  /* line 280, ../../../_sass/scss/components/molecules/_project-item.scss */
+  /* line 282, ../../../_sass/scss/components/molecules/_project-item.scss */
   .project-item-container.double .project-item, .project-item-container.double .project-item-placeholder, .project-item-container.double .empty-project-item {
     height: 50%;
   }
 
-  /* line 287, ../../../_sass/scss/components/molecules/_project-item.scss */
+  /* line 289, ../../../_sass/scss/components/molecules/_project-item.scss */
   .project-item-container .project-item, .project-item-container .project-item-placeholder, .empty-project-item {
     width: 100%;
   }
-  /* line 290, ../../../_sass/scss/components/molecules/_project-item.scss */
+  /* line 292, ../../../_sass/scss/components/molecules/_project-item.scss */
   .project-item-container .project-item .project-item-thumb, .project-item-container .project-item-placeholder .project-item-thumb, .empty-project-item .project-item-thumb {
     position: absolute;
     width: 100%;
     height: calc(100vw / 1.5);
   }
 
-  /* line 297, ../../../_sass/scss/components/molecules/_project-item.scss */
+  /* line 299, ../../../_sass/scss/components/molecules/_project-item.scss */
   .project-overlay .overlay-item, .project-item-placeholder, .empty-project-item {
     width: 100vw;
     height: calc(100vw / 1.5);
@@ -2765,7 +2765,6 @@ i {
   height: 100%;
   top: 0;
   left: 0;
-  transform: translateZ(-1px) scale(2);
 }
 /* line 19, ../../../_sass/scss/components/organisms/_header.scss */
 .header-background:after {
@@ -2796,27 +2795,31 @@ i {
 }
 /* line 47, ../../../_sass/scss/components/organisms/_header.scss */
 .header-homepage .header-content:before {
-  content: '';
+  content: "";
   width: 100%;
   position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   height: 100%;
-  background: url("/static/img/backgrounds/pattern-a.png") center center repeat;
+  background: url("/static/img/backgrounds/pattern-a.png") top left repeat;
   opacity: .7;
 }
 
 @media (max-width: 768px) {
-  /* line 58, ../../../_sass/scss/components/organisms/_header.scss */
+  /* line 62, ../../../_sass/scss/components/organisms/_header.scss */
   .case-header-title {
     font-size: 80px;
   }
 }
 @media (max-height: 480px) {
-  /* line 63, ../../../_sass/scss/components/organisms/_header.scss */
+  /* line 67, ../../../_sass/scss/components/organisms/_header.scss */
   .header-background {
     transform: none;
   }
 }
-/* line 67, ../../../_sass/scss/components/organisms/_header.scss */
+/* line 71, ../../../_sass/scss/components/organisms/_header.scss */
 .video-header-homepage.no-parallax {
   -moz-transform: translate(-50%, -50%) !important;
   -ms-transform: translate(-50%, -50%) !important;

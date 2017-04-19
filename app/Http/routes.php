@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -11,11 +10,21 @@
 |
 */
 
-$app_routes = ['/', 'home', 'about', 'cases/{slug?}', 'limbo', 'contact'];
+$app_routes = ['/', 'home', 'about', 'cases', 'limbo', 'contact', 'cases/{slug}'];
 
 foreach($app_routes as $index => $route) {
 	Route::get($route, 'FrontController@getIndex');
 }
+/*
+Route::get('cases/{slug}', function($slug = null){
+    $slugs = array_pluck(config('projects.items'), 'slug');
+
+    if(!in_array($slug, $slugs)) {
+        return redirect('404');
+    }
+
+    Route::get($route, 'FrontController@getIndex');
+});
 /*
 |--------------------------------------------------------------------------
 | API Routes
