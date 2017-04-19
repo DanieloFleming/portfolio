@@ -2183,10 +2183,9 @@ i {
   overflow: hidden;
   display: none;
   z-index: 100;
-  background-color: #640a64;
 }
 
-/* line 88, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 86, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-overlay .overlay-item {
   position: absolute;
   overflow: hidden;
@@ -2196,15 +2195,15 @@ i {
   width: 50vw;
   height: calc(50vw / 1.5);
 }
-/* line 98, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 96, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-overlay .overlay-item:after {
   opacity: 1;
 }
-/* line 102, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 100, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-overlay .overlay-item .overlay-item-thumb {
   position: absolute;
 }
-/* line 106, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 104, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-overlay .overlay-item.full {
   -moz-transform: translate(0%, 0%) scale(1);
   -ms-transform: translate(0%, 0%) scale(1);
@@ -2212,7 +2211,7 @@ i {
   transform: translate(0%, 0%) scale(1);
 }
 
-/* line 111, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 109, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-title {
   position: absolute;
   font-size: 48px;
@@ -2227,11 +2226,11 @@ i {
   -webkit-transition: -webkit-transform 0.34s, opacity 0.34s;
   transition: transform 0.34s, opacity 0.34s;
 }
-/* line 125, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 123, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-title i {
   font-family: "latoblack";
 }
-/* line 129, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 127, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-title:before {
   content: 'view';
   position: absolute;
@@ -2244,12 +2243,12 @@ i {
   opacity: 0;
 }
 
-/* line 139, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 137, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-container .project-item:not([data-delay]):hover,
 .project-item-container .project-item-placeholder:not([data-delay]):hover {
   cursor: pointer;
 }
-/* line 143, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 141, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-container .project-item:not([data-delay]):hover .project-item-thumb,
 .project-item-container .project-item-placeholder:not([data-delay]):hover .project-item-thumb {
   -moz-transform: scale(1, 1);
@@ -2261,13 +2260,13 @@ i {
   -webkit-transition: -webkit-transform 0.34s;
   transition: transform 0.34s;
 }
-/* line 148, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 146, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-container .project-item:not([data-delay]):hover .project-item-thumb:after,
 .project-item-container .project-item-placeholder:not([data-delay]):hover .project-item-thumb:after {
   opacity: 1;
   transition: opacity .35s;
 }
-/* line 153, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 151, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-container .project-item:not([data-delay]):hover .project-item-title, .project-item-container .project-item:not([data-delay]):hover .project-item-title:before,
 .project-item-container .project-item-placeholder:not([data-delay]):hover .project-item-title,
 .project-item-container .project-item-placeholder:not([data-delay]):hover .project-item-title:before {
@@ -2282,7 +2281,7 @@ i {
   transition: transform 0.34s, opacity 0.34s;
 }
 
-/* line 164, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 162, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-container .project-item.selected .project-item-thumb {
   -moz-transform: scale(1, 1);
   -ms-transform: scale(1, 1);
@@ -2293,7 +2292,7 @@ i {
   -webkit-transition: -webkit-transform 0.34s;
   transition: transform 0.34s;
 }
-/* line 170, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 168, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-container .project-item.selected .project-item-title {
   opacity: 0 !important;
   -moz-transition: -moz-transform 0.34s, opacity 0.34s;
@@ -2301,7 +2300,7 @@ i {
   -webkit-transition: -webkit-transform 0.34s, opacity 0.34s;
   transition: transform 0.34s, opacity 0.34s;
 }
-/* line 176, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 174, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-container .project-item.selected .project-item-thumb:after {
   opacity: 1;
   transition: opacity .35s;
@@ -2310,7 +2309,7 @@ i {
   -webkit-transition: opacity 0.34s;
   transition: opacity 0.34s;
 }
-/* line 181, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 179, ../../../_sass/scss/components/molecules/_project-item.scss */
 .project-item-container .project-item.selected .project-item-thumb:after {
   -moz-transform: scale(1, 1);
   -ms-transform: scale(1, 1);
@@ -2322,7 +2321,7 @@ i {
   transition: transform 0.34s;
 }
 
-/* line 187, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 185, ../../../_sass/scss/components/molecules/_project-item.scss */
 .empty-project-item {
   cursor: pointer;
   position: absolute;
@@ -2332,13 +2331,13 @@ i {
   padding: 20px;
   overflow: hidden;
 }
-/* line 196, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 194, ../../../_sass/scss/components/molecules/_project-item.scss */
 .empty-project-item p, .empty-project-item h2 {
   color: white;
   text-transform: uppercase;
   font-weight: bold;
 }
-/* line 203, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 201, ../../../_sass/scss/components/molecules/_project-item.scss */
 .empty-project-item h2 {
   position: absolute;
   top: 44%;
@@ -2350,7 +2349,7 @@ i {
   max-width: 600px;
   text-align: left;
 }
-/* line 215, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 213, ../../../_sass/scss/components/molecules/_project-item.scss */
 .empty-project-item .text-bottom {
   font-size: 14px;
   position: absolute;
@@ -2358,20 +2357,20 @@ i {
   left: 20px;
   right: 20px;
 }
-/* line 223, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 221, ../../../_sass/scss/components/molecules/_project-item.scss */
 .empty-project-item.full {
   width: 100%;
 }
-/* line 226, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 224, ../../../_sass/scss/components/molecules/_project-item.scss */
 .empty-project-item.left {
   left: 0;
   width: 100%;
 }
-/* line 231, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 229, ../../../_sass/scss/components/molecules/_project-item.scss */
 .empty-project-item.right {
   right: 0;
 }
-/* line 235, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 233, ../../../_sass/scss/components/molecules/_project-item.scss */
 .empty-project-item:before {
   content: "";
   position: absolute;
@@ -2382,66 +2381,66 @@ i {
   background: rgba(0, 0, 0, 0.5);
   transition: transform .7s ease;
 }
-/* line 244, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 242, ../../../_sass/scss/components/molecules/_project-item.scss */
 .empty-project-item:hover:before {
   transform: scale(1.2);
   transition: transform .7s ease;
 }
-/* line 248, ../../../_sass/scss/components/molecules/_project-item.scss */
+/* line 246, ../../../_sass/scss/components/molecules/_project-item.scss */
 .empty-project-item:hover h2 {
   transform: translateY(-45%);
   transition: transform .7s ease;
 }
 
 @media (max-width: 400px) {
-  /* line 256, ../../../_sass/scss/components/molecules/_project-item.scss */
+  /* line 254, ../../../_sass/scss/components/molecules/_project-item.scss */
   .empty-project-item h2 {
     font-size: 36px;
   }
 }
 @media (max-width: 768px) {
-  /* line 261, ../../../_sass/scss/components/molecules/_project-item.scss */
+  /* line 259, ../../../_sass/scss/components/molecules/_project-item.scss */
   .on-homescreen {
     display: block;
   }
 
-  /* line 264, ../../../_sass/scss/components/molecules/_project-item.scss */
+  /* line 262, ../../../_sass/scss/components/molecules/_project-item.scss */
   .project-item-container {
     height: calc(100vw / 1.5);
   }
-  /* line 267, ../../../_sass/scss/components/molecules/_project-item.scss */
+  /* line 265, ../../../_sass/scss/components/molecules/_project-item.scss */
   .project-item-container.double {
     height: calc(200vw / 1.5);
   }
-  /* line 270, ../../../_sass/scss/components/molecules/_project-item.scss */
+  /* line 268, ../../../_sass/scss/components/molecules/_project-item.scss */
   .project-item-container.double .project-item:nth-child(1),
   .project-item-container.double .project-item-placeholder:first-child,
   .project-item-container.double .empty-project-item.left {
     top: 0;
   }
-  /* line 276, ../../../_sass/scss/components/molecules/_project-item.scss */
+  /* line 274, ../../../_sass/scss/components/molecules/_project-item.scss */
   .project-item-container.double .project-item:nth-child(2),
   .project-item-container.double .project-item-placeholder,
   .project-item-container.double .empty-project-item.right {
     top: calc(100vw / 1.5);
   }
-  /* line 282, ../../../_sass/scss/components/molecules/_project-item.scss */
+  /* line 280, ../../../_sass/scss/components/molecules/_project-item.scss */
   .project-item-container.double .project-item, .project-item-container.double .project-item-placeholder, .project-item-container.double .empty-project-item {
     height: 50%;
   }
 
-  /* line 289, ../../../_sass/scss/components/molecules/_project-item.scss */
+  /* line 287, ../../../_sass/scss/components/molecules/_project-item.scss */
   .project-item-container .project-item, .project-item-container .project-item-placeholder, .empty-project-item {
     width: 100%;
   }
-  /* line 292, ../../../_sass/scss/components/molecules/_project-item.scss */
+  /* line 290, ../../../_sass/scss/components/molecules/_project-item.scss */
   .project-item-container .project-item .project-item-thumb, .project-item-container .project-item-placeholder .project-item-thumb, .empty-project-item .project-item-thumb {
     position: absolute;
     width: 100%;
     height: calc(100vw / 1.5);
   }
 
-  /* line 299, ../../../_sass/scss/components/molecules/_project-item.scss */
+  /* line 297, ../../../_sass/scss/components/molecules/_project-item.scss */
   .project-overlay .overlay-item, .project-item-placeholder, .empty-project-item {
     width: 100vw;
     height: calc(100vw / 1.5);
@@ -2791,7 +2790,7 @@ i {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) translateZ(-1px) scale(2) !important;
+  transform: translate(-50%, -50%) !important;
 }
 /* line 47, ../../../_sass/scss/components/organisms/_header.scss */
 .header-homepage .header-content:before {

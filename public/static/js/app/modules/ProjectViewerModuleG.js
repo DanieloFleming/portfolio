@@ -64,7 +64,7 @@ define([
                 scrollTarget = maxScroll;
             }
             this.overlayElement.style.width = this.$application[0].clientWidth + 'px';
-            this.$application[0].appendChild(this.overlayElement);
+            this.$body[0].appendChild(this.overlayElement);
 
 
             this.animateScroll(scrollTarget, scrollData);
@@ -130,7 +130,6 @@ define([
             var scale = this.getScale(backgroundData);
 
             this.overlayImage.appendChild(this.headerImage);
-
 
             this.setOverlayItem(backgroundData);
 
