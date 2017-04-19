@@ -47,6 +47,10 @@ html, #application {
 	//perspective: 1px;
 }
 
+@media screen and (min-width:0\0) {
+	#application { width: calc(100% + 20px);}
+}
+
 a, a:visited {
 	text-decoration: none;
 	color: inherit;
