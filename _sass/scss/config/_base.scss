@@ -47,7 +47,12 @@ html, #application {
 	//perspective: 1px;
 }
 
-@media screen and (min-width:0\0) {
+@media screen and (min-width:0\0),
+(-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+	#application { width: calc(100% + 20px);}
+}
+@supports (-ms-ime-align:auto) {
 	#application { width: calc(100% + 20px);}
 }
 
