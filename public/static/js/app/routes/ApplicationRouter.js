@@ -41,12 +41,13 @@ define([
             var collection = app.collections.projectCollection;
 
             var model = collection.findWhere({slug : slug});
-                model.setPrev(collection.prev(model));
-                model.setNext(collection.next(model));
-
+            console.log(model);
             if (model === undefined) {
-                return this.invalidUrl();
+                return this.pageNotFound();
             }
+
+            model.setPrev(collection.prev(model));
+            model.setNext(collection.next(model));
 
             this.views.projectInfo.setModel(model);
             
