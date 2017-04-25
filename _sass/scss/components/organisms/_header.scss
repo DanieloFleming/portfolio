@@ -71,6 +71,11 @@
 (not (-webkit-overflow-scrolling: touch)) and
 (not(-ms-high-contrast: none)) and
 (not(-ms-high-contrast: active))) {
+	@supports not(-ms-ime-align:auto) {
+		.header-background {
+			transform: translateZ(-1px) scale(2);
+		}
+	}
 	#application{
 		-webkit-perspective: 1px;
 		perspective: 1px;
@@ -79,9 +84,7 @@
 	.video-header-homepage{
 		transform: translate3d(-50%, -50%, -1px) scale(2);
 	}
-	.header-background {
-		transform: translateZ(-1px) scale(2);
-	}
+
 	.section-header {
 		position:static;
 	}
