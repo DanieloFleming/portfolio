@@ -75,20 +75,22 @@
 (not(-ms-ime-align:auto))
 ) {
 
-	#application{
+	#application {
 		-webkit-perspective: 1px;
 		perspective: 1px;
 		height: 100vh;
 	}
-	.video-header-homepage{
-		transform: translate3d(-50%, -50%, -1px) scale(2) !important;
-	}
-	
-	.header-background {
-		transform: translateZ(-1px) scale(2);
-	}
+	.parallax {
+		.video-header-homepage {
+			transform: translate3d(-50%, -50%, -1px) scale(2) !important;
+		}
 
-	.section-header {
-		position:static;
+		.parallax.header-background {
+			transform: translateZ(-1px) scale(2);
+		}
+
+		&.section-header {
+			position:static;
+		}
 	}
 }

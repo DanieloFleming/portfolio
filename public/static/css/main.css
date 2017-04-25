@@ -2846,18 +2846,16 @@ i {
     height: 100vh;
   }
 
-  /* line 83, ../../../_sass/scss/components/organisms/_header.scss */
-  .video-header-homepage {
+  /* line 84, ../../../_sass/scss/components/organisms/_header.scss */
+  .parallax .video-header-homepage {
     transform: translate3d(-50%, -50%, -1px) scale(2) !important;
   }
-
-  /* line 87, ../../../_sass/scss/components/organisms/_header.scss */
-  .header-background {
+  /* line 88, ../../../_sass/scss/components/organisms/_header.scss */
+  .parallax .parallax.header-background {
     transform: translateZ(-1px) scale(2);
   }
-
-  /* line 91, ../../../_sass/scss/components/organisms/_header.scss */
-  .section-header {
+  /* line 92, ../../../_sass/scss/components/organisms/_header.scss */
+  .parallax.section-header {
     position: static;
   }
 }
