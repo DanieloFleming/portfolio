@@ -2848,7 +2848,7 @@ i {
 
   /* line 83, ../../../_sass/scss/components/organisms/_header.scss */
   .video-header-homepage {
-    transform: translate3d(-50%, -50%, -1px) scale(2);
+    transform: translate3d(-50%, -50%, -1px) scale(2) !important;
   }
 
   /* line 87, ../../../_sass/scss/components/organisms/_header.scss */
