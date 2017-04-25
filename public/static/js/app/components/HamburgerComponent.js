@@ -78,7 +78,7 @@ define([
 			goToPage : function(e) {
 				e.preventDefault();
 				var target = e.currentTarget;
-				slug = $(target).find('.nav-link')[0].dataset.href;
+				slug = $(target).find('.nav-link')[0].getAttribute('data-href');
 
 				if(slug == location.pathname) {
 					this.togglePanel();

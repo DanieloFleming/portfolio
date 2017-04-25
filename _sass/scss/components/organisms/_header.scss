@@ -15,7 +15,6 @@
 	height: 100%;
 	top: 0;
 	left: 0;
-	//transform: translateZ(-1px) scale(2);
 	&:after {
 		content: '';
 		background-color: rgba(0, 0, 0, .5);
@@ -40,7 +39,7 @@
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%) !important;
+	transform: translate(-50%, -50%);
 }
 .header-homepage {
 
@@ -68,6 +67,22 @@
 		transform:none;
 	}
 }
-.video-header-homepage.no-parallax {
-	@include transform(translate(-50%, -50%) !important);
+@supports ((perspective: 1px) and
+(not (-webkit-overflow-scrolling: touch)) and
+(not(-ms-high-contrast: none)) and
+(not(-ms-high-contrast: active))) {
+	#application{
+		-webkit-perspective: 1px;
+		perspective: 1px;
+		height: 100vh;
+	}
+	.video-header-homepage{
+		transform: translate3d(-50%, -50%, -1px) scale(2);
+	}
+	.header-background {
+		transform: translateZ(-1px) scale(2);
+	}
+	.section-header {
+		position:static;
+	}
 }

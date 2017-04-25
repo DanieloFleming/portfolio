@@ -63,8 +63,8 @@ define([
 
 	FadeInComponent.prototype.showElements = function(section) {
 		var elements = section.querySelectorAll('[data-delay]');
-		
-		section.dataset.visible = true;
+
+		section.setAttribute('data-visible', true);
 
 		_.each(elements, this.fadeInElement);
 	};
