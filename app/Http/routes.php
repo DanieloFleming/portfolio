@@ -1,20 +1,6 @@
 <?php
 /*
 |--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here are all the routes defined for the frond-end. These routes are
-| required for the request to be processed. The frond-end  
-| will handle the rest of the route calls.
-|
-*/
-Route::get('unsupported', function(){
-    return view('errors.unsupported');
-});
-
-/*
-|--------------------------------------------------------------------------
 | API Routes
 |--------------------------------------------------------------------------
 |
@@ -24,4 +10,14 @@ Route::get('unsupported', function(){
 
 Route::resource('api/projects', 'Api\ProjectsApiController', ['only' => ['index', 'show']]);
 
+/*
+|--------------------------------------------------------------------------
+| Application Routes
+|--------------------------------------------------------------------------
+|
+| Here are all the routes defined for the frond-end. These routes are
+| required for the request to be processed. The frond-end
+| will handle the rest of the route calls.
+|
+*/
 Route::any( '{catchall}', 'FrontController@getIndex' )->where('catchall', '(.*)');
