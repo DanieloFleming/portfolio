@@ -6,30 +6,24 @@ define([
     return Backbone.View.extend({
 
         initialize : function(){
+            _.bindAll(this, 'handleResize', 'ticker');
+
             if(app.browser.isMobile) {
-                _.bindAll(this, 'handleResize');
-
                 $(window).on('resize', this.handleResize);
-
                 this.handleResize();
             }
+
             if(!app.browser.isChrome) {
                 this.handleNonChrome();
             }
+
+            TweenMax.ticker.addEventListener('tick', this.ticker);
         },
 
         handleNonChrome : function() {
-            var vid = this.el.querySelector('.video-header-homepage');
-            var bg = this.el.querySelector('.header-background');
-            if(vid) {
-                vid.classList.add("no-parallax");
-            } else if(bg) {
-                bg.style.transform = 'none';
-            }
+
             if(app.browser.isSafari) {
-                $("#application").css({perspective : 'none', transform:'none'});
-            } else {
-                $("#application").css({perspective : 'none'});
+                $("#application").css({transform:'none'});
             }
         },
 
@@ -37,10 +31,15 @@ define([
             this.el.style.height = window.innerHeight + 'px';
         },
 
+        ticker : function() {
+
+        },
+
         close : function() {
             if(app.browser.isMobile) {
                 $(window).off('resize', this.handleResize);
             }
+            TweenMax.ticker.removeEventListener('tick', this.ticker);
         }
     });
 });

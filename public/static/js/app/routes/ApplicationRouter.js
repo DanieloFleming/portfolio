@@ -39,9 +39,7 @@ define([
 
         projectPage : function(slug) {
             var collection = app.collections.projectCollection;
-
             var model = collection.findWhere({slug : slug});
-            console.log(model);
             if (model === undefined) {
                 return this.pageNotFound();
             }
