@@ -16,7 +16,7 @@ class CheckBrowser
         'ucbrowser'=> 1
     ];
 
-    private $redirect_route = "unsupported";
+    private $redirect_view = "errors.unsupported";
 
     /**
      * Handle an incoming request.
@@ -32,14 +32,14 @@ class CheckBrowser
         $version = $agent->version($agent->browser());
 
         if($browser_key == 'ucbrowser' ) {
-            return redirect($this->redirect_route);
+            return view($this->redirect_view);
         }
 
         if($agent->isDesktop() && key_exists($browser_key, $this->params)) {
             $supported_version = $this->params[$browser_key];
 
             if(floor($version) < $supported_version ) {
-                return redirect($this->redirect_route);
+                return view($this->redirect_view);
             }
         }
 
