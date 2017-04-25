@@ -1,6 +1,6 @@
 <script type="template" class="page" id="homepage">
 
-    <section class="section section-header header-homepage is-unpadded is-inverted">
+    <section class="section parallax section-header header-homepage is-unpadded is-inverted">
         <video class="video-header-homepage" muted autoplay loop data-delay=".5" data-transition-type="fadeIn">
             <source src="/static/video/trailer.mp4" type="video/mp4">
         </video>
