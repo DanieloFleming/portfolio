@@ -8,7 +8,6 @@
 
 namespace App\Http\Controllers;
 
-
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\File;
@@ -22,6 +21,8 @@ class FrontController extends Controller
 
     public function __construct()
     {
+        $this->middleware('check.browser');
+
         $paths = Config::get('custom.urls');
 
         $this->collection = collect(Config::get('projects.items'));
@@ -38,7 +39,7 @@ class FrontController extends Controller
             $this->getProjectOverview(),
             view('pages.contactpage'),
             view('pages.splash-screen'),
-            //view('errors.404')
+            $this->get404()
         ];
 
         return view($this->layout, ['templates' => $views]);
@@ -47,7 +48,7 @@ class FrontController extends Controller
     private function getHomePage()
     {
         $collection = $this->collection->take(4);
-        $placeholder = (object)Config::get('projects.placeholders.to_all');
+        $placeholder = (object) Config::get('projects.placeholders.to_all');
 
         return view('pages.homepage', compact('collection', 'placeholder'));
     }
@@ -58,6 +59,13 @@ class FrontController extends Controller
         $placeholder = (object) Config::get('projects.placeholders.contact');
 
         return view('pages.project-index', compact('collection', 'placeholder'));
+    }
+
+    private function get404() {
+        $collection = $this->collection;
+        $placeholder = (object) Config::get('projects.placeholders.contact');
+
+        return view('pages.notfoundpage', compact('collection', 'placeholder'));
     }
 
     private function getProjectOverview()

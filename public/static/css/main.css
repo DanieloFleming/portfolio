@@ -2799,8 +2799,8 @@ i {
   font-size: 120px;
 }
 
-/* line 37, ../../../_sass/scss/components/organisms/_header.scss */
-.header-homepage video {
+/* line 35, ../../../_sass/scss/components/organisms/_header.scss */
+.video-header-homepage {
   min-width: 100%;
   min-height: 100%;
   width: auto;
@@ -2810,6 +2810,7 @@ i {
   left: 50%;
   transform: translate(-50%, -50%) !important;
 }
+
 /* line 47, ../../../_sass/scss/components/organisms/_header.scss */
 .header-homepage .header-content:before {
   content: "";

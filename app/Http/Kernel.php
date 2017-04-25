@@ -49,6 +49,7 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Foundation\Http\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'browser.check' => \App\Http\Middleware\CheckBrowser::class
+        'check.browser' => \App\Http\Middleware\CheckBrowser::class,
+        'check.ajax' => \App\Http\Middleware\CheckAjax::class
     ];
 }

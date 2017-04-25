@@ -10,9 +10,8 @@ define([
             'about'          : 'about',
             'cases(/)'       : 'projectIndex',
             'cases/:slug'    : 'projectPage',
-            'limbo'          : 'pageNotFound',
             'contact'        : 'contact',
-            '*action'        : 'invalidUrl'
+            '*action'        : 'pageNotFound'
         },
 
         initialize : function() {
@@ -22,7 +21,7 @@ define([
                 portfolioPage   : ViewFactory.get(ViewFactory.VIEW_PORTFOLIO, {collection: app.collections.projectCollection}),
                 projectInfo     : ViewFactory.get(ViewFactory.VIEW_PROJECT, {model: app.models.projectModel}),
                 contactPage     : ViewFactory.get(ViewFactory.VIEW_CONTACT),
-                //page404         : ViewFactory.get(ViewFactory.VIEW_404)
+                page404         : ViewFactory.get(ViewFactory.VIEW_404)
             };
         },
 
@@ -58,11 +57,8 @@ define([
             app.regionManager.show(this.views.contactPage);
         },
 
-        invalidUrl : function() {
-           app.router.navigate('/limbo', {trigger: true});
-        },
         pageNotFound : function() {
-            //app.regionManager.show(this.views.page404);
+            app.regionManager.show(this.views.page404);
         }
     });
 });
