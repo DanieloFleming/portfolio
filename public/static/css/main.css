@@ -2838,26 +2838,25 @@ i {
     transform: none;
   }
 }
-@supports (perspective: 1px) and (not (-webkit-overflow-scrolling: touch)) and (not (-ms-high-contrast: none)) and (not (-ms-high-contrast: active)) {
-  @supports not (-ms-ime-align: auto) {
-    /* line 75, ../../../_sass/scss/components/organisms/_header.scss */
-    .header-background {
-      transform: translateZ(-1px) scale(2);
-    }
-  }
-  /* line 79, ../../../_sass/scss/components/organisms/_header.scss */
+@supports (perspective: 1px) and (not (-webkit-overflow-scrolling: touch)) and (not (-ms-high-contrast: none)) and (not (-ms-high-contrast: active)) and (not (-ms-ime-align: auto)) {
+  /* line 78, ../../../_sass/scss/components/organisms/_header.scss */
   #application {
     -webkit-perspective: 1px;
     perspective: 1px;
     height: 100vh;
   }
 
-  /* line 84, ../../../_sass/scss/components/organisms/_header.scss */
+  /* line 83, ../../../_sass/scss/components/organisms/_header.scss */
   .video-header-homepage {
     transform: translate3d(-50%, -50%, -1px) scale(2);
   }
 
-  /* line 88, ../../../_sass/scss/components/organisms/_header.scss */
+  /* line 87, ../../../_sass/scss/components/organisms/_header.scss */
+  .header-background {
+    transform: translateZ(-1px) scale(2);
+  }
+
+  /* line 91, ../../../_sass/scss/components/organisms/_header.scss */
   .section-header {
     position: static;
   }
