@@ -1,5 +1,5 @@
 <script type="template" id="contactpage">
-    <section class="section section-header is-unpadded  is-inverted">
+    <section class="section section-header is-unpadded  is-inverted" style="position: relative">
         <div class="row fill-parent is-aligned--middle is-unpadded is-aligned--center">
 
             <div class="header-background" data-delay="0" data-transition-type="fadeIn"
