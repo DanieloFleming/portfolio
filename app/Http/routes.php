@@ -9,22 +9,10 @@
 | will handle the rest of the route calls.
 |
 */
-
-$app_routes = ['/', 'home', 'about', 'cases', 'limbo', 'contact', 'cases/{slug}'];
-
-foreach($app_routes as $index => $route) {
-	Route::get($route, 'FrontController@getIndex');
-}
-/*
-Route::get('cases/{slug}', function($slug = null){
-    $slugs = array_pluck(config('projects.items'), 'slug');
-
-    if(!in_array($slug, $slugs)) {
-        return redirect('404');
-    }
-
-    Route::get($route, 'FrontController@getIndex');
+Route::get('unsupported', function(){
+    return view('errors.unsupported');
 });
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -36,11 +24,4 @@ Route::get('cases/{slug}', function($slug = null){
 
 Route::resource('api/projects', 'Api\ProjectsApiController', ['only' => ['index', 'show']]);
 
-Route::get('/mail', function(){
-
-    Mail::raw('See if this works', function($message){
-        $message->from('danielofleming@gmail.com', 'danielo');
-        $message->to('connect@danielo.nl', 'Admin Master');
-    });
-    
-});
+Route::any( '{catchall}', 'FrontController@getIndex' )->where('catchall', '(.*)');

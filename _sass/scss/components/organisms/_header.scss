@@ -32,18 +32,18 @@
 .case-header-title {
 	font-size: 120px;
 }
-
+.video-header-homepage {
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) !important;
+}
 .header-homepage {
-	video {
-		min-width: 100%;
-		min-height: 100%;
-		width: auto;
-		height: auto;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%) !important;
-	}
+
 	.header-content:before {
 		content: "";
 		width: 100%;

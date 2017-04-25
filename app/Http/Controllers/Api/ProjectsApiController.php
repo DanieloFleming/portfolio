@@ -9,6 +9,8 @@ class ProjectsApiController extends Controller
 
     public function __construct()
     {
+        $this->middleware('check.ajax');
+
         $this->projectData = collect(Config::get("projects.items"));
     }
 
