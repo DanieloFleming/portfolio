@@ -64,6 +64,7 @@ define([
             ComponentLoader.load(this.ui.components);
 
             this.handleHeaderLoading();
+
             this.listenTo(this.components.projectViewer, 'clicked', this.preparePageChange);
 
         },

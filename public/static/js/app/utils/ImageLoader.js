@@ -54,6 +54,9 @@ define([
             totalBytes : e.total
         };
 
+        this.request.removeEventListener("progress", this._handleProgress.bind(this));
+        this.request.removeEventListener("load", this._loadCompleted.bind(this));
+
         data.image = this._handleResponseData(this.request.response);
 
         if(this.onCompleted) this.onCompleted (data);
