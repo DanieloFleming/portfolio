@@ -6,7 +6,7 @@ define([
     return Backbone.View.extend({
 
         initialize : function(){
-            _.bindAll(this, 'handleResize', 'ticker');
+            _.bindAll(this, 'handleResize');
 
             if(app.browser.isMobile) {
                 $(window).on('resize', this.handleResize);
@@ -16,8 +16,6 @@ define([
             if(!app.browser.isChrome) {
                 this.handleNonChrome();
             }
-
-            TweenMax.ticker.addEventListener('tick', this.ticker);
         },
 
         handleNonChrome : function() {
@@ -31,15 +29,10 @@ define([
             this.el.style.height = window.innerHeight + 'px';
         },
 
-        ticker : function() {
-
-        },
-
         close : function() {
             if(app.browser.isMobile) {
                 $(window).off('resize', this.handleResize);
             }
-            TweenMax.ticker.removeEventListener('tick', this.ticker);
         }
     });
 });

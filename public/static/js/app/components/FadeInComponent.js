@@ -92,6 +92,7 @@ define([
 
 		element.style.transitionDelay = '';
 		element.removeAttribute('data-delay');
+		element.removeEventListener("transitionend", this.removeTransformValues);
 	}
 
 	FadeInComponent.prototype.terminate = function() {

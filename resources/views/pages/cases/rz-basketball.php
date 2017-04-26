@@ -38,7 +38,7 @@
     <section class="section is-aligned--center is-colored--dark"
              style="display:flex; justify-content:space-around; flex-wrap:wrap; align-items:flex-start;padding-top: 2rem">
         <?php for($i = 1; $i < 11; $i++):?>
-            <img data-transition-type="slideDown" data-delay="<?=.3 * $i;?>" src="/static/img/cases/rz-basketball/insta/<?=$i;?>.jpg" style="width:calc(<?=(100/5);?>% - 10px);  height: auto; margin: 5px">
+            <img data-transition-type="slideDown" data-delay="<?=.15 * $i;?>" src="/static/img/cases/rz-basketball/insta/<?=$i;?>.jpg" style="width:calc(<?=(100/5);?>% - 10px);  height: auto; margin: 5px">
         <?php endfor;?>
     </section>
     <div class="section is-unpadded black-style" style="overflow:hidden; background-color:black;">
