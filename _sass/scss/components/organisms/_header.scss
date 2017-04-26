@@ -39,7 +39,7 @@
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%) !important;
 }
 .header-homepage {
 
@@ -78,7 +78,7 @@
 	#application {
 		-webkit-perspective: 1px;
 		perspective: 1px;
-		height: 100vh;
+		height: 100%;
 	}
 	.parallax {
 		.video-header-homepage {
