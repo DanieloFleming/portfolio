@@ -2851,7 +2851,7 @@ i {
     transform: translate3d(-50%, -50%, -1px) scale(2) !important;
   }
   /* line 88, ../../../_sass/scss/components/organisms/_header.scss */
-  .parallax .parallax.header-background {
+  .parallax .header-background {
     transform: translateZ(-1px) scale(2);
   }
   /* line 92, ../../../_sass/scss/components/organisms/_header.scss */

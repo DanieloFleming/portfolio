@@ -85,10 +85,10 @@
 			transform: translate3d(-50%, -50%, -1px) scale(2) !important;
 		}
 
-		.parallax.header-background {
+		.header-background {
 			transform: translateZ(-1px) scale(2);
 		}
-
+		
 		&.section-header {
 			position:static;
 		}
