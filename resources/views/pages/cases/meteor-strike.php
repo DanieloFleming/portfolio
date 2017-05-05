@@ -26,11 +26,9 @@
         <img data-delay="0" src="/static/img/cases/meteor-strike/sprite3.png" style="width:100%;" class="smart-object"/>
     </div>
     <div class="section is-aligned--center is-unpadded" style="background:#3A2E3F">
-        <div class="row is-unpadded">
-            <div class="column is-unpadded">
-                <iframe src="<?= url('/static/demos/mstrike/test.html');?>" style="width:100%; height:100%; max-width:800px;position:absolute;top:0; overflow: hidden"></iframe>
-                <canvas width="800" height="600" style="width:100%; max-width:800px;  visibility: hidden"></canvas>
-            </div>
+        <div class="container is-centered">
+            <iframe src="<?= url('/static/demos/mstrike/test.html');?>" style="transform:translateX(-50%); left:50%; width:100%; height:100%; max-width:800px;position:absolute;top:0; overflow: hidden"></iframe>
+            <canvas width="800" height="600" style="width:100%; max-width:800px;  visibility: hidden"></canvas>
         </div>
     </div>
 

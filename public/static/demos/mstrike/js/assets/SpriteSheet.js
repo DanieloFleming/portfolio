@@ -25,6 +25,7 @@ var SpriteSheet = {
             explode : [0, 48]
         }
     },
+
     explosion_small_1 : {
         src : 'img/explosion/ex-small-1.png',
         frames : 40,
@@ -32,6 +33,7 @@ var SpriteSheet = {
             explode : [0, 40]
         }
     },
+
     explosion_small_2 : {
         src : 'img/explosion/ex-small-2.png',
         frames : 64,
@@ -39,6 +41,7 @@ var SpriteSheet = {
             explode : [0, 64]
         }
     },
+
     explosion_small_3 : {
         src : 'img/explosion/ex-small-3.png',
         frames : 8,
@@ -46,6 +49,7 @@ var SpriteSheet = {
             explode : [0, 8]
         }
     },
+
     explosion_small_4 : {
         src : 'img/explosion/ex-small-4.png',
         frames : 10,
