@@ -11,6 +11,7 @@ namespace App\Http\Controllers;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\File;
+use Jenssegers\Agent\Agent;
 
 class FrontController extends Controller
 {
@@ -41,8 +42,13 @@ class FrontController extends Controller
             view('pages.splash-screen'),
             $this->get404()
         ];
+        $agent = new Agent();
 
-        return view($this->layout, ['templates' => $views]);
+        return view($this->layout, [
+            'templates' => $views,
+            'dataBrowser' => strtolower($agent->browser()),
+            'dataOS' => strtolower($agent->platform())
+        ]);
     }
 
     private function getHomePage()

@@ -122,7 +122,7 @@ body {
 html, #application {
   width: 100%;
   height: 100%;
-  min-height: 480px;
+  min-height: 420px;
   background: white;
   position: relative;
 }
@@ -959,38 +959,39 @@ a, a:visited {
   overflow: hidden;
   position: relative;
   background-color: white;
+  z-index: 1 !important;
 }
-/* line 8, ../../../_sass/scss/layouts/_section.scss */
+/* line 9, ../../../_sass/scss/layouts/_section.scss */
 .section.is-colored--dark {
   background-color: #f9f9f9;
 }
-/* line 12, ../../../_sass/scss/layouts/_section.scss */
+/* line 13, ../../../_sass/scss/layouts/_section.scss */
 .section.is-unpadded {
   padding-top: 0;
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
 }
-/* line 18, ../../../_sass/scss/layouts/_section.scss */
+/* line 19, ../../../_sass/scss/layouts/_section.scss */
 .section.is-unpadded--horizontal {
   padding-left: 0;
   padding-right: 0;
 }
-/* line 22, ../../../_sass/scss/layouts/_section.scss */
+/* line 23, ../../../_sass/scss/layouts/_section.scss */
 .section.is-unpadded--vertical {
   padding-top: 0;
   padding-bottom: 0;
 }
-/* line 27, ../../../_sass/scss/layouts/_section.scss */
+/* line 28, ../../../_sass/scss/layouts/_section.scss */
 .section.is-unpadded--top {
   padding-top: 0;
 }
-/* line 31, ../../../_sass/scss/layouts/_section.scss */
+/* line 32, ../../../_sass/scss/layouts/_section.scss */
 .section.is-unpadded--bottom {
   padding-bottom: 0;
 }
 
-/* line 36, ../../../_sass/scss/layouts/_section.scss */
+/* line 37, ../../../_sass/scss/layouts/_section.scss */
 .is-inverted {
   background-color: black;
 }
@@ -2771,9 +2772,10 @@ i {
   width: 100%;
   height: 100vh;
   background-color: #fff !important;
+  z-index: 2 !important;
 }
 
-/* line 9, ../../../_sass/scss/components/organisms/_header.scss */
+/* line 8, ../../../_sass/scss/components/organisms/_header.scss */
 .header-background {
   background-position: center center;
   background-repeat: no-repeat;
@@ -2784,7 +2786,7 @@ i {
   top: 0;
   left: 0;
 }
-/* line 18, ../../../_sass/scss/components/organisms/_header.scss */
+/* line 17, ../../../_sass/scss/components/organisms/_header.scss */
 .header-background:after {
   content: '';
   background-color: rgba(0, 0, 0, 0.5);
@@ -2795,12 +2797,12 @@ i {
   left: 0;
 }
 
-/* line 31, ../../../_sass/scss/components/organisms/_header.scss */
+/* line 30, ../../../_sass/scss/components/organisms/_header.scss */
 .case-header-title {
   font-size: 120px;
 }
 
-/* line 34, ../../../_sass/scss/components/organisms/_header.scss */
+/* line 33, ../../../_sass/scss/components/organisms/_header.scss */
 .video-header-homepage {
   min-width: 100%;
   min-height: 100%;
@@ -2812,7 +2814,7 @@ i {
   transform: translate(-50%, -50%) !important;
 }
 
-/* line 46, ../../../_sass/scss/components/organisms/_header.scss */
+/* line 45, ../../../_sass/scss/components/organisms/_header.scss */
 .header-homepage .header-content:before {
   content: "";
   width: 100%;
@@ -2827,13 +2829,13 @@ i {
 }
 
 @media (max-width: 768px) {
-  /* line 61, ../../../_sass/scss/components/organisms/_header.scss */
+  /* line 60, ../../../_sass/scss/components/organisms/_header.scss */
   .case-header-title {
     font-size: 80px;
   }
 }
 @media (max-height: 480px) {
-  /* line 66, ../../../_sass/scss/components/organisms/_header.scss */
+  /* line 65, ../../../_sass/scss/components/organisms/_header.scss */
   .header-background {
     transform: none;
   }
@@ -2846,6 +2848,11 @@ i {
     height: 100%;
   }
 
+  /* line 83, ../../../_sass/scss/components/organisms/_header.scss */
+  .parallax {
+    position: static;
+    z-index: 0;
+  }
   /* line 84, ../../../_sass/scss/components/organisms/_header.scss */
   .parallax .video-header-homepage {
     transform: translate3d(-50%, -50%, -1px) scale(2) !important;
@@ -2854,9 +2861,25 @@ i {
   .parallax .header-background {
     transform: translateZ(-1px) scale(2);
   }
-  /* line 92, ../../../_sass/scss/components/organisms/_header.scss */
-  .parallax.section-header {
-    position: static;
+  /* line 91, ../../../_sass/scss/components/organisms/_header.scss */
+  .parallax [class*="layer_"] {
+    position: absolute;
+  }
+  /* line 95, ../../../_sass/scss/components/organisms/_header.scss */
+  .parallax .layer_front {
+    transform: translateZ(-1px) scale(2);
+  }
+  /* line 98, ../../../_sass/scss/components/organisms/_header.scss */
+  .parallax .layer_middle {
+    transform: translateZ(-2px) scale(3);
+  }
+  /* line 101, ../../../_sass/scss/components/organisms/_header.scss */
+  .parallax .layer_back {
+    transform: translateZ(-3px) scale(4);
+  }
+  /* line 104, ../../../_sass/scss/components/organisms/_header.scss */
+  .parallax .layer_group {
+    width: 100%;
   }
 }
 /* line 1, ../../../_sass/scss/components/organisms/_footer.scss */

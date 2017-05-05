@@ -1,9 +1,8 @@
 .section-header {
 	width: 100%;
 	height: 100vh;
-	//min-height: 480px;
 	background-color: #fff !important;
-	//transition: height .4s ease;
+	z-index:2 !important;
 }
 
 .header-background {
@@ -67,6 +66,7 @@
 		transform:none;
 	}
 }
+
 @supports (
 (perspective: 1px) and
 (not (-webkit-overflow-scrolling: touch)) and
@@ -88,9 +88,28 @@
 		.header-background {
 			transform: translateZ(-1px) scale(2);
 		}
-		
-		&.section-header {
-			position:static;
+		[class*="layer_"] {
+			position:absolute;
 		}
+
+		.layer_front {
+			transform: translateZ(-1px) scale(2);
+		}
+		.layer_middle {
+			transform: translateZ(-2px) scale(3);
+		}
+		.layer_back {
+			transform: translateZ(-3px) scale(4);
+		}
+		.layer_group {
+			width:100%;
+		}
+
+		position:static;
+		z-index:0;
+		&.section {
+
+		}
+
 	}
 }
