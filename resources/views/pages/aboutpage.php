@@ -34,7 +34,7 @@
         <div class="container">
             <div class="row">
                 <div class="column span-8-10 space-l-1-10 span-md-10-10 space-md-none">
-                    <h3 data-delay="0" class="is-bold">Alchemistic Practices</h3>
+                    <h3 data-delay="0" class="is-bold">Platforms</h3>
                     <h5 data-delay=".2">Transmuting text into Awesomeness</h5>
                 </div>
                 <div class="column span-8-10 space-l-1-10 space-md-none span-md-10-10">
@@ -44,12 +44,12 @@
                             <h5 class="is-bold" style="margin-top:10px;" data-delay=".7">App</h5>
                         </li>
                         <li class="list-item">
-                            <img src="/static/img/sprites/games-small.gif" data-delay=".8"  data-transition-type="zoomIn" style=" max-width:150px; width:100%;"/>
-                            <h5 class="is-bold" style="margin-top:10px;" data-delay=".9">Games</h5>
+                            <img src="/static/img/sprites/desktop-small.gif" data-delay=".8"  data-transition-type="zoomIn" style=" max-width:150px; width:100%;"/>
+                            <h5 class="is-bold" style="margin-top:10px;" data-delay=".9">Web</h5>
                         </li>
                         <li class="list-item">
-                            <img src="/static/img/sprites/desktop-small.gif"   data-delay="1" data-transition-type="zoomIn" style=" max-width:150px; width:100%;"/>
-                            <h5 class="is-bold" style="margin-top:10px;" data-delay="1.1">Web</h5>
+                            <img src="/static/img/sprites/games-small.gif"   data-delay="1" data-transition-type="zoomIn" style=" max-width:150px; width:100%;"/>
+                            <h5 class="is-bold" style="margin-top:10px;" data-delay="1.1">Games</h5>
                         </li>
                     </ul>
                 </div>
@@ -63,7 +63,7 @@
                 <div class="column span-6-10 span-md-10-10 is-aligned--left column-languages">
                     <div class="column span-10-10">
                         <h3 class="is-bold is-aligned--center skills-title" data-delay="0">Knowledge of spells</h3>
-                        <h5 class="is-aligned--center skills-subtitle" data-delay=".2">What sorcery is this</h5>
+                        <h5 class="is-aligned--center skills-subtitle" data-delay=".2">Or exotic languages</h5>
                     </div>
 
                     <h4 class="language-type" data-delay=".6">HTML</h4>
@@ -109,7 +109,7 @@
         <div class="container">
             <div class="row">
                 <div class="column span-8-10 space-l-1-10 space-r-1-10 span-md-10-10 space-md-none">
-                    <h3 data-delay="0" class="is-bold">Libraries and Frameworks</h3>
+                    <h3 data-delay="0" class="is-bold">Frameworks</h3>
                     <h5 data-delay=".2">Transmutation Circles</h5>
                 </div>
                 <div class="column">
@@ -117,8 +117,8 @@
                     <img src="/static/img/sprites/frameworks/wordpress.png"  data-delay=".6" data-transition-type="zoomIn" class="frame-item"/>
                     <img src="/static/img/sprites/frameworks/laravel.png" data-delay=".8"  data-transition-type="zoomIn" class="frame-item"/>
                     <img src="/static/img/sprites/frameworks/android.png"  data-delay="1" data-transition-type="zoomIn" class="frame-item"/>
-                    <img src="/static/img/sprites/frameworks/github.png"  data-delay="1.2" data-transition-type="zoomIn" class="frame-item"/>
-                    <img src="/static/img/sprites/frameworks/unity.png"  data-delay="1.4" data-transition-type="zoomIn" class="frame-item"/>
+                   <!-- <img src="/static/img/sprites/frameworks/github.png"  data-delay="1.2" data-transition-type="zoomIn" class="frame-item"/>-->
+                    <img src="/static/img/sprites/frameworks/unity.png"  data-delay="1.2" data-transition-type="zoomIn" class="frame-item"/>
                 </div>
             </div>
         </div>

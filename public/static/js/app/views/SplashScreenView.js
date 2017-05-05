@@ -16,7 +16,9 @@ define([
             logo: '.logo',
             text: '.rep',
             loader: '.i-loader',
-            loadbar: '.i-loadbar'
+            loadbar: '.i-loadbar',
+            outScroll: '.out-scroll',
+            inScroll: '.in-scroll'
         },
         components : {
             headerResize: {
@@ -32,6 +34,7 @@ define([
         initialized: function () {
             _.map(this.ui.paths, this.setStrokeLength);
             this.ease = Power4.easeInOut;
+
             this.handlePreLoad();
         },
 
@@ -115,6 +118,18 @@ define([
         },
 
         onClose: function () {
+            var css = {};
+            var scrollbarWidth = this.ui.outScroll.offsetWidth - this.ui.inScroll.offsetWidth;
+            app.config.applicationWidth = scrollbarWidth < 15 ? 15 : scrollbarWidth;
+
+            css.width = "calc(100% + " + app.config.applicationWidth + "px)";
+
+            if(app.browser.os !== 'windows') {
+                css.paddingRight = app.config.applicationWidth + "px";
+            }
+
+            $('#application').css(css);
+
             this.preAnimation.kill();
             this.postAnimation.kill();
             this.ease = null;

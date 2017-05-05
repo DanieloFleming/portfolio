@@ -17,7 +17,7 @@ define([
          * initialize pre-loader.
          */
         function initialize() {
-
+            app.config = {};
             app.regionManager = RegionManager;
             app.templateManager = TemplateManager;
 
@@ -45,11 +45,15 @@ define([
 
         function checkBrowser() {
             app.browser = {};
+            app.browser.os = document.body.getAttribute('data-os');
+            app.browser.type = document.body.getAttribute('data-browser');
 
             app.browser.isFireFox = document.body.style.MozTransform != undefined;
             app.browser.isSafari = navigator.userAgent.indexOf("Safari") > -1;
-            app.browser.isChrome = (window.chrome);// && navigator.vendor == "Google Inc.";
-                //navigator.userAgent.indexOf("OPR") == -1;
+            app.browser.isChrome = (window.chrome);
+            app.browser.isIe = app.browser.type == 'edge' || app.browser.type == 'ie';
+            app.browser.isWindows = app.browser.os == 'windows';
+
 
             app.browser.isMobile = 'ontouchstart' in window || navigator.msMaxTouchPoints ||
             typeof window.orientation !== "undefined" || navigator.userAgent.indexOf('IEMobile') !== -1;

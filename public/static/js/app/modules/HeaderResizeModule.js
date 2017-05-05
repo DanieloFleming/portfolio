@@ -16,6 +16,12 @@ define([
             if(!app.browser.isChrome) {
                 this.handleNonChrome();
             }
+
+            var headerBackground = this.el.querySelector('.header-background');
+
+            if(headerBackground && app.browser.isWindows && !app.browser.isIe) {
+                $(headerBackground).css({ left: - app.config.applicationWidth / 2 + "px"});
+            }
         },
 
         handleNonChrome : function() {
