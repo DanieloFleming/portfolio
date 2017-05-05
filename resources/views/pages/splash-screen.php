@@ -29,4 +29,8 @@
         </svg>
         <div class="i-loader"><span class="i-loadbar"></span></div>
     </div>
+
+    <div class="out-scroll" style="width: 40px; overflow-y: scroll; height:40px; overflow-x:hidden; visibility: hidden">
+        <div class="in-scroll" style="height: 150px;"></div>
+    </div>
 </div>

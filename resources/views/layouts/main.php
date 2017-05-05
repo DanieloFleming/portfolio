@@ -15,7 +15,7 @@
         <title>welcome @ danielo.nl</title>
         <link rel="stylesheet" href="<?=$paths['css'];?>/main.css?v3">
     </head>
-    <body>
+    <body data-os="<?php if(isset($dataOS)) echo $dataOS;?>" data-browser="<?php if(isset($dataBrowser)) echo $dataBrowser;?>">
 
         <div id="application">
 

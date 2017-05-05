@@ -3,7 +3,8 @@ define([
     'app/views/BaseView',
     'app/components/FadeInComponent',
     'app/modules/ScrollToModule',
-], function(_, BaseView, FadeInComponent, ScrollToModule) {
+    'app/modules/HeaderResizeModule'
+], function(_, BaseView, FadeInComponent, ScrollToModule, HeaderResizeModule) {
 
     return  BaseView.extend({
         className : 'page 404',
@@ -21,6 +22,10 @@ define([
             scrollTo : {
                 module : ScrollToModule,
                 el : '.scroll-to'
+            },
+            headerResize: {
+                module : HeaderResizeModule,
+                el : '.section-header'
             }
         },
 
