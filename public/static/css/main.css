@@ -2772,10 +2772,9 @@ i {
   width: 100%;
   height: 100vh;
   background-color: #fff !important;
-  z-index: 2 !important;
 }
 
-/* line 8, ../../../_sass/scss/components/organisms/_header.scss */
+/* line 7, ../../../_sass/scss/components/organisms/_header.scss */
 .header-background {
   background-position: center center;
   background-repeat: no-repeat;
@@ -2786,7 +2785,7 @@ i {
   top: 0;
   left: 0;
 }
-/* line 17, ../../../_sass/scss/components/organisms/_header.scss */
+/* line 16, ../../../_sass/scss/components/organisms/_header.scss */
 .header-background:after {
   content: '';
   background-color: rgba(0, 0, 0, 0.5);
@@ -2797,12 +2796,12 @@ i {
   left: 0;
 }
 
-/* line 30, ../../../_sass/scss/components/organisms/_header.scss */
+/* line 29, ../../../_sass/scss/components/organisms/_header.scss */
 .case-header-title {
   font-size: 120px;
 }
 
-/* line 33, ../../../_sass/scss/components/organisms/_header.scss */
+/* line 32, ../../../_sass/scss/components/organisms/_header.scss */
 .video-header-homepage {
   min-width: 100%;
   min-height: 100%;
@@ -2814,7 +2813,7 @@ i {
   transform: translate(-50%, -50%) !important;
 }
 
-/* line 45, ../../../_sass/scss/components/organisms/_header.scss */
+/* line 44, ../../../_sass/scss/components/organisms/_header.scss */
 .header-homepage .header-content:before {
   content: "";
   width: 100%;
@@ -2829,55 +2828,55 @@ i {
 }
 
 @media (max-width: 768px) {
-  /* line 60, ../../../_sass/scss/components/organisms/_header.scss */
+  /* line 59, ../../../_sass/scss/components/organisms/_header.scss */
   .case-header-title {
     font-size: 80px;
   }
 }
 @media (max-height: 480px) {
-  /* line 65, ../../../_sass/scss/components/organisms/_header.scss */
+  /* line 64, ../../../_sass/scss/components/organisms/_header.scss */
   .header-background {
     transform: none;
   }
 }
 @supports (perspective: 1px) and (not (-webkit-overflow-scrolling: touch)) and (not (-ms-high-contrast: none)) and (not (-ms-high-contrast: active)) and (not (-ms-ime-align: auto)) {
-  /* line 78, ../../../_sass/scss/components/organisms/_header.scss */
+  /* line 76, ../../../_sass/scss/components/organisms/_header.scss */
   #application {
     -webkit-perspective: 1px;
     perspective: 1px;
     height: 100%;
   }
 
-  /* line 83, ../../../_sass/scss/components/organisms/_header.scss */
+  /* line 81, ../../../_sass/scss/components/organisms/_header.scss */
   .parallax {
     position: static;
     z-index: 0;
   }
-  /* line 84, ../../../_sass/scss/components/organisms/_header.scss */
+  /* line 82, ../../../_sass/scss/components/organisms/_header.scss */
   .parallax .video-header-homepage {
     transform: translate3d(-50%, -50%, -1px) scale(2) !important;
   }
-  /* line 88, ../../../_sass/scss/components/organisms/_header.scss */
+  /* line 86, ../../../_sass/scss/components/organisms/_header.scss */
   .parallax .header-background {
     transform: translateZ(-1px) scale(2);
   }
-  /* line 91, ../../../_sass/scss/components/organisms/_header.scss */
+  /* line 89, ../../../_sass/scss/components/organisms/_header.scss */
   .parallax [class*="layer_"] {
     position: absolute;
   }
-  /* line 95, ../../../_sass/scss/components/organisms/_header.scss */
+  /* line 93, ../../../_sass/scss/components/organisms/_header.scss */
   .parallax .layer_front {
     transform: translateZ(-1px) scale(2);
   }
-  /* line 98, ../../../_sass/scss/components/organisms/_header.scss */
+  /* line 96, ../../../_sass/scss/components/organisms/_header.scss */
   .parallax .layer_middle {
     transform: translateZ(-2px) scale(3);
   }
-  /* line 101, ../../../_sass/scss/components/organisms/_header.scss */
+  /* line 99, ../../../_sass/scss/components/organisms/_header.scss */
   .parallax .layer_back {
     transform: translateZ(-3px) scale(4);
   }
-  /* line 104, ../../../_sass/scss/components/organisms/_header.scss */
+  /* line 102, ../../../_sass/scss/components/organisms/_header.scss */
   .parallax .layer_group {
     width: 100%;
   }

@@ -2,7 +2,6 @@
 	width: 100%;
 	height: 100vh;
 	background-color: #fff !important;
-	z-index:2 !important;
 }
 
 .header-background {
@@ -74,7 +73,6 @@
 (not(-ms-high-contrast: active)) and
 (not(-ms-ime-align:auto))
 ) {
-
 	#application {
 		-webkit-perspective: 1px;
 		perspective: 1px;
@@ -107,9 +105,5 @@
 
 		position:static;
 		z-index:0;
-		&.section {
-
-		}
-
 	}
 }
