@@ -1,1 +1,1594 @@
-!function(){game=window.game||{};var t=function(t,e){var i=t.split("."),n=game,s=i.length-1,o=0;for("game"==i[0]&&(i=i.slice(1)),o;o<s;o++)"undefined"==typeof n[i[o]]&&(n[i[o]]={}),n=n[i[o]]};NS=window.NS||t}(),function(){var t=function(){var t=function(t,n,o){s(t)?e(t,n,o):i(t,n,o)},e=function(t,e,i){for(var s=0;s<t.length;s++)n(t[s],s,e,i)},i=function(t,e,i){for(var s in t)t.hasOwnProperty(s)&&n(t[s],s,e,i)},n=function(t,e,i,n){"function"==typeof i&&(n?i.call(n,t,e):i(t,e))},s=function(t){return t instanceof Array||t.length};return{each:t,isArray:s}}();_=window._||t}(),function(){NS("game.library.Class");var t=function(){};t.extend=function i(t){var n=t.constructor;if("function"!=typeof n)throw new e;n.prototype=this.prototype,n.prototype=Object.create(this.prototype),n.extend=i;for(var s in t)t.hasOwnProperty(s)&&(n.prototype[s]=t[s]);return n};var e=function(){this.message='Invalid constructor provided. Constructor must be of type "function"',this.name="ClassConstructorException"};game.library.Class=t}(),function(){NS("game.library.AssetsLoader");var t=function(){var t,e,i,n,s=0,o=function(s,o,h){i=s,n=o,t=Object.keys(i).length+Object.keys(n).length,e=h;for(var c in i)i.hasOwnProperty(c)&&r(i[c],c);for(var m in n)n.hasOwnProperty(m)&&a(n[m],m)},r=function(t,e){var i=new Image;i.src=t.src,i.onload=function(){h(e,i)}},a=function(t,e){var i=new Audio(t);i.oncanplaythrough=function(){n[e]=i,s++,i.oncanplaythrough=null,c()}},h=function(t,e){var n=i[t];n.image=e,n.width=e.width/n.frames,n.height=e.height,s++,c()},c=function(){s==t&&e(i)},m=function(){return i},u=function(){return n};return{load:o,getSpriteData:m,getAudioData:u}}();game.library.AssetsLoader=t}(),function(){NS("game.library.SpriteManager");var t={data:function(t){this.spriteContainer=t},get:function(t){return this.spriteContainer[t]}};game.library.SpriteManager=t}(),function(){NS("game.library.AudioManager");var t=!0,e=!1,i={sound:t,data:function(t){this.audioContainer=t},playFX:function(e){this.sound==t&&this.audioContainer[e].cloneNode(!0).play()},playMusic:function(e){this.sound==t?(this.checkIfPlaying(e),this.currentBgm=e,this.audioContainer[e].volume=.5,this.audioContainer[e].play(),this.audioContainer[e].addEventListener("ended",this.replay.bind(this))):this.currentBgm=e},play:function(t){this.audioContainer[t].play()},stop:function(t){this.audioContainer[t].pause(),this.audioContainer[t].currentTime=0},checkIfPlaying:function(t){this.currentBgm&&this.currentBmg!==t&&this.audioContainer[this.currentBgm].pause&&this.stopMusic(this.currentBgm)},stopMusic:function(t){this.audioContainer[t].pause(),this.audioContainer[t].currentTime=0,this.audioContainer[t].removeEventListener("ended",this.replay.bind(this)),this.currentBgm=!1},replay:function(){this.audioContainer[this.currentBgm].currentTime=0,this.audioContainer[this.currentBgm].play()},enableSound:function(){this.sound=t,this.currentBgm&&this.playMusic(this.currentBgm)},disableSound:function(){if(this.sound=e,this.currentBgm){var t=this.currentBgm;this.stopMusic(this.currentBgm),this.currentBgm=t}},toggleSound:function(){this.sound==t?this.disableSound():this.enableSound()}};game.library.AudioManager=i}(),function(){NS("game.library.CanvasManager");var t={element:[],context:[],setCanvas:function(t){this.element[t]=document.getElementById(t),this.context[t]=this.element[t].getContext("2d"),this.width=this.element[t].width,this.height=this.element[t].height},getCanvas:function(t){return this.element[t]},getContext:function(t){return this.context[t]},clearContext:function(t,e){for(var i in this.context)this.context.hasOwnProperty(i)&&this.context[i].clearRect(0,0,t,e)}};game.library.CanvasManager=t}(),function(){NS("game.library.SpriteAnimator");var t=function(e,i){t.prototype.ctx=i,this.sprite=e,this.isAnimating=!1};t.prototype.draw=function(t,e,i){this.currentFrame=i||0,this._draw(t,e)},t.prototype.playOnce=function(t,e,i,n){this._play(t,e,i,n||function(){})},t.prototype.playLoop=function(t,e,i){this._play(t,e,i,this._resetFrame.bind(this,t))},t.prototype._play=function(t,e,i,n){this.currentFrame&&this.currentSequence==t||(this.currentFrame=this.sprite.frameSet[t][0],this.endFrame=this.sprite.frameSet[t][1],this.currentSequence=t,this.isAnimating=!0),this.currentFrame<this.endFrame&&(this._draw(e,i),this.currentFrame++),this.currentFrame+1==this.endFrame&&(this.isAnimating=!1,n())},t.prototype._draw=function(t,e){this.ctx.drawImage(this.sprite.image,this.currentFrame*this.sprite.width,0,this.sprite.width,this.sprite.height,t,e,this.sprite.width,this.sprite.height)},t.prototype._resetFrame=function(t){this.currentFrame=this.sprite.frameSet[t][0],this.isAnimating=!0},t.prototype.setSprite=function(t){this.sprite=t},game.library.SpriteAnimator=t}(),function(){NS("game.library.CollisionDetect");var t=function(){};t.prototype.check=function(t,e,i){for(var n=0;n<t.length;n++)for(var s=t[n],o=0;o<e.length;o++){var r=e[o];if(this.checkHit(s,r))return!i||i(s,r)}},t.prototype.checkHit=function(t,e){return t.isAlive!==!1&&0!=e.isAlive&&(t.x<e.x+e.width&&t.x+t.width>e.x&&t.y<e.y+e.height&&t.y+t.height>e.y)},game.library.CollisionDetect=new t}(),function(){NS("game.library.GameArray");var t=function(){};t.prototype=Array.prototype,t.prototype.add=t.prototype.push,t.prototype.addArray=function(t){var e=0;t.length;for(e;e<t.length;e++)this.add(t[e])},t.prototype.remove=function(t){this.splice(this.indexOf(t),1)},game.library.GameArray=t}();var SpriteSheet={ship:{src:"img/ship5.png",frames:4},bullet:{src:"img/bullet.png",frames:1},explosion_1:{src:"img/explosion/ex-1-a.png",frames:40,frameSet:{explode:[0,40]}},explosion_2:{src:"img/explosion/ex-2.png",frames:48,frameSet:{explode:[0,48]}},explosion_small_1:{src:"img/explosion/ex-small-1.png",frames:40,frameSet:{explode:[0,40]}},explosion_small_2:{src:"img/explosion/ex-small-2.png",frames:64,frameSet:{explode:[0,64]}},explosion_small_3:{src:"img/explosion/ex-small-3.png",frames:8,frameSet:{explode:[0,8]}},explosion_small_4:{src:"img/explosion/ex-small-4.png",frames:10,frameSet:{explode:[0,10]}},meteor_1:{src:"img/meteor/meteor_1.png",frames:2},meteor_2:{src:"img/meteor/meteor_2.png",frames:2},meteorite_1:{src:"img/meteor/s_1.png",frames:1},meteorite_2:{src:"img/meteor/s_2.png",frames:1},background:{src:"img/dark-purple.png",frames:1},live:{src:"img/live.png",frames:1}},AudioBook={explode:"audio/explode.mp3",laser:"audio/pewV2.mp3",chopper:"audio/chopper.mp3",level1:"audio/bg.mp3",pew:"audio/pewpew.ogg",coin:"audio/coin.mp3",bgmIntro:"audio/main-theme.mp3"};!function(t){NS("game.screen.LoadScreen");var e=".load-screen",i=function(i,n){this.loadScreen=document.querySelector(e),t.load(i,n,this.loadCompleted.bind(this))};i.prototype.loadCompleted=function(){this.loadScreen.classList.add("hide"),this.callback(game.library.AssetsLoader.getSpriteData(),game.library.AssetsLoader.getAudioData())},i.prototype.onCompleted=function(t){this.callback=t},game.screen.LoadScreen=i}(game.library.AssetsLoader),function(){NS("game.screen.StartScreen");var t="btn-play",e="btn-sound",i=".start-screen",n="bgmIntro",s=function(){game.library.AudioManager.playMusic(n),this.startScreen=document.querySelector(i),this.initialize()};s.prototype.initialize=function(){this.startBtn=this.startScreen.querySelector("."+t),this.soundBtn=this.startScreen.querySelector("."+e),this.addEvents()},s.prototype.addEvents=function(){this.soundBtn.addEventListener("click",this.handleClick.bind(this)),this.startBtn.addEventListener("click",this.handleClick.bind(this)),this.soundBtn.addEventListener("mouseenter",this.handleMouseEnter.bind(this)),this.startBtn.addEventListener("mouseenter",this.handleMouseEnter.bind(this))},s.prototype.handleClick=function(i){var n=i.currentTarget.getAttribute("data-btn");switch(n){case t:this.startGame();break;case e:this.toggleSound()}},s.prototype.handleMouseEnter=function(t){game.library.AudioManager.playFX("pew")},s.prototype.startGame=function(){game.library.AudioManager.stopMusic(n),game.library.AudioManager.playFX("coin"),this.startScreen.classList.add("hide"),this.onStartCallback()},s.prototype.toggleSound=function(){game.library.AudioManager.toggleSound()},s.prototype.onStart=function(t){this.onStartCallback=t},s.prototype.show=function(){game.library.AudioManager.playMusic(n),this.startScreen.classList.remove("hide")},game.screen.StartScreen=s}(),function(t,e,i){NS("game.component.GameObject");var n=t.extend({type:"GameObject",constructor:function(t){this._spriteData=i.get(t),this._animator=new e(this._spriteData,this.ctx),this.width=this._spriteData.width,this.height=this._spriteData.height,this.xCenter=this.width/2,this.yCenter=this.height/2,this.destroy=!1,this.isActive=!0},draw:function(){},update:function(t,e){},ticker:function(t,e,i){var n=t+"Stamp",s=performance.now();this[n]||(this[n]=s);var o=s-this[n];o>e&&(i(n),this[n]=!1)}});n.setContext=function(t){this.prototype.ctx=t},game.component.GameObject=n}(game.library.Class,game.library.SpriteAnimator,game.library.SpriteManager),function(t,e){NS("game.component.explosion.Explosion");var i=t.extend({constructor:function(i,n,s){this.spriteName=s?s:"explosion_2",this.x=i,this.y=n,t.call(this,this.spriteName),e.playFX("explode")},draw:function(){this._animator.playOnce("explode",this.x-this.xCenter,this.y-this.yCenter,this.completed.bind(this))},completed:function(){this.doOnCompleted&&this.doOnCompleted(this),this.doOnCompleted=null,this.isActive=!1},onCompleted:function(t){this.doOnCompleted=t}});i.type={BIG_1:"explosion_1",BIG_2:"explosion_2",SMALL_1:"explosion_small_1"},game.component.explosion.Explosion=i}(game.component.GameObject,game.library.AudioManager),function(t,e){NS("game.component.weapon.Bullet");var i=t.extend({spriteName:"bullet",type:"bullet",power:5,speed:20,constructor:function(i,n){this.x=i,this.y=n,e.playFX("laser"),t.call(this,this.spriteName)},draw:function(){this._animator.draw(this.x-this.xCenter,this.y)},update:function(t,e){this.y-=this.speed,this.checkBound()},checkBound:function(){this.isInactive||this.y<-this.height&&(this.destroy=!0)},hit:function(){this.destroy=!0}});game.component.weapon.Bullet=i}(game.component.GameObject,game.library.AudioManager),function(t,e,i,n){NS("game.component.player.Ship");var s=t.extend({bullets:new i,constructor:function(e,i){this.spriteName="ship",this.type="player",this.x=e,this.y=i,this.reloadTime=150,this.recoverTime=1e3,this.isHit=!1,this.points=1e3,this.frame=0,t.call(this,this.spriteName)},draw:function(){this._animator.draw(this.x,this.y,this.frame)},update:function(){this.x+=(game.mouseX-this.xCenter-this.x)/20,this.y+=(game.mouseY-this.yCenter-this.y)/20,this.autoFire(),this.isHit&&this.recover()},hit:function(){this.isActive=!1,this.frame>2?(this.dead=!0,this.explode()):(this.isHit=!0,this.frame++)},recover:function(){this.ticker("recover",this.recoverTime,this.recovered.bind(this))},recovered:function(){this.isHit=!1,this.dead!==!0&&(this.isActive=!0)},autoFire:function(){this.dead||this.toDraw===!1||this.ticker("fire",this.reloadTime,this.fire.bind(this))},fire:function(){var t=new e(this.x+this.xCenter,this.y+this.yCenter);GameComponents.add(t),this.bullets.push(t)},explode:function(){this.toDraw=!1;var t=new n(this.x+this.xCenter,this.y+this.yCenter,n.type.BIG_2);t.onCompleted(this.cleanUp.bind(this)),GameComponents.add(t)},cleanUp:function(t){GameComponents.remove(t),this.isHit=!1,this.dead=!1,this.frame=0,this.gameOver()}});game.component.player.Ship=s}(game.component.GameObject,game.component.weapon.Bullet,game.library.GameArray,game.component.explosion.Explosion),function(t,e){NS("game.component.meteor.Meteorite");var i=0,n=["meteorite_1","meteorite_2"],s=t.extend({constructor:function(e,i,s){this.x=e,this.y=i,this.spriteName=n[Math.round(Math.random())],this.hp=5,this.speed=16,this.points=100,t.call(this,this.spriteName),this.setVelocities(s)},setVelocities:function(t){var e=3*Math.random();t===i?(this.speedX=e*-1,this.x+=-10):(this.speedX=e,this.x+=10),this.speedY=4*Math.random()},draw:function(){this._animator.draw(this.x,this.y)},update:function(){this.y+=this.speedY,this.x+=this.speedX,this.checkBound()},checkBound:function(){this.isInactive||(this.y>CANVAS_HEIGHT||this.x<-this.width||this.x>CANVAS_WIDTH)&&(this.destroy=!0)},hit:function(t){this.hp-=t,this.speed++,this.hp<=0&&this.explode()},explode:function(){this.killed=!0,this.toDraw=!1,this.isActive=!1;var t=new e(this.x+this.xCenter,this.y+this.yCenter,e.type.SMALL_1);t.onCompleted(this.cleanUp.bind(this)),GameComponents.add(t)},cleanUp:function(t){GameComponents.remove(t),this.destroy=!0}});game.component.meteor.Meteorite=s}(game.component.GameObject,game.component.explosion.Explosion),function(t,e,i){NS("game.component.meteor.Meteor");var n=["meteor_1","meteor_2"],s=t.extend({constructor:function(e,i){this.x=e,this.y=i,this.spriteName=n[Math.round(Math.random())],this.hp=10,this.frame=0,this.speed=2,this.points=300,t.call(this,this.spriteName)},draw:function(){this._animator.draw(this.x,this.y,this.frame)},update:function(){this.y+=this.speed,this.checkBound()},checkBound:function(){this.isInactive||this.y>CANVAS_HEIGHT&&(this.destroy=!0)},hit:function(t){this.hp-=t,this.frame++,this.speed--,this.hp<=0&&this.explode()},explode:function(t){this.killed=!0,this.toDraw=!1,this.isActive=!1;var i=new e(this.x+this.xCenter,this.y+this.yCenter,e.type.BIG_2);i.onCompleted(this.cleanUp.bind(this)),GameComponents.add(i),t||this.createMeteorite()},createMeteorite:function(){var t=new i(this.x,this.y+this.yCenter,0),e=new i(this.x+this.width,this.y+this.yCenter,1);GameComponents.addArray([t,e]),LevelContent.enemies.addArray([t,e])},cleanUp:function(t){GameComponents.remove(t),this.destroy=!0}});game.component.meteor.Meteor=s}(game.component.GameObject,game.component.explosion.Explosion,game.component.meteor.Meteorite),function(t,e){NS("game.component.HUD");var i=t.extend({score:0,textScore:0,lives:3,shakeTime:60,zeros:"000000",settings:{font:"24pt 'Kenvector Future'",shadowBlur:4,shadowColor:"grey",textAlign:"end",textBaseline:"buttom",fillStyle:"#fff"},constructor:function(t){this.element=t,this.imageData=e.get("live"),this.ctx.translate(.5,.5),this.setupContext(),this.addScore(0)},restart:function(){this.score=0,this.textScore=0,this.lives=3,this.addScore(0)},setupContext:function(){_.each(this.settings,this.applyContextSettings,this)},applyContextSettings:function(t,e){this.ctx[e]=t},draw:function(){this.setupContext(),this.ctx.fillText(this.textScore,CANVAS_WIDTH-10,CANVAS_HEIGHT-10),this.showLives()},showLives:function(){for(var t=0;t<this.lives;t++)this.ctx.drawImage(this.imageData.image,this.imageData.width*t+20,CANVAS_HEIGHT-40)},update:function(){this.isHit&&this.shakeScreen()},addScore:function(t){this.score+=t;var e=this.zeros+this.score;this.textScore=e.substr(e.length-this.zeros.length)},hit:function(){this.lives--,this.isHit=!0},shakeScreen:function(){var t=-this.shakeTime+Math.round(Math.random()*this.shakeTime);this.shakeTime>0?(this.shakeTime-=1.4,this.element.style.transform="translate("+t+"px, "+t+"px)"):(this.isHit=!1,this.shakeTime=60,this.element.style.transform="translate(0, 0)")},reset:function(){this.score=0,this.textScore=0,this.lives=3,this.shakeTime=60,this.zeros="000000"}});i.setContext=function(t){this.prototype.ctx=t},game.component.HUD=i}(game.component.GameObject,game.library.SpriteManager),function(t,e){NS("game.component.background.Background");var i=t.extend({constructor:function(){this._spriteData=e.get("background"),this.width=this._spriteData.width,this.height=this._spriteData.height,this.x=0,this.y=0,this.speed=3,this.createBackground()},createBackground:function(){var t={x:Math.ceil(CANVAS_WIDTH/this.width)+1,y:Math.ceil(CANVAS_HEIGHT/this.height)+1};this.pattern=[],this.startPos=CANVAS_HEIGHT-t.y*this.height;for(var e=0;e<t.x;e++)for(var i=0;i<t.y;i++)this.pattern.push([-this.width+e*this.width,-this.height+i*this.height]);this.repeat=t},draw:function(){for(var t=0;t<this.pattern.length;t++)this.pattern[t][1]>CANVAS_HEIGHT&&(this.pattern[t][1]=this.startPos),this.ctx.drawImage(this._spriteData.image,0,0,this.width,this.height,this.pattern[t][0]+this.x,this.pattern[t][1]+=this.speed,this.width,this.height)},update:function(){this.speed=3+.005*game.mouseY}});i.setContext=function(t){this.prototype.ctx=t},game.component.background.Background=i}(game.library.Class,game.library.SpriteManager),function(t,e,i,n){NS("game.component.level.Level1");var s="enemy",o="weapon",r=game.component.GameObject.extend({constructor:function(i,n){this.makeTime=1e3,this.container=new e,this.player=i,this.hud=n,t.playMusic("level1"),this.setup()},setup:function(){this.player.gameOver=this.gameOver.bind(this)},restart:function(){this.player.toDraw=!0,this.player.isActive=!0,this.gameEnded=!1,this.hud.restart()},update:function(){this.checkIfInactive(),this.createLevel(),this.checkCollisions()},checkCollisions:function(){for(var t=0;t<LevelContent.enemies.length;t++){var e=LevelContent.enemies[t];if(e.isActive){this.player.isActive&&n.checkHit(e,this.player)&&(e.hit(this.player.points),this.player.hit(),this.hud.hit());for(var i=0;i<this.player.bullets.length;i++){var s=this.player.bullets[i];s.isActive&&n.checkHit(e,s)&&(e.hit(s.power),s.hit())}}}},checkIfInactive:function(){_.each(LevelContent.enemies,function(t){t.killed&&(this.hud.addScore(t.points),t.killed=null),t.destroy&&this.removeComponent(t,s)},this),_.each(this.player.bullets,function(t){t.destroy&&this.removeComponent(t,o)},this)},removeComponent:function(t,e){e===s?LevelContent.enemies.remove(t):e===o&&this.player.bullets.remove(t),GameComponents.remove(t),this.gameEnded&&0==LevelContent.enemies.length&&this.showStartScreen()},createLevel:function(){this.gameEnded||this.ticker("meteor",this.makeTime,this.addMeteor.bind(this))},addMeteor:function(){var t=new i(100+Math.ceil(Math.random()*CANVAS_WIDTH-200),(-80));GameComponents.add(t),LevelContent.enemies.add(t),this.makeTime=this.makeTime>500?this.makeTime-100:500},gameOver:function(){this.gameEnded=!0,_.each(LevelContent.enemies,this.explode,this)},explode:function(t){t.explode()}});game.component.level.Level1=r}(game.library.AudioManager,game.library.GameArray,game.component.meteor.Meteor,game.library.CollisionDetect),function(t,e,i,n){function s(){i.disableSound(),GameComponents=new n,LevelContent={enemies:new n,bullets:new n},x=document.querySelector("#container");var t=new game.screen.LoadScreen(SpriteSheet,AudioBook);t.onCompleted(a),o(window.innerWidth,window.innerHeight),r()}function o(t,e){if(!i)var i=document.querySelectorAll(".canvas");var n=t>MAX_WIDTH?MAX_WIDTH:t,s=e>MAX_HEIGHT?MAX_HEIGHT:e,o=CANVAS_WIDTH=n?n:CANVAS_WIDTH,r=CANVAS_HEIGHT=s?s:CANVAS_HEIGHT;_.each(i,function(t){"CANVAS"===t.nodeName?(t.width=o,t.height=r):(t.style.width=o+"px",t.style.height=r+"px")}),S&&S.createBackground()}function r(){_.each(A,function(e){t.setCanvas(e)}),w.GameObject.setContext(t.getContext(CANVAS_PLAY)),w.background.Background.setContext(t.getContext(CANVAS_BG)),w.HUD.setContext(t.getContext(CANVAS_HUD)),f(new Date)}function a(t,n){e.data(t),i.data(n),h(),p()}function h(){game.mouseX=100,game.mouseY=100,x.addEventListener("mousemove",c),x.addEventListener("touchstart",m),x.addEventListener("touchmove",m),window.addEventListener("resize",u)}function c(t){game.mouseX=t.layerX,game.mouseY=t.layerY}function m(t){t.preventDefault();var e=t.changedTouches[0];game.mouseX=e.pageX-x.offsetLeft,game.mouseY=e.pageY-x.offsetTop}function u(t){o(window.innerWidth,window.innerHeight)}function p(){v=new game.screen.StartScreen,v.onStart(l),S=new w.background.Background,GameComponents.add(S)}function l(){null===b&&d(),k.restart(),GameComponents.addArray([b,k,M])}function d(){b=new w.player.Ship(100,100),M=new w.HUD(x),k=new w.level.Level1(b,M),k.showStartScreen=g}function g(){GameComponents.remove(b),GameComponents.remove(M),GameComponents.remove(k),v.show()}function f(t){var e=Date.now(),i=(e-C)/1e3;y(i,t),C=e,requestAnimationFrame(f)}function y(e,i){t.clearContext(CANVAS_WIDTH,CANVAS_HEIGHT),_.each(GameComponents,function(t){t.toDraw!==!1&&t.draw(e,i),t.update!==!1&&t.update()})}window.CANVAS_WIDTH=MAX_WIDTH=1200,window.CANVAS_HEIGHT=MAX_HEIGHT=800,window.GameComponents=null,window.LevelContent=null,TYPE_MOUSEDOWN="mousedown",TYPE_MOUSEUP="mouseup",CANVAS_PLAY="playfield",CANVAS_BG="background",CANVAS_HUD="hud";var v,x,C,S,w=game.component,A=[CANVAS_PLAY,CANVAS_BG,CANVAS_HUD],b=null,k=null,M=null;s()}(game.library.CanvasManager,game.library.SpriteManager,game.library.AudioManager,game.library.GameArray);
+(function() {
+    game = window.game || {};
+
+
+    var _namespaceMaker = function (namespace, fn) {
+
+        var names = namespace.split('.'),
+            base = game,
+            maxIndex = names.length - 1, i = 0;
+
+        if (names[0] == 'game') {
+            names = names.slice(1);
+        }
+
+
+        for (i; i < maxIndex; i++) {
+            if (typeof base[names[i]] == 'undefined') {
+                base[names[i]] = {};
+            }
+
+            base = base[names[i]];
+        }
+
+    };
+
+    NS = window.NS || _namespaceMaker;
+})();
+(function(){
+    var _o = (function() {
+        var _each = function (value, callback, scope) {
+
+            if (_isArray(value)) {
+                _eachArray(value, callback, scope);
+            } else {
+                _eachObject(value, callback, scope);
+            }
+        };
+
+        var _eachArray = function (arr, callback, scope) {
+            for (var i = 0; i < arr.length; i++) {
+                _doCallBack(arr[i], i, callback, scope);
+            }
+        };
+
+        var _eachObject = function (obj, callback, scope) {
+            for (var key in obj) {
+                if (obj.hasOwnProperty(key)) {
+                    _doCallBack(obj[key], key, callback, scope);
+                }
+            }
+        };
+
+        var _doCallBack = function (value, index, callback, scope) {
+            if (typeof callback === 'function') {
+                if (scope) callback.call(scope, value, index);
+               else  callback(value, index);
+            }
+        };
+
+        var _isArray = function(value) {
+            return value instanceof Array || (value.length);
+        };
+
+        return {
+            each : _each,
+            isArray : _isArray
+        }
+    })();
+
+    _ = window._ || _o;
+
+})();
+(function() {
+    NS('game.library.Class');
+
+    var Class = function () {};
+
+    Class.extend = function extend (props) {
+        var fn = props.constructor;
+
+        if (typeof fn !== 'function') {
+            throw new ClassConstructorException();
+        }
+
+        fn.prototype = this.prototype;
+        fn.prototype = Object.create(this.prototype);
+        fn.extend = extend;
+
+        for (var key in props) {
+            if (props.hasOwnProperty(key)) {
+                fn.prototype[key] = props[key];
+            }
+        }
+
+        return fn;
+    };
+
+    var ClassConstructorException = function() {
+        this.message = 'Invalid constructor provided. Constructor must be of type "function"';
+        this.name = 'ClassConstructorException';
+    };
+
+    game.library.Class = Class;
+})();
+(function() {
+    NS('game.library.AssetsLoader');
+
+    var AssetsLoader = (function(){
+        var _assetsLoaded = 0;
+        var _assetCount;
+        var _onCompleted;
+        var _spriteAssets;
+        var _audioAssets;
+
+        /**
+         * Load Assets.
+         *
+         * @param spriteSheet
+         * @param AudioBook
+         * @param callback
+         * @private
+         */
+        var _loadAssets = function (spriteSheet, AudioBook, callback) {
+            _spriteAssets = spriteSheet;
+            _audioAssets = AudioBook;
+
+            _assetCount = Object.keys(_spriteAssets).length + Object.keys(_audioAssets).length;
+            _onCompleted = callback;
+
+            for (var key in _spriteAssets) {
+                if (_spriteAssets.hasOwnProperty(key)) {
+                    _loadAsset(_spriteAssets[key], key);
+                }
+            }
+
+            for (var note in _audioAssets) {
+                if (_audioAssets.hasOwnProperty(note)) {
+                    _loadAudio(_audioAssets[note], note);
+                }
+            }
+        }
+
+        /**
+         * Load sprites.
+         *
+         * @param value
+         * @param key
+         * @private
+         */
+        var _loadAsset = function (value, key) {
+            var image = new Image();
+                image.src = value.src;
+
+            image.onload = function () {
+                _saveAsset(key, image);
+            }
+        };
+
+        /**
+         * Load Audio.
+         *
+         * @param value
+         * @param key
+         * @private
+         */
+        var _loadAudio = function (value, key) {
+            var audio = new Audio(value);
+            
+            audio.oncanplaythrough = function () {
+                _audioAssets[key] = audio;
+                _assetsLoaded++;
+
+                audio.oncanplaythrough = null;
+                _checkAssetsLoader();
+            }
+        }
+
+        /**
+         * Store imageData in SpiteAssetsArray.
+         *
+         * @param key
+         * @param image
+         * @private
+         */
+        var _saveAsset = function (key, image) {
+            var asset = _spriteAssets[key];
+
+            asset.image = image;
+            asset.width = image.width / asset.frames;
+            asset.height = image.height;
+
+            _assetsLoaded++;
+
+            _checkAssetsLoader();
+        };
+
+        /**
+         * Check if all files are loaded
+         *
+         * @private
+         */
+        var _checkAssetsLoader = function () {
+            if (_assetsLoaded == _assetCount) {
+                _onCompleted(_spriteAssets);
+            }
+        }
+
+        /**
+         * Return all sprite assets.
+         *
+         * @returns {*}
+         * @private
+         */
+        var _getAllSprites = function () {
+            return _spriteAssets;
+        }
+
+        /**
+         * Return all audio assets.
+         *
+         * @returns {*}
+         * @private
+         */
+        var _getAllAudio = function () {
+            return _audioAssets;
+        }
+
+        /**
+         * publicly accessible methods.
+         */
+        return {
+            load: _loadAssets,
+            getSpriteData: _getAllSprites,
+            getAudioData: _getAllAudio
+        }
+    })();
+
+    game.library.AssetsLoader = AssetsLoader;
+
+})();
+(function(){
+    NS('game.library.SpriteManager');
+
+    var SpriteManager = {
+        data : function(spriteData) {
+            this.spriteContainer = spriteData;
+        },
+
+        get : function(spriteName) {
+            return this.spriteContainer[spriteName];
+        }
+    };
+
+    game.library.SpriteManager = SpriteManager;
+})();
+(function(){
+    NS('game.library.AudioManager');
+
+    var SOUND_ON = true;
+    var SOUND_OFF = false;
+
+    var AudioManager = {
+
+        sound : SOUND_ON,
+
+        data : function(audioData) {
+            this.audioContainer = audioData;
+        },
+
+        playFX : function(audioName) {
+            if(this.sound == SOUND_ON) {
+                this.audioContainer[audioName].cloneNode(true).play();
+            }
+        },
+
+        playMusic : function(audioName) {
+            if(this.sound == SOUND_ON) {
+                this.checkIfPlaying(audioName);
+                this.currentBgm = audioName;
+                this.audioContainer[audioName].volume = .5;
+                this.audioContainer[audioName].play();
+                this.audioContainer[audioName].addEventListener('ended', this.replay.bind(this));
+            } else {
+                this.currentBgm = audioName;
+            }
+        },
+
+        play : function(audioName) {
+            this.audioContainer[audioName].play();
+        },
+
+        stop : function(audioName) {
+            this.audioContainer[audioName].pause();
+            this.audioContainer[audioName].currentTime = 0;
+        },
+
+        checkIfPlaying : function(audioName) {
+            if(!this.currentBgm) return;
+            if(this.currentBmg !== audioName && this.audioContainer[this.currentBgm].pause) {
+                this.stopMusic(this.currentBgm);
+            }
+        },
+
+        stopMusic : function(audioName) {
+            this.audioContainer[audioName].pause();
+            this.audioContainer[audioName].currentTime = 0;
+            this.audioContainer[audioName].removeEventListener('ended', this.replay.bind(this));
+            this.currentBgm = false;
+        },
+
+        replay : function() {
+            this.audioContainer[this.currentBgm].currentTime = 0;
+            this.audioContainer[this.currentBgm].play();
+        },
+
+        enableSound : function() {
+            this.sound = SOUND_ON;
+
+            if(this.currentBgm) {
+                this.playMusic(this.currentBgm);
+            }
+        },
+
+        disableSound : function() {
+            this.sound = SOUND_OFF;
+
+            if(this.currentBgm) {
+                var cache = this.currentBgm;
+                this.stopMusic(this.currentBgm);
+                this.currentBgm = cache;
+            }
+        },
+
+        toggleSound : function() {
+            if(this.sound == SOUND_ON) {
+                this.disableSound();
+            } else {
+                this.enableSound();
+            }
+        }
+    };
+
+    game.library.AudioManager = AudioManager;
+})();
+(function(){
+    NS('game.library.CanvasManager');
+
+    var CanvasManager = {
+
+        element : [],
+
+        context : [],
+
+        setCanvas : function(canvasId) {
+            this.element[canvasId] = document.getElementById(canvasId);
+            this.context[canvasId] = this.element[canvasId].getContext('2d');
+            //this.context[canvasId].globalCompositeOperation = 'destination-over';
+
+            this.width = this.element[canvasId].width;
+            this.height = this.element[canvasId].height;
+        },
+
+        getCanvas : function(canvasId) {
+            return this.element[canvasId];
+        },
+
+        getContext : function(canvasId) {
+            return this.context[canvasId];
+        },
+
+        clearContext : function(width, height) {
+            for(var key in this.context) {
+                if(this.context.hasOwnProperty(key)){
+                    this.context[key].clearRect(0, 0, width, height);
+                }
+            }
+        }
+    };
+
+    game.library.CanvasManager = CanvasManager;
+
+})();
+(function(){
+
+    NS('game.library.SpriteAnimator');
+
+    var SpriteAnimator = function(spriteData, ctx) {
+        SpriteAnimator.prototype.ctx = ctx;
+        this.sprite = spriteData;
+        this.isAnimating = false;
+    };
+
+    SpriteAnimator.prototype.draw = function(x, y, frame) {
+        this.currentFrame = frame || 0;
+        this._draw(x, y);
+    };
+
+    SpriteAnimator.prototype.playOnce = function(sequenceName, x, y, callBack) {
+        this._play(sequenceName, x, y, callBack || function(){});
+    };
+
+    SpriteAnimator.prototype.playLoop = function(sequenceName, x, y) {
+        this._play(sequenceName, x, y, this._resetFrame.bind(this, sequenceName));
+    };
+
+    SpriteAnimator.prototype._play = function(sequenceName, x, y, callBack) {
+
+        if(! this.currentFrame || this.currentSequence != sequenceName) {
+            this.currentFrame = this.sprite.frameSet[sequenceName][0];
+            this.endFrame = this.sprite.frameSet[sequenceName][1];
+            this.currentSequence = sequenceName;
+            this.isAnimating = true;
+        }
+
+        if(this.currentFrame < this.endFrame) {
+            this._draw(x, y);
+            this.currentFrame++;
+        }
+
+        if(this.currentFrame + 1 == this.endFrame) {
+            this.isAnimating = false;
+            callBack();
+        }
+    };
+
+    SpriteAnimator.prototype._draw = function(x, y) {
+        this.ctx.drawImage(
+            this.sprite.image,
+            this.currentFrame * this.sprite.width, 0,
+            this.sprite.width, this.sprite.height,
+            x, y,
+            this.sprite.width, this.sprite.height
+        );
+    };
+
+    SpriteAnimator.prototype._resetFrame = function(sequenceName) {
+        this.currentFrame = this.sprite.frameSet[sequenceName][0];
+        this.isAnimating = true;
+    };
+
+    SpriteAnimator.prototype.setSprite = function(newSpriteData) {
+        this.sprite = newSpriteData;
+    };
+
+    game.library.SpriteAnimator = SpriteAnimator;
+
+})();
+(function(){
+    NS('game.library.CollisionDetect');
+    var CollisionDetect = function() {};
+
+    CollisionDetect.prototype.check = function(arr1, arr2, callback) {
+        for(var i = 0; i < arr1.length; i++) {
+            var a = arr1[i];
+
+            for(var n = 0; n < arr2.length; n++) {
+                var b = arr2[n];
+
+                if(this.checkHit(a, b)) {
+                    return (callback) ? callback(a, b) : true;
+                }
+            }
+        }
+    }
+
+    CollisionDetect.prototype.checkHit = function(a, b) {
+        if(a.isAlive === false || b.isAlive == false) return false;
+
+        return a.x < b.x + b.width
+            && a.x + a.width > b.x
+            && a.y < b.y + b.height
+            && a.y + a.height > b.y
+    }
+
+    game.library.CollisionDetect = new CollisionDetect();
+
+})();
+(function(){
+    NS('game.library.GameArray');
+    var GameComponent = function(){};
+
+    GameComponent.prototype = Array.prototype;
+
+    GameComponent.prototype.add = GameComponent.prototype.push;
+
+    GameComponent.prototype.addArray = function(arr) {
+        var i = 0, l = arr.length;
+
+        for (i; i < arr.length; i++) {
+            this.add(arr[i]);
+        }
+    };
+
+    GameComponent.prototype.remove = function(component) {
+        this.splice(this.indexOf(component), 1);
+    };
+
+    game.library.GameArray = GameComponent;
+
+})();
+var SpriteSheet = {
+
+    ship : {
+        src :'img/ship5.png',
+        frames : 4
+    },
+
+    bullet : {
+        src : 'img/bullet.png',
+        frames : 1
+    },
+
+    explosion_1 : {
+        src : 'img/explosion/ex-1-a.png',
+        frames : 40,
+        frameSet : {
+            explode : [0, 40]
+        }
+    },
+
+    explosion_2 : {
+        src : 'img/explosion/ex-2.png',
+        frames : 48,
+        frameSet : {
+            explode : [0, 48]
+        }
+    },
+
+    explosion_small_1 : {
+        src : 'img/explosion/ex-small-1.png',
+        frames : 40,
+        frameSet : {
+            explode : [0, 40]
+        }
+    },
+
+    explosion_small_2 : {
+        src : 'img/explosion/ex-small-2.png',
+        frames : 64,
+        frameSet : {
+            explode : [0, 64]
+        }
+    },
+
+    explosion_small_3 : {
+        src : 'img/explosion/ex-small-3.png',
+        frames : 8,
+        frameSet : {
+            explode : [0, 8]
+        }
+    },
+
+    explosion_small_4 : {
+        src : 'img/explosion/ex-small-4.png',
+        frames : 10,
+        frameSet : {
+            explode : [0, 10]
+        }
+    },
+    meteor_1 : {
+        src : 'img/meteor/meteor_1.png',
+        frames : 2
+    },
+    meteor_2 : {
+        src : 'img/meteor/meteor_2.png',
+        frames : 2
+    },
+    meteorite_1 : {
+        src : 'img/meteor/s_1.png',
+        frames : 1
+    },
+    meteorite_2 : {
+        src : 'img/meteor/s_2.png',
+        frames : 1
+    },
+    background : {
+        src : 'img/dark-purple.png',
+        frames : 1
+    },
+    live : {
+        src : 'img/live.png',
+        frames : 1
+    }
+};
+var AudioBook = {
+    explode : 'audio/explode.mp3',
+    laser : 'audio/pewV2.mp3',
+    //chopper : 'audio/chopper.mp3',
+    level1 : 'audio/bg.mp3',
+    pew : 'audio/pew.mp3',
+    coin : 'audio/coin.mp3',
+    bgmIntro : 'audio/main-theme.mp3'
+};
+(function(AssetsLoader){
+    NS('game.screen.LoadScreen');
+
+    var CLASS_NAME = '.load-screen';
+
+    var LoadScreen = function (sprites, audio) {
+        this.loadScreen = document.querySelector(CLASS_NAME);
+
+        AssetsLoader.load(sprites, audio, this.loadCompleted.bind(this));
+    };
+
+    LoadScreen.prototype.loadCompleted = function() {
+
+        this.loadScreen.classList.add('hide');
+
+        this.callback(
+            game.library.AssetsLoader.getSpriteData(),
+            game.library.AssetsLoader.getAudioData()
+        );
+    };
+
+    LoadScreen.prototype.onCompleted = function(callback) {
+        this.callback = callback;
+    };
+
+    game.screen.LoadScreen = LoadScreen;
+
+})(game.library.AssetsLoader);
+(function(){
+
+    NS('game.screen.StartScreen');
+
+    var BTN_START = 'btn-play';
+    var BTN_SOUND = 'btn-sound';
+    var CLASS_NAME = '.start-screen';
+    var BG_MUSIC = 'bgmIntro';
+
+    var StartScreen = function() {
+        game.library.AudioManager.playMusic(BG_MUSIC);
+        this.startScreen = document.querySelector(CLASS_NAME);
+        this.initialize();
+    };
+
+    StartScreen.prototype.initialize = function() {
+        this.startBtn = this.startScreen.querySelector('.' + BTN_START);
+        this.soundBtn = this.startScreen.querySelector('.' + BTN_SOUND);
+
+        this.addEvents();
+    };
+
+    StartScreen.prototype.addEvents = function() {
+        this.soundBtn.addEventListener('click', this.handleClick.bind(this));
+        this.startBtn.addEventListener('click', this.handleClick.bind(this));
+
+        this.soundBtn.addEventListener('mouseenter', this.handleMouseEnter.bind(this));
+        this.startBtn.addEventListener('mouseenter', this.handleMouseEnter.bind(this));
+    };
+
+    StartScreen.prototype.handleClick = function(e) {
+        var button = e.currentTarget.getAttribute('data-btn');
+
+        switch(button) {
+            case BTN_START:
+                this.startGame();
+                break;
+            case BTN_SOUND:
+                this.toggleSound();
+                break;
+        }
+    };
+
+    StartScreen.prototype.handleMouseEnter = function(e) {
+        game.library.AudioManager.playFX('pew');
+    };
+
+    StartScreen.prototype.startGame = function() {
+        game.library.AudioManager.stopMusic(BG_MUSIC);
+        game.library.AudioManager.playFX('coin');
+
+        this.startScreen.classList.add('hide');
+        this.onStartCallback();
+    };
+
+    StartScreen.prototype.toggleSound = function() {
+        game.library.AudioManager.toggleSound();
+    };
+
+    StartScreen.prototype.onStart = function(callback) {
+        this.onStartCallback = callback;
+    };
+
+    StartScreen.prototype.show = function() {
+        game.library.AudioManager.playMusic(BG_MUSIC);
+
+        this.startScreen.classList.remove('hide');
+    };
+
+    game.screen.StartScreen = StartScreen;
+
+})();
+(function(Class, SpriteAnimator, SpriteManager){
+    NS('game.component.GameObject');
+
+    var GameObject = Class.extend({
+        type : 'GameObject',
+
+        constructor : function GameObject(spriteName) {
+            this._spriteData = SpriteManager.get(spriteName);
+            this._animator = new SpriteAnimator(this._spriteData, this.ctx);
+            this.width = this._spriteData.width;
+            this.height = this._spriteData.height;
+            this.xCenter = this.width / 2;
+            this.yCenter = this.height / 2;
+            this.destroy = false;
+            this.isActive = true;
+        },
+
+        draw : function() {
+            //override this method
+        },
+
+        update : function(gameTime, timestamp) {
+            //override this method
+        },
+
+        ticker : function(tickName, ms, fn) {
+            var timeName = tickName + 'Stamp';
+            var timestamp = performance.now();
+            if(!this[timeName]) this[timeName] = timestamp;
+
+            var progress = timestamp - this[timeName];
+
+            if(progress > ms) {
+                fn(timeName);
+                this[timeName] = false;
+            }
+        }
+    });
+
+    GameObject.setContext = function(ctx) {
+        this.prototype.ctx = ctx;
+    };
+
+    game.component.GameObject = GameObject;
+
+})(game.library.Class, game.library.SpriteAnimator, game.library.SpriteManager);
+
+
+(function(GameObject, AudioManager){
+
+    NS('game.component.explosion.Explosion');
+
+    var Explosion = GameObject.extend({
+
+        constructor : function Explosion(x, y, type) {
+            this.spriteName = (type) ? type : 'explosion_2';
+            this.x = x;
+            this.y = y;
+
+            GameObject.call(this, this.spriteName);
+
+            AudioManager.playFX('explode');
+        },
+
+        draw : function() {
+            this._animator.playOnce(
+                'explode',
+                this.x - this.xCenter,
+                this.y - this.yCenter,
+                this.completed.bind(this)
+            );
+        },
+
+        completed : function() {
+            if(this.doOnCompleted) this.doOnCompleted(this);
+            this.doOnCompleted = null;
+            this.isActive = false;
+        },
+
+        onCompleted : function(callback) {
+            this.doOnCompleted = callback;
+        }
+    });
+
+    Explosion.type = {
+        BIG_1 : 'explosion_1',
+        BIG_2 : 'explosion_2',
+        SMALL_1 : 'explosion_small_1'
+    };
+
+    game.component.explosion.Explosion = Explosion;
+
+})(game.component.GameObject, game.library.AudioManager);
+(function(GameObject, AudioManager){
+    NS('game.component.weapon.Bullet');
+
+    var Bullet = GameObject.extend({
+
+        spriteName : 'bullet',
+
+        type : 'bullet',
+
+        power : 5,
+
+        speed : 20,
+
+        constructor : function Bullet(x, y) {
+            this.x = x;
+            this.y = y;
+
+            AudioManager.playFX('laser');
+
+            GameObject.call(this, this.spriteName);
+        },
+
+        draw : function() {
+            this._animator.draw(this.x - this.xCenter, this.y);
+        },
+
+        update : function(gameTime, timestamp) {
+            this.y -= this.speed;
+
+            this.checkBound();
+        },
+
+        checkBound : function() {
+            if(!this.isInactive) {
+                if(this.y < -this.height) this.destroy = true;
+            }
+        },
+
+        hit : function() {
+            this.destroy = true;
+        },
+
+    });
+
+    game.component.weapon.Bullet = Bullet;
+
+})(game.component.GameObject, game.library.AudioManager);
+(function(GameObject, Bullet, GameArray, Explosion){
+
+    NS('game.component.player.Ship');
+
+    var Ship = GameObject.extend({
+
+        bullets : new GameArray(),
+
+        constructor : function Ship(x, y) {
+            this.spriteName = 'ship';
+            this.type = 'player';
+            this.x = x;
+            this.y = y;
+            this.reloadTime = 150;
+            this.recoverTime = 1000;
+            this.isHit = false;
+            this.points = 1000;
+            this.frame = 0;
+
+            GameObject.call(this, this.spriteName);
+        },
+
+        draw : function(){
+            this._animator.draw(this.x, this.y, this.frame);
+        },
+
+        update : function() {
+            this.x += ((game.mouseX - this.xCenter) - this.x) / 20;
+            this.y += ((game.mouseY - this.yCenter) - this.y) / 20;
+
+            this.autoFire();
+            if(this.isHit) {
+                this.recover();
+            }
+        },
+
+        hit : function() {
+            this.isActive = false;
+
+            if (this.frame > 2) {
+                this.dead = true;
+                this.explode();
+            } else {
+                this.isHit = true;
+                this.frame++;
+            }
+        },
+
+        recover : function() {
+            this.ticker('recover', this.recoverTime, this.recovered.bind(this))
+        },
+
+        recovered : function() {
+            this.isHit = false;
+            if(this.dead === true) return;
+            this.isActive = true;
+        },
+
+        autoFire : function() {
+            if(this.dead || this.toDraw === false) return;
+            this.ticker('fire', this.reloadTime, this.fire.bind(this));
+        },
+
+
+        fire : function() {
+            var bullet = new Bullet(this.x + this.xCenter, this.y + this.yCenter);
+
+            GameComponents.add(bullet);
+
+            this.bullets.push(bullet);
+        },
+
+        explode : function() {
+            this.toDraw = false;
+            var ex = new Explosion(this.x + this.xCenter, this.y + this.yCenter, Explosion.type.BIG_2);
+
+            ex.onCompleted(this.cleanUp.bind(this));
+
+            GameComponents.add(ex);
+        },
+
+        cleanUp : function(ex) {
+            GameComponents.remove(ex);
+
+            this.isHit = false;
+            this.dead = false;
+            //this.toDraw = this.draw.bind(this);
+            this.frame = 0;
+            this.gameOver();
+        }
+    });
+
+    game.component.player.Ship = Ship;
+
+})(
+    game.component.GameObject,
+    game.component.weapon.Bullet,
+    game.library.GameArray,
+    game.component.explosion.Explosion);
+
+
+(function(GameObject, Explosion){
+    NS('game.component.meteor.Meteorite');
+
+    var MODE_LEFT = 0;
+    var MODE_RIGHT = 1;
+
+    var sprites = ['meteorite_1', 'meteorite_2'];
+
+    var EXPLOSION_TYPE = 0;
+
+    var Meteorite = GameObject.extend({
+
+        constructor : function Meteor(x, y, direction) {
+
+            this.x = x;
+            this.y = y;
+            this.spriteName = sprites[Math.round(Math.random())];
+            this.hp = 5;
+            this.speed = 16;
+            this.points = 100;
+
+            GameObject.call(this, this.spriteName);
+
+            this.setVelocities(direction)
+        },
+
+        setVelocities : function(mode) {
+            var speed = (Math.random() * 3);
+
+            if(mode === MODE_LEFT) {
+                this.speedX = speed * -1;
+                this.x += -10;
+            } else {
+                this.speedX = speed;
+                this.x += 10;
+            }
+
+            this.speedY = (Math.random() * 4);
+        },
+
+        draw : function() {
+            this._animator.draw(this.x, this.y);
+        },
+
+        update : function() {
+            this.y += this.speedY;
+
+            this.x += this.speedX;
+
+            this.checkBound();
+        },
+
+        checkBound : function() {
+            if(!this.isInactive) {
+                if(this.y > CANVAS_HEIGHT || this.x < -this.width || this.x > CANVAS_WIDTH) {
+                    this.destroy = true;
+                }
+            }
+        },
+
+        hit : function(damage) {
+
+            this.hp -= damage;
+            this.speed++;
+
+            if(this.hp <= 0) {
+                this.explode();
+            }
+        },
+
+        explode : function() {
+            this.killed = true;
+            this.toDraw = false;
+            this.isActive = false;
+
+            var ex = new Explosion(this.x + this.xCenter, this.y + this.yCenter, Explosion.type.SMALL_1);
+            ex.onCompleted(this.cleanUp.bind(this));
+
+            GameComponents.add(ex);
+        },
+
+        cleanUp : function(ex) {
+            GameComponents.remove(ex);
+            this.destroy = true;
+        }
+    });
+
+    game.component.meteor.Meteorite = Meteorite;
+
+})(game.component.GameObject, game.component.explosion.Explosion);
+(function(GameObject, Explosion, Meteorite){
+    NS('game.component.meteor.Meteor');
+
+    var sprites = ['meteor_1', 'meteor_2'];
+
+    var Meteor = GameObject.extend({
+
+        constructor : function Meteor(x, y) {
+
+            this.x = x;
+            this.y = y;
+            this.spriteName = sprites[Math.round(Math.random())];
+            this.hp = 10;
+            this.frame = 0;
+            this.speed = 2;
+            this.points = 300;
+
+            GameObject.call(this, this.spriteName);
+        },
+
+        draw : function() {
+            this._animator.draw(this.x, this.y, this.frame);
+        },
+
+        update : function() {
+            this.y += this.speed;
+
+            this.checkBound();
+        },
+
+        checkBound : function() {
+            if(!this.isInactive) {
+                if(this.y > CANVAS_HEIGHT) {
+                    this.destroy = true;
+                }
+            }
+        },
+
+        hit : function(damage) {
+
+            this.hp -= damage;
+            this.frame++;
+            this.speed--;
+
+            if(this.hp <= 0) {
+                this.explode();
+            }
+        },
+
+        explode : function(isDead) {
+            this.killed = true;
+            this.toDraw = false;
+            this.isActive = false;
+
+            var ex = new Explosion(this.x + this.xCenter, this.y + this.yCenter, Explosion.type.BIG_2);
+                ex.onCompleted(this.cleanUp.bind(this));
+
+            GameComponents.add(ex);
+
+            if(isDead) return;
+            this.createMeteorite();
+        },
+
+        createMeteorite : function() {
+            var m1 = new Meteorite(this.x, this.y + this.yCenter, 0);
+            var m2 = new Meteorite(this.x + this.width, this.y + this.yCenter, 1);
+
+            GameComponents.addArray([m1, m2]);
+
+            LevelContent.enemies.addArray([m1, m2])
+        },
+
+        cleanUp : function(ex) {
+            GameComponents.remove(ex);
+
+            this.destroy = true;
+        }
+    });
+
+    game.component.meteor.Meteor = Meteor;
+
+})(game.component.GameObject, game.component.explosion.Explosion, game.component.meteor.Meteorite);
+(function(GameObject, SpriteManager){
+    NS('game.component.HUD');
+
+    var HUD = GameObject.extend({
+        score : 0,
+        textScore : 0,
+        lives :3,
+        shakeTime : 60,
+        zeros : '000000',
+
+        settings : {
+            font : "24pt 'Kenvector Future'",
+            shadowBlur : 4,
+            shadowColor : 'grey',
+            textAlign : 'end',
+            textBaseline : 'buttom',
+            fillStyle : '#fff'
+        },
+
+        constructor : function HUD(element) {
+            this.element = element;
+            this.imageData = SpriteManager.get('live');
+            this.ctx.translate(0.5, 0.5);
+            this.setupContext();
+            this.addScore(0);
+        },
+
+        restart : function() {
+            this.score = 0;
+            this.textScore = 0;
+            this.lives = 3;
+            this.addScore(0);
+        },
+
+        setupContext : function() {
+            _.each(this.settings, this.applyContextSettings, this);
+        },
+
+        applyContextSettings : function(value, settingName) {
+            this.ctx[settingName] = value;
+        },
+
+        draw : function() {
+            this.setupContext();
+            this.ctx.fillText(this.textScore, CANVAS_WIDTH - 10,  CANVAS_HEIGHT - 10);
+            this.showLives();
+        },
+
+        showLives : function() {
+            for(var i = 0; i < this.lives; i++) {
+                this.ctx.drawImage(this.imageData.image, this.imageData.width * i + 20, CANVAS_HEIGHT - 40);
+            }
+        },
+
+        update : function() {
+            if(this.isHit) {
+                this.shakeScreen();
+            }
+        },
+
+        addScore : function(points) {
+            this.score += points;
+            var s = this.zeros + this.score;
+            this.textScore = s.substr(s.length - this.zeros.length);
+        },
+
+        hit : function() {
+            this.lives--;
+            this.isHit = true;
+        },
+
+        shakeScreen : function() {
+            var val = - this.shakeTime + Math.round(Math.random() * this.shakeTime);
+
+            if(this.shakeTime > 0) {
+                this.shakeTime -= 1.4;
+                this.element.style.transform = 'translate(' + val +'px, ' + val + 'px)';
+            } else {
+                this.isHit = false;
+                this.shakeTime = 60;
+                this.element.style.transform = 'translate(0, 0)';
+            }
+        },
+
+        reset : function() {
+            this.score = 0;
+            this.textScore = 0;
+            this.lives =3;
+            this.shakeTime = 60;
+            this.zeros = '000000';
+        }
+
+    });
+
+    HUD.setContext = function(ctx) {
+        this.prototype.ctx = ctx;
+    };
+
+    game.component.HUD = HUD;
+})(game.component.GameObject, game.library.SpriteManager);
+(function(Class, SpriteManager){
+    NS('game.component.background.Background');
+
+    var Background = Class.extend({
+
+        constructor : function Background() {
+            this._spriteData = SpriteManager.get('background');
+            this.width = this._spriteData.width;
+            this.height = this._spriteData.height;
+            this.x  = 0;
+            this.y = 0;
+            this.speed = 3;
+            this.createBackground();
+        },
+
+        createBackground : function() {
+
+            var repeat = {
+                x : Math.ceil(CANVAS_WIDTH / this.width) + 1,
+                y : Math.ceil(CANVAS_HEIGHT / this.height) + 1
+            };
+
+
+            this.pattern = [];
+
+            this.startPos = CANVAS_HEIGHT - (repeat.y * this.height);
+
+            for(var i = 0; i < repeat.x; i++) {
+
+                for(var n = 0; n < repeat.y; n++) {
+                    this.pattern.push([-this.width + (i * this.width), -this.height + (n * this.height)]);
+                }
+            }
+
+            this.repeat = repeat
+        },
+
+        draw : function() {
+
+            for(var i = 0; i < this.pattern.length; i++) {
+                if(this.pattern[i][1] > CANVAS_HEIGHT) {
+                    this.pattern[i][1] = this.startPos;
+                }
+
+                this.ctx.drawImage(this._spriteData.image, 0, 0,
+                    this.width, this.height,
+                    this.pattern[i][0] + this.x, this.pattern[i][1]+= this.speed,
+                    this.width, this.height
+                )
+            }
+        },
+
+        update : function() {
+            this.speed = 3 + (.005 * game.mouseY);
+        }
+
+    });
+
+    Background.setContext = function(ctx) {
+        this.prototype.ctx = ctx;
+    };
+
+    game.component.background.Background = Background;
+
+})(game.library.Class, game.library.SpriteManager);
+(function(AudioManager, GameArray, Meteor, CollisionDetect){
+    NS('game.component.level.Level1');
+
+    var TYPE_ENEMY = 'enemy';
+    var TYPE_WEAPON = 'weapon';
+
+    var Level1 = game.component.GameObject.extend({
+
+        constructor : function Level1(player, hud) {
+            this.makeTime = 1000;
+            this.container = new GameArray();
+            this.player = player;
+            this.hud = hud;
+
+            AudioManager.playMusic('level1');
+
+            this.setup();
+        },
+
+        setup : function() {
+            this.player.gameOver = this.gameOver.bind(this);
+        },
+
+        restart : function() {
+            this.player.toDraw = true;
+            this.player.isActive = true;
+            this.gameEnded = false;
+            this.hud.restart();
+        },
+
+        update : function() {
+            this.checkIfInactive();
+            this.createLevel();
+            this.checkCollisions();
+        },
+
+        checkCollisions : function() {
+            for(var i = 0; i < LevelContent.enemies.length; i++) {
+
+                var enemy = LevelContent.enemies[i];
+
+                if(!enemy.isActive) continue;
+
+                if (this.player.isActive && CollisionDetect.checkHit(enemy, this.player)) {
+                    enemy.hit(this.player.points);
+                    this.player.hit();
+                    this.hud.hit();
+                }
+
+                for(var n =0; n < this.player.bullets.length; n++) {
+
+                    var bullet = this.player.bullets[n];
+
+                    if(! bullet.isActive) continue;
+
+                    if(CollisionDetect.checkHit(enemy, bullet)) {
+                        enemy.hit(bullet.power);
+                        bullet.hit();
+                    }
+                }
+            }
+        },
+
+
+        checkIfInactive : function() {
+
+            _.each(LevelContent.enemies, function(enemy){
+                if(enemy.killed) {
+                    this.hud.addScore(enemy.points);
+                    enemy.killed = null;
+                }
+
+                if(enemy.destroy) {
+                    this.removeComponent(enemy, TYPE_ENEMY);
+                }
+            }, this);
+
+            _.each(this.player.bullets, function(bullet) {
+                if(bullet.destroy) {
+                    this.removeComponent(bullet, TYPE_WEAPON);
+                }
+            }, this);
+        },
+
+        removeComponent : function(component, type) {
+            if(type === TYPE_ENEMY) {
+                LevelContent.enemies.remove(component);
+
+            } else if(type === TYPE_WEAPON) {
+                this.player.bullets.remove(component);
+
+            }
+
+            GameComponents.remove(component);
+
+            if(this.gameEnded && LevelContent.enemies.length == 0) {
+                this.showStartScreen();
+            }
+        },
+
+        createLevel : function() {
+            if(!this.gameEnded) {
+                this.ticker('meteor', this.makeTime, this.addMeteor.bind(this));
+            }
+        },
+
+        addMeteor : function() {
+            var meteor = new Meteor(100 + (Math.ceil(Math.random() * CANVAS_WIDTH - 200)), -80);
+
+            GameComponents.add(meteor);
+
+            LevelContent.enemies.add(meteor);
+
+            this.makeTime = (this.makeTime >  500) ? this.makeTime - 100 : 500;
+        },
+
+        gameOver : function() {
+            this.gameEnded = true;
+            _.each(LevelContent.enemies, this.explode, this);
+        },
+
+        explode : function(enemy) {
+            enemy.explode();
+        }
+
+    });
+
+    game.component.level.Level1 = Level1;
+
+})(
+    game.library.AudioManager,
+    game.library.GameArray,
+    game.component.meteor.Meteor,
+    game.library.CollisionDetect
+);
+;(function(CanvasManager, SpriteManager, AudioManager, GameArray) {
+
+    window.CANVAS_WIDTH = MAX_WIDTH = 1200;
+    window.CANVAS_HEIGHT = MAX_HEIGHT =  800;
+
+    window.GameComponents = null;
+    window.LevelContent = null;
+
+    TYPE_MOUSEDOWN = 'mousedown';
+    TYPE_MOUSEUP = 'mouseup';
+
+    CANVAS_PLAY = 'playfield';
+    CANVAS_BG = 'background';
+    CANVAS_HUD = 'hud';
+
+    /**
+     * imports
+     */
+    var component = game.component;
+    var canvasIds = [CANVAS_PLAY, CANVAS_BG, CANVAS_HUD];
+    var startScreen;
+    var container;
+    var lastTime;
+    var background;
+    var player = null;
+    var level = null;
+    var hud = null;
+
+    function initialize() {
+        AudioManager.disableSound();
+
+        GameComponents = new GameArray();
+
+        LevelContent = {
+            enemies : new GameArray(),
+            bullets : new GameArray()
+        };
+        
+        container = document.querySelector('#container');
+
+        var loadScreen = new game.screen.LoadScreen(SpriteSheet, AudioBook);
+            loadScreen.onCompleted(assetsLoaded);
+
+        setGameWidth(window.innerWidth, window.innerHeight);
+
+        setupCanvas();
+    }
+
+    function setGameWidth(width, height) {
+        if(!canvasses) {
+            var canvasses = document.querySelectorAll('.canvas');
+        }
+
+        var sw = (width > MAX_WIDTH) ? MAX_WIDTH : width;
+        var sh = (height > MAX_HEIGHT) ? MAX_HEIGHT : height;
+
+        var w = CANVAS_WIDTH = (sw) ? sw : CANVAS_WIDTH;
+        var h = CANVAS_HEIGHT = (sh) ? sh: CANVAS_HEIGHT;
+
+
+        _.each(canvasses, function(element){
+            if(element.nodeName === 'CANVAS') {
+                element.width = w;
+                element.height = h;
+            } else {
+                element.style.width = w + 'px';
+                element.style.height = h+ 'px';
+            }
+        });
+
+        if(background) {
+            background.createBackground();
+        }
+    }
+
+    function setupCanvas() {
+        _.each(canvasIds, function(id){
+            CanvasManager.setCanvas(id);
+        });
+
+        component.GameObject.setContext(CanvasManager.getContext(CANVAS_PLAY));
+        component.background.Background.setContext((CanvasManager.getContext(CANVAS_BG)));
+        component.HUD.setContext(CanvasManager.getContext(CANVAS_HUD));
+
+        gameLoop(new Date());
+    }
+
+    function assetsLoaded(spriteData, audioData) {
+        SpriteManager.data(spriteData);
+        AudioManager.data(audioData);
+
+
+        addEvents();
+        showStart();
+    }
+    function addEvents() {
+        game.mouseX = 100;
+        game.mouseY = 100;
+
+        //container.addEventListener('mousedown', handleMouseClick);
+        //container.addEventListener('mouseup', handleMouseClick);
+        container.addEventListener('mousemove', handleMouseMove);
+        container.addEventListener('touchstart', handleTouch);
+         container.addEventListener('touchmove', handleTouch);
+        window.addEventListener('resize', handleResize);
+    }
+
+    function handleMouseClick(e) {
+        var eventType = e.type;
+
+        switch(eventType) {
+            case TYPE_MOUSEUP:
+                break;
+            case TYPE_MOUSEDOWN:
+                break
+        }
+    }
+
+    function handleMouseMove(e) {
+        game.mouseX = e.pageX - container.offsetLeft;
+        game.mouseY = e.pageY - container.offsetTop;
+    }
+
+    function handleTouch(e) {
+        e.preventDefault();
+        var touch = e.changedTouches[0];
+        
+        game.mouseX = (touch.pageX - container.offsetLeft);
+        game.mouseY = (touch.pageY - container.offsetTop);
+    }
+
+    function handleResize(e) {
+        setGameWidth(window.innerWidth, window.innerHeight);
+    }
+
+    function showStart() {
+        startScreen = new game.screen.StartScreen();
+        startScreen.onStart(startGame);
+
+        background = new component.background.Background();
+        GameComponents.add(background);
+    }
+
+    function startGame() {
+        if(player === null) loadComponents();
+        level.restart();
+
+        GameComponents.addArray([player, level, hud]);
+    }
+
+    function loadComponents() {
+        player = new component.player.Ship(100, 100);
+        hud = new component.HUD(container);
+        level = new component.level.Level1(player, hud);
+        
+        level.showStartScreen = gameOver;
+    }
+
+    function gameOver() {
+        GameComponents.remove(player);
+        GameComponents.remove(hud);
+        GameComponents.remove(level);
+        startScreen.show();
+    }
+
+    function gameLoop(timestamp) {
+        var now = Date.now();
+        var gameTime = (now - lastTime) / 1000;
+
+        update(gameTime, timestamp);
+        lastTime = now;
+
+        requestAnimationFrame(gameLoop);
+    }
+
+    function update(gameTime, timestamp) {
+        CanvasManager.clearContext(CANVAS_WIDTH, CANVAS_HEIGHT);
+
+        _.each(GameComponents, function(component) {
+            if(component.toDraw !== false) component.draw(gameTime, timestamp);
+            if(component.update !== false) component.update();
+        });
+    }
+
+    initialize();
+
+})(game.library.CanvasManager, game.library.SpriteManager, game.library.AudioManager, game.library.GameArray);
+//# sourceMappingURL=game.js.map

@@ -43,7 +43,7 @@
 
     StartScreen.prototype.handleMouseEnter = function(e) {
         game.library.AudioManager.playFX('pew');
-    }
+    };
 
     StartScreen.prototype.startGame = function() {
         game.library.AudioManager.stopMusic(BG_MUSIC);

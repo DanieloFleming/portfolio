@@ -117,8 +117,8 @@
     }
 
     function handleMouseMove(e) {
-        game.mouseX = e.layerX;
-        game.mouseY = e.layerY;
+        game.mouseX = e.pageX - container.offsetLeft;
+        game.mouseY = e.pageY - container.offsetTop;
     }
 
     function handleTouch(e) {
