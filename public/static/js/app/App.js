@@ -53,6 +53,7 @@ define([
             app.browser.isChrome = (window.chrome);
             app.browser.isIe = app.browser.type == 'edge' || app.browser.type == 'ie';
             app.browser.isWindows = app.browser.os == 'windows';
+            app.browser.isAndroid = app.browser.os == 'androidos';
 
 
             app.browser.isMobile = 'ontouchstart' in window || navigator.msMaxTouchPoints ||

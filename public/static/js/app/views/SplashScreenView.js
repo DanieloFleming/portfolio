@@ -122,13 +122,17 @@ define([
             var scrollbarWidth = this.ui.outScroll.offsetWidth - this.ui.inScroll.offsetWidth;
             app.config.applicationWidth = scrollbarWidth < 15 ? 15 : scrollbarWidth;
 
-            css.width = "calc(100% + " + app.config.applicationWidth + "px)";
+            if(app.browser.isAndroid && !app.browser.isChrome) {
+                //do nothing
+            } else {
+                css.width = "calc(100% + " + app.config.applicationWidth + "px)";
 
-            if(app.browser.os !== 'windows') {
-                css.paddingRight = app.config.applicationWidth + "px";
+                if(app.browser.os !== 'windows') {
+                    css.paddingRight = app.config.applicationWidth + "px";
+                }
+
+                $('#application').css(css);
             }
-
-            $('#application').css(css);
 
             this.preAnimation.kill();
             this.postAnimation.kill();

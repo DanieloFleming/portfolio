@@ -3,7 +3,7 @@
 <?php
 echo "\033[1;32m \033[43m --- Build Started --- \033[0m \n";
 
-exec ('compass compile _sass');
+passthru ('compass compile -e production --force _sass');
 
 echo "-- compiled css -- \n";
 
