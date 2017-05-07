@@ -10,6 +10,9 @@
 	height: 50px;
 	overflow: hidden;
 }
+body[data-browser*="firefox"] .menu-button {
+	transform: translateX(0);
+}
 .menu-button:hover {
 	cursor:pointer;
 }
