@@ -3,6 +3,9 @@
 	height: 100vh;
 	background-color: #fff !important;
 }
+body[data-browser*="firefox"] .header-background {
+	width: calc(100% + 15px);
+}
 
 .header-background {
 	background-position: center center;
@@ -29,6 +32,7 @@
 .case-header-title {
 	font-size: 120px;
 }
+
 .video-header-homepage {
 	min-width: 100%;
 	min-height: 100%;
@@ -72,9 +76,7 @@
 (not(-ms-high-contrast: none)) and
 (not(-ms-high-contrast: active)) and
 (not(-ms-ime-align:auto))),*/
-body:not([data-browser*="edge"]),
-body:not([data-browser*="ie"]),
-body:not([data-browser*="firefox"]){
+body:not([data-browser*="edge"]):not([data-browser*="ie"]):not([data-browser*="firefox"]){
 	#application {
 		-webkit-perspective: 1px;
 		perspective: 1px;
