@@ -73,7 +73,8 @@
 (not(-ms-high-contrast: active)) and
 (not(-ms-ime-align:auto))),*/
 body:not([data-browser*="edge"]),
-body:not([data-browser*="ie"]) {
+body:not([data-browser*="ie"]),
+body:not([data-browser*="firefox"][data-os*="android"]){
 	#application {
 		-webkit-perspective: 1px;
 		perspective: 1px;
