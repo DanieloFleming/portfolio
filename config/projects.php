@@ -105,6 +105,15 @@ return [
             'sub_title' => '<i>RZ</i>Ball',
             'slug'      => 'rz-basketball',
             'header'    => '/static/img/cases/rz-basketball/thumb-overlayed.jpg',
+        ],
+        [
+            'id'        => 10,
+            'order'     => 0,
+            'type'      => 'PROTOTYPE',
+            'title'     => 'Vinyl-ly',
+            'sub_title' => '<i>Vinyl</i>ly',
+            'slug'      => 'vinylly-music-player',
+            'header'    => '/static/img/cases/vinylly-music-player/thumb-2.jpg',
         ]
     ]
 ];

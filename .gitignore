@@ -4,6 +4,8 @@
 Homestead.yaml
 Homestead.json
 
+node_modules
+
 /.sass-cache
 # OS generated files #
 ######################
