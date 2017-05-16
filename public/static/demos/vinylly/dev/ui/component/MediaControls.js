@@ -15,7 +15,7 @@ class MediaControls extends React.Component
                 ['play', 'flaticon-play-button'], 
                 ['next', 'flaticon-next']
             ],
-            volumeButton : ['volume', 'flaticon-technology-1'],
+            volumeButton : ['volume', 'flaticon-interface'],
             isActive : false,
             volume:100
         };
@@ -107,7 +107,7 @@ class MediaControls extends React.Component
     }
 
     getAction(activityType) {
-        this.action = activityType == "Playlist" ? ["player", 'flaticon-lp-player'] : ["list", "list"];
+        this.action = activityType == "Playlist" ? ["player", 'flaticon-lp-player'] : ["list", "flaticon-list"];
         return this.action;
     }
 

@@ -12,14 +12,14 @@
             </div>
             <div class="row">
                 <div class="column span-10-10">
-                    <img data-delay=".4" src="/static/img/cases/noted/logo-noted.png" />
+                    <img data-delay=".4" src="/static/img/cases/noted/logo-noted.png" style="width:120px;" />
                 </div>
             </div>
         </div>
     </div>
     <div class="section">
         <div class="container">
-            <img data-delay="0" src="/static/img/cases/noted/triple-view.jpg" style="width:100%;" class="smart-object"/>
+            <img data-delay="0" src="/static/img/cases/noted/triple-view3.png" style="width:90%;" class="smart-object"/>
         </div>
     </div>
     <div class="section is-colored--dark">
