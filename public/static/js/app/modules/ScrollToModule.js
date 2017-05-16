@@ -9,7 +9,7 @@ define([
 		},
 
 		initialize : function() {
-            var bodyValue = (app.browser.isFireFox) ? 'body, html' : 'body';
+            //var bodyValue = (app.browser.isFireFox) ? 'body, html' : 'body';
             this.$body = $('#application');
 
             _.bindAll(this, 'handleComplete', 'scrollToPosition');

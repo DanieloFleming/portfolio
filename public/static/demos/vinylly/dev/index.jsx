@@ -9,18 +9,18 @@ const playlist = require('./music.js').default.songs;
 
 class App extends React.Component {
 
-constructor(props){
-    super(props);
+    constructor(props){
+        super(props);
 
-    this.startActivity = this.startActivity.bind(this);
+        this.startActivity = this.startActivity.bind(this);
 
-    AudioPlayer.setPlaylist(props.playlist);
-    
-    this.state = {
-        activity :  <ActivityPlaylist playlist={props.playlist} startActivity={this.startActivity} />,
-        currentActivity : 'Playlist'
-    };
-}
+        AudioPlayer.setPlaylist(props.playlist);
+        
+        this.state = {
+            activity :  <ActivityPlaylist playlist={props.playlist} startActivity={this.startActivity} />,
+            currentActivity : 'Playlist'
+        };
+    }
 
     render() {
         return(

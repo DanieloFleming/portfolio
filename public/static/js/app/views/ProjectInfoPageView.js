@@ -128,9 +128,7 @@ define([
             $('body').off('keyup', this.handleKeyPress);
 
             if(this.ui.demos) {
-                TweenMax.set(this.ui.demos, {
-                    opacity:0
-                });
+                this.ui.demos.src = "";
             }
         },
 
