@@ -10,7 +10,8 @@ function PlaylistItem(props) {
     const isPlaying = props.isSelected && props.isPlaying ? ' playing' : ''
 
     return( 
-        <li onClick={onClick} className={"playlist-item " + isSelected + isPlaying} data-id={props.id}>
+        <li data-index={props.index} onClick={onClick} className={"playlist-item " + isSelected + isPlaying} data-id={props.id}
+        ref={ (li) => props.isSelected ? props.setTarget(li) : null}>
             <div className="cover-art">
                 <figure className="cover-art-vinyl"></figure>
                 <img src={coverArt} />
