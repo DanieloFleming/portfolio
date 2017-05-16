@@ -3,7 +3,9 @@
 	height: 100vh;
 	background-color: #fff !important;
 }
-
+.section-header--info, .header-content {
+	position:relative;
+}
 body[data-browser*="firefox"]:not([data-os*="android"]) .header-background {
 	width: calc(100% + 15px);
 }

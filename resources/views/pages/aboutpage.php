@@ -35,7 +35,7 @@
             <div class="row">
                 <div class="column span-8-10 space-l-1-10 span-md-10-10 space-md-none">
                     <h3 data-delay="0" class="is-bold">Platforms</h3>
-                    <h5 data-delay=".2">Transmuting text into Awesomeness</h5>
+                    <h5 data-delay=".2">I tried coding on humans and dogs but thats not for me</h5>
                 </div>
                 <div class="column span-8-10 space-l-1-10 space-md-none span-md-10-10">
                     <ul class="flex-list text-center">
@@ -87,7 +87,7 @@
                 <div class="column span-4-10 span-md-8-10 space-md-l-1-10 span-sm-10-10 space-sm-none  column-platforms" style="height: 410px">
                     <div class="column span-10-10">
                         <h3 class="is-bold is-aligned--center skills-title" data-delay="1.4">Platform Disciplines</h3>
-                        <h5 class="is-aligned--center skills-subtitle" data-delay="1.6">The 4 Elements</h5>
+                        <h5 class="is-aligned--center skills-subtitle" data-delay="1.6">Or places we know of</h5>
                     </div>
 
                     <div class="platform-bar" style="height: 70%; left: 5%;" data-transition-type="slideUp" data-delay="1.9"></div>
@@ -110,14 +110,14 @@
             <div class="row">
                 <div class="column span-8-10 space-l-1-10 space-r-1-10 span-md-10-10 space-md-none">
                     <h3 data-delay="0" class="is-bold">Frameworks</h3>
-                    <h5 data-delay=".2">Transmutation Circles</h5>
+                    <h5 data-delay=".2">But React is a library. You smart!</h5>
                 </div>
                 <div class="column">
                     <img src="/static/img/sprites/frameworks/backbone-js.png"  data-delay=".4" data-transition-type="zoomIn" class="frame-item"/>
                     <img src="/static/img/sprites/frameworks/wordpress.png"  data-delay=".6" data-transition-type="zoomIn" class="frame-item"/>
                     <img src="/static/img/sprites/frameworks/laravel.png" data-delay=".8"  data-transition-type="zoomIn" class="frame-item"/>
                     <img src="/static/img/sprites/frameworks/android.png"  data-delay="1" data-transition-type="zoomIn" class="frame-item"/>
-                   <!-- <img src="/static/img/sprites/frameworks/github.png"  data-delay="1.2" data-transition-type="zoomIn" class="frame-item"/>-->
+                    <img src="/static/img/sprites/frameworks/react.png"  data-delay="1.2" data-transition-type="zoomIn" class="frame-item"/>
                     <img src="/static/img/sprites/frameworks/unity.png"  data-delay="1.2" data-transition-type="zoomIn" class="frame-item"/>
                 </div>
             </div>

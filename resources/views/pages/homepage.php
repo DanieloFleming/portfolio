@@ -4,17 +4,19 @@
         <video class="video-header-homepage" muted autoplay loop data-delay=".5" data-transition-type="fadeIn">
             <source src="/static/video/trailer.mp4" type="video/mp4">
         </video>
-        <div data-delay="0" data-transition-type="fadeIn" class="row fill-parent is-aligned--middle is-unpadded is-aligned--center header-content" style="position:absolute">
+        <div data-delay="0" data-transition-type="fadeIn" class="row fill-parent is-aligned--middle is-unpadded is-aligned--center header-content">
             <div class="column span-8-10 space-l-1-10 span-md-10-10 space-md-none">
                 <h1 class="title" data-delay=".2">I'm pointing at the moon, but you keep looking at my finger.</h1>
                 <h3 class="text is-bold" data-delay=".4"> - <i>VAST</i>AIRE - </h3>
             </div>
+
+            <div class="scroll-indicator scroll-to" data-delay=".6">
+                <span class="indicator"></span>
+                <span class="indicator-text text-top">latest</span>
+                <span class="indicator-text text-bottom">cases</span>
+            </div>
         </div>
-        <div class="scroll-indicator scroll-to" data-delay=".6">
-            <span class="indicator"></span>
-            <span class="indicator-text text-top">latest</span>
-            <span class="indicator-text text-bottom">cases</span>
-        </div>
+
     </section>
 
     <section class="section section-portfolio-items is-unpadded is-inverted">

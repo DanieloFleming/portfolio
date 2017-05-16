@@ -16,11 +16,13 @@
             </div>
         </div>
     </section>
+
     <section class="section">
         <div class="container">
             <img data-delay="0" src="/static/img/cases/rz-basketball/mac.png" style="width:100%" class="smart-object"/>
         </div>
     </section>
+
     <div class="section is-colored--dark">
         <div class="container">
             <img data-delay="0" src="/static/img/cases/rz-basketball/tabs-2.png" style="width:100%;" class="smart-object"/>
