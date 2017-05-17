@@ -33,7 +33,6 @@ class MusicPlayer {
     }
 
     handleEnded(e) {
-        console.log("Hereh");
         this.next();
     }
 
