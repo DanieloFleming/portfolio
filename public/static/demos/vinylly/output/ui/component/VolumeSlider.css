@@ -28,8 +28,8 @@
 .volume-slider input[type="range"] {
     transform: rotate(-90deg);
     position: absolute;
-    bottom: 0;
-    width: 94px;
+    bottom: 4px;
+    width: 88px;
     left: 0;
     transform-origin: 12px center;
 }

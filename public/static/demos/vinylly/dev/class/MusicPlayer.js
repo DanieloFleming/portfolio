@@ -20,11 +20,12 @@ class MusicPlayer {
         };
         this.updateTime = this.updateTime.bind(this);
         this.handlePlayState = this.handlePlayState.bind(this);
+        this.handleEnded = this.handleEnded.bind(this);
 
         this.audioPlayer.addEventListener('timeupdate', this.updateTime);
         this.audioPlayer.addEventListener('play', this.handlePlayState);
         this.audioPlayer.addEventListener('pause', this.handlePlayState);
-        this.audioPlayer.addEventListener('ended', this.handleEnded.bind(this));
+        this.audioPlayer.addEventListener('ended', this.handleEnded);
     }
 
     handlePlayState(e) {
@@ -32,6 +33,7 @@ class MusicPlayer {
     }
 
     handleEnded(e) {
+        console.log("Hereh");
         this.next();
     }
 
@@ -92,6 +94,7 @@ class MusicPlayer {
     }
 
     next() {
+
         const index = this.playlist.indexOf(this.currentTrack) + 1;
         
         if(index > this.playlistCount - 1) {
@@ -171,7 +174,9 @@ class MusicPlayer {
     } 
 
     notLoaded() {
-        return !this.isIe11 ? this.currentTrack && this.audioPlayer.readyState !== 4 : false;
+        return !this.isIe11 ? this.currentTrack 
+            && (this.audioPlayer.readyState !== 2 &&  this.audioPlayer.readyState !== 4)  
+            : false;
     }
     
 }
