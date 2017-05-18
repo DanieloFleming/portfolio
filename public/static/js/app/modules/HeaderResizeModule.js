@@ -12,7 +12,7 @@ define([
                 $(window).on('resize', this.handleResize);
                 this.handleResize();
             }
-
+            
             if(!app.browser.isChrome) {
                 this.handleNonChrome();
             }
@@ -21,7 +21,7 @@ define([
 
             if(headerBackground) {
                 if (app.browser.isWindows && !app.browser.isIe) {
-                    $(headerBackground).css({left: -app.config.applicationWidth / 2 + "px"});
+                    TweenMax.set({left: -app.config.applicationWidth / 2 + "px"});
                 }
             }
         },

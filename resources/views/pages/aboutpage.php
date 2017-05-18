@@ -110,7 +110,7 @@
             <div class="row">
                 <div class="column span-8-10 space-l-1-10 space-r-1-10 span-md-10-10 space-md-none">
                     <h3 data-delay="0" class="is-bold">Frameworks</h3>
-                    <h5 data-delay=".2">But React is a library. You smart!</h5>
+                    <h5 data-delay=".2">And libraires, but who cares about those</h5>
                 </div>
                 <div class="column">
                     <img src="/static/img/sprites/frameworks/backbone-js.png"  data-delay=".4" data-transition-type="zoomIn" class="frame-item"/>

@@ -1,10 +1,11 @@
 define([
+    'underscore',
     'app/views/BaseView',
     'app/components/FadeInComponent',
     'app/modules/ProjectViewerModuleG',
     'app/modules/ScrollToModule',
     'app/modules/HeaderResizeModule'
-], function(BaseView, FadeInComponent, ProjectViewerModule, ScrollToModule, HeaderResizeModule) {
+], function(_, BaseView, FadeInComponent, ProjectViewerModule, ScrollToModule, HeaderResizeModule) {
 
     return  BaseView.extend({
         id : 'homepage',
