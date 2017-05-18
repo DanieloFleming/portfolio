@@ -21,7 +21,7 @@ define([
 
             if(headerBackground) {
                 if (app.browser.isWindows && !app.browser.isIe) {
-                    TweenMax.set({left: -app.config.applicationWidth / 2 + "px"});
+                    TweenMax.set(headerBackground, {left: -app.config.applicationWidth / 2 + "px"});
                 }
             }
         },
