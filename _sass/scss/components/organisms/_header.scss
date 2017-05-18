@@ -46,8 +46,12 @@ body[data-browser*="firefox"]:not([data-os*="android"]) .header-background {
 	left: 50%;
 	transform: translate(-50%, -50%) !important;
 }
+
 .header-homepage {
 
+	.header-background:after {
+		content:none;
+	}
 	.header-content:before {
 		content: "";
 		width: 100%;

@@ -83,7 +83,6 @@ define([
 
             this.isClicked = true;
             this.components.projectViewer.isClicked = true;
-            //$('body').off('keyup', this.handleKeyPress);
 
             TweenMax.to(this.el, .7, {
                 opacity:0,
