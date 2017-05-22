@@ -25,9 +25,9 @@
         <div class="container is-centered">
             <iframe data-delay="0"
                     src="<?= url('/static/demos/vinylly/index.html');?>"
-                    style="width:100%; height:100%; position:absolute; top:0; left:0">
+                    style="width:260px; height:100%; position:absolute; top:0; left:50%; margin-left:-130px;">
             </iframe>
-            <canvas width="300" height="500" style="visibility: hidden"></canvas>
+            <canvas width="260" height="460" style="visibility: hidden"></canvas>
         </div>
     </section>
     <?php echo view('layouts.project-footer');?>
