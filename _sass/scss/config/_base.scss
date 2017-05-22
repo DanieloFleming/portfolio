@@ -16,19 +16,27 @@
 	margin: 0;
 	padding: 0;
 
-	-webkit-user-drag: none;
+	@include user-select(none);
+	
+}
+
+img, iframe {
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 	-webkit-overflow-scrolling: touch;
 	-webkit-touch-callout: none;
 
-	@include user-select(none);
+	-webkit-user-drag: none;
+	-khtml-user-drag: none;
+	-moz-user-drag: none;
+	-o-user-drag: none;
+	user-drag: none;
 }
-
 body {
 	font-family: $font-family-primary;
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
+	position: fixed;
 	font-size: 18px;
 }
 
@@ -41,7 +49,8 @@ html, #application {
 }
 #application {
 	overflow-x: hidden;
-	overflow-y: visible;
+    overflow-y: visible;
+    //-webkit-overflow-scrolling: touch;
 	transform: translateZ(0);
 }
 

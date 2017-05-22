@@ -40,15 +40,15 @@
                 <div class="column span-8-10 space-l-1-10 space-md-none span-md-10-10">
                     <ul class="flex-list text-center">
                         <li class="list-item">
-                            <img src="/static/img/sprites/mobile-small.gif"  data-delay=".6" data-transition-type="zoomIn" style=" max-width:150px; width:100%;"/>
+                            <img src="/static/img/sprites/mobile-small.gif"  data-delay=".8" data-transition-type="slideLeft" style=" max-width:150px; width:100%;"/>
                             <h5 class="is-bold" style="margin-top:10px;" data-delay=".7">App</h5>
                         </li>
                         <li class="list-item">
-                            <img src="/static/img/sprites/desktop-small.gif" data-delay=".8"  data-transition-type="zoomIn" style=" max-width:150px; width:100%;"/>
+                            <img src="/static/img/sprites/desktop-small.gif" data-delay=".6"  data-transition-type="zoomIn" style=" max-width:150px; width:100%;"/>
                             <h5 class="is-bold" style="margin-top:10px;" data-delay=".9">Web</h5>
                         </li>
                         <li class="list-item">
-                            <img src="/static/img/sprites/games-small.gif"   data-delay="1" data-transition-type="zoomIn" style=" max-width:150px; width:100%;"/>
+                            <img src="/static/img/sprites/games-small.gif"   data-delay="1" data-transition-type="slideRight" style=" max-width:150px; width:100%;"/>
                             <h5 class="is-bold" style="margin-top:10px;" data-delay="1.1">Games</h5>
                         </li>
                     </ul>

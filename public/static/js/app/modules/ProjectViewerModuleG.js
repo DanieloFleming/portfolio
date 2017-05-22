@@ -63,7 +63,7 @@ define([
             if(scrollTarget > maxScroll) {
                 scrollTarget = maxScroll;
             }
-            this.overlayElement.style.width = this.$application[0].clientWidth + 'px';
+            this.overlayElement.style.width = window.innerWidth + 'px';
             this.$body[0].appendChild(this.overlayElement);
 
 
