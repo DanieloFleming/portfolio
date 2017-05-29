@@ -122,7 +122,6 @@ define([
 
         setupHeaderAnimation : function() {
             this.overlayContainer = this.$body[0].querySelector('.project-overlay');
-            //this.overlayContainer.style.width = this.$application[0].clientWidth + 'px';
             this.overlayImage = this.overlayContainer.querySelector('.overlay-item');
             this.overlayContainer.style.display = 'block';
 
@@ -152,7 +151,7 @@ define([
                     cover : 'height',
                     stretchTo : stretch
                 }
-            }else {
+            } else {
                 return {
                     
                     width:viewWidth,
