@@ -81,7 +81,7 @@ define([
             var models = app.collections.projectCollection.models;
 
             app.router = new Router();
-            app.navigation = new HamburgerComponent();
+            app.navigation = new HamburgerComponent({router:app.router});
             app.templateManager.cacheTemplates(models);
 
             Backbone.history.start({pushState: true});

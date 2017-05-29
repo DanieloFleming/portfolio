@@ -6,10 +6,10 @@ define([
     return Backbone.Router.extend({
 
         routes: {
-            ''               : 'index',
+            ''               : 'home',
             'about'          : 'about',
-            'cases(/)'       : 'projectIndex',
-            'cases/:slug'    : 'projectPage',
+            'cases(/)'       : 'cases',
+            'cases/:slug'    : 'case',
             'contact'        : 'contact',
             '*action'        : 'pageNotFound'
         },
@@ -25,7 +25,7 @@ define([
             };
         },
 
-        index : function() {
+        home : function() {
             app.regionManager.show(this.views.homePage);
         },
 
@@ -33,11 +33,11 @@ define([
             app.regionManager.show(this.views.aboutPage);
         },
 
-        projectIndex : function() {
+        cases : function() {
             app.regionManager.show(this.views.portfolioPage);
         },
 
-        projectPage : function(slug) {
+        case : function(slug) {
             var collection = app.collections.projectCollection;
             var model = collection.findWhere({slug : slug});
             if (model === undefined) {

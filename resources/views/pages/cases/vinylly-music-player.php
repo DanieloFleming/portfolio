@@ -23,10 +23,10 @@
     </div>
     <section class="section" style="background:#e6e6e6;">
         <div class="container is-centered">
-            <iframe data-delay="0"
-                    src="<?= url('/static/demos/vinylly/index.html');?>"
+            <object data-delay="0"
+                    data="/static/demos/vinylly/index.html"
                     style="width:260px; height:100%; position:absolute; top:0; left:50%; margin-left:-130px;">
-            </iframe>
+            </object>
             <canvas width="260" height="460" style="visibility: hidden"></canvas>
         </div>
     </section>
