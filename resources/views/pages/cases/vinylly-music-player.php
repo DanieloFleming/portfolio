@@ -30,5 +30,5 @@
             <canvas width="260" height="460" style="visibility: hidden"></canvas>
         </div>
     </section>
-    <?php echo view('layouts.project-footer');?>
+    <?php echo view('layouts.project-footer')->with('data', $data);?>
 </script>

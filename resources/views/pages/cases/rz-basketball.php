@@ -50,5 +50,5 @@
             </video>
         </div>
     </div>
-    <?php echo view('layouts.project-footer');?>
+    <?php echo view('layouts.project-footer')->with('data', $data);?>
 </script>
