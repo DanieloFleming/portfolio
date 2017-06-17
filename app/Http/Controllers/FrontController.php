@@ -94,12 +94,13 @@ class FrontController extends Controller
 
     private function getFileView($file)
     {
-        $view_name = pathinfo( (string) $file, PATHINFO_FILENAME);
+        $slug = pathinfo( (string) $file, PATHINFO_FILENAME);
 
-        $view_location = 'pages.cases.' . $view_name;
+        $view_location = 'pages.cases.' . $slug;
 
-        if ($this->collection->contains('slug', $view_name)) {
-            return view($view_location)->with('slug', $view_name);
+        if ($this->collection->contains('slug', $slug)) {
+            $data = $this->collection->where('slug', $slug)->first()['info'];
+            return view($view_location)->with(compact('data', 'slug'));
         }
 
         return null;

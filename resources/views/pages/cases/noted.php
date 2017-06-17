@@ -40,5 +40,5 @@
         <img data-delay="0" src="/static/img/cases/noted/yellow.jpg" style="width:100%" class="smart-object"/>
     </div>
 
-    <?php echo view('layouts.project-footer');?>
+    <?php echo view('layouts.project-footer')->with('data', $data);?>
 </script>
