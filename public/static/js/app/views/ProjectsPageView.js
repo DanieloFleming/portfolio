@@ -7,7 +7,6 @@ define([
 
     return  BaseView.extend({
         id : 'project-index',
-
         templateName: '#project-index',
         templateVars : {},
 

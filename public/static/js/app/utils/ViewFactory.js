@@ -6,6 +6,7 @@ define([
     'app/views/ContactPageView',
     'app/views/Page404'
 ], function(HomePage, AboutPage, ProjectPage, ProjectInfoPage, ContactPage, Page404){
+    //TODO : We should remove this. Really... this idea... needs to be reviewd
     return (function(){
         var views =  [
             HomePage,

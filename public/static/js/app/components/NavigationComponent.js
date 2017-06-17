@@ -81,8 +81,7 @@ define([
 						onComplete : this.setupNavigation
 					});
         		}.bind(this));
-/*
-				*/
+
 			},
 
 			setupNavigation : function() {

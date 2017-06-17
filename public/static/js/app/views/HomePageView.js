@@ -66,8 +66,6 @@ define([
             }.bind(this));
         },
 
-
-
         handleComplete : function() {
             app.router.navigate('/cases', {trigger: true});
         },

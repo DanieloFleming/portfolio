@@ -45,6 +45,7 @@ define([
 
         goHome : function(e) {
             e.preventDefault();
+            
             var footer = this.el.querySelector('footer');
             footer.style.display = 'none';
             TweenMax.to(this.el, .7, {opacity:0, onComplete:this.handleComplete})

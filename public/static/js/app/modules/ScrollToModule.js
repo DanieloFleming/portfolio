@@ -9,7 +9,6 @@ define([
 		},
 
 		initialize : function() {
-            //var bodyValue = (app.browser.isFireFox) ? 'body, html' : 'body';
             this.$body = $('#application');
 
             _.bindAll(this, 'handleComplete', 'scrollToPosition');
@@ -64,6 +63,11 @@ define([
             this.$body[0].scrollTop = scrollData.top;
         },
 
+        /**
+         * Toggle scroll availability.
+         * 
+         * @param {bool} enabled
+         */
         setScrollEvent : function(enabled) {
         	if(!enabled) {
 				this.$body[0].addEventListener('mousewheel', this.preventPageScroll);
@@ -72,6 +76,9 @@ define([
         	}
         },
 
+        /**
+         * Prevents the page from scrolling on scroll.
+         */
          preventPageScroll : function(e) {
             e.preventDefault();
             e.stopPropagation();

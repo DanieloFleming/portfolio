@@ -13,6 +13,7 @@ define([
     var Application = (function(){
         var splashScreen;
         var prefix = typeof document.hidden == "undefined" ? "ms" : '';
+
         /**
          * initialize pre-loader.
          */
@@ -54,7 +55,6 @@ define([
             app.browser.isIe = app.browser.type == 'edge' || app.browser.type == 'ie';
             app.browser.isWindows = app.browser.os == 'windows';
             app.browser.isAndroid = app.browser.os == 'androidos';
-
 
             app.browser.isMobile = 'ontouchstart' in window || navigator.msMaxTouchPoints ||
             typeof window.orientation !== "undefined" || navigator.userAgent.indexOf('IEMobile') !== -1;

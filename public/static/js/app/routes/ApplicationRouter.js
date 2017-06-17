@@ -14,6 +14,11 @@ define([
             '*action'        : 'pageNotFound'
         },
 
+        /**
+         * Prepare views with content en store them for later use.
+         * 
+         * NOTE: I'm not sure if this is the way to go. 
+         */
         initialize : function() {
             this.views = {
                 homePage        : ViewFactory.get(ViewFactory.VIEW_HOME, {collection: app.collections.projectCollection}),

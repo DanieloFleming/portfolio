@@ -1,17 +1,19 @@
 <script type="template" id="aboutpage">
-    <section class="section section-header is-aligned--centered is-inverted is-unpadded">
-
-		<div data-delay="0" data-transition-type="fadeIn" class="row fill-parent is-aligned--middle is-unpadded" style="background: black">
+    <section class="section parallax section-header is-aligned--centered is-inverted is-unpadded">
+        <div class="header-background"  style="background-image:url('/static/img/backgrounds/passpicsQ.jpg');"></div>
+		<div data-delay="0" data-transition-type="fadeIn" class="row fill-parent is-aligned--middle is-unpadded">
 			<div class="column span-8-10 space-l-1-10 span-md-10-10 space-md-none">
 				<h1 class="title" data-delay="0.2">Game recognises game and you don't look familiar.</h1>
 				<h3 class="text is-bold" data-delay=".4"> - <i>RILEY</i>FREEMAN - </h3>
 			</div>
+
+            <div class="scroll-indicator scroll-to" data-delay=".6">
+                <span class="indicator"></span>
+                <span class="indicator-text text-top">about</span>
+                <span class="indicator-text text-bottom">me</span>
+            </div>
 		</div>
-        <div class="scroll-indicator scroll-to" data-delay=".6">
-            <span class="indicator"></span>
-            <span class="indicator-text text-top">about</span>
-            <span class="indicator-text text-bottom">me</span>
-        </div>
+
     </section>
 
     <section class="section">
