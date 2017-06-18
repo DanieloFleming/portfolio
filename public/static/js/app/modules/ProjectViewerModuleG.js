@@ -243,7 +243,6 @@ define([
         },
 
         handleTransitionCompleted : function(e) {
-            //window.scroll(0, 0);
             this.$application[0].scrollTop = 0;
             this.setScrollEvent(true);
             app.router.navigate('/cases/' + this.slug, {trigger: true});
@@ -253,10 +252,10 @@ define([
         setScrollEvent : function(enabled) {
             if(!enabled) {
                 this.$body[0].addEventListener('mousewheel', this.preventPageScroll);
-                this.$body[0].addEventListener('touchmove', this.preventPageScroll);
+                document.addEventListener('touchmove', this.preventPageScroll);
             } else {
                 this.$body[0].removeEventListener('mousewheel', this.preventPageScroll);
-                this.$body[0].removeEventListener('touchmove', this.preventPageScroll);
+                document.removeEventListener('touchmove', this.preventPageScroll);
             }
         },
 
