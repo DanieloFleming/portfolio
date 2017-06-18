@@ -158,29 +158,31 @@ $duration : .3s;
 	}
 }
 
+$selected-duration: .1s;
+
 .project-item-container .project-item.selected {
 
 	.project-item-thumb {
 		@include scale(1);
 
-		@include transition(transform $duration);
+		@include transition(transform $selected-duration);
 	}
 
 	.project-item-title {
 		opacity:0 !important;
 
-		@include transition(transform $duration, opacity $duration);
+		@include transition(transform $selected-duration, opacity $selected-duration);
 	}
 
 	.project-item-thumb:after{
 		opacity: 1;
-		transition:opacity $duration;
-		@include transition(opacity $duration);
+		transition:opacity $selected-duration;
+		@include transition(opacity $selected-duration);
 	}
 	.project-item-thumb:after{
 		@include scale(1);
 
-		@include transition(transform $duration);
+		@include transition(transform $selected-duration);
 	}
 }
 .empty-project-item {
