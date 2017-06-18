@@ -83,6 +83,7 @@ define([
 
         animateScroll : function(target, obj) {
             TweenMax.to(obj, this.ANIMATION_TIME, {
+                delay:.1,
                 top:target,
                 ease: Power4.easeInOut,
                 onUpdate:this.scrollToPosition,
