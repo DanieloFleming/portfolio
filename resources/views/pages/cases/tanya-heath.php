@@ -1,7 +1,8 @@
 <script type="template" id="<?=$slug;?>">
+
     <?= view('layouts.project-item-header');?>
 
-    <section class="section is-aligned--center is-unpadded--bottom">
+    <section class="section is-aligned--center">
         <div class="container">
             <div class="row">
                 <div class="column span-8-10 space-l-1-10">
@@ -14,12 +15,7 @@
                     <img data-delay=".4" src="/static/img/cases/tanya-heath-paris/logo.png" />
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section class="section is-unpadded--top">
-        <div class="container">
-            <img data-delay="0" src="/static/img/cases/tanya-heath-paris/mac-2016.png" style="width:100%;" class="smart-object"/>
+            <img data-delay=".6" src="/static/img/cases/tanya-heath-paris/mac-2016.png" style="width:100%;" class="smart-object"/>
         </div>
     </section>
 

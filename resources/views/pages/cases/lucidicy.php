@@ -1,6 +1,8 @@
 <script type="template" id="<?=$slug;?>">
+
     <?= view('layouts.project-item-header');?>
-    <div class="section is-aligned--center is-unpadded--bottom">
+
+    <div class="section is-aligned--center">
         <div class="container">
             <div class="row">
                 <div class="column span-8-10 space-l-1-10">
@@ -13,13 +15,10 @@
                     <img data-delay=".4" src="/static/img/cases/lucidicy/infoboard.png" />
                 </div>
             </div>
+            <img data-delay=".6" src="/static/img/cases/lucidicy/lucidicy_tablet.png" style="width:100%" class="smart-object"/> 
         </div>
     </div>
-    <section class="section">
-        <div class="container">
-            <img data-delay="0" src="/static/img/cases/lucidicy/lucidicy_tablet.png" style="width:100%" class="smart-object"/>
-        </div>
-    </section>
+
     <section class="section is-unpadded--bottom" style="background-color: #010d1d">
         <div class="row">
             <div class="column span-5-10 span-md-10-10 is-aligned--center">

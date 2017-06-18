@@ -4,6 +4,7 @@ define([
 	], function(BaseComponent){
 
 		return BaseComponent.extend({
+			ANIMATION_TIME : .7,
 
 			el: '.navigation',
 
@@ -63,17 +64,24 @@ define([
 			},
 
 			togglePanel : function() {
+				TweenMax.set([$('#application'), this.ui.panel], {
+					willChange : 'transform'
+				});
 				if(this.isOpen) {
 
-					TweenMax.to($('#application'), .7, {
+					TweenMax.to($('#application'), this.ANIMATION_TIME, {
 						x : "0%"
 					});
 
-					TweenMax.to(this.ui.panel, .7, {
+					TweenMax.to(this.ui.panel, this.ANIMATION_TIME, {
 						x:'100%',
 						onComplete:function() {
 							this.isOpen = false;
 							this.clicked = false;
+
+							TweenMax.set([$('#application'), this.ui.panel], {
+								willChange : 'auto'
+							});
 						}.bind(this)
 					});
 
@@ -87,16 +95,20 @@ define([
                         x : -25
                     }, .1);
 
-					TweenMax.to($('#application'), .7, {
+					TweenMax.to($('#application'), this.ANIMATION_TIME, {
 						x : "-40%"
 					});
 
-					TweenMax.to(this.ui.panel, .7, {
+					TweenMax.to(this.ui.panel, this.ANIMATION_TIME, {
 						x:'0%',
 						ease:Power1.easeOut,
 						onComplete:function() {
 							this.isOpen = true;
 							this.clicked = false;
+
+							TweenMax.set([$('#application'), this.ui.panel], {
+								willChange : 'auto'
+							});
 						}.bind(this)
 					});
 				}

@@ -26,7 +26,7 @@ return [
             'header'    => '/static/img/cases/djos-ink/thumb-v.jpg',
             'info'      => [
                 'technique' => ['html/css', 'javascript', 'laravel', 'backbone', 'tweenmax'],
-                'description' => 'Portfolio site of Djovani Pimentel'
+                'description' => 'The portfolio site for Djovani Pimentel, a tattoo artist from rotterdam'
             ]
         ],
         [
@@ -39,7 +39,8 @@ return [
             'header'    => '/static/img/cases/cafe-de-kroeg/thumb.jpg',
             'info'      => [
                 'technique' => ['html/css', 'javascript', 'wordpress'],
-                'description' => 'Homepage for cafe de kroeg'
+                'description' => 'The homepage of Cafe de kroeg, the place to be for the best bavaria beers',
+                'link' => '<a target="_blank" href="http://cafe-de-kroeg.nl/">Visite Site</a>'
             ]
         ],
         [
@@ -52,7 +53,7 @@ return [
             'header'    => '/static/img/cases/meteor-strike/thumb-2.png',
             'info'      => [
                 'technique' => ['html5', 'canvas', 'javascript'],
-                'description' => 'Vanilla javascript 2d spaceshooter'
+                'description' => 'A 2d side scrolling shooter made with vanilla javascript'
             ]
         ],
         [
@@ -65,7 +66,7 @@ return [
             'header'    => '/static/img/cases/noted/thumb.jpg',
             'info'      => [
                 'technique' => ['java', 'android SDK'],
-                'description' => 'Android application for keeping notes'
+                'description' => 'A android application for keeping notes, poems or lyrics wherever you go'
             ]
         ],
         [
@@ -78,7 +79,7 @@ return [
             'header'    => '/static/img/cases/travel-away/thumb.jpg',
             'info'      => [
                 'technique' => ['html/css', 'javascript', 'wordpress'],
-                'description' => 'Blog about travel destinations'
+                'description' => 'The Travelblog for those who do not know where to go'
             ]
         ],
         [
@@ -91,7 +92,8 @@ return [
             'header'    => '/static/img/cases/tanya-heath-paris/header.jpg',
             'info'      => [
                 'technique' => ['html/css', 'php', 'magento'],
-                'description' => 'Webshop for buying custom shoes and heels'
+                'description' => 'A webshop for buying custom shoes and heel products by Tanya Heath',
+                'link' => '<a target="_blank" href="http://tanyaheath.nl/">Visit Site</a>'
             ]
         ],
         [
@@ -104,8 +106,9 @@ return [
             'header'    => '/static/img/cases/lucidicy/thumb.jpg',
             'info'      => [
                 'technique' => ['c#', 'unity'],
-                'description' => '2d plaform game for Android',
-                'collaboration' => ['Kjell Willemstein', 'Sanne van Alphen']
+                'description' => 'A 2d plaform game for Android phones',
+                'collaboration' => ['Kjell Willemstein', 'Sanne van Alphen'],
+                'link' => '<a target="_blank" href="https://play.google.com/store/apps/details?id=nl.ludicity.disconnected">Google Play</a>'
             ]
         ],
 
@@ -119,7 +122,7 @@ return [
             'header'    => '/static/img/cases/d-blog/thumb.jpg',
             'info'      => [
                 'technique' => ['html/css', 'javascript', 'laravel'],
-                'description' => 'Minimalistic blog with a custom cms'
+                'description' => 'A Minimalistic blog with a custom cms, build form scratch'
             ]
         ],
         [
@@ -132,9 +135,9 @@ return [
             'header'    => '/static/img/cases/pool-party-panic/thumb-stretched.jpg',
             'info'      => [
                 'technique' => ['c#', 'unity'],
-                'description' => 'Chaotic 3d game about a lifegaurd and burning guests',
+                'description' => 'A chaotic 3d game about a lifegaurd saving burning guests with towel slaps',
                 'collaboration' => '<a target="_blank" href="http://www.outlawsstudio.com/">Outlaws Studio</a>',
-                'Link' => '<a target="_blank" href="http://gamejolt.com/games/pool-party-panic/228361">GameJolt</a>'
+                'link' => '<a target="_blank" href="http://gamejolt.com/games/pool-party-panic/228361">GameJolt</a>'
             ]
         ],
         [
@@ -147,7 +150,7 @@ return [
             'header'    => '/static/img/cases/rz-basketball/thumb-overlayed.jpg',
             'info'      => [
                 'technique' => ['html/css', 'javascript', 'php', 'wordpress'],
-                'description' => 'Homepage for Rotterdam-Zuid Basketball',
+                'description' => 'The homepage for Rotterdam-Zuid Basketball',
                 'collaboration' => [
                     '<a target="_blank" href="http://sapphirewebstudio.com/">Joey Teng</a>',
                     '<a target="_blank" href="http://superbruut.nl/">Thijs Janssen</a>'
@@ -164,7 +167,7 @@ return [
             'header'    => '/static/img/cases/vinylly-music-player/thumb-2.jpg',
             'info'      => [
                 'technique' => ['html5/css3', 'es6', 'react', 'webpack', 'babel'],
-                'description' => 'MP3 music player'
+                'description' => 'A music player combining new technology with some old school feelings'
             ]
         ]
     ]

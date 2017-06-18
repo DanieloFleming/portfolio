@@ -80,7 +80,7 @@ define([
 		if(TweenMax.isTweening(element)) return false;
 
 		var delayTime = element.getAttribute('data-delay') || 0;
-
+		element.style.willChange = 'transform, opacity';
 		element.style.transitionDelay = delayTime + 's';
 		element.classList.remove('hide');
 
@@ -91,6 +91,7 @@ define([
 		var element = event.currentTarget;
 
 		element.style.transitionDelay = '';
+		element.style.willChange = 'auto';
 		element.removeAttribute('data-delay');
 		element.removeEventListener("transitionend", this.removeTransformValues);
 	}
