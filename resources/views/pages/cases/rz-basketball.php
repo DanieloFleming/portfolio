@@ -1,7 +1,8 @@
 <script type="template" id="<?=$slug;?>">
+
     <?= view('layouts.project-item-header');?>
 
-    <section class="section is-aligned--center is-unpadded--bottom">
+    <section class="section is-aligned--center">
         <div class="container">
             <div class="row">
                 <div class="column span-8-10 space-l-1-10">
@@ -14,14 +15,11 @@
                     <img data-delay=".4" src="/static/img/cases/rz-basketball/logo.png" />
                 </div>
             </div>
+            <img data-delay=".6" src="/static/img/cases/rz-basketball/mac.png" style="width:100%" class="smart-object"/>
         </div>
     </section>
 
-    <section class="section">
-        <div class="container">
-            <img data-delay="0" src="/static/img/cases/rz-basketball/mac.png" style="width:100%" class="smart-object"/>
-        </div>
-    </section>
+
 
     <div class="section is-colored--dark">
         <div class="container">

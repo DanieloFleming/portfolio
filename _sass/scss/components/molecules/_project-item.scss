@@ -1,3 +1,4 @@
+$duration : .3s;
 .project-item-container {
 	position:relative;
 
@@ -40,7 +41,7 @@
 		transform-origin: 100% 50%;
 
 		@include scale(1.1);
-		@include transition(transform .34s);
+		@include transition(transform $duration);
 	}
 }
 .project-item-container .project-item-thumb:after,
@@ -118,7 +119,7 @@
 	//@include translateY(-40px);
 	opacity:1;
 
-	@include transition(transform .34s, opacity .34s);
+	@include transition(transform $duration, opacity $duration);
 
 	i {
 		font-family: 'latoblack'
@@ -129,7 +130,7 @@
 		position:absolute;
 		left:-120px;
 		bottom:40px;
-		@include transition(transform .34s, opacity .34s);
+		@include transition(transform $duration, opacity $duration);
 		opacity:0;
 	}
 }
@@ -141,11 +142,11 @@
 	.project-item-thumb {
 		@include scale(1);
 
-		@include transition(transform .34s);
+		@include transition(transform $duration);
 	}
 	.project-item-thumb:after{
 		opacity: 1;
-		transition:opacity .35s;
+		transition:opacity $duration;
 	}
 
 	.project-item-title, .project-item-title:before {
@@ -153,7 +154,7 @@
 
 		@include translateY(40px);
 
-		@include transition(transform .34s, opacity .34s);
+		@include transition(transform $duration, opacity $duration);
 	}
 }
 
@@ -162,24 +163,24 @@
 	.project-item-thumb {
 		@include scale(1);
 
-		@include transition(transform .34s);
+		@include transition(transform $duration);
 	}
 
 	.project-item-title {
 		opacity:0 !important;
 
-		@include transition(transform .34s, opacity .34s);
+		@include transition(transform $duration, opacity $duration);
 	}
 
 	.project-item-thumb:after{
 		opacity: 1;
-		transition:opacity .35s;
-		@include transition(opacity .34s);
+		transition:opacity $duration;
+		@include transition(opacity $duration);
 	}
 	.project-item-thumb:after{
 		@include scale(1);
 
-		@include transition(transform .34s);
+		@include transition(transform $duration);
 	}
 }
 .empty-project-item {

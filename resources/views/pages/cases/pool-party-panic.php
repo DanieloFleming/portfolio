@@ -1,7 +1,8 @@
 <script type="template" id="<?=$slug;?>">
+
     <?= view('layouts.project-item-header');?>
 
-    <div class="section is-aligned--center is-unpadded--bottom">
+    <div class="section is-aligned--center">
         <div class="container">
             <div class="row">
                 <div class="column span-8-10 space-l-1-10">
@@ -14,13 +15,10 @@
                     <img data-delay=".4" src="/static/img/cases/pool-party-panic/outlawslogo-black.png" />
                 </div>
             </div>
+            <img data-delay=".6" src="/static/img/cases/pool-party-panic/tv.png" style="width:100%;" class="smart-object"/>
         </div>
     </div>
-    <section class="section is-unpadded--top">
-        <div class="container">
-            <img data-delay="0" src="/static/img/cases/pool-party-panic/tv.png" style="width:100%;" class="smart-object"/>
-        </div>
-    </section>
+
 
     <section class="section is-colored--dark is-unpadded--bottom">
 

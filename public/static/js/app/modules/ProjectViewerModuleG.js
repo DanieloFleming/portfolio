@@ -4,7 +4,7 @@ define([
 ], function(_, BaseModule) {
 
     return BaseModule.extend({
-        ANIMATION_TIME : .7,
+        ANIMATION_TIME : .5,
         template : '<div class="project-overlay"><div class="overlay-item"></div></div>',
         events : {
             'click .project-item' : 'handleClick'
@@ -244,7 +244,7 @@ define([
 
         handleTransitionCompleted : function(e) {
             //window.scroll(0, 0);
-            //this.$application[0].scrollTop = 0;
+            this.$application[0].scrollTop = 0;
             this.setScrollEvent(true);
             app.router.navigate('/cases/' + this.slug, {trigger: true});
             app.navigation.show();
@@ -253,8 +253,10 @@ define([
         setScrollEvent : function(enabled) {
             if(!enabled) {
                 this.$body[0].addEventListener('mousewheel', this.preventPageScroll);
+                this.$body[0].addEventListener('touchmove', this.preventPageScroll);
             } else {
                 this.$body[0].removeEventListener('mousewheel', this.preventPageScroll);
+                this.$body[0].removeEventListener('touchmove', this.preventPageScroll);
             }
         },
 
