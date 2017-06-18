@@ -26,7 +26,6 @@
 		line-height: 24px;
 	}
 	li {
-		//text-transform: lowercase;
 		margin-bottom:5px;
 	}
 	a {
@@ -38,7 +37,12 @@
 		font-weight: bold;
 		overflow: hidden;
 	}
+	a:before {
+		content:'→';
+		display: inline-block;
+		margin-right:5px;
 
+	}
 	a:after {
 		content:'';
 		position: absolute;
@@ -57,7 +61,6 @@
 		cursor: pointer;
 		color:black;
 		transition: color .3s ease;
-		//transition-delay: .7s;
 	}
 
 	a:hover:after {
