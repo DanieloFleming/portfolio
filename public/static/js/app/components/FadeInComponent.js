@@ -12,6 +12,13 @@ define([
 
 			_.bindAll(this, 'setupTransition', 'update', 'checkIfVisible', 'isVisible', 'fadeInElement', 'terminate', 'removeTransformValues');
 
+
+			for(var i = this.sections.length -1; i >= 0 ; i--){
+				if(this.sections[i].querySelectorAll('[data-delay]').length <= 0){
+					this.sections.splice(i, 1);
+				}
+			}
+
 			if(this.elements.length && this.elements.length > 0) {
 				_.each(this.elements, this.setupTransition);
 				this.addEvents();
@@ -49,6 +56,7 @@ define([
 		
 		if(arrayLength <= 0 ) {
 			this.terminate();
+			this.showAll = true;
 		}
 
 		for(i; i < arrayLength; i++) {
@@ -101,6 +109,9 @@ define([
 	};
 
 	FadeInComponent.prototype.close = function() {
+		if(!this.showAll) {
+			this.terminate();
+		}
 		this.sections = this.elements = [];
 	};
 
