@@ -36,6 +36,7 @@ define([
 
         interact : function(){
             if(this.isInteracting) return;
+            
             this.isInteracting = true;
 
             this.components.scrollTo.interact(function(){
@@ -45,8 +46,7 @@ define([
 
         goHome : function(e) {
             e.preventDefault();
-            var footer = this.el.querySelector('footer');
-            footer.style.display = 'none';
+            this.el.querySelector('footer').style.display = 'none';
             TweenMax.to(this.el, .7, {opacity:0, onComplete:this.handleComplete})
         },
 

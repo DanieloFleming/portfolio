@@ -5,23 +5,47 @@ define([
 		var templateCache = {};
 		var slugs = {};
 
+		/**
+		 * Get templates.
+		 * 
+		 * @param {Array[Backbone.Models]} models 
+		 */
 		var getTemplates = function(models) {
-			_.each(models, _getTemplateId);
+			_.each(models, _storeTemplateId);
 		};
 
-		var _getTemplateId = function(model) {
-			var slug = model.get('slug');
-
-			var templateId = ($('#' + slug).length !== 0) ? '#' + slug : '#project-overview';
+		/**
+		 * Retreive the temlatename or templateId.
+		 * 
+		 * @param {Backbone.Model} model 
+		 */
+		var _storeTemplateId = function(model) {
+			var slug = model.get('slug'),
+				templateId = ($('#' + slug).length !== 0) ? '#' + slug : '#project-overview';
 
 			slugs[slug] = templateId;
 
 			if(! templateCache[templateId] ) {
-				templateCache[templateId] = _.template($(templateId).html());
-				$(templateId).remove();
+				_cacheTemplate(templateId);
 			}
 		};
 
+		/**
+		 * Cache the template and remove template source from the dom.
+		 * 
+		 * @param {String} templateId 
+		 */
+		var _cacheTemplate = function(templateId) {
+			templateCache[templateId] = _.template($(templateId).html());
+
+			$(templateId).remove();
+		}
+
+		/**
+		 * Retreive the template associated with the slug.
+		 * 
+		 * @param {String} slug 
+		 */
 		var get = function(slug) {
 			return templateCache[slugs[slug]];
 		};

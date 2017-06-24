@@ -31,7 +31,7 @@ define([
          * Executed when view is rendered
          */
         rendered : function() {
-            this.setUi();
+            this._setUi();
         
             this.delegateEvents();
 
@@ -43,11 +43,11 @@ define([
         /**
          * Make HtmlElements from ui object
          */
-        setUi : function() {
+        _setUi : function() {
             if(_.keys(this.ui).length == 0) return;
 
             _.map(this.ui, function(value, key) {
-                this.addUi(key, value);
+                this._addUi(key, value);
             }, this);
         },
         
@@ -57,7 +57,7 @@ define([
          * @param key
          * @param value
          */
-        addUi : function (key, value) {
+        _addUi : function (key, value) {
             var element = this.el.querySelectorAll(value);
         
             this.ui = this.ui || {};
@@ -70,14 +70,14 @@ define([
                 this.onClose();
             }
 
-            this.unsetUi();
+            this._unsetUi();
 
             this.undelegateEvents();
             this.unbind();
             this.remove();
         },
 
-        unsetUi : function() {
+        _unsetUi : function() {
             _.each(this.ui || {}, function(value, key) {
                 $(this.ui[key]).empty();
                 this.ui[key] = null;

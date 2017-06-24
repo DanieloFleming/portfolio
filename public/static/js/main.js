@@ -22,14 +22,14 @@ require.config({
 
 require([
     'app/App',
-    'vendor/tweenmax'
+    'vendor/tweenmax',
+    'app/modules/TabCheckModule'
 ], function(App){
     window.app = window.app || {};
 
     app.models = window.app.models || {};
-    app.views  = window.app.views  || {};
     app.collections = window.app.collections || {};
-    app.modules = window.app.modules || {};
+    app.config = window.app.config || {};
 
     App.start();
 });
