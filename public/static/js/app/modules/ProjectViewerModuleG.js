@@ -21,7 +21,7 @@ define([
             this.overlayElement = $(this.template)[0];
 
             this.$body = $(
-                app.browser.isFireFox ? 'body, html' : 'body'
+                app.browser.isFireFox() ? 'body, html' : 'body'
             );
 
             this.$application = $('#application');

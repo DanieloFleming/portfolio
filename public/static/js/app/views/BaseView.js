@@ -5,16 +5,7 @@ define([
 
     return Backbone.View.extend({
         
-        //tagName    : 'div',
         className  : 'page',
-        //components : {},
-        //elements   : {},
-
-        //templateName : '<div></div>',
-        //templateOptions: {},
-        //templateVars   : {},
-        //template       : {},
-
 
         initialize : function(options) {
             this._createCache();
@@ -54,9 +45,9 @@ define([
 
             window.scroll(0, 0);
 
-            $('#application')[0].scrollTop = -1;
+            $('#application')[0].scrollTop = 0;
 
-            $(this.el).html(this.template(this.templateVars));
+            this.$el.html(this.template(this.templateVars));
 
             this.once('render', this._rendered);
 
@@ -93,18 +84,17 @@ define([
          */
         _setUi : function() {
             if(_.keys(this.ui).length == 0) return;
-            _.map(this._viewCache.ui, function(value, key) {
-                this._addUi(key, value);
-            }, this);
+
+            _.each(this._viewCache.ui, this._addUi, this);
         },
         
         /**
          * add HTML element to ui object.
          *
-         * @param key
-         * @param value
+         * @param {String} value
+         * @param {String} key
          */
-        _addUi : function (key, value) {
+        _addUi : function (value, key) {
             var element = this.el.querySelectorAll(value);
         
             this.ui = this.ui || {};
@@ -116,19 +106,16 @@ define([
          * Make modules from component object
          */
         _setComponents : function() {
-            _.map(this._viewCache.components, function(value, key){
-                this._addComponent(key, value);    
-            }, this);
+            _.each(this._viewCache.components, this._addComponent, this);
         },
         
         /**
          * Add module to compoents object.
          * 
-         * @param modules
-         * @param el
-         * @parem options
+         * @param {object} obj
+         * @param {String} key
          */
-        _addComponent : function(key, obj) {
+        _addComponent : function(obj, key) {
             var options = obj.options || {};
 
             if(obj.el) {
@@ -159,15 +146,23 @@ define([
             this.unbind();
         },
 
+        /**
+         * Remove cached elements from the view and remove references
+         */
         _unsetUi : function() {
             _.each(this.ui, function(value, key) {
+
                 $(this.ui[key]).empty();
+                
                 this.ui[key] = null;
             }, this);
 
             this.ui = _.clone(this._viewCache.ui);
         },
 
+        /**
+         * Destroy components and remove references
+         */
         _unsetComponents : function() {
             _.each(this.components, function(value, key) {
                 this.components[key].close();

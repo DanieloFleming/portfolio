@@ -1,7 +1,12 @@
 define([
     'backbone',
-    'app/utils/ViewFactory'
-], function(Backbone, ViewFactory){
+    'app/views/HomePageView',
+    'app/views/AboutPageView',
+    'app/views/ProjectsPageView',
+    'app/views/ProjectInfoPageView',
+    'app/views/ContactPageView',
+    'app/views/Page404'
+], function(Backbone, HomePage, AboutPage, ProjectPage, ProjectInfoPage, ContactPage, Page404){
 
     return Backbone.Router.extend({
 
@@ -14,15 +19,19 @@ define([
             '*action'        : 'pageNotFound'
         },
 
-        initialize : function() {
+        initialize : function(props) {
+            this.collection = props.collection;
+
             this.views = {
-                homePage        : ViewFactory.get(ViewFactory.VIEW_HOME, {collection: app.collections.projectCollection}),
-                aboutPage       : ViewFactory.get(ViewFactory.VIEW_ABOUT),
-                portfolioPage   : ViewFactory.get(ViewFactory.VIEW_PORTFOLIO, {collection: app.collections.projectCollection}),
-                projectInfo     : ViewFactory.get(ViewFactory.VIEW_PROJECT, {model: app.models.projectModel}),
-                contactPage     : ViewFactory.get(ViewFactory.VIEW_CONTACT),
-                page404         : ViewFactory.get(ViewFactory.VIEW_404)
+                homePage        : new HomePage({collection: app.collections.projectCollection}),
+                portfolioPage   : new ProjectPage({collection: app.collections.projectCollection}),
+                projectInfo     : new ProjectInfoPage({model: app.models.projectModel}),
+                contactPage     : new ContactPage(),
+                aboutPage       : new AboutPage(),
+                page404         : new Page404()
             };
+
+            Backbone.history.start({pushState: true});
         },
 
         home : function() {
@@ -38,14 +47,11 @@ define([
         },
 
         case : function(slug) {
-            var collection = app.collections.projectCollection;
-            var model = collection.findWhere({slug : slug});
+            var model = this.collection.findWhere({slug : slug});
+
             if (model === undefined) {
                 return this.pageNotFound();
             }
-
-            model.setPrev(collection.prev(model));
-            model.setNext(collection.next(model));
 
             this.views.projectInfo.setModel(model);
             

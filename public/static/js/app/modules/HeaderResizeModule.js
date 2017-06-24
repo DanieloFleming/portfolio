@@ -8,19 +8,19 @@ define([
         initialize : function(){
             _.bindAll(this, 'handleResize');
 
-            if(app.browser.isMobile) {
+            if(app.browser.isMobile()) {
                 $(window).on('resize', this.handleResize);
                 this.handleResize();
             }
             
-            if(!app.browser.isChrome) {
+            if(!app.browser.isChrome()) {
                 this.handleNonChrome();
             }
 
             var headerBackground = this.el.querySelector('.header-background');
 
             if(headerBackground) {
-                if (app.browser.isWindows && !app.browser.isIe) {
+                if (app.browser.isWindows() && !app.browser.isIe()) {
                     TweenMax.set(headerBackground, {left: -app.config.applicationWidth / 2 + "px"});
                 }
             }
@@ -28,7 +28,7 @@ define([
 
         handleNonChrome : function() {
 
-            if(app.browser.isSafari) {
+            if(app.browser.isSafari()) {
                 $("#application").css({transform:'none'});
             }
         },
@@ -38,7 +38,7 @@ define([
         },
 
         close : function() {
-            if(app.browser.isMobile) {
+            if(app.browser.isMobile()) {
                 $(window).off('resize', this.handleResize);
             }
         }

@@ -8,32 +8,35 @@ define([
     return Backbone.Model.extend({
         urlRoot : '/api/projects/',
 
-        setPrev : function(model) {
+        get : function(attr) {
+
+            switch(attr) {
+                case 'prev':
+                    this.getPreviousModel();
+                    break;
+                case 'next':
+                    this.getNextModel();
+                    break;
+                default:
+            }
+
+            return Backbone.Model.prototype.get.call(this, attr);
+        },
+
+        getPreviousModel : function() {
+            var currentIndex = this.collection.indexOf(this);
+            var id = (currentIndex - 1 < 0) ? this.collection.length - 1 : currentIndex - 1;
+
+            model =  this.collection.at(id);
             this.set({'prev' : model.toJSON()});
         },
 
-        setNext : function(model) {
+        getNextModel : function() {
+            var currentIndex = this.collection.indexOf(this);
+            var id = (currentIndex + 1 > this.collection.length - 1) ? 0 : currentIndex + 1;
+
+            model = this.collection.at(id);
             this.set({'next' : model.toJSON()});
         }
-       /* defaults : {
-            'id'        : '10101',
-            'order'     : '0',
-            'type'      : 'default type',
-            'title'     : 'default Title',
-            'sub-title' : 'default subtitle',
-            'slug'      : 'default-slug',
-            'header'    : 'image'
-        },
-        index : function(){
-            return this.collection.indexOf(this);
-        },
-        prev : function() {
-            var id = (this.index() - 1 < 0) ? this.collection.length - 1 : this.index() -1;
-            return this.collection.at(id)
-        },
-        next: function() {
-            var id = (this.index() + 1 > this.collection.length - 1) ? 0 : this.index() +1;
-            return this.collection.at(id)
-        }*/
     });
 });

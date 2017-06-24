@@ -54,8 +54,6 @@ define([
             this.templateVars.model = this.model;
 
             this.template = app.templateManager.get(this.model.attributes.slug);
-
-            this.listenToOnce(this.model, 'change', this.updateTemplate);
         },
 
         initialized : function () {
@@ -104,7 +102,7 @@ define([
         },
 
         setModel : function(model) {
-            this.model.set(model.toJSON());
+            this.model = model;
 
             this.updateTemplate();
         },

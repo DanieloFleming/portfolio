@@ -32,7 +32,7 @@ define([
         },
 
         initialized: function () {
-            _.map(this.ui.paths, this.setStrokeLength);
+            _.each(this.ui.paths, this.setStrokeLength);
             this.ease = Power4.easeInOut;
 
             this.handlePreLoad();
@@ -122,12 +122,12 @@ define([
             var scrollbarWidth = this.ui.outScroll.offsetWidth - this.ui.inScroll.offsetWidth;
             app.config.applicationWidth = scrollbarWidth < 15 ? 15 : scrollbarWidth;
 
-            if(app.browser.isAndroid && !app.browser.isChrome) {
+            if(app.browser.isAndroid() && !app.browser.isChrome()) {
                 //do nothing
             } else {
                 css.width = "calc(100% + " + app.config.applicationWidth + "px)";
 
-                if(app.browser.os !== 'windows') {
+                if(app.browser.os() !== 'windows') {
                     css.paddingRight = app.config.applicationWidth + "px";
                 }
 
