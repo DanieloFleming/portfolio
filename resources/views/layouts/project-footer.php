@@ -1,5 +1,5 @@
 <section class="section is-inverted case-info">
-    <div class="container container-project-info is-aligned--left">
+    <div class="container">
 
         <div class="row is-aligned--left">
 
