@@ -53,7 +53,9 @@ return [
             'header'    => '/static/img/cases/meteor-strike/thumb-2.png',
             'info'      => [
                 'technique' => ['html5', 'canvas', 'javascript'],
-                'description' => 'A 2d side scrolling shooter made with vanilla javascript'
+                'description' => 'A 2d side scrolling shooter made with vanilla javascript',
+                'link' => '<a target="_blank" href="https://github.com/DanieloFleming/meteor-strike">GitHub</a>'
+                
             ]
         ],
         [
@@ -122,7 +124,8 @@ return [
             'header'    => '/static/img/cases/d-blog/thumb.jpg',
             'info'      => [
                 'technique' => ['html/css', 'javascript', 'laravel'],
-                'description' => 'A Minimalistic blog with a custom cms, build form scratch'
+                'description' => 'A Minimalistic blog with a custom cms, build form scratch',
+                'link' => '<a target="_blank" href="https://github.com/DanieloFleming/blog">GitHub</a>'
             ]
         ],
         [
@@ -167,7 +170,8 @@ return [
             'header'    => '/static/img/cases/vinylly-music-player/thumb-2.jpg',
             'info'      => [
                 'technique' => ['html5/css3', 'es6', 'react', 'webpack', 'babel'],
-                'description' => 'A music player combining new technology with some old school feelings'
+                'description' => 'A music player combining new technology with some old school feelings',
+                'link' => '<a target="_blank" href="https://github.com/DanieloFleming/vinyl-ly">GitHub</a>',
             ]
         ]
     ]
