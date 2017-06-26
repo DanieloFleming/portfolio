@@ -68,7 +68,11 @@ return [
             'info'      => [
                 'technique' => ['java', 'android SDK'],
                 'description' => 'A android application for keeping notes, poems or lyrics wherever you go',
-                'link' => '<a target="_blank" href="https://github.com/DanieloFleming/noted">GitHub</a>'
+                'link' => [
+                    '<a target="_blank" href="https://github.com/DanieloFleming/noted">GitHub</a>',
+                    '<a target="_blank" href="https://play.google.com/store/apps/details?id=nl.fleming.noted">Google Play</a>'
+                ]
+
             ]
         ],
         [
