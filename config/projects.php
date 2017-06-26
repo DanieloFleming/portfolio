@@ -55,7 +55,6 @@ return [
                 'technique' => ['html5', 'canvas', 'javascript'],
                 'description' => 'A 2d side scrolling shooter made with vanilla javascript',
                 'link' => '<a target="_blank" href="https://github.com/DanieloFleming/meteor-strike">GitHub</a>'
-                
             ]
         ],
         [
@@ -68,7 +67,8 @@ return [
             'header'    => '/static/img/cases/noted/thumb.jpg',
             'info'      => [
                 'technique' => ['java', 'android SDK'],
-                'description' => 'A android application for keeping notes, poems or lyrics wherever you go'
+                'description' => 'A android application for keeping notes, poems or lyrics wherever you go',
+                'link' => '<a target="_blank" href="https://github.com/DanieloFleming/noted">GitHub</a>'
             ]
         ],
         [
