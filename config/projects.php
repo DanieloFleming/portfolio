@@ -161,7 +161,8 @@ return [
                 'collaboration' => [
                     '<a target="_blank" href="http://sapphirewebstudio.com/">Joey Teng</a>',
                     '<a target="_blank" href="http://superbruut.nl/">Thijs Janssen</a>'
-                ]
+                ],
+                'link' => '<a target="_blank" href="http://www.rotterdamzuid.com/">Visit Site</a>'
             ]
         ],
         [
