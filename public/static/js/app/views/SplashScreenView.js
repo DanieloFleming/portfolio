@@ -32,8 +32,9 @@ define([
         },
 
         initialized: function () {
-            _.each(this.ui.paths, this.setStrokeLength);
             this.ease = Power4.easeInOut;
+
+            _.each(this.ui.paths, this.setStrokeLength);
 
             this.handlePreLoad();
         },

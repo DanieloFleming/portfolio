@@ -8,18 +8,20 @@ define([
     'app/views/Page404'
 ], function(Backbone, HomePage, AboutPage, ProjectPage, ProjectInfoPage, ContactPage, Page404){
 
+    'use strict';
+
     return Backbone.Router.extend({
 
         routes: {
-            ''               : 'home',
-            'about'          : 'about',
-            'cases(/)'       : 'cases',
-            'cases/:slug'    : 'case',
-            'contact'        : 'contact',
-            '*action'        : 'pageNotFound'
+            ''           : 'home',
+            'about'      : 'about',
+            'cases(/)'   : 'cases',
+            'cases/:slug': 'case',
+            'contact'    : 'contact',
+            '*action'    : 'pageNotFound'
         },
 
-        initialize : function(props) {
+        initialize: function (props) {
             this.collection = props.collection;
 
             this.views = {
@@ -34,35 +36,35 @@ define([
             Backbone.history.start({pushState: true});
         },
 
-        home : function() {
+        home: function () {
             app.regionManager.show(this.views.homePage);
         },
 
-        about : function() {
+        about: function () {
             app.regionManager.show(this.views.aboutPage);
         },
 
-        cases : function() {
+        cases: function () {
             app.regionManager.show(this.views.portfolioPage);
         },
 
-        case : function(slug) {
+        case: function (slug) {
             var model = this.collection.findWhere({slug : slug});
 
-            if (model === undefined) {
+            if ( _.isUndefined(model) ) {
                 return this.pageNotFound();
             }
 
             this.views.projectInfo.setModel(model);
-            
+
             app.regionManager.show(this.views.projectInfo);
         },
 
-        contact : function() {
+        contact: function () {
             app.regionManager.show(this.views.contactPage);
         },
 
-        pageNotFound : function() {
+        pageNotFound: function () {
             app.regionManager.show(this.views.page404);
         }
     });

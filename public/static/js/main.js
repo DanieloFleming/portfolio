@@ -25,6 +25,7 @@ require([
     'vendor/tweenmax',
     'app/modules/TabCheckModule'
 ], function(App){
+    
     window.app = window.app || {};
 
     app.models = window.app.models || {};

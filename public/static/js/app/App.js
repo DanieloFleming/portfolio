@@ -26,7 +26,7 @@ define([
 
     var Application = (function(){
         var splashScreen;
-        
+
         /**
          * Instanciate modules
          */

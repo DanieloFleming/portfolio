@@ -6,10 +6,11 @@ define([
     'app/components/ComponentLoader',
     'app/modules/HeaderResizeModule'
 ], function(BaseView, FadeInComponent, ProjectViewerModule, ScrollToModule, ComponentLoader, HeaderResizeModule) {
+    'use strict';
 
     return  BaseView.extend({
         id : 'projectPage',
-        
+
         className : 'page',
 
         templateVars : {},
@@ -21,7 +22,7 @@ define([
             casesFooter : '.footer-cases',
             demos : 'iframe'
         },
-        
+
         components : {
 
             projectViewer : {
@@ -66,6 +67,7 @@ define([
             this.listenTo(this.components.projectViewer, 'clicked', this.preparePageChange);
 
         },
+
         interact : function(){
             if(this.isInteracting) return;
 
@@ -82,7 +84,7 @@ define([
             this.isClicked = true;
             this.components.projectViewer.isClicked = true;
 
-            TweenMax.to(this.el, .7, {
+            TweenMax.to(this.el, 0.7, {
                 opacity:0,
                 onComplete : this.handleComplete
             });
