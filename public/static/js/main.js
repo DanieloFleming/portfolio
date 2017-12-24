@@ -1,6 +1,6 @@
 require.config({
 
-    baseUrl: '/static/js',
+    baseUrl: "/static/js",
 
     paths: {
         jquery: 'vendor/jquery-1.11.2',
@@ -25,7 +25,6 @@ require([
     'vendor/tweenmax',
     'app/modules/TabCheckModule'
 ], function(App){
-    
     window.app = window.app || {};
 
     app.models = window.app.models || {};

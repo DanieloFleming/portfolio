@@ -49,6 +49,10 @@ define([
             this.templateVars.collection = _.first(options.collection.toJSON(), 3);
         },
 
+        initialized : function() {
+            app.virtualscroll.on(this.el);
+        },
+        
         handleClick : function(e) {
             TweenMax.to(this.el, .5, {
                 opacity:0,

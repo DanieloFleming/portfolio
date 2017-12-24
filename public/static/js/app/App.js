@@ -1,4 +1,5 @@
 define([
+    'jquery',
     'app/routes/ApplicationRouter',
     'app/collections/ProjectCollection',
     'app/models/ProjectModel',
@@ -8,18 +9,21 @@ define([
     'app/utils/BrowserCheck',
 
     'app/views/SplashScreenView',
-    'app/components/HamburgerComponent'
-], function(
-    Router, 
-    ProjectCollection, 
+    'app/components/HamburgerComponent',
+    'app/modules/ScrollModule'
+], function (
+    $,
+    Router,
+    ProjectCollection,
     ProjectModel,
 
-    RegionManager, 
-    TemplateManager, 
+    RegionManager,
+    TemplateManager,
     BrowserCheck,
 
-    SplashScreenView, 
-    HamburgerComponent
+    SplashScreenView,
+    HamburgerComponent,
+    ScrollModule
     ){
     //strict mode on!
     "use strict";
@@ -28,7 +32,7 @@ define([
         var splashScreen;
 
         /**
-         * Instanciate modules
+         * Instantiate modules
          */
         function setModules() {
             app.browser = BrowserCheck;
@@ -36,11 +40,12 @@ define([
             app.templateManager = TemplateManager;
             app.models.projectModel = new ProjectModel();
             app.collections.projectCollection = new ProjectCollection();
-        };
+            app.virtualscroll = ScrollModule;
+        }
 
         /**
          * Start setup application
-         * 
+         *
          */
         function initialize() {
             setModules();
@@ -57,8 +62,8 @@ define([
 
         /**
          * Handle success of fetch
-         * 
-         * @param {Backbone.Collection} collection 
+         *
+         * @param {Backbone.Collection} collection
          */
         function handleFetchCompleted(collection) {
             splashScreen.setCollection(collection);
@@ -76,6 +81,7 @@ define([
             app.navigation = new HamburgerComponent({
                 router:app.router
             });
+
         }
 
         /**
@@ -83,7 +89,7 @@ define([
          */
         return {
             start: initialize
-        }
+        };
     });
 
     return new Application();

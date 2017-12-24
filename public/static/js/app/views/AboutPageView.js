@@ -32,7 +32,10 @@ define([
                 el : '.section-header'
             }
         },
-
+        initialized : function() {
+            app.virtualscroll.on(this.el);
+        },
+        
         interact : function(){
             if(this.isInteracting) return;
 

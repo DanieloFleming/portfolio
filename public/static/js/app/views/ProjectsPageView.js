@@ -3,6 +3,7 @@ define([
     'app/views/BaseView',
     'app/components/FadeInComponent',
     'app/modules/ProjectViewerModuleG',
+
 ], function(_, BaseView, FadeInComponent, ProjectViewerModule) {
 
     return  BaseView.extend({
@@ -30,6 +31,12 @@ define([
 
         onInitialize : function(options) {
             this.templateVars.collection = options.collection.toJSON();
+ 
+        },
+
+        initialized : function() {
+
+            app.virtualscroll.on(this.el);
         },
 
         handleCaseClicked : function() {

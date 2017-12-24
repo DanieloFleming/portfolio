@@ -66,6 +66,7 @@ define([
 
             this.listenTo(this.components.projectViewer, 'clicked', this.preparePageChange);
 
+            app.virtualscroll.on(this.el);
         },
 
         interact : function(){
